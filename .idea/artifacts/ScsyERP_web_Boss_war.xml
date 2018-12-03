@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ScsyERP-web-Boss:war">
+    <output-path>$PROJECT_DIR$/ScsyERP-web-Boss/target</output-path>
+    <root id="archive" name="ScsyERP-web-Boss.war">
+      <element id="artifact" artifact-name="ScsyERP-web-Boss:war exploded" />
+    </root>
+  </artifact>
+</component>

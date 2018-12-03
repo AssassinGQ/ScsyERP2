@@ -1,0 +1,721 @@
+[INFO ][20181113 09:41:23,837][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:41:23,872][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@185d8b6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67784306, org.springframework.test.context.support.DirtiesContextTestExecutionListener@335eadca, org.springframework.test.context.transaction.TransactionalTestExecutionListener@210366b4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@eec5a4a]
+[INFO ][20181113 09:41:24,021][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181113 09:41:24,942][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181113 09:41:25,030][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:41:25 CST 2018]; root of context hierarchy
+[INFO ][20181113 09:41:25,451][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181113 09:41:27,205][TestRole:180] The user who's id = 1 has roles : 
+[INFO ][20181113 09:41:27,835][TestRole:183] Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:27,835][TestRole:183] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:41:27,836][TestRole:183] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:27,847][TestRole:148] GetBy succeed
+[INFO ][20181113 09:41:27,957][TestRole:63] BatchInserted succeed
+[INFO ][20181113 09:41:28,012][TestRole:103] BatchUpdated succeed
+[INFO ][20181113 09:41:28,019][TestRole:31] GetById success
+[INFO ][20181113 09:41:28,053][TestRole:136] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,053][TestRole:136] Item1:Role{RoleName='qRz7bw', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:28,055][TestRole:136] Item2:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:28,055][TestRole:136] Item3:Role{RoleName='F50BzH', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181113 09:41:28,055][TestRole:136] Item4:Role{RoleName='corp_partner', RoleDesc='承运方合作方', SuperRoleName='corpration'}
+[INFO ][20181113 09:41:28,056][TestRole:136] Item5:Role{RoleName='corp_employee', RoleDesc='承运方员工', SuperRoleName='corpration'}
+[INFO ][20181113 09:41:28,056][TestRole:136] Item6:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:41:28,056][TestRole:136] Item7:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:41:28,056][TestRole:136] Item8:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:41:28,056][TestRole:136] Item9:Role{RoleName='partner_consignor', RoleDesc='客户', SuperRoleName='corp_partner'}
+[INFO ][20181113 09:41:28,057][TestRole:136] Item10:Role{RoleName='partner_manufacturer', RoleDesc='生产厂家', SuperRoleName='corp_partner'}
+[INFO ][20181113 09:41:28,057][TestRole:136] Item11:Role{RoleName='partner_receiver', RoleDesc='收货方', SuperRoleName='corp_partner'}
+[INFO ][20181113 09:41:28,057][TestRole:136] Item12:Role{RoleName='employee_driver', RoleDesc='驾驶员', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:41:28,058][TestRole:136] Item13:Role{RoleName='employee_supervisor', RoleDesc='监装员', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:41:28,058][TestRole:136] Item14:Role{RoleName='employee_leftworker', RoleDesc='起重工', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:41:28,058][TestRole:136] Item15:Role{RoleName='employee_driveworker', RoleDesc='行车工', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:41:28,058][TestRole:136] Item16:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,058][TestRole:136] Item17:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,058][TestRole:136] Item18:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,059][TestRole:136] Item19:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,059][TestRole:136] Item20:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,059][TestRole:136] Item21:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,059][TestRole:136] Item22:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,059][TestRole:136] Item23:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,060][TestRole:136] Item24:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,060][TestRole:136] Item25:Role{RoleName='asddf3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,060][TestRole:136] Item26:Role{RoleName='asddf4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,062][TestRole:189] The user who's username= superadmin has roles : 
+[INFO ][20181113 09:41:28,095][TestRole:192] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,096][TestRole:192] Role{RoleName='qRz7bw', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:28,096][TestRole:192] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:28,119][TestRole:115] Delete succeed
+[INFO ][20181113 09:41:28,138][TestRole:128] Delete succeed
+[INFO ][20181113 09:41:28,156][TestRole:44] Inserted : Role{RoleName='asddf', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,164][TestRole:159] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:41:28,164][TestRole:159] Item1:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:41:28,164][TestRole:159] Item2:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:41:28,165][TestRole:159] Item3:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:41:28,177][TestRole:71] Before Update: Role{RoleName='qRz7bw', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:28,188][TestRole:78] Updated succeed
+[INFO ][20181113 09:41:28,200][TestRole:168] PageBean{currentPage=2, numPerPage=2, totalCount=28, recordList=[Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}, Role{RoleName='F50BzH', RoleDesc='承运方管理员', SuperRoleName='corpration'}], pageCount=14, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:41:28,200][TestRole:174] Item0:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:41:28,200][TestRole:174] Item1:Role{RoleName='F50BzH', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181113 09:41:28,218][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:41:25 CST 2018]; root of context hierarchy
+[WARN ][20181113 09:41:28,224][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181113 09:44:18,333][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:44:18,368][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@185d8b6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67784306, org.springframework.test.context.support.DirtiesContextTestExecutionListener@335eadca, org.springframework.test.context.transaction.TransactionalTestExecutionListener@210366b4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@eec5a4a]
+[INFO ][20181113 09:44:18,531][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181113 09:44:18,905][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181113 09:44:18,963][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:44:18 CST 2018]; root of context hierarchy
+[INFO ][20181113 09:44:19,262][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181113 09:44:20,942][TestPermission:181] The role who's id = 1 has permissions: 
+[INFO ][20181113 09:44:22,118][TestPermission:184] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181113 09:44:22,200][TestPermission:149] GetBy succeed
+[INFO ][20181113 09:44:22,275][TestPermission:64] BatchInserted succeed
+[INFO ][20181113 09:44:22,316][TestPermission:104] BatchUpdated succeed
+[INFO ][20181113 09:44:22,323][TestPermission:32] GetById success
+[INFO ][20181113 09:44:22,353][TestPermission:137] Item0:Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181113 09:44:22,354][TestPermission:137] Item1:Permission{PermissionName='GiX5k6', PermissionDesc='访问权限配置页面'}
+[INFO ][20181113 09:44:22,354][TestPermission:137] Item2:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181113 09:44:22,354][TestPermission:137] Item3:Permission{PermissionName='R0IiER', PermissionDesc='修改所有权限配置'}
+[INFO ][20181113 09:44:22,356][TestPermission:137] Item4:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,357][TestPermission:137] Item5:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,357][TestPermission:137] Item6:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,357][TestPermission:137] Item7:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,358][TestPermission:137] Item8:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,358][TestPermission:137] Item9:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,358][TestPermission:137] Item10:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,358][TestPermission:137] Item11:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,359][TestPermission:137] Item12:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,359][TestPermission:137] Item13:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,360][TestPermission:137] Item14:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,360][TestPermission:137] Item15:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,360][TestPermission:137] Item16:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,361][TestPermission:137] Item17:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,361][TestPermission:137] Item18:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,361][TestPermission:137] Item19:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,361][TestPermission:137] Item20:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,364][TestPermission:190] The role who's rolename = superadmin has permissions: 
+[INFO ][20181113 09:44:22,371][TestPermission:193] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181113 09:44:22,388][TestPermission:116] Delete succeed
+[INFO ][20181113 09:44:22,415][TestPermission:129] Delete succeed
+[INFO ][20181113 09:44:22,439][TestPermission:45] Inserted : Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:44:22,462][TestPermission:72] Before Update: Permission{PermissionName='GiX5k6', PermissionDesc='访问权限配置页面'}
+[INFO ][20181113 09:44:22,482][TestPermission:79] Updated succeed
+[INFO ][20181113 09:44:22,500][TestPermission:169] PageBean{currentPage=2, numPerPage=2, totalCount=22, recordList=[Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}, Permission{PermissionName='R0IiER', PermissionDesc='修改所有权限配置'}], pageCount=11, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:44:22,500][TestPermission:175] Item0:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181113 09:44:22,501][TestPermission:175] Item1:Permission{PermissionName='R0IiER', PermissionDesc='修改所有权限配置'}
+[INFO ][20181113 09:44:22,528][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:44:18 CST 2018]; root of context hierarchy
+[WARN ][20181113 09:44:22,533][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181113 09:51:46,617][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:51:46,643][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@185d8b6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67784306, org.springframework.test.context.support.DirtiesContextTestExecutionListener@335eadca, org.springframework.test.context.transaction.TransactionalTestExecutionListener@210366b4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@eec5a4a]
+[INFO ][20181113 09:51:46,770][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181113 09:51:47,142][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181113 09:51:47,193][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:51:47 CST 2018]; root of context hierarchy
+[INFO ][20181113 09:51:47,423][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181113 09:51:49,145][TestRolePermission:150] GetBy succeed
+[INFO ][20181113 09:51:49,319][TestRolePermission:65] BatchInserted succeed
+[INFO ][20181113 09:51:49,357][TestRolePermission:105] BatchUpdated succeed
+[INFO ][20181113 09:51:49,365][TestRolePermission:33] GetById success
+[INFO ][20181113 09:51:49,388][TestRolePermission:138] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5b068087
+[INFO ][20181113 09:51:49,388][TestRolePermission:138] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6f152006
+[INFO ][20181113 09:51:49,388][TestRolePermission:138] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3a393455
+[INFO ][20181113 09:51:49,388][TestRolePermission:138] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@13518f37
+[INFO ][20181113 09:51:49,389][TestRolePermission:138] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7cbc3762
+[INFO ][20181113 09:51:49,389][TestRolePermission:138] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3a6f2de3
+[INFO ][20181113 09:51:49,390][TestRolePermission:138] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@78f5c518
+[INFO ][20181113 09:51:49,391][TestRolePermission:138] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2f48b3d2
+[INFO ][20181113 09:51:49,392][TestRolePermission:138] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@34f7234e
+[INFO ][20181113 09:51:49,392][TestRolePermission:138] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@753432a2
+[INFO ][20181113 09:51:49,392][TestRolePermission:138] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@23bff419
+[INFO ][20181113 09:51:49,392][TestRolePermission:138] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4983159f
+[INFO ][20181113 09:51:49,392][TestRolePermission:138] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@44e3a2b2
+[INFO ][20181113 09:51:49,393][TestRolePermission:138] Item13:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@101639ae
+[INFO ][20181113 09:51:49,393][TestRolePermission:138] Item14:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4c550889
+[INFO ][20181113 09:51:49,393][TestRolePermission:138] Item15:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1d2bd371
+[INFO ][20181113 09:51:49,393][TestRolePermission:138] Item16:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@44040454
+[INFO ][20181113 09:51:49,394][TestRolePermission:138] Item17:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@65fe9e33
+[INFO ][20181113 09:51:49,408][TestRolePermission:117] Delete succeed
+[INFO ][20181113 09:51:49,426][TestRolePermission:130] Delete succeed
+[INFO ][20181113 09:51:49,456][TestRolePermission:46] Inserted : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@40dff0b7
+[INFO ][20181113 09:51:49,482][TestRolePermission:161] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2d36e77e
+[INFO ][20181113 09:51:49,483][TestRolePermission:161] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@61c9c3fd
+[INFO ][20181113 09:51:49,483][TestRolePermission:161] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3b0c9195
+[INFO ][20181113 09:51:49,483][TestRolePermission:161] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@366c4480
+[INFO ][20181113 09:51:49,484][TestRolePermission:161] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2c7b5824
+[INFO ][20181113 09:51:49,484][TestRolePermission:161] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@302a07d
+[INFO ][20181113 09:51:49,484][TestRolePermission:161] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5cdd09b1
+[INFO ][20181113 09:51:49,484][TestRolePermission:161] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@8c11eee
+[INFO ][20181113 09:51:49,484][TestRolePermission:161] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7e8dcdaa
+[INFO ][20181113 09:51:49,484][TestRolePermission:161] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@681a8b4e
+[INFO ][20181113 09:51:49,485][TestRolePermission:161] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5cbe877d
+[INFO ][20181113 09:51:49,485][TestRolePermission:161] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5c08c46a
+[INFO ][20181113 09:51:49,485][TestRolePermission:161] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4cf8b2dc
+[INFO ][20181113 09:51:49,485][TestRolePermission:161] Item13:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@708400f6
+[INFO ][20181113 09:51:49,485][TestRolePermission:161] Item14:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5829e4f4
+[INFO ][20181113 09:51:49,486][TestRolePermission:161] Item15:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4218500f
+[INFO ][20181113 09:51:49,486][TestRolePermission:161] Item16:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4bff64c2
+[INFO ][20181113 09:51:49,486][TestRolePermission:161] Item17:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1b2c4efb
+[INFO ][20181113 09:51:49,486][TestRolePermission:161] Item18:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@c35172e
+[INFO ][20181113 09:51:49,514][TestRolePermission:73] Before Update: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3668d4
+[INFO ][20181113 09:51:49,528][TestRolePermission:80] Updated succeed
+[INFO ][20181113 09:51:49,541][TestRolePermission:170] PageBean{currentPage=2, numPerPage=2, totalCount=19, recordList=[cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@655ef322, cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7e276594], pageCount=10, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:51:49,541][TestRolePermission:176] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@655ef322
+[INFO ][20181113 09:51:49,542][TestRolePermission:176] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7e276594
+[INFO ][20181113 09:51:49,551][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:51:47 CST 2018]; root of context hierarchy
+[WARN ][20181113 09:51:49,554][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181113 09:54:23,980][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:54:24,013][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@185d8b6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67784306, org.springframework.test.context.support.DirtiesContextTestExecutionListener@335eadca, org.springframework.test.context.transaction.TransactionalTestExecutionListener@210366b4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@eec5a4a]
+[INFO ][20181113 09:54:24,155][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181113 09:54:24,529][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181113 09:54:24,580][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:54:24 CST 2018]; root of context hierarchy
+[INFO ][20181113 09:54:24,821][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181113 09:54:27,180][TestUserRole:150] GetBy succeed
+[INFO ][20181113 09:54:27,252][TestUserRole:65] BatchInserted succeed
+[INFO ][20181113 09:54:27,287][TestUserRole:105] BatchUpdated succeed
+[INFO ][20181113 09:54:27,297][TestUserRole:33] GetById success
+[INFO ][20181113 09:54:27,320][TestUserRole:138] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181113 09:54:27,320][TestUserRole:138] Item1:User_Role{UserId=2, RoleId=298}
+[INFO ][20181113 09:54:27,320][TestUserRole:138] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,321][TestUserRole:138] Item3:User_Role{UserId=null, RoleId=297}
+[INFO ][20181113 09:54:27,321][TestUserRole:138] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,321][TestUserRole:138] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,326][TestUserRole:138] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:27,326][TestUserRole:138] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,327][TestUserRole:138] Item8:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,327][TestUserRole:138] Item9:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:27,327][TestUserRole:138] Item10:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,328][TestUserRole:138] Item11:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:27,328][TestUserRole:138] Item12:User_Role{UserId=null, RoleId=4}
+[INFO ][20181113 09:54:27,347][TestUserRole:117] Delete succeed
+[INFO ][20181113 09:54:27,365][TestUserRole:130] Delete succeed
+[INFO ][20181113 09:54:27,385][TestUserRole:46] Inserted : User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,402][TestUserRole:161] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181113 09:54:27,402][TestUserRole:161] Item1:User_Role{UserId=2, RoleId=298}
+[INFO ][20181113 09:54:27,402][TestUserRole:161] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,402][TestUserRole:161] Item3:User_Role{UserId=null, RoleId=297}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item8:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item9:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:27,403][TestUserRole:161] Item10:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,404][TestUserRole:161] Item11:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:27,404][TestUserRole:161] Item12:User_Role{UserId=null, RoleId=4}
+[INFO ][20181113 09:54:27,404][TestUserRole:161] Item13:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,410][TestUserRole:73] Before Update: User_Role{UserId=2, RoleId=298}
+[INFO ][20181113 09:54:27,427][TestUserRole:80] Updated succeed
+[INFO ][20181113 09:54:27,442][TestUserRole:170] PageBean{currentPage=2, numPerPage=2, totalCount=14, recordList=[User_Role{UserId=null, RoleId=1}, User_Role{UserId=null, RoleId=297}], pageCount=7, beginPageIndex=1, endPageIndex=7, countResultMap=null}
+[INFO ][20181113 09:54:27,442][TestUserRole:176] Item0:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:27,443][TestUserRole:176] Item1:User_Role{UserId=null, RoleId=297}
+[INFO ][20181113 09:54:27,452][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@59e5ddf: startup date [Tue Nov 13 09:54:24 CST 2018]; root of context hierarchy
+[WARN ][20181113 09:54:27,455][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181113 09:54:36,647][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:54:36,677][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6ddf90b0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@57536d79, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3b0143d3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5a8e6209, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4b4523f8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@731a74c]
+[INFO ][20181113 09:54:36,681][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:54:36,681][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7d907bac, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7791a895, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6325a3ee, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1d16f93d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@67b92f0a]
+[INFO ][20181113 09:54:36,685][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:54:36,686][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
+[INFO ][20181113 09:54:36,691][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:54:36,691][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6e0e048a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5bc79255, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@47ef968d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@23e028a9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3dd4520b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5ae63ade]
+[INFO ][20181113 09:54:36,695][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181113 09:54:36,695][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@43814d18, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5c5a1b69, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3701eaf6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@627551fb, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2b552920, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2758fe70]
+[INFO ][20181113 09:54:36,839][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181113 09:54:37,149][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181113 09:54:37,207][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@6f195bc3: startup date [Tue Nov 13 09:54:37 CST 2018]; root of context hierarchy
+[INFO ][20181113 09:54:37,498][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181113 09:54:38,910][TestPermission:181] The role who's id = 1 has permissions: 
+[INFO ][20181113 09:54:39,553][TestPermission:184] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181113 09:54:39,618][TestPermission:149] GetBy succeed
+[INFO ][20181113 09:54:39,670][TestPermission:64] BatchInserted succeed
+[INFO ][20181113 09:54:39,722][TestPermission:104] BatchUpdated succeed
+[INFO ][20181113 09:54:39,729][TestPermission:32] GetById success
+[INFO ][20181113 09:54:39,761][TestPermission:137] Item0:Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181113 09:54:39,762][TestPermission:137] Item1:Permission{PermissionName='X5ixuZ', PermissionDesc='访问权限配置页面'}
+[INFO ][20181113 09:54:39,762][TestPermission:137] Item2:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181113 09:54:39,763][TestPermission:137] Item3:Permission{PermissionName='LmRdzY', PermissionDesc='修改所有权限配置'}
+[INFO ][20181113 09:54:39,763][TestPermission:137] Item4:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,763][TestPermission:137] Item5:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,763][TestPermission:137] Item6:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,763][TestPermission:137] Item7:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,764][TestPermission:137] Item8:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,764][TestPermission:137] Item9:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,764][TestPermission:137] Item10:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,764][TestPermission:137] Item11:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,764][TestPermission:137] Item12:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,765][TestPermission:137] Item13:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,765][TestPermission:137] Item14:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,765][TestPermission:137] Item15:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,765][TestPermission:137] Item16:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,765][TestPermission:137] Item17:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,765][TestPermission:137] Item18:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,766][TestPermission:137] Item19:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,766][TestPermission:137] Item20:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,766][TestPermission:137] Item21:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,767][TestPermission:137] Item22:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,768][TestPermission:137] Item23:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,772][TestPermission:190] The role who's rolename = superadmin has permissions: 
+[INFO ][20181113 09:54:39,781][TestPermission:193] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181113 09:54:39,814][TestPermission:116] Delete succeed
+[INFO ][20181113 09:54:39,842][TestPermission:129] Delete succeed
+[INFO ][20181113 09:54:39,866][TestPermission:45] Inserted : Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181113 09:54:39,886][TestPermission:72] Before Update: Permission{PermissionName='X5ixuZ', PermissionDesc='访问权限配置页面'}
+[INFO ][20181113 09:54:39,919][TestPermission:79] Updated succeed
+[INFO ][20181113 09:54:39,940][TestPermission:169] PageBean{currentPage=2, numPerPage=2, totalCount=25, recordList=[Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}, Permission{PermissionName='LmRdzY', PermissionDesc='修改所有权限配置'}], pageCount=13, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:54:39,940][TestPermission:175] Item0:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181113 09:54:39,941][TestPermission:175] Item1:Permission{PermissionName='LmRdzY', PermissionDesc='修改所有权限配置'}
+[INFO ][20181113 09:54:39,946][TestRole:180] The user who's id = 1 has roles : 
+[INFO ][20181113 09:54:39,967][TestRole:183] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:54:39,968][TestRole:183] Role{RoleName='Wjnmly', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:39,969][TestRole:183] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:39,976][TestRole:148] GetBy succeed
+[INFO ][20181113 09:54:39,989][TestRole:63] BatchInserted succeed
+[INFO ][20181113 09:54:40,022][TestRole:103] BatchUpdated succeed
+[INFO ][20181113 09:54:40,033][TestRole:31] GetById success
+[INFO ][20181113 09:54:40,072][TestRole:136] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,072][TestRole:136] Item1:Role{RoleName='U1LQ62', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:40,073][TestRole:136] Item2:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:40,073][TestRole:136] Item3:Role{RoleName='Uj88BP', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181113 09:54:40,073][TestRole:136] Item4:Role{RoleName='corp_partner', RoleDesc='承运方合作方', SuperRoleName='corpration'}
+[INFO ][20181113 09:54:40,073][TestRole:136] Item5:Role{RoleName='corp_employee', RoleDesc='承运方员工', SuperRoleName='corpration'}
+[INFO ][20181113 09:54:40,073][TestRole:136] Item6:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:54:40,074][TestRole:136] Item7:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:54:40,074][TestRole:136] Item8:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:54:40,075][TestRole:136] Item9:Role{RoleName='partner_consignor', RoleDesc='客户', SuperRoleName='corp_partner'}
+[INFO ][20181113 09:54:40,075][TestRole:136] Item10:Role{RoleName='partner_manufacturer', RoleDesc='生产厂家', SuperRoleName='corp_partner'}
+[INFO ][20181113 09:54:40,075][TestRole:136] Item11:Role{RoleName='partner_receiver', RoleDesc='收货方', SuperRoleName='corp_partner'}
+[INFO ][20181113 09:54:40,075][TestRole:136] Item12:Role{RoleName='employee_driver', RoleDesc='驾驶员', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:54:40,075][TestRole:136] Item13:Role{RoleName='employee_supervisor', RoleDesc='监装员', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:54:40,076][TestRole:136] Item14:Role{RoleName='employee_leftworker', RoleDesc='起重工', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:54:40,076][TestRole:136] Item15:Role{RoleName='employee_driveworker', RoleDesc='行车工', SuperRoleName='corp_employee'}
+[INFO ][20181113 09:54:40,076][TestRole:136] Item16:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,076][TestRole:136] Item17:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,077][TestRole:136] Item18:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,077][TestRole:136] Item19:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,077][TestRole:136] Item20:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,078][TestRole:136] Item21:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,078][TestRole:136] Item22:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,078][TestRole:136] Item23:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,078][TestRole:136] Item24:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,080][TestRole:136] Item25:Role{RoleName='asddf3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,080][TestRole:136] Item26:Role{RoleName='asddf4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,080][TestRole:136] Item27:Role{RoleName='asddf', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,080][TestRole:136] Item28:Role{RoleName='asddf3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,081][TestRole:136] Item29:Role{RoleName='asddf4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,082][TestRole:189] The user who's username= superadmin has roles : 
+[INFO ][20181113 09:54:40,108][TestRole:192] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,108][TestRole:192] Role{RoleName='U1LQ62', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:40,109][TestRole:192] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:40,128][TestRole:115] Delete succeed
+[INFO ][20181113 09:54:40,145][TestRole:128] Delete succeed
+[INFO ][20181113 09:54:40,160][TestRole:44] Inserted : Role{RoleName='asddf', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,166][TestRole:159] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181113 09:54:40,166][TestRole:159] Item1:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:54:40,167][TestRole:159] Item2:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:54:40,167][TestRole:159] Item3:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181113 09:54:40,173][TestRole:71] Before Update: Role{RoleName='U1LQ62', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:40,184][TestRole:78] Updated succeed
+[INFO ][20181113 09:54:40,206][TestRole:168] PageBean{currentPage=2, numPerPage=2, totalCount=31, recordList=[Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}, Role{RoleName='Uj88BP', RoleDesc='承运方管理员', SuperRoleName='corpration'}], pageCount=16, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:54:40,207][TestRole:174] Item0:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181113 09:54:40,207][TestRole:174] Item1:Role{RoleName='Uj88BP', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181113 09:54:40,217][TestRolePermission:150] GetBy succeed
+[INFO ][20181113 09:54:40,228][TestRolePermission:65] BatchInserted succeed
+[INFO ][20181113 09:54:40,283][TestRolePermission:105] BatchUpdated succeed
+[INFO ][20181113 09:54:40,292][TestRolePermission:33] GetById success
+[INFO ][20181113 09:54:40,305][TestRolePermission:138] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7c098bb3
+[INFO ][20181113 09:54:40,306][TestRolePermission:138] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@31e4bb20
+[INFO ][20181113 09:54:40,306][TestRolePermission:138] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@18cebaa5
+[INFO ][20181113 09:54:40,306][TestRolePermission:138] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@463b4ac8
+[INFO ][20181113 09:54:40,306][TestRolePermission:138] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@765f05af
+[INFO ][20181113 09:54:40,306][TestRolePermission:138] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@62f68dff
+[INFO ][20181113 09:54:40,307][TestRolePermission:138] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@f001896
+[INFO ][20181113 09:54:40,307][TestRolePermission:138] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@13f17eb4
+[INFO ][20181113 09:54:40,307][TestRolePermission:138] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1d0d6318
+[INFO ][20181113 09:54:40,307][TestRolePermission:138] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4bc28c33
+[INFO ][20181113 09:54:40,307][TestRolePermission:138] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4409e975
+[INFO ][20181113 09:54:40,308][TestRolePermission:138] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5c153b9e
+[INFO ][20181113 09:54:40,308][TestRolePermission:138] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2a7686a7
+[INFO ][20181113 09:54:40,308][TestRolePermission:138] Item13:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@758a34ce
+[INFO ][20181113 09:54:40,308][TestRolePermission:138] Item14:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7ec3394b
+[INFO ][20181113 09:54:40,308][TestRolePermission:138] Item15:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@bff34c6
+[INFO ][20181113 09:54:40,309][TestRolePermission:138] Item16:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1522d8a0
+[INFO ][20181113 09:54:40,309][TestRolePermission:138] Item17:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@312ab28e
+[INFO ][20181113 09:54:40,314][TestRolePermission:138] Item18:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5644dc81
+[INFO ][20181113 09:54:40,314][TestRolePermission:138] Item19:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@246f8b8b
+[INFO ][20181113 09:54:40,315][TestRolePermission:138] Item20:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@278bb07e
+[INFO ][20181113 09:54:40,337][TestRolePermission:117] Delete succeed
+[INFO ][20181113 09:54:40,355][TestRolePermission:130] Delete succeed
+[INFO ][20181113 09:54:40,366][TestRolePermission:46] Inserted : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3542162a
+[INFO ][20181113 09:54:40,380][TestRolePermission:161] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3b2c0e88
+[INFO ][20181113 09:54:40,381][TestRolePermission:161] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5bd82fed
+[INFO ][20181113 09:54:40,381][TestRolePermission:161] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@c1bd0be
+[INFO ][20181113 09:54:40,381][TestRolePermission:161] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@476b0ae6
+[INFO ][20181113 09:54:40,382][TestRolePermission:161] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1c6804cd
+[INFO ][20181113 09:54:40,382][TestRolePermission:161] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@655f7ea
+[INFO ][20181113 09:54:40,382][TestRolePermission:161] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@549949be
+[INFO ][20181113 09:54:40,382][TestRolePermission:161] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4b3a45f1
+[INFO ][20181113 09:54:40,382][TestRolePermission:161] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@17a87e37
+[INFO ][20181113 09:54:40,383][TestRolePermission:161] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3eeb318f
+[INFO ][20181113 09:54:40,383][TestRolePermission:161] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@20a14b55
+[INFO ][20181113 09:54:40,384][TestRolePermission:161] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@39ad977d
+[INFO ][20181113 09:54:40,386][TestRolePermission:161] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6da00fb9
+[INFO ][20181113 09:54:40,386][TestRolePermission:161] Item13:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@a202ccb
+[INFO ][20181113 09:54:40,386][TestRolePermission:161] Item14:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@20f12539
+[INFO ][20181113 09:54:40,386][TestRolePermission:161] Item15:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@75b25825
+[INFO ][20181113 09:54:40,387][TestRolePermission:161] Item16:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@18025ced
+[INFO ][20181113 09:54:40,387][TestRolePermission:161] Item17:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@13cf7d52
+[INFO ][20181113 09:54:40,387][TestRolePermission:161] Item18:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3a3e4aff
+[INFO ][20181113 09:54:40,387][TestRolePermission:161] Item19:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5d2a4eed
+[INFO ][20181113 09:54:40,387][TestRolePermission:161] Item20:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@57459491
+[INFO ][20181113 09:54:40,387][TestRolePermission:161] Item21:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3f0846c6
+[INFO ][20181113 09:54:40,392][TestRolePermission:73] Before Update: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7e22550a
+[INFO ][20181113 09:54:40,414][TestRolePermission:80] Updated succeed
+[INFO ][20181113 09:54:40,433][TestRolePermission:170] PageBean{currentPage=2, numPerPage=2, totalCount=22, recordList=[cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6f0b0a5e, cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6035b93b], pageCount=11, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:54:40,433][TestRolePermission:176] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6f0b0a5e
+[INFO ][20181113 09:54:40,433][TestRolePermission:176] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6035b93b
+[INFO ][20181113 09:54:40,470][TestUser:152] GetBy succeed
+[INFO ][20181113 09:54:40,500][TestUser:67] BatchInserted succeed
+[INFO ][20181113 09:54:40,548][TestUser:107] BatchUpdated succeed
+[INFO ][20181113 09:54:40,555][TestUser:34] GetById success
+[INFO ][20181113 09:54:40,577][TestUser:140] Item0:User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,578][TestUser:140] Item1:User{UserName='sRHINy', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=Tue Nov 13 07:34:52 CST 2018, IfDeleted=true}
+[INFO ][20181113 09:54:40,578][TestUser:140] Item2:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,579][TestUser:140] Item3:User{UserName='q9t1nu', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=Tue Nov 13 07:34:52 CST 2018, IfDeleted=true}
+[INFO ][20181113 09:54:40,579][TestUser:140] Item4:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=5, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Sat Oct 27 07:22:13 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,579][TestUser:140] Item5:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=6, CreateTime=Sat Oct 27 07:39:40 CST 2018, UpdateTime=Sat Oct 27 07:39:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,580][TestUser:140] Item6:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=7, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,580][TestUser:140] Item7:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=8, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,581][TestUser:140] Item8:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=9, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,581][TestUser:140] Item9:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=10, CreateTime=Mon Oct 29 17:40:48 CST 2018, UpdateTime=Mon Oct 29 17:40:48 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,581][TestUser:140] Item10:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=11, CreateTime=Mon Nov 12 22:27:54 CST 2018, UpdateTime=Mon Nov 12 22:27:54 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,582][TestUser:140] Item11:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=12, CreateTime=Mon Nov 12 22:28:02 CST 2018, UpdateTime=Mon Nov 12 22:28:02 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,582][TestUser:140] Item12:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=13, CreateTime=Mon Nov 12 22:28:02 CST 2018, UpdateTime=Mon Nov 12 22:28:02 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,582][TestUser:140] Item13:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=14, CreateTime=Mon Nov 12 23:51:11 CST 2018, UpdateTime=Mon Nov 12 23:51:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,582][TestUser:140] Item14:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=15, CreateTime=Tue Nov 13 07:33:44 CST 2018, UpdateTime=Tue Nov 13 07:33:44 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,583][TestUser:140] Item15:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=16, CreateTime=Tue Nov 13 07:33:44 CST 2018, UpdateTime=Tue Nov 13 07:33:44 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,583][TestUser:140] Item16:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=17, CreateTime=Tue Nov 13 07:33:44 CST 2018, UpdateTime=Tue Nov 13 07:33:44 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,583][TestUser:140] Item17:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=18, CreateTime=Tue Nov 13 07:34:51 CST 2018, UpdateTime=Tue Nov 13 07:34:51 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,583][TestUser:140] Item18:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=19, CreateTime=Tue Nov 13 07:34:51 CST 2018, UpdateTime=Tue Nov 13 07:34:51 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,584][TestUser:140] Item19:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=20, CreateTime=Tue Nov 13 07:34:52 CST 2018, UpdateTime=Tue Nov 13 07:34:52 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,584][TestUser:140] Item20:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=21, CreateTime=Tue Nov 13 17:54:40 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,585][TestUser:140] Item21:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=22, CreateTime=Tue Nov 13 17:54:40 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,593][TestUser:184] The user who's username = superadmin : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,693][TestUser:119] Delete succeed
+[INFO ][20181113 09:54:40,743][TestUser:132] Delete succeed
+[INFO ][20181113 09:54:40,759][TestUser:48] Inserted : User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=23, CreateTime=Tue Nov 13 17:54:40 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,764][TestUser:163] Item0:User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,769][TestUser:75] Before Update: User{UserName='sRHINy', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=Tue Nov 13 17:54:40 CST 2018, IfDeleted=true}
+[INFO ][20181113 09:54:40,778][TestUser:82] Updated succeed
+[INFO ][20181113 09:54:40,790][TestUser:172] PageBean{currentPage=2, numPerPage=2, totalCount=23, recordList=[User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IfDeleted=false}, User{UserName='q9t1nu', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=Tue Nov 13 17:54:40 CST 2018, IfDeleted=true}], pageCount=12, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181113 09:54:40,791][TestUser:178] Item0:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181113 09:54:40,791][TestUser:178] Item1:User{UserName='q9t1nu', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=Tue Nov 13 17:54:40 CST 2018, IfDeleted=true}
+[INFO ][20181113 09:54:40,800][TestUserRole:150] GetBy succeed
+[INFO ][20181113 09:54:40,814][TestUserRole:65] BatchInserted succeed
+[INFO ][20181113 09:54:40,837][TestUserRole:105] BatchUpdated succeed
+[INFO ][20181113 09:54:40,841][TestUserRole:33] GetById success
+[INFO ][20181113 09:54:40,848][TestUserRole:138] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181113 09:54:40,848][TestUserRole:138] Item1:User_Role{UserId=2, RoleId=298}
+[INFO ][20181113 09:54:40,849][TestUserRole:138] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,849][TestUserRole:138] Item3:User_Role{UserId=null, RoleId=297}
+[INFO ][20181113 09:54:40,849][TestUserRole:138] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,849][TestUserRole:138] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,849][TestUserRole:138] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,849][TestUserRole:138] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item8:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item9:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item10:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item11:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item12:User_Role{UserId=null, RoleId=4}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item13:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,850][TestUserRole:138] Item14:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,851][TestUserRole:138] Item15:User_Role{UserId=null, RoleId=4}
+[INFO ][20181113 09:54:40,861][TestUserRole:117] Delete succeed
+[INFO ][20181113 09:54:40,901][TestUserRole:130] Delete succeed
+[INFO ][20181113 09:54:40,913][TestUserRole:46] Inserted : User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,922][TestUserRole:161] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181113 09:54:40,922][TestUserRole:161] Item1:User_Role{UserId=2, RoleId=298}
+[INFO ][20181113 09:54:40,922][TestUserRole:161] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,922][TestUserRole:161] Item3:User_Role{UserId=null, RoleId=297}
+[INFO ][20181113 09:54:40,923][TestUserRole:161] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,923][TestUserRole:161] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,923][TestUserRole:161] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,923][TestUserRole:161] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,923][TestUserRole:161] Item8:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,923][TestUserRole:161] Item9:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item10:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item11:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item12:User_Role{UserId=null, RoleId=4}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item13:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item14:User_Role{UserId=null, RoleId=2}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item15:User_Role{UserId=null, RoleId=4}
+[INFO ][20181113 09:54:40,924][TestUserRole:161] Item16:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,928][TestUserRole:73] Before Update: User_Role{UserId=2, RoleId=298}
+[INFO ][20181113 09:54:40,944][TestUserRole:80] Updated succeed
+[INFO ][20181113 09:54:40,952][TestUserRole:170] PageBean{currentPage=2, numPerPage=2, totalCount=17, recordList=[User_Role{UserId=null, RoleId=1}, User_Role{UserId=null, RoleId=297}], pageCount=9, beginPageIndex=1, endPageIndex=9, countResultMap=null}
+[INFO ][20181113 09:54:40,952][TestUserRole:176] Item0:User_Role{UserId=null, RoleId=1}
+[INFO ][20181113 09:54:40,952][TestUserRole:176] Item1:User_Role{UserId=null, RoleId=297}
+[INFO ][20181113 09:54:40,971][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@6f195bc3: startup date [Tue Nov 13 09:54:37 CST 2018]; root of context hierarchy
+[WARN ][20181113 09:54:40,974][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181114 13:39:58,867][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181114 13:39:58,907][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@57536d79, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b0143d3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5a8e6209, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4b4523f8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@731a74c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@369f73a2]
+[INFO ][20181114 13:39:58,912][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181114 13:39:58,913][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181114 13:39:58,917][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181114 13:39:58,917][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f970963, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@61f8bee4, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7b49cea0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@887af79, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7fac631b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5b87ed94]
+[INFO ][20181114 13:39:58,920][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181114 13:39:58,926][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5bc79255, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@47ef968d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@23e028a9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3dd4520b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5ae63ade, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@610694f1]
+[INFO ][20181114 13:39:58,930][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181114 13:39:58,931][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c5a1b69, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3701eaf6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@627551fb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2b552920, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2758fe70, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1f36e637]
+[INFO ][20181114 13:39:59,085][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181114 13:39:59,887][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181114 13:40:00,108][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@51e2adc7: startup date [Wed Nov 14 13:40:00 CST 2018]; root of context hierarchy
+[INFO ][20181114 13:40:00,611][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181114 13:40:01,995][TestPermission:181] The role who's id = 1 has permissions: 
+[INFO ][20181114 13:40:02,525][TestPermission:184] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181114 13:40:02,572][TestPermission:149] GetBy succeed
+[INFO ][20181114 13:40:02,626][TestPermission:64] BatchInserted succeed
+[INFO ][20181114 13:40:02,666][TestPermission:104] BatchUpdated succeed
+[INFO ][20181114 13:40:02,673][TestPermission:32] GetById success
+[INFO ][20181114 13:40:02,700][TestPermission:137] Item0:Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181114 13:40:02,700][TestPermission:137] Item1:Permission{PermissionName='bswrRX', PermissionDesc='访问权限配置页面'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item2:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item3:Permission{PermissionName='TpBAg4', PermissionDesc='修改所有权限配置'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item4:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item5:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item6:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item7:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,701][TestPermission:137] Item8:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,702][TestPermission:137] Item9:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,702][TestPermission:137] Item10:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,702][TestPermission:137] Item11:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,702][TestPermission:137] Item12:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,702][TestPermission:137] Item13:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,703][TestPermission:137] Item14:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,703][TestPermission:137] Item15:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,703][TestPermission:137] Item16:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,703][TestPermission:137] Item17:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,703][TestPermission:137] Item18:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,704][TestPermission:137] Item19:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,704][TestPermission:137] Item20:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,704][TestPermission:137] Item21:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,704][TestPermission:137] Item22:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,705][TestPermission:137] Item23:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,705][TestPermission:137] Item24:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,705][TestPermission:137] Item25:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,705][TestPermission:137] Item26:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,706][TestPermission:190] The role who's rolename = superadmin has permissions: 
+[INFO ][20181114 13:40:02,725][TestPermission:193] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181114 13:40:02,743][TestPermission:116] Delete succeed
+[INFO ][20181114 13:40:02,774][TestPermission:129] Delete succeed
+[INFO ][20181114 13:40:02,791][TestPermission:45] Inserted : Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181114 13:40:02,805][TestPermission:72] Before Update: Permission{PermissionName='bswrRX', PermissionDesc='访问权限配置页面'}
+[INFO ][20181114 13:40:02,818][TestPermission:79] Updated succeed
+[INFO ][20181114 13:40:02,834][TestPermission:169] PageBean{currentPage=2, numPerPage=2, totalCount=28, recordList=[Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}, Permission{PermissionName='TpBAg4', PermissionDesc='修改所有权限配置'}], pageCount=14, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181114 13:40:02,834][TestPermission:175] Item0:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181114 13:40:02,835][TestPermission:175] Item1:Permission{PermissionName='TpBAg4', PermissionDesc='修改所有权限配置'}
+[INFO ][20181114 13:40:02,841][TestRole:180] The user who's id = 1 has roles : 
+[INFO ][20181114 13:40:02,878][TestRole:183] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,878][TestRole:183] Role{RoleName='8mKP1i', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:02,879][TestRole:183] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:02,884][TestRole:148] GetBy succeed
+[INFO ][20181114 13:40:02,897][TestRole:63] BatchInserted succeed
+[INFO ][20181114 13:40:02,934][TestRole:103] BatchUpdated succeed
+[INFO ][20181114 13:40:02,944][TestRole:31] GetById success
+[INFO ][20181114 13:40:02,970][TestRole:136] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,970][TestRole:136] Item1:Role{RoleName='bHeZXj', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:02,971][TestRole:136] Item2:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:02,971][TestRole:136] Item3:Role{RoleName='4UTlUm', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181114 13:40:02,972][TestRole:136] Item4:Role{RoleName='corp_partner', RoleDesc='承运方合作方', SuperRoleName='corpration'}
+[INFO ][20181114 13:40:02,972][TestRole:136] Item5:Role{RoleName='corp_employee', RoleDesc='承运方员工', SuperRoleName='corpration'}
+[INFO ][20181114 13:40:02,972][TestRole:136] Item6:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181114 13:40:02,972][TestRole:136] Item7:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181114 13:40:02,972][TestRole:136] Item8:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181114 13:40:02,973][TestRole:136] Item9:Role{RoleName='partner_consignor', RoleDesc='客户', SuperRoleName='corp_partner'}
+[INFO ][20181114 13:40:02,973][TestRole:136] Item10:Role{RoleName='partner_manufacturer', RoleDesc='生产厂家', SuperRoleName='corp_partner'}
+[INFO ][20181114 13:40:02,976][TestRole:136] Item11:Role{RoleName='partner_receiver', RoleDesc='收货方', SuperRoleName='corp_partner'}
+[INFO ][20181114 13:40:02,976][TestRole:136] Item12:Role{RoleName='employee_driver', RoleDesc='驾驶员', SuperRoleName='corp_employee'}
+[INFO ][20181114 13:40:02,979][TestRole:136] Item13:Role{RoleName='employee_supervisor', RoleDesc='监装员', SuperRoleName='corp_employee'}
+[INFO ][20181114 13:40:02,980][TestRole:136] Item14:Role{RoleName='employee_leftworker', RoleDesc='起重工', SuperRoleName='corp_employee'}
+[INFO ][20181114 13:40:02,980][TestRole:136] Item15:Role{RoleName='employee_driveworker', RoleDesc='行车工', SuperRoleName='corp_employee'}
+[INFO ][20181114 13:40:02,980][TestRole:136] Item16:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,981][TestRole:136] Item17:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,981][TestRole:136] Item18:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,981][TestRole:136] Item19:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,981][TestRole:136] Item20:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,982][TestRole:136] Item21:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,982][TestRole:136] Item22:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,982][TestRole:136] Item23:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,983][TestRole:136] Item24:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,983][TestRole:136] Item25:Role{RoleName='asddf3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,983][TestRole:136] Item26:Role{RoleName='asddf4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,983][TestRole:136] Item27:Role{RoleName='asddf', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,984][TestRole:136] Item28:Role{RoleName='asddf3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,984][TestRole:136] Item29:Role{RoleName='asddf4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,984][TestRole:136] Item30:Role{RoleName='asddf', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,984][TestRole:136] Item31:Role{RoleName='asddf3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,985][TestRole:136] Item32:Role{RoleName='asddf4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:02,986][TestRole:189] The user who's username= superadmin has roles : 
+[INFO ][20181114 13:40:03,013][TestRole:192] Role{RoleName='bHeZXj', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:03,013][TestRole:192] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181114 13:40:03,014][TestRole:192] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:03,025][TestRole:115] Delete succeed
+[INFO ][20181114 13:40:03,042][TestRole:128] Delete succeed
+[INFO ][20181114 13:40:03,052][TestRole:44] Inserted : Role{RoleName='asddf', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181114 13:40:03,058][TestRole:159] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181114 13:40:03,059][TestRole:159] Item1:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181114 13:40:03,059][TestRole:159] Item2:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181114 13:40:03,059][TestRole:159] Item3:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181114 13:40:03,064][TestRole:71] Before Update: Role{RoleName='bHeZXj', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:03,074][TestRole:78] Updated succeed
+[INFO ][20181114 13:40:03,092][TestRole:168] PageBean{currentPage=2, numPerPage=2, totalCount=34, recordList=[Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}, Role{RoleName='4UTlUm', RoleDesc='承运方管理员', SuperRoleName='corpration'}], pageCount=17, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181114 13:40:03,092][TestRole:174] Item0:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181114 13:40:03,092][TestRole:174] Item1:Role{RoleName='4UTlUm', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181114 13:40:03,102][TestRolePermission:150] GetBy succeed
+[INFO ][20181114 13:40:03,111][TestRolePermission:65] BatchInserted succeed
+[INFO ][20181114 13:40:03,137][TestRolePermission:105] BatchUpdated succeed
+[INFO ][20181114 13:40:03,141][TestRolePermission:33] GetById success
+[INFO ][20181114 13:40:03,154][TestRolePermission:138] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7c098bb3
+[INFO ][20181114 13:40:03,154][TestRolePermission:138] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@31e4bb20
+[INFO ][20181114 13:40:03,155][TestRolePermission:138] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@18cebaa5
+[INFO ][20181114 13:40:03,155][TestRolePermission:138] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@463b4ac8
+[INFO ][20181114 13:40:03,155][TestRolePermission:138] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@765f05af
+[INFO ][20181114 13:40:03,155][TestRolePermission:138] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@62f68dff
+[INFO ][20181114 13:40:03,156][TestRolePermission:138] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@f001896
+[INFO ][20181114 13:40:03,156][TestRolePermission:138] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@13f17eb4
+[INFO ][20181114 13:40:03,156][TestRolePermission:138] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1d0d6318
+[INFO ][20181114 13:40:03,156][TestRolePermission:138] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4bc28c33
+[INFO ][20181114 13:40:03,157][TestRolePermission:138] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4409e975
+[INFO ][20181114 13:40:03,157][TestRolePermission:138] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5c153b9e
+[INFO ][20181114 13:40:03,157][TestRolePermission:138] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2a7686a7
+[INFO ][20181114 13:40:03,159][TestRolePermission:138] Item13:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@758a34ce
+[INFO ][20181114 13:40:03,159][TestRolePermission:138] Item14:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7ec3394b
+[INFO ][20181114 13:40:03,159][TestRolePermission:138] Item15:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@bff34c6
+[INFO ][20181114 13:40:03,160][TestRolePermission:138] Item16:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1522d8a0
+[INFO ][20181114 13:40:03,160][TestRolePermission:138] Item17:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@312ab28e
+[INFO ][20181114 13:40:03,160][TestRolePermission:138] Item18:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5644dc81
+[INFO ][20181114 13:40:03,160][TestRolePermission:138] Item19:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@246f8b8b
+[INFO ][20181114 13:40:03,161][TestRolePermission:138] Item20:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@278bb07e
+[INFO ][20181114 13:40:03,161][TestRolePermission:138] Item21:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4351c8c3
+[INFO ][20181114 13:40:03,161][TestRolePermission:138] Item22:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3381b4fc
+[INFO ][20181114 13:40:03,163][TestRolePermission:138] Item23:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6bea52d4
+[INFO ][20181114 13:40:03,178][TestRolePermission:117] Delete succeed
+[INFO ][20181114 13:40:03,192][TestRolePermission:130] Delete succeed
+[INFO ][20181114 13:40:03,203][TestRolePermission:46] Inserted : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1e7aa82b
+[INFO ][20181114 13:40:03,214][TestRolePermission:161] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@476b0ae6
+[INFO ][20181114 13:40:03,214][TestRolePermission:161] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1c6804cd
+[INFO ][20181114 13:40:03,214][TestRolePermission:161] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@655f7ea
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@549949be
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4b3a45f1
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@17a87e37
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3eeb318f
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@20a14b55
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@39ad977d
+[INFO ][20181114 13:40:03,215][TestRolePermission:161] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6da00fb9
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@a202ccb
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@20f12539
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@75b25825
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item13:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@18025ced
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item14:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@13cf7d52
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item15:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3a3e4aff
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item16:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5d2a4eed
+[INFO ][20181114 13:40:03,216][TestRolePermission:161] Item17:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@57459491
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item18:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3f0846c6
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item19:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@77a98a6a
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item20:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@78fbff54
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item21:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3e10dc6
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item22:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7e22550a
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item23:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@45e37a7e
+[INFO ][20181114 13:40:03,217][TestRolePermission:161] Item24:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@62452cc9
+[INFO ][20181114 13:40:03,221][TestRolePermission:73] Before Update: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1021f6c9
+[INFO ][20181114 13:40:03,230][TestRolePermission:80] Updated succeed
+[INFO ][20181114 13:40:03,237][TestRolePermission:170] PageBean{currentPage=2, numPerPage=2, totalCount=25, recordList=[cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1a7288a3, cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2974f221], pageCount=13, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181114 13:40:03,237][TestRolePermission:176] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1a7288a3
+[INFO ][20181114 13:40:03,238][TestRolePermission:176] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2974f221
+[INFO ][20181114 13:40:03,249][TestUser:152] GetBy succeed
+[INFO ][20181114 13:40:03,260][TestUser:67] BatchInserted succeed
+[INFO ][20181114 13:40:03,293][TestUser:107] BatchUpdated succeed
+[INFO ][20181114 13:40:03,299][TestUser:34] GetById success
+[INFO ][20181114 13:40:03,311][TestUser:140] Item0:User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,311][TestUser:140] Item1:User{UserName='vmAa2i', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=Tue Nov 13 17:54:40 CST 2018, IfDeleted=true}
+[INFO ][20181114 13:40:03,312][TestUser:140] Item2:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,313][TestUser:140] Item3:User{UserName='28nlpc', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=Tue Nov 13 17:54:40 CST 2018, IfDeleted=true}
+[INFO ][20181114 13:40:03,313][TestUser:140] Item4:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=5, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Sat Oct 27 07:22:13 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,313][TestUser:140] Item5:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=6, CreateTime=Sat Oct 27 07:39:40 CST 2018, UpdateTime=Sat Oct 27 07:39:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,314][TestUser:140] Item6:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=7, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,314][TestUser:140] Item7:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=8, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,314][TestUser:140] Item8:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=9, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,315][TestUser:140] Item9:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=10, CreateTime=Mon Oct 29 17:40:48 CST 2018, UpdateTime=Mon Oct 29 17:40:48 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,330][TestUser:140] Item10:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=11, CreateTime=Mon Nov 12 22:27:54 CST 2018, UpdateTime=Mon Nov 12 22:27:54 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,331][TestUser:140] Item11:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=12, CreateTime=Mon Nov 12 22:28:02 CST 2018, UpdateTime=Mon Nov 12 22:28:02 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,331][TestUser:140] Item12:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=13, CreateTime=Mon Nov 12 22:28:02 CST 2018, UpdateTime=Mon Nov 12 22:28:02 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,331][TestUser:140] Item13:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=14, CreateTime=Mon Nov 12 23:51:11 CST 2018, UpdateTime=Mon Nov 12 23:51:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,332][TestUser:140] Item14:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=15, CreateTime=Tue Nov 13 07:33:44 CST 2018, UpdateTime=Tue Nov 13 07:33:44 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,332][TestUser:140] Item15:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=16, CreateTime=Tue Nov 13 07:33:44 CST 2018, UpdateTime=Tue Nov 13 07:33:44 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,332][TestUser:140] Item16:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=17, CreateTime=Tue Nov 13 07:33:44 CST 2018, UpdateTime=Tue Nov 13 07:33:44 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,333][TestUser:140] Item17:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=18, CreateTime=Tue Nov 13 07:34:51 CST 2018, UpdateTime=Tue Nov 13 07:34:51 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,333][TestUser:140] Item18:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=19, CreateTime=Tue Nov 13 07:34:51 CST 2018, UpdateTime=Tue Nov 13 07:34:51 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,333][TestUser:140] Item19:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=20, CreateTime=Tue Nov 13 07:34:52 CST 2018, UpdateTime=Tue Nov 13 07:34:52 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,333][TestUser:140] Item20:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=21, CreateTime=Tue Nov 13 17:54:40 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,334][TestUser:140] Item21:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=22, CreateTime=Tue Nov 13 17:54:40 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,334][TestUser:140] Item22:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=23, CreateTime=Tue Nov 13 17:54:40 CST 2018, UpdateTime=Tue Nov 13 17:54:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,334][TestUser:140] Item23:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=24, CreateTime=Wed Nov 14 21:40:03 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,335][TestUser:140] Item24:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=25, CreateTime=Wed Nov 14 21:40:03 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,342][TestUser:184] The user who's username = superadmin : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,368][TestUser:119] Delete succeed
+[INFO ][20181114 13:40:03,390][TestUser:132] Delete succeed
+[INFO ][20181114 13:40:03,404][TestUser:48] Inserted : User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=26, CreateTime=Wed Nov 14 21:40:03 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,412][TestUser:163] Item0:User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,436][TestUser:75] Before Update: User{UserName='vmAa2i', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=Wed Nov 14 21:40:03 CST 2018, IfDeleted=true}
+[INFO ][20181114 13:40:03,467][TestUser:82] Updated succeed
+[INFO ][20181114 13:40:03,483][TestUser:172] PageBean{currentPage=2, numPerPage=2, totalCount=26, recordList=[User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IfDeleted=false}, User{UserName='28nlpc', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=Wed Nov 14 21:40:03 CST 2018, IfDeleted=true}], pageCount=13, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181114 13:40:03,484][TestUser:178] Item0:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181114 13:40:03,501][TestUser:178] Item1:User{UserName='28nlpc', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Wed Nov 14 21:40:03 CST 2018, DeleteTime=Wed Nov 14 21:40:03 CST 2018, IfDeleted=true}
+[INFO ][20181114 13:40:03,526][TestUserRole:150] GetBy succeed
+[INFO ][20181114 13:40:03,544][TestUserRole:65] BatchInserted succeed
+[INFO ][20181114 13:40:03,586][TestUserRole:105] BatchUpdated succeed
+[INFO ][20181114 13:40:03,591][TestUserRole:33] GetById success
+[INFO ][20181114 13:40:03,608][TestUserRole:138] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181114 13:40:03,608][TestUserRole:138] Item1:User_Role{UserId=2, RoleId=298}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item3:User_Role{UserId=null, RoleId=297}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item8:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,609][TestUserRole:138] Item9:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,610][TestUserRole:138] Item10:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,610][TestUserRole:138] Item11:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,610][TestUserRole:138] Item12:User_Role{UserId=null, RoleId=4}
+[INFO ][20181114 13:40:03,610][TestUserRole:138] Item13:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,610][TestUserRole:138] Item14:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,611][TestUserRole:138] Item15:User_Role{UserId=null, RoleId=4}
+[INFO ][20181114 13:40:03,611][TestUserRole:138] Item16:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,611][TestUserRole:138] Item17:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,612][TestUserRole:138] Item18:User_Role{UserId=null, RoleId=4}
+[INFO ][20181114 13:40:03,630][TestUserRole:117] Delete succeed
+[INFO ][20181114 13:40:03,646][TestUserRole:130] Delete succeed
+[INFO ][20181114 13:40:03,660][TestUserRole:46] Inserted : User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,672][TestUserRole:161] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181114 13:40:03,672][TestUserRole:161] Item1:User_Role{UserId=2, RoleId=298}
+[INFO ][20181114 13:40:03,674][TestUserRole:161] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,674][TestUserRole:161] Item3:User_Role{UserId=null, RoleId=297}
+[INFO ][20181114 13:40:03,675][TestUserRole:161] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,675][TestUserRole:161] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,675][TestUserRole:161] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,675][TestUserRole:161] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,675][TestUserRole:161] Item8:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,676][TestUserRole:161] Item9:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,676][TestUserRole:161] Item10:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,676][TestUserRole:161] Item11:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,676][TestUserRole:161] Item12:User_Role{UserId=null, RoleId=4}
+[INFO ][20181114 13:40:03,677][TestUserRole:161] Item13:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,679][TestUserRole:161] Item14:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,679][TestUserRole:161] Item15:User_Role{UserId=null, RoleId=4}
+[INFO ][20181114 13:40:03,679][TestUserRole:161] Item16:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,680][TestUserRole:161] Item17:User_Role{UserId=null, RoleId=2}
+[INFO ][20181114 13:40:03,680][TestUserRole:161] Item18:User_Role{UserId=null, RoleId=4}
+[INFO ][20181114 13:40:03,680][TestUserRole:161] Item19:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,684][TestUserRole:73] Before Update: User_Role{UserId=2, RoleId=298}
+[INFO ][20181114 13:40:03,698][TestUserRole:80] Updated succeed
+[INFO ][20181114 13:40:03,707][TestUserRole:170] PageBean{currentPage=2, numPerPage=2, totalCount=20, recordList=[User_Role{UserId=null, RoleId=1}, User_Role{UserId=null, RoleId=297}], pageCount=10, beginPageIndex=1, endPageIndex=10, countResultMap=null}
+[INFO ][20181114 13:40:03,708][TestUserRole:176] Item0:User_Role{UserId=null, RoleId=1}
+[INFO ][20181114 13:40:03,708][TestUserRole:176] Item1:User_Role{UserId=null, RoleId=297}
+[INFO ][20181114 13:40:03,746][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@51e2adc7: startup date [Wed Nov 14 13:40:00 CST 2018]; root of context hierarchy
+[WARN ][20181114 13:40:03,754][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

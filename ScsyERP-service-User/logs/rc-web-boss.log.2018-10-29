@@ -1,0 +1,1004 @@
+[INFO ][20181029 09:21:59,538][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:21:59,580][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:21:59,718][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:22:00,585][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:22:00,637][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:22:00 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:22:00,961][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[WARN ][20181029 09:22:01,620][AbstractApplicationContext:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+[ERROR][20181029 09:22:01,623][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee] to prepare test instance [TestMyBatis.Dao.TestUser@33065d67]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 42 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:668)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 55 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:378)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:660)
+	... 68 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1710)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	... 83 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1706)
+	... 90 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:121)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:99)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 93 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.mapperElement(XMLConfigBuilder.java:373)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:119)
+	... 95 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 98 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 102 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 104 more
+[INFO ][20181029 09:24:18,960][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:24:19,045][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:24:19,387][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:24:19,916][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:24:19,969][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:24:19 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:24:20,217][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[WARN ][20181029 09:24:20,894][AbstractApplicationContext:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+[ERROR][20181029 09:24:20,899][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee] to prepare test instance [TestMyBatis.Dao.TestUser@33065d67]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 42 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:668)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 55 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:378)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:660)
+	... 68 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1710)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	... 83 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1706)
+	... 90 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:121)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:99)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 93 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.mapperElement(XMLConfigBuilder.java:373)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:119)
+	... 95 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 98 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 102 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 104 more
+[INFO ][20181029 09:24:54,979][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:24:55,013][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:24:55,129][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:24:55,472][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:24:55,519][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:24:55 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:24:55,743][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[WARN ][20181029 09:24:56,305][AbstractApplicationContext:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+[ERROR][20181029 09:24:56,310][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee] to prepare test instance [TestMyBatis.Dao.TestUser@33065d67]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 42 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:668)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 55 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:378)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:660)
+	... 68 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1710)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	... 83 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis/mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:499)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1706)
+	... 90 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:121)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:99)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:493)
+	... 93 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'mybatis/mapper/BaseEntity.Mapper.xml'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.mapperElement(XMLConfigBuilder.java:373)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:119)
+	... 95 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 98 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'cn.AssassinG.scsycc.common.entity.BaseEntity'.  Cause: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 102 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: cn.AssassinG.scsycc.common.entity.BaseEntity
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 104 more
+[INFO ][20181029 09:27:34,159][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:27:34,185][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:27:34,303][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:27:34,657][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:27:34,707][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:27:34 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:27:35,030][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:27:36,879][TestUser:29] The user who's id = 1 : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:27:36,883][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:27:34 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:27:36,886][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:27:45,499][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:27:45,532][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:27:45,671][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:27:46,091][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:27:46,139][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:27:46 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:27:46,390][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:27:47,990][TestUser:29] The user who's id = 1 : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:27:47,994][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:27:46 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:27:47,996][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:28:21,182][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:28:21,211][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:28:21,344][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:28:21,709][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:28:21,751][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:28:21 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:28:21,984][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:28:23,644][TestUser:29] The user who's id = 1 : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:28:23,647][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:28:21 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:28:23,650][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:31:34,522][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:31:34,575][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:31:34,929][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:31:35,334][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:31:35,372][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:31:35 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:31:35,648][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[WARN ][20181029 09:31:36,017][AbstractApplicationContext:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+[ERROR][20181029 09:31:36,030][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee] to prepare test instance [TestMyBatis.Dao.TestUser@550ee7e5]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 42 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSqlSession' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:668)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 55 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:378)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:660)
+	... 68 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	... 83 more
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertIfNecessary(AbstractNestablePropertyAccessor.java:590)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertForProperty(AbstractNestablePropertyAccessor.java:604)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1662)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1618)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	... 89 more
+Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.Object[]' to required type 'org.apache.ibatis.session.Configuration' for property 'configuration': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:299)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertIfNecessary(AbstractNestablePropertyAccessor.java:585)
+	... 95 more
+[INFO ][20181029 09:33:56,033][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:33:56,063][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:33:56,188][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:33:56,549][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:33:56,592][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:33:56 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:33:56,996][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[WARN ][20181029 09:33:57,341][AbstractApplicationContext:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+[ERROR][20181029 09:33:57,348][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee] to prepare test instance [TestMyBatis.Dao.TestUser@20f5239f]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceFacadeImpl': Unsatisfied dependency expressed through field 'userBiz'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserBiz': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 42 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserDao': Unsatisfied dependency expressed through method 'setSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:668)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	... 55 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionTemplate' defined in class path resource [spring/spring-mybatis.xml]: Cannot resolve reference to bean 'sqlSessionFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:378)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:660)
+	... 68 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1710)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	... 83 more
+Caused by: java.io.FileNotFoundException: class path resource [mybatis/mybatis*-config.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:180)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:407)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1706)
+	... 90 more
+[INFO ][20181029 09:37:03,706][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:37:03,738][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7791a895, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a5ed7a6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6325a3ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d16f93d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67b92f0a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2b9627bc]
+[INFO ][20181029 09:37:03,874][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:37:04,208][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:37:04,253][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:37:04 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:37:04,474][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:37:06,151][TestUser:29] The user who's id = 1 : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:37:06,156][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@11438d26: startup date [Mon Oct 29 09:37:04 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:37:06,158][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:39:33,999][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:39:34,029][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e9b1010, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c3708b3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextTestExecutionListener@185d8b6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67784306, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@335eadca]
+[INFO ][20181029 09:39:34,163][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:39:34,554][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:39:34,595][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:39:34 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:39:34,867][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:39:36,644][TestUser:115] User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,758][TestUser:56] Inserted : User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=7, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,771][TestUser:58] Inserted : User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=8, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,788][TestUser:74] User2 Before Update: User{UserName='duyanting2', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:39:40 CST 2018, DeleteTime=Sat Oct 27 07:39:40 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,788][TestUser:75] User4 Before Update: User{UserName='updatedname5', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Sat Oct 27 07:23:09 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,816][TestUser:82] User2 After Updated: User{UserName='updatedname4', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Sat Oct 27 07:39:40 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,820][TestUser:83] User4 After Updated: User{UserName='updatedname5', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,827][TestUser:29] The user who's id = 1 : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,844][TestUser:107] Item0:User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,845][TestUser:107] Item1:User{UserName='updatedname4', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Sat Oct 27 07:39:40 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,847][TestUser:107] Item2:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,847][TestUser:107] Item3:User{UserName='updatedname5', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,847][TestUser:107] Item4:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=5, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Sat Oct 27 07:22:13 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,848][TestUser:107] Item5:User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=6, CreateTime=Sat Oct 27 07:39:40 CST 2018, UpdateTime=Sat Oct 27 07:39:40 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,848][TestUser:107] Item6:User{UserName='asddf3', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=7, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,848][TestUser:107] Item7:User{UserName='asddf4', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=8, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,856][TestUser:143] The user who's username = superadmin : User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,863][TestUser:89] Before Delete User{UserName='updatedname4', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Sat Oct 27 07:39:40 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,874][TestUser:91] After Deleted User{UserName='updatedname4', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,887][TestUser:98] Before Delete User{UserName='updatedname5', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,899][TestUser:100] After Deleted User{UserName='updatedname5', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,917][TestUser:42] Inserted : User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=9, CreateTime=Mon Oct 29 17:39:36 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,927][TestUser:125] Item0:User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,935][TestUser:64] Before Update: User{UserName='updatedname4', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,947][TestUser:67] After Updated: User{UserName='updatedname3', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,958][TestUser:134] PageBean{currentPage=2, numPerPage=2, totalCount=9, pageCount=5, beginPageIndex=1, endPageIndex=5}
+[INFO ][20181029 09:39:36,959][TestUser:137] Item0:User{UserName='asddf', PassWord='d123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=3, CreateTime=Sat Oct 27 07:21:40 CST 2018, UpdateTime=Sat Oct 27 07:21:40 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:39:36,959][TestUser:137] Item1:User{UserName='updatedname5', PassWord='null', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=4, CreateTime=Sat Oct 27 07:22:13 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:39:36,963][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:39:34 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:39:36,969][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:40:16,986][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:40:17,019][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e9b1010, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c3708b3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextTestExecutionListener@185d8b6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67784306, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@335eadca]
+[INFO ][20181029 09:40:17,143][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:40:17,495][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:40:17,534][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:17 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:40:17,778][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:40:18,919][TestPermission:140] The role who's id = 1 has permissions: 
+[INFO ][20181029 09:40:19,443][TestPermission:143] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:19,485][TestPermission:112] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:19,520][TestPermission:53] Inserted : Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,524][TestPermission:55] Inserted : Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,538][TestPermission:71] Permission2 Before Update: Permission{PermissionName='updatedname3', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,539][TestPermission:72] Permission4 Before Update: Permission{PermissionName='updatedname5', PermissionDesc='修改所有权限配置'}
+[INFO ][20181029 09:40:19,562][TestPermission:79] Permission2 After Updated: Permission{PermissionName='updatedname4', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,572][TestPermission:80] Permission4 After Updated: Permission{PermissionName='updatedname5', PermissionDesc='修改所有权限配置'}
+[INFO ][20181029 09:40:19,577][TestPermission:27] The permission who's id = 1 : Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:19,596][TestPermission:104] Item0:Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:19,596][TestPermission:104] Item1:Permission{PermissionName='updatedname4', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,597][TestPermission:104] Item2:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181029 09:40:19,597][TestPermission:104] Item3:Permission{PermissionName='updatedname5', PermissionDesc='修改所有权限配置'}
+[INFO ][20181029 09:40:19,598][TestPermission:104] Item4:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,598][TestPermission:104] Item5:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,598][TestPermission:104] Item6:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,598][TestPermission:104] Item7:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,598][TestPermission:104] Item8:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,598][TestPermission:104] Item9:Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,599][TestPermission:104] Item10:Permission{PermissionName='asddf3', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,599][TestPermission:104] Item11:Permission{PermissionName='asddf4', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,600][TestPermission:149] The role who's rolename = superadmin has permissions: 
+[INFO ][20181029 09:40:19,607][TestPermission:152] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:19,614][TestPermission:86] Before Delete Permission{PermissionName='updatedname4', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,631][TestPermission:88] After Deleted Permission{PermissionName='updatedname4', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,644][TestPermission:95] Before Delete Permission{PermissionName='updatedname5', PermissionDesc='修改所有权限配置'}
+[INFO ][20181029 09:40:19,657][TestPermission:97] After Deleted Permission{PermissionName='updatedname5', PermissionDesc='修改所有权限配置'}
+[INFO ][20181029 09:40:19,672][TestPermission:39] Inserted : Permission{PermissionName='asddf', PermissionDesc='null'}
+[INFO ][20181029 09:40:19,677][TestPermission:122] Item0:Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:19,683][TestPermission:61] Before Update: Permission{PermissionName='updatedname4', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,695][TestPermission:64] After Updated: Permission{PermissionName='updatedname3', PermissionDesc='访问权限配置页面'}
+[INFO ][20181029 09:40:19,707][TestPermission:131] PageBean{currentPage=2, numPerPage=2, totalCount=13, pageCount=7, beginPageIndex=1, endPageIndex=7}
+[INFO ][20181029 09:40:19,707][TestPermission:134] Item0:Permission{PermissionName='RES_SER_AUTHREAD', PermissionDesc='读取所有权限配置'}
+[INFO ][20181029 09:40:19,708][TestPermission:134] Item1:Permission{PermissionName='updatedname5', PermissionDesc='修改所有权限配置'}
+[INFO ][20181029 09:40:19,710][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:17 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:40:19,715][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:40:24,406][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:40:24,450][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e9b1010, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c3708b3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextTestExecutionListener@185d8b6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67784306, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@335eadca]
+[INFO ][20181029 09:40:24,625][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:40:25,081][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:40:25,144][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:25 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:40:25,419][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:40:26,780][TestRole:139] The user who's id = 1 has roles : 
+[INFO ][20181029 09:40:27,542][TestRole:142] Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,543][TestRole:142] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,543][TestRole:142] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,553][TestRole:111] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,657][TestRole:52] Inserted : Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,664][TestRole:54] Inserted : Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,680][TestRole:70] Role2 Before Update: Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,680][TestRole:71] Role4 Before Update: Role{RoleName='updatedname5', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,701][TestRole:78] Role2 After Updated: Role{RoleName='updatedname4', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,707][TestRole:79] Role4 After Updated: Role{RoleName='updatedname5', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,714][TestRole:26] The role who's id = 1 : Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,741][TestRole:103] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,742][TestRole:103] Item1:Role{RoleName='updatedname4', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,742][TestRole:103] Item2:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,742][TestRole:103] Item3:Role{RoleName='updatedname5', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,742][TestRole:103] Item4:Role{RoleName='corp_partner', RoleDesc='承运方合作方', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,743][TestRole:103] Item5:Role{RoleName='corp_employee', RoleDesc='承运方员工', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,743][TestRole:103] Item6:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181029 09:40:27,743][TestRole:103] Item7:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181029 09:40:27,744][TestRole:103] Item8:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181029 09:40:27,744][TestRole:103] Item9:Role{RoleName='partner_consignor', RoleDesc='客户', SuperRoleName='corp_partner'}
+[INFO ][20181029 09:40:27,744][TestRole:103] Item10:Role{RoleName='partner_manufacturer', RoleDesc='生产厂家', SuperRoleName='corp_partner'}
+[INFO ][20181029 09:40:27,745][TestRole:103] Item11:Role{RoleName='partner_receiver', RoleDesc='收货方', SuperRoleName='corp_partner'}
+[INFO ][20181029 09:40:27,745][TestRole:103] Item12:Role{RoleName='employee_driver', RoleDesc='驾驶员', SuperRoleName='corp_employee'}
+[INFO ][20181029 09:40:27,745][TestRole:103] Item13:Role{RoleName='employee_supervisor', RoleDesc='监装员', SuperRoleName='corp_employee'}
+[INFO ][20181029 09:40:27,745][TestRole:103] Item14:Role{RoleName='employee_leftworker', RoleDesc='起重工', SuperRoleName='corp_employee'}
+[INFO ][20181029 09:40:27,745][TestRole:103] Item15:Role{RoleName='employee_driveworker', RoleDesc='行车工', SuperRoleName='corp_employee'}
+[INFO ][20181029 09:40:27,746][TestRole:103] Item16:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,746][TestRole:103] Item17:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,746][TestRole:103] Item18:Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,746][TestRole:103] Item19:Role{RoleName='duyanting3', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,746][TestRole:103] Item20:Role{RoleName='duyanting4', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,748][TestRole:148] The user who's username= superadmin has roles : 
+[INFO ][20181029 09:40:27,779][TestRole:151] Role{RoleName='updatedname4', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,780][TestRole:151] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,780][TestRole:151] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,785][TestRole:85] Before Delete Role{RoleName='updatedname4', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,797][TestRole:87] After Deleted Role{RoleName='updatedname4', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,808][TestRole:94] Before Delete Role{RoleName='updatedname5', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,821][TestRole:96] After Deleted Role{RoleName='updatedname5', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,835][TestRole:38] Inserted : Role{RoleName='duyanting', RoleDesc='null', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,843][TestRole:121] Item0:Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:27,844][TestRole:121] Item1:Role{RoleName='admin_warehouse', RoleDesc='仓库管理员', SuperRoleName='corp_admin'}
+[INFO ][20181029 09:40:27,844][TestRole:121] Item2:Role{RoleName='admin_project', RoleDesc='项目管理员', SuperRoleName='corp_admin'}
+[INFO ][20181029 09:40:27,846][TestRole:121] Item3:Role{RoleName='admin_finance', RoleDesc='财务管理员', SuperRoleName='corp_admin'}
+[INFO ][20181029 09:40:27,852][TestRole:60] Before Update: Role{RoleName='updatedname4', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,866][TestRole:63] After Updated: Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,884][TestRole:130] PageBean{currentPage=2, numPerPage=2, totalCount=22, pageCount=11, beginPageIndex=1, endPageIndex=10}
+[INFO ][20181029 09:40:27,884][TestRole:133] Item0:Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:27,885][TestRole:133] Item1:Role{RoleName='updatedname5', RoleDesc='承运方管理员', SuperRoleName='corpration'}
+[INFO ][20181029 09:40:27,895][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:25 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:40:27,900][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:40:30,169][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:40:30,199][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e9b1010, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c3708b3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextTestExecutionListener@185d8b6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67784306, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@335eadca]
+[INFO ][20181029 09:40:30,376][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:40:30,817][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:40:30,896][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:30 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:40:31,203][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:40:33,339][TestRolePermission:114] cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@31c7528f
+[INFO ][20181029 09:40:33,396][TestRolePermission:55] Inserted : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@336f1079
+[INFO ][20181029 09:40:33,401][TestRolePermission:57] Inserted : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4b79ac84
+[INFO ][20181029 09:40:33,411][TestRolePermission:73] Role_Permission2 Before Update: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2e6a5539
+[INFO ][20181029 09:40:33,411][TestRolePermission:74] Role_Permission4 Before Update: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3fc9504b
+[INFO ][20181029 09:40:33,428][TestRolePermission:81] Role_Permission2 After Updated: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@73194df
+[INFO ][20181029 09:40:33,432][TestRolePermission:82] Role_Permission4 After Updated: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@31dadd46
+[INFO ][20181029 09:40:33,441][TestRolePermission:29] The role_permission who's id = 1 : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1f010bf0
+[INFO ][20181029 09:40:33,460][TestRolePermission:106] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7f132176
+[INFO ][20181029 09:40:33,460][TestRolePermission:106] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6bca7e0d
+[INFO ][20181029 09:40:33,462][TestRolePermission:106] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@19835e64
+[INFO ][20181029 09:40:33,462][TestRolePermission:106] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@68b32e3e
+[INFO ][20181029 09:40:33,462][TestRolePermission:106] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@bcef303
+[INFO ][20181029 09:40:33,463][TestRolePermission:106] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@41709512
+[INFO ][20181029 09:40:33,463][TestRolePermission:106] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@42039326
+[INFO ][20181029 09:40:33,463][TestRolePermission:106] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@33308786
+[INFO ][20181029 09:40:33,463][TestRolePermission:106] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4f9a2c08
+[INFO ][20181029 09:40:33,464][TestRolePermission:106] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@a87f8ec
+[INFO ][20181029 09:40:33,465][TestRolePermission:106] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5443d039
+[INFO ][20181029 09:40:33,465][TestRolePermission:106] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@63787180
+[INFO ][20181029 09:40:33,476][TestRolePermission:88] Before Delete cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@22356acd
+[INFO ][20181029 09:40:33,495][TestRolePermission:90] After Deleted cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4b6e2263
+[INFO ][20181029 09:40:33,512][TestRolePermission:97] Before Delete cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5dcb4f5f
+[INFO ][20181029 09:40:33,527][TestRolePermission:99] After Deleted cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@561868a0
+[INFO ][20181029 09:40:33,543][TestRolePermission:41] Inserted : cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@531f4093
+[INFO ][20181029 09:40:33,565][TestRolePermission:124] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@dbd8e44
+[INFO ][20181029 09:40:33,566][TestRolePermission:124] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@51acdf2e
+[INFO ][20181029 09:40:33,566][TestRolePermission:124] Item2:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@6a55299e
+[INFO ][20181029 09:40:33,566][TestRolePermission:124] Item3:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@2f1de2d6
+[INFO ][20181029 09:40:33,566][TestRolePermission:124] Item4:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@4eb386df
+[INFO ][20181029 09:40:33,567][TestRolePermission:124] Item5:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@79517588
+[INFO ][20181029 09:40:33,567][TestRolePermission:124] Item6:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3a0baae5
+[INFO ][20181029 09:40:33,567][TestRolePermission:124] Item7:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@7ac0e420
+[INFO ][20181029 09:40:33,567][TestRolePermission:124] Item8:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@289710d9
+[INFO ][20181029 09:40:33,568][TestRolePermission:124] Item9:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5a18cd76
+[INFO ][20181029 09:40:33,568][TestRolePermission:124] Item10:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@3da30852
+[INFO ][20181029 09:40:33,568][TestRolePermission:124] Item11:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@403f0a22
+[INFO ][20181029 09:40:33,569][TestRolePermission:124] Item12:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@503ecb24
+[INFO ][20181029 09:40:33,578][TestRolePermission:63] Before Update: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@77825085
+[INFO ][20181029 09:40:33,588][TestRolePermission:66] After Updated: cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@1b835480
+[INFO ][20181029 09:40:33,601][TestRolePermission:133] PageBean{currentPage=2, numPerPage=2, totalCount=13, pageCount=7, beginPageIndex=1, endPageIndex=7}
+[INFO ][20181029 09:40:33,601][TestRolePermission:136] Item0:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@5a709816
+[INFO ][20181029 09:40:33,602][TestRolePermission:136] Item1:cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission@78383390
+[INFO ][20181029 09:40:33,605][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:30 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:40:33,609][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:40:37,454][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:40:37,489][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e9b1010, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c3708b3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f1fba17, org.springframework.test.context.support.DirtiesContextTestExecutionListener@185d8b6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67784306, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@335eadca]
+[INFO ][20181029 09:40:37,637][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:40:37,997][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:40:38,051][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:38 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:40:38,339][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:40:41,030][TestUserRole:114] User_Role{UserId=1, RoleId=1}
+[INFO ][20181029 09:40:41,080][TestUserRole:55] Inserted : User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,085][TestUserRole:57] Inserted : User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,097][TestUserRole:73] User_Role2 Before Update: User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,098][TestUserRole:74] User_Role4 Before Update: User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,118][TestUserRole:81] User_Role2 After Updated: User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,124][TestUserRole:82] User_Role4 After Updated: User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,132][TestUserRole:29] The user_role who's id = 1 : User_Role{UserId=1, RoleId=1}
+[INFO ][20181029 09:40:41,148][TestUserRole:106] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181029 09:40:41,148][TestUserRole:106] Item1:User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,151][TestUserRole:106] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,152][TestUserRole:106] Item3:User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,152][TestUserRole:106] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,152][TestUserRole:106] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,152][TestUserRole:106] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,161][TestUserRole:88] Before Delete User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,183][TestUserRole:90] After Deleted User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,200][TestUserRole:97] Before Delete User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,214][TestUserRole:99] After Deleted User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,240][TestUserRole:41] Inserted : User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,259][TestUserRole:123] Item0:User_Role{UserId=1, RoleId=1}
+[INFO ][20181029 09:40:41,259][TestUserRole:123] Item1:User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,259][TestUserRole:123] Item2:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,259][TestUserRole:123] Item3:User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,260][TestUserRole:123] Item4:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,260][TestUserRole:123] Item5:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,260][TestUserRole:123] Item6:User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,260][TestUserRole:123] Item7:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,268][TestUserRole:63] Before Update: User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,279][TestUserRole:66] After Updated: User_Role{UserId=2, RoleId=1}
+[INFO ][20181029 09:40:41,292][TestUserRole:132] PageBean{currentPage=2, numPerPage=2, totalCount=8, pageCount=4, beginPageIndex=1, endPageIndex=4}
+[INFO ][20181029 09:40:41,293][TestUserRole:135] Item0:User_Role{UserId=null, RoleId=1}
+[INFO ][20181029 09:40:41,293][TestUserRole:135] Item1:User_Role{UserId=null, RoleId=2}
+[INFO ][20181029 09:40:41,297][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@1b68ddbd: startup date [Mon Oct 29 09:40:38 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:40:41,300][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181029 09:40:45,493][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181029 09:40:45,526][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@67784306, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@335eadca, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@210366b4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@eec5a4a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2b2948e2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6ddf90b0]
+[INFO ][20181029 09:40:45,661][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181029 09:40:46,024][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181029 09:40:46,064][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@e320068: startup date [Mon Oct 29 09:40:46 CST 2018]; root of context hierarchy
+[INFO ][20181029 09:40:46,380][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181029 09:40:48,243][TestUser:130] Before The user who's Id = 1 has roles:
+[INFO ][20181029 09:40:48,243][TestUser:132] Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,244][TestUser:132] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:48,244][TestUser:132] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,272][TestUser:134] After The user who's Id = 1 has roles:
+[INFO ][20181029 09:40:48,272][TestUser:136] Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,273][TestUser:136] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:48,273][TestUser:136] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,293][TestUser:44] Inserted : User{UserName='duyanting', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=false, UserType=null, UserInfo=null, Id=10, CreateTime=Mon Oct 29 17:40:48 CST 2018, UpdateTime=Mon Oct 29 17:40:48 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:40:48,313][TestUser:102] Before The role who's Id = 1 has permissions:
+[INFO ][20181029 09:40:48,315][TestUser:104] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:48,326][TestUser:106] After The role who's Id = 1 has permissions:
+[INFO ][20181029 09:40:48,326][TestUser:108] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:48,333][TestUser:50] Before Update: User{UserName='updatedname3', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:39:36 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:40:48,360][TestUser:54] After Updated: User{UserName='duyanting2', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:40:48 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:40:48,373][TestUser:116] Before The role who's Id = 1 has permissions:
+[INFO ][20181029 09:40:48,374][TestUser:118] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:48,391][TestUser:120] After The role who's Id = 1 has permissions:
+[INFO ][20181029 09:40:48,391][TestUser:122] Permission{PermissionName='ROLE_URL_HOME', PermissionDesc='访问主页'}
+[INFO ][20181029 09:40:48,397][TestUser:60] Before Delete User{UserName='duyanting2', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:40:48 CST 2018, DeleteTime=Mon Oct 29 17:39:36 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:40:48,417][TestUser:62] After Deleted User{UserName='duyanting2', PassWord='123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=2, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Mon Oct 29 17:40:48 CST 2018, DeleteTime=Mon Oct 29 17:40:48 CST 2018, IsDeleted=true}
+[INFO ][20181029 09:40:48,425][TestUser:67] Find user who's id = 1: User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:40:48,443][TestUser:144] Before The user who's Id = 1 has roles:
+[INFO ][20181029 09:40:48,444][TestUser:146] Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,444][TestUser:146] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:48,444][TestUser:146] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,459][TestUser:148] After The user who's Id = 1 has roles:
+[INFO ][20181029 09:40:48,460][TestUser:150] Role{RoleName='updatedname3', RoleDesc='承运方账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,460][TestUser:150] Role{RoleName='superadmin', RoleDesc='超级管理员', SuperRoleName='null'}
+[INFO ][20181029 09:40:48,460][TestUser:150] Role{RoleName='government', RoleDesc='政府账号', SuperRoleName='superadmin'}
+[INFO ][20181029 09:40:48,467][TestUser:75] Find user who's username = superadmin: User{UserName='superadmin', PassWord='{noop}123456', Phone='null', Vcode='null', VcodeTime=null, IfRegistered=true, UserType=null, UserInfo=null, Id=1, CreateTime=Sat Oct 27 07:21:11 CST 2018, UpdateTime=Sat Oct 27 07:21:11 CST 2018, DeleteTime=null, IsDeleted=false}
+[INFO ][20181029 09:40:48,470][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@e320068: startup date [Mon Oct 29 09:40:46 CST 2018]; root of context hierarchy
+[WARN ][20181029 09:40:48,473][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

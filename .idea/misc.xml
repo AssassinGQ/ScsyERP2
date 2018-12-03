@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ScsyERP-web-Boss" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ScsyERP-common-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-common-config/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERPcommoncore/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-common-core/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-InStorge/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-InStorage/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-OutStorage/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-OutStorage/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-Fee/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-Fee/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-Statistics/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-Statistics/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-common-web/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-common/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-User/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-User/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-Basicinfo/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ScsyERP-Web-boss/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

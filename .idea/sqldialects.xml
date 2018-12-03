@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/DriveWorkerTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/LiftWorkerTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/MaterialTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/ProductTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/ProjectTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/TruckTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/WarehouseTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/WorkshopTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-Fee/doc/SQL/OnTruckFormTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-Fee/doc/SQL/TransportContractTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-InStorage/doc/SQL/InStorageFormTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/doc/SQL/TruckLogTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/doc/SQL/WarnTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-OutStorage/doc/SQL/OutStorageFormTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/AdminTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/ConsigneeTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/CorporationTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/CustomerTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/DriverTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/EscortTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/GovernmentTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/ManufacturerTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/PermissionTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/RoleTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/Role_PermissionTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/TestTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/UserTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/User_RoleTableInit.sql" dialect="MySQL" />
+  </component>
+</project>

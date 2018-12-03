@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ScsyERP-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-common-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-common-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-common-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-common-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-BasicInfo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-Fee" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-InStorge" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-OnWayWatch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-OutStorage" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-Statistics" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-User" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-Fee" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-InStorage" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-OutStorage" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-Statistics" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-User" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-web-Boss" charset="UTF-8" />
+  </component>
+</project>

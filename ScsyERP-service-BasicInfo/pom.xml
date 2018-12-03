@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ScsyERP-common-parent</artifactId>
+        <groupId>ScsyERP</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../ScsyERP-common-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ScsyERP</groupId>
+    <artifactId>ScsyERP-service-Basicinfo</artifactId>
+    <version>${ScsyERP-service-BasicInfo.version}</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-common</artifactId>
+            <version>${ScsyERP-common.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-common-config</artifactId>
+            <version>${ScsyERP-common-config.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-common-core</artifactId>
+            <version>${ScsyERP-common-core.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-BasicInfo</artifactId>
+            <version>${ScsyERP-facade-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+</project>
