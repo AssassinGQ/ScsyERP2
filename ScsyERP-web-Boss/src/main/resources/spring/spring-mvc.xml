@@ -12,7 +12,8 @@
        http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--自动扫描-->
-    <context:component-scan base-package="cn.AssassinG.scsycc.entitys"/>
+    <context:component-scan base-package="cn.AssassinG.ScsyERP.WebBoss"/>
+    <!--<context:component-scan base-package="cn.AssassinG.ScsyERP.User.facade.service"/>-->
 
     <!--spring security start-->
     <security:global-method-security jsr250-annotations="enabled"/>
@@ -20,7 +21,7 @@
 
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
-    <mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters register-defaults="false">
             <!--避免AJAX请求时返回JSON出现下载文件-->
             <bean id = "mappingJacksonHttpMessageConverter"
@@ -35,6 +36,14 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.AdminDeptConverter" />
+            </list>
+        </property>
+    </bean>
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="spring.messages.messages" />

@@ -13,18 +13,6 @@
     <groupId>ScsyERP</groupId>
     <artifactId>ScsyERP-service-User</artifactId>
     <version>${ScsyERP-service-User.version}</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>6</source>
-                    <target>6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>
@@ -49,6 +37,18 @@
             <groupId>ScsyERP</groupId>
             <artifactId>ScsyERP-facade-User</artifactId>
             <version>${ScsyERP-facade-User.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-BasicInfo</artifactId>
+            <version>${ScsyERP-facade-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-BasicInfo</artifactId>
+            <version>${ScsyERP-service-BasicInfo.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

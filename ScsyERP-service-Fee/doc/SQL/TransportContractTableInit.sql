@@ -25,11 +25,12 @@ create table t_transport_contract (
   oil_card_number       VARCHAR(20)                     COMMENT '油卡卡号',
   oil_card_money        DOUBLE(5,2)                     COMMENT '油卡金额',
   pre_repair_fee        DOUBLE(5,2)                     COMMENT '预付维修费用金额',
+  if_completed          BOOLEAN  NOT NULL DEFAULT FALSE      COMMENT '当前运输合同是否已经完成',
   PRIMARY KEY (id)
 );
 
 alter table t_transport_contract comment '运输合同信息表';
 
 ## 权限的初始化数据
-insert into t_transport_contract(corporation, contract_number) values (-1, "aaaaaaa");
-insert into t_transport_contract(corporation, contract_number) values (-1, "bbbbbbb");
+insert into t_transport_contract(corporation, contract_number, if_completed) values (-1, "aaaaaaa", false);
+insert into t_transport_contract(corporation, contract_number, if_completed) values (-1, "bbbbbbb", false);

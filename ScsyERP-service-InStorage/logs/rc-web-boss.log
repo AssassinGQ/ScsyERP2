@@ -1,404 +1,57 @@
-[INFO ][20181126 15:43:06,044][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 15:43:06,083][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@210366b4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@eec5a4a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ddf90b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@57536d79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3b0143d3]
-[INFO ][20181126 15:43:06,213][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 15:43:06,715][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 15:43:06,806][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Mon Nov 26 15:43:06 CST 2018]; root of context hierarchy
-[INFO ][20181126 15:43:07,122][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[ERROR][20181126 15:43:08,337][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@2ce6c6ec]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,360][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@75d2da2d]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,372][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@6057aebb]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,378][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@352c1b98]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,389][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@7d898981]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,393][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@14f9390f]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,402][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@409c54f]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,407][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@71e693fa]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[ERROR][20181126 15:43:08,416][TestContextManager:246] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2] to prepare test instance [TestService.TruckLogServiceFacadeImplTest@7b8b43c7]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TestService.TruckLogServiceFacadeImplTest': Unsatisfied dependency expressed through field 'inStorageFormService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:587)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:400)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.AssassinG.ScsyERP.InStorage.facade.service.InStorageFormServiceFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1509)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
-	... 27 more
-[INFO ][20181126 15:43:08,424][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Mon Nov 26 15:43:06 CST 2018]; root of context hierarchy
-[WARN ][20181126 15:43:08,430][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-[INFO ][20181126 15:44:57,640][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 15:44:57,674][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@210366b4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@eec5a4a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ddf90b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@57536d79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3b0143d3]
-[INFO ][20181126 15:44:57,798][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 15:44:58,086][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 15:44:58,138][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Mon Nov 26 15:44:58 CST 2018]; root of context hierarchy
-[INFO ][20181126 15:44:58,350][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO ][20181126 15:45:00,444][InStorageFormServiceFacadeImplTest:76] Created : InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='bOEMV5AX', InStorageTime=Mon Nov 26 15:45:00 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=12, Corporation=1, CreateTime=Mon Nov 26 23:45:00 CST 2018, UpdateTime=Mon Nov 26 23:45:00 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:45:00,538][InStorageFormServiceFacadeImplTest:114] Delete succeed
-[INFO ][20181126 15:45:00,677][InStorageFormServiceFacadeImplTest:153] Item0:InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='V5ZgjYcC', InStorageTime=Mon Nov 26 15:45:01 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=14, Corporation=1, CreateTime=Mon Nov 26 23:45:00 CST 2018, UpdateTime=Mon Nov 26 23:45:00 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:45:00,714][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='G6KJQ1s4', InStorageTime=Mon Nov 26 15:45:01 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=15, Corporation=1, CreateTime=Mon Nov 26 23:45:00 CST 2018, UpdateTime=Mon Nov 26 23:45:00 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:45:00,887][InStorageFormServiceFacadeImplTest:127] getById succeed
-[INFO ][20181126 15:45:00,935][InStorageFormServiceFacadeImplTest:141] getBy succeed
-[INFO ][20181126 15:45:00,984][InStorageFormServiceFacadeImplTest:162] PageBean{currentPage=2, numPerPage=2, totalCount=10, recordList=[InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=5, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}, InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=6, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}], pageCount=5, beginPageIndex=1, endPageIndex=5, countResultMap=null}
-[INFO ][20181126 15:45:00,984][InStorageFormServiceFacadeImplTest:165] Item0:InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=5, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:45:00,984][InStorageFormServiceFacadeImplTest:165] Item1:InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=6, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:45:01,042][InStorageFormServiceFacadeImplTest:102] Delete succeed
-[INFO ][20181126 15:45:01,070][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Mon Nov 26 15:44:58 CST 2018]; root of context hierarchy
-[WARN ][20181126 15:45:01,072][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-[INFO ][20181126 15:48:51,390][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 15:48:51,420][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
-[INFO ][20181126 15:48:51,560][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 15:48:51,898][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 15:48:51,958][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:48:51 CST 2018]; root of context hierarchy
-[INFO ][20181126 15:48:52,198][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO ][20181126 15:48:54,212][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='OIwEJPOb', InStorageTime=Mon Nov 26 15:48:53 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=21, Corporation=1, CreateTime=Mon Nov 26 23:48:54 CST 2018, UpdateTime=Mon Nov 26 23:48:54 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:48:54,244][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:48:51 CST 2018]; root of context hierarchy
-[WARN ][20181126 15:48:54,246][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-[INFO ][20181126 15:50:23,577][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 15:50:23,614][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
-[INFO ][20181126 15:50:23,770][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 15:50:24,056][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 15:50:24,106][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:50:24 CST 2018]; root of context hierarchy
-[INFO ][20181126 15:50:24,313][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO ][20181126 15:50:26,545][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='zOS751Gm', InStorageTime=Mon Nov 26 15:50:25 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=22, Corporation=1, CreateTime=Mon Nov 26 23:50:26 CST 2018, UpdateTime=Mon Nov 26 23:50:26 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 15:50:26,564][InStorageFormServiceFacadeImplTest:91] Updated succeed
-[INFO ][20181126 15:50:26,582][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:50:24 CST 2018]; root of context hierarchy
-[WARN ][20181126 15:50:26,587][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-[INFO ][20181126 15:51:59,349][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 15:51:59,385][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
-[INFO ][20181126 15:51:59,500][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 15:51:59,837][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 15:51:59,896][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:51:59 CST 2018]; root of context hierarchy
-[INFO ][20181126 15:52:00,140][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO ][20181126 15:52:02,337][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:51:59 CST 2018]; root of context hierarchy
-[WARN ][20181126 15:52:02,340][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-[INFO ][20181126 15:54:00,978][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 15:54:01,009][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
-[INFO ][20181126 15:54:01,135][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 15:54:01,423][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 15:54:01,481][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:54:01 CST 2018]; root of context hierarchy
-[INFO ][20181126 15:54:01,709][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO ][20181126 15:54:03,676][InStorageFormServiceFacadeImplTest:202] updateByMap succeed
-[INFO ][20181126 15:54:03,727][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Mon Nov 26 15:54:01 CST 2018]; root of context hierarchy
-[WARN ][20181126 15:54:03,736][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
-[INFO ][20181126 21:20:00,459][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-[INFO ][20181126 21:20:00,579][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@210366b4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@eec5a4a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ddf90b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@57536d79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3b0143d3]
-[INFO ][20181126 21:20:01,046][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
-[INFO ][20181126 21:20:02,187][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
-[INFO ][20181126 21:20:02,441][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Mon Nov 26 21:20:02 CST 2018]; root of context hierarchy
-[INFO ][20181126 21:20:03,503][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO ][20181126 21:20:09,114][InStorageFormServiceFacadeImplTest:76] Created : InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='Aska9TVO', InStorageTime=Mon Nov 26 21:20:09 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=26, Corporation=1, CreateTime=Tue Nov 27 05:20:08 CST 2018, UpdateTime=Tue Nov 27 05:20:08 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 21:20:09,538][InStorageFormServiceFacadeImplTest:114] Delete succeed
-[INFO ][20181126 21:20:10,036][InStorageFormServiceFacadeImplTest:153] Item0:InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='efLn8haj', InStorageTime=Mon Nov 26 21:20:10 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=28, Corporation=1, CreateTime=Tue Nov 27 05:20:09 CST 2018, UpdateTime=Tue Nov 27 05:20:09 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 21:20:10,204][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='qhkm3lST', InStorageTime=Mon Nov 26 21:20:10 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=29, Corporation=1, CreateTime=Tue Nov 27 05:20:10 CST 2018, UpdateTime=Tue Nov 27 05:20:10 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 21:20:11,013][InStorageFormServiceFacadeImplTest:127] getById succeed
-[INFO ][20181126 21:20:11,231][InStorageFormServiceFacadeImplTest:141] getBy succeed
-[INFO ][20181126 21:20:11,375][InStorageFormServiceFacadeImplTest:162] PageBean{currentPage=2, numPerPage=2, totalCount=11, recordList=[InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=5, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}, InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=6, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}], pageCount=6, beginPageIndex=1, endPageIndex=6, countResultMap=null}
-[INFO ][20181126 21:20:11,376][InStorageFormServiceFacadeImplTest:165] Item0:InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=5, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 21:20:11,378][InStorageFormServiceFacadeImplTest:165] Item1:InStorageForm{Project=1, InStorageStatus=Workging, InStorageNumber='rkd123456', InStorageTime=Mon Nov 19 15:09:39 CST 2018, Warehouse=1, Truck=2, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, Id=6, Corporation=1, CreateTime=Mon Nov 19 23:09:38 CST 2018, UpdateTime=Mon Nov 19 23:09:38 CST 2018, DeleteTime=null, IfDeleted=false}
-[INFO ][20181126 21:20:11,523][InStorageFormServiceFacadeImplTest:102] Delete succeed
-[INFO ][20181126 21:20:11,618][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Mon Nov 26 21:20:02 CST 2018]; root of context hierarchy
-[WARN ][20181126 21:20:11,623][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181206 16:23:58,630][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181206 16:23:58,670][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
+[INFO ][20181206 16:23:58,812][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181206 16:23:59,309][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181206 16:23:59,394][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:23:59 CST 2018]; root of context hierarchy
+[INFO ][20181206 16:23:59,803][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181206 16:24:03,073][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='PUDid2Am', InStorageTime=Thu Dec 06 16:24:02 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=13, Corporation=1, CreateTime=Thu Dec 06 16:24:03 CST 2018, UpdateTime=Thu Dec 06 16:24:03 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:24:03,119][InStorageFormServiceFacadeImplTest:91] Updated succeed
+[INFO ][20181206 16:24:03,180][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:23:59 CST 2018]; root of context hierarchy
+[WARN ][20181206 16:24:03,194][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181206 16:27:29,084][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181206 16:27:29,116][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
+[INFO ][20181206 16:27:29,321][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181206 16:27:29,725][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181206 16:27:29,807][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:27:29 CST 2018]; root of context hierarchy
+[INFO ][20181206 16:27:30,126][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181206 16:27:32,620][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='Ob0tDTwj', InStorageTime=Thu Dec 06 16:27:32 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=14, Corporation=1, CreateTime=Thu Dec 06 16:27:32 CST 2018, UpdateTime=Thu Dec 06 16:27:32 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:27:32,650][InStorageFormServiceFacadeImplTest:91] Updated succeed
+[INFO ][20181206 16:27:32,689][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:27:29 CST 2018]; root of context hierarchy
+[WARN ][20181206 16:27:32,693][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181206 16:37:02,765][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181206 16:37:02,803][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
+[INFO ][20181206 16:37:02,944][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181206 16:37:03,312][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181206 16:37:03,403][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:37:03 CST 2018]; root of context hierarchy
+[INFO ][20181206 16:37:03,735][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181206 16:37:06,495][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='XmaLGBX7', InStorageTime=Thu Dec 06 16:37:06 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=15, Corporation=1, CreateTime=Thu Dec 06 16:37:06 CST 2018, UpdateTime=Thu Dec 06 16:37:06 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:37:06,524][InStorageFormServiceFacadeImplTest:91] Updated succeed
+[INFO ][20181206 16:37:06,537][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:37:03 CST 2018]; root of context hierarchy
+[WARN ][20181206 16:37:06,542][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181206 16:47:03,086][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181206 16:47:03,121][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@210366b4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@eec5a4a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b2948e2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ddf90b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@57536d79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3b0143d3]
+[INFO ][20181206 16:47:03,261][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181206 16:47:03,633][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181206 16:47:03,709][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Thu Dec 06 16:47:03 CST 2018]; root of context hierarchy
+[INFO ][20181206 16:47:04,053][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181206 16:47:07,326][InStorageFormServiceFacadeImplTest:114] Delete succeed
+[INFO ][20181206 16:47:07,377][InStorageFormServiceFacadeImplTest:153] Item0:InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='T6Zy590a', InStorageTime=Thu Dec 06 16:47:07 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=18, Corporation=1, CreateTime=Thu Dec 06 16:47:07 CST 2018, UpdateTime=Thu Dec 06 16:47:07 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:47:07,441][InStorageFormServiceFacadeImplTest:84] Before Update: InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='QuDhGXYi', InStorageTime=Thu Dec 06 16:47:07 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=19, Corporation=1, CreateTime=Thu Dec 06 16:47:07 CST 2018, UpdateTime=Thu Dec 06 16:47:07 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:47:07,472][InStorageFormServiceFacadeImplTest:91] Updated succeed
+[INFO ][20181206 16:47:07,559][InStorageFormServiceFacadeImplTest:202] updateByMap succeed
+[INFO ][20181206 16:47:07,588][InStorageFormServiceFacadeImplTest:127] getById succeed
+[INFO ][20181206 16:47:07,621][InStorageFormServiceFacadeImplTest:141] getBy succeed
+[INFO ][20181206 16:47:07,654][InStorageFormServiceFacadeImplTest:162] PageBean{currentPage=2, numPerPage=2, totalCount=3, recordList=[InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='kfzZaX88', InStorageTime=Thu Dec 06 16:47:08 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=23, Corporation=1, CreateTime=Thu Dec 06 16:47:07 CST 2018, UpdateTime=Thu Dec 06 16:47:07 CST 2018, DeleteTime=null, IfDeleted=false}], pageCount=2, beginPageIndex=1, endPageIndex=2, countResultMap=null}
+[INFO ][20181206 16:47:07,655][InStorageFormServiceFacadeImplTest:165] Item0:InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='kfzZaX88', InStorageTime=Thu Dec 06 16:47:08 CST 2018, Warehouse=1, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=WRZ, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=23, Corporation=1, CreateTime=Thu Dec 06 16:47:07 CST 2018, UpdateTime=Thu Dec 06 16:47:07 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:47:07,707][InStorageFormServiceFacadeImplTest:102] Delete succeed
+[INFO ][20181206 16:47:07,735][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Thu Dec 06 16:47:03 CST 2018]; root of context hierarchy
+[WARN ][20181206 16:47:07,738][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[INFO ][20181206 16:47:47,628][AbstractTestContextBootstrapper:248] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO ][20181206 16:47:47,666][AbstractTestContextBootstrapper:177] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4f970963, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61f8bee4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b49cea0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@887af79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fac631b]
+[INFO ][20181206 16:47:47,842][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20181206 16:47:48,264][XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20181206 16:47:48,351][AbstractApplicationContext:589] Refreshing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:47:48 CST 2018]; root of context hierarchy
+[INFO ][20181206 16:47:48,809][AutowiredAnnotationBeanPostProcessor:154] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO ][20181206 16:47:51,792][InStorageFormServiceFacadeImplTest:76] Created : InStorageForm{Project=1, InStorageStatus=Working, InStorageNumber='we13fof6', InStorageTime=Thu Dec 06 16:47:52 CST 2018, Warehouse=3, Truck=1, PickWorker=1, Lister=1, DriveWorkers=null, LiftWorkers=null, AccountStatus=null, TotalAmount=null, TotalVolume=null, TotalWeight=null, Products=null, WorkingProduct=null, IfCompleted=false, Id=26, Corporation=1, CreateTime=Thu Dec 06 16:47:51 CST 2018, UpdateTime=Thu Dec 06 16:47:51 CST 2018, DeleteTime=null, IfDeleted=false}
+[INFO ][20181206 16:47:51,812][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@2bbf4b8b: startup date [Thu Dec 06 16:47:48 CST 2018]; root of context hierarchy
+[WARN ][20181206 16:47:51,816][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

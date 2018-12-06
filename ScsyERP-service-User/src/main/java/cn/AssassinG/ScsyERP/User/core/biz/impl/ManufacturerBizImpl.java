@@ -1,5 +1,7 @@
 package cn.AssassinG.ScsyERP.User.core.biz.impl;
 
+import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Workshop;
+import cn.AssassinG.ScsyERP.BasicInfo.facade.service.WorkshopServiceFacade;
 import cn.AssassinG.ScsyERP.User.core.biz.ManufacturerBiz;
 import cn.AssassinG.ScsyERP.User.core.dao.ManufacturerDao;
 import cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer;
@@ -7,6 +9,7 @@ import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.User.facade.exceptions.ManufacturerBizException;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
+import com.alibaba.fastjson.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,4 +81,59 @@ public class ManufacturerBizImpl extends LoginableBizImpl<Manufacturer> implemen
         userBiz.delete(user);
     }
 
+    @Autowired
+    private WorkshopServiceFacade workshopServiceFacade;
+
+    @Transactional
+    public void addWorkshops(Long entityId, String jsonArrayStr) {
+        if(entityId == null){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产厂家基本信息主键不能为空");
+        }
+        if(jsonArrayStr == null || jsonArrayStr.isEmpty()){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产车间基本信息主键不能为空");
+        }
+        JSONArray jsonArray;
+        try{
+            jsonArray = JSONArray.parseArray(jsonArrayStr);
+        }catch(Exception e){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产车间基本信息主键格式不正确");
+        }
+        Manufacturer manufacturer = this.getById(entityId);
+        if(manufacturer == null || manufacturer.getIfDeleted()){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产厂家基本信息，entityId: %d", entityId);
+        }
+        boolean flag = true;
+        for(int i = 0; i < jsonArray.size(); i++){
+            Workshop driveWorker_tmp = workshopServiceFacade.getById(jsonArray.getLong(i));
+            if(driveWorker_tmp == null || driveWorker_tmp.getIfDeleted()){
+                flag = false;
+            }else{
+                manufacturer.getWorkshops().add(driveWorker_tmp.getId());
+            }
+        }
+        this.update(manufacturer);
+        if(!flag){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_UNKNOWN_ERROR, "一部分生产车间主键没有对应的记录导致这部分主键没有添加", entityId);
+        }
+    }
+
+    @Transactional
+    public void removeWorkshop(Long entityId, Long productId) {
+        if(entityId == null){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产厂家基本信息主键不能为空");
+        }
+        if(productId == null){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产车间基本信息主键不能为空");
+        }
+        Manufacturer manufacturer = this.getById(entityId);
+        if(manufacturer == null || manufacturer.getIfDeleted()){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产厂家基本信息，entityId: %d", entityId);
+        }
+        Workshop workshop = workshopServiceFacade.getById(productId);
+        if(workshop == null || workshop.getIfDeleted()){
+            throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产车间基本信息，entityId: %d", entityId);
+        }
+        manufacturer.getWorkshops().remove(workshop.getId());
+        this.update(manufacturer);
+    }
 }

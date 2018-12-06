@@ -5,7 +5,7 @@ import cn.AssassinG.ScsyERP.OnWayWatch.core.dao.WarnDao;
 import cn.AssassinG.ScsyERP.OnWayWatch.facade.entity.Warn;
 import cn.AssassinG.ScsyERP.OnWayWatch.facade.enums.WarnStatus;
 import cn.AssassinG.ScsyERP.OnWayWatch.facade.exceptions.WarnBizException;
-import cn.AssassinG.ScsyERP.common.core.biz.BaseBizImpl;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.BaseBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,6 @@
-package cn.AssassinG.ScsyERP.BasicInfo.core.biz.impl;
+package cn.AssassinG.ScsyERP.common.core.biz.impl;
 
-import cn.AssassinG.ScsyERP.BasicInfo.core.biz.UnLoginableBiz;
-import cn.AssassinG.ScsyERP.common.core.biz.BaseBizImpl;
+import cn.AssassinG.ScsyERP.common.core.biz.UnLoginableBiz;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
 public abstract class UnLoginableBizImpl<T extends UnLoginableEntity> extends BaseBizImpl<T> implements UnLoginableBiz<T> {

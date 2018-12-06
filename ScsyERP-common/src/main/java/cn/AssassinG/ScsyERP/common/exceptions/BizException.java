@@ -33,6 +33,7 @@ public class BizException extends RuntimeException {
      *         费用结算业务               1600 <br>
      *         数据统计业务               1700 <br>
      *         管理网页门户               1800 <br>
+     *         文件业务                   1900 <br>
      */
 
     /**

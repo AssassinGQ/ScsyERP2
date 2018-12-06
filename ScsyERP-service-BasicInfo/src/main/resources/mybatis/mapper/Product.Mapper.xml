@@ -5,8 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_product"> t_product </sql>
 
-	<resultMap id="beanMap" type="Product" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
-		<result column="name" property="Name" />
+	<resultMap id="beanMap" type="Product" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 		<result column="project" property="Project" />
 		<result column="status" property="Status" typeHandler="cn.AssassinG.ScsyERP.BasicInfo.core.dao.MyBatisHandler.ProductStatusHandler" />
 		<result column="packet_number" property="PacketNumber" />
@@ -110,7 +109,7 @@
 			</trim>
 			<trim prefix="out_storage_form =case" suffix="end,">
 				<foreach collection="list" item="item">
-					<if test="item.OutStorage!=null">
+					<if test="item.OutStorageForm!=null">
 						when id=#{item.Id} then #{item.OutStorageForm}
 					</if>
 				</foreach>

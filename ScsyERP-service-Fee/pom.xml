@@ -13,18 +13,6 @@
     <groupId>ScsyERP</groupId>
     <artifactId>ScsyERP-service-Fee</artifactId>
     <version>${ScsyERP-service-Fee.version}</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>6</source>
-                    <target>6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>
@@ -49,6 +37,30 @@
             <groupId>ScsyERP</groupId>
             <artifactId>ScsyERP-facade-Fee</artifactId>
             <version>${ScsyERP-facade-Fee.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-File</artifactId>
+            <version>${ScsyERP-facade-File.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-File</artifactId>
+            <version>${ScsyERP-service-File.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-OutStorage</artifactId>
+            <version>${ScsyERP-facade-OutStorage.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-OutStorage</artifactId>
+            <version>${ScsyERP-service-OutStorage.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

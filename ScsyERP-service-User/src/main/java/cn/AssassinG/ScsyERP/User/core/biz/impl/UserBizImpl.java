@@ -4,7 +4,7 @@ import cn.AssassinG.ScsyERP.User.core.biz.UserBiz;
 import cn.AssassinG.ScsyERP.User.core.dao.*;
 import cn.AssassinG.ScsyERP.User.facade.entity.*;
 import cn.AssassinG.ScsyERP.User.facade.exceptions.UserBizException;
-import cn.AssassinG.ScsyERP.common.core.biz.BaseBizImpl;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.BaseBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import cn.AssassinG.ScsyERP.common.utils.StringUtils;
 import cn.AssassinG.ScsyERP.common.utils.ValidUtils;
@@ -132,12 +132,12 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
     }
 
     @Transactional
-    public void ChangePSW(String phone, String vcode, String password) {
+    public void ChangePSW(String phone, String vcode, String newPassWord) {
         if(!StringUtils.isMobileNum(phone)) {
             throw new UserBizException(UserBizException.USERBIZ_PARAMS_ILLEGAL, "请输入合法的手机号码:%s", phone);
         }
-        if(vcode == null || password == null) {
-            throw new UserBizException(UserBizException.USERBIZ_PARAMS_ILLEGAL, "验证码和新密码不能为空，验证码:%s,新密码:%s", vcode, password);
+        if(vcode == null || newPassWord == null) {
+            throw new UserBizException(UserBizException.USERBIZ_PARAMS_ILLEGAL, "验证码和新密码不能为空，验证码:%s,新密码:%s", vcode, newPassWord);
         }
         User user = this.findUserByPhone(phone);
         if(user == null || user.getIfDeleted()){
@@ -146,13 +146,13 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
         if(!user.getVcode().equals(vcode) || System.currentTimeMillis() - user.getVcodeTime().getTime() > 1000*60*60*4){//验证码有效期四个小时
             throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "验证码过期，手机号:%s", phone);
         }
-        user.setPassWord(password);
+        user.setPassWord(newPassWord);
         userDao.update(user);
     }
 
     @Override
     @Transactional
-    public void ChangeUserName(Long userId, String newUserName) {
+    public void ChangeUserName(Long userId, String Vcode, String newUserName) {
         if(userId == null){
             throw new UserBizException(UserBizException.USERBIZ_PARAMS_ILLEGAL, "用户主键不能为空");
         }
@@ -160,12 +160,12 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
         if(user == null || user.getIfDeleted()){
             throw new UserBizException(UserBizException.USERBIZ_NOSUIT_RESULT, "没有符合条件的用户记录，主键:%d", userId);
         }
-        ChangeUserName(user, newUserName);
+        ChangeUserName(user, Vcode, newUserName);
     }
 
     @Override
     @Transactional
-    public void ChangeUserName(User user, String newUserName) {
+    public void ChangeUserName(User user, String Vcode, String newUserName) {
         if(user == null || !ValidUtils.Validation(user)){
             throw new UserBizException(UserBizException.USERBIZ_NOSUIT_RESULT, "用户不合法");
         }
@@ -176,13 +176,16 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
         if(user_checkuname != null && !user_checkuname.getIfDeleted() && user_checkuname.getId().longValue() != user.getId().longValue()){
             throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "用户名被占用:%s", newUserName);
         }
+        if(!user.getVcode().equals(Vcode) || System.currentTimeMillis() - user.getVcodeTime().getTime() > 1000*60*60*4){//验证码有效期四个小时
+            throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "验证码过期，手机号:%s", user.getPhone());
+        }
         user.setUserName(newUserName);
         userDao.update(user);
     }
 
     @Override
     @Transactional
-    public void ChangePhone(Long userId, String newPhone) {
+    public void ChangePhone(Long userId, String Vcode, String newPhone) {
         if(userId == null){
             throw new UserBizException(UserBizException.USERBIZ_PARAMS_ILLEGAL, "用户主键不能为空");
         }
@@ -190,12 +193,12 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
         if(user == null || user.getIfDeleted()) {
             throw new UserBizException(UserBizException.USERBIZ_NOSUIT_RESULT, "没有符合条件的用户记录，手机号:%d", userId);
         }
-        ChangePhone(user, newPhone);
+        ChangePhone(user, Vcode, newPhone);
     }
 
     @Override
     @Transactional
-    public void ChangePhone(User user, String newPhone) {
+    public void ChangePhone(User user, String Vcode, String newPhone) {
         if(user == null || !ValidUtils.Validation(user)){
             throw new UserBizException(UserBizException.USERBIZ_NOSUIT_RESULT, "没有符合条件的用户记录，手机号");
         }
@@ -205,6 +208,9 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
         User user_checkphone = this.findUserByPhone(newPhone);
         if(user_checkphone != null && !user_checkphone.getIfDeleted() && user_checkphone.getId().longValue() != user.getId().longValue()){
             throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "手机号被占用:%s", newPhone);
+        }
+        if(!user.getVcode().equals(Vcode) || System.currentTimeMillis() - user.getVcodeTime().getTime() > 1000*60*60*4){//验证码有效期四个小时
+            throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "验证码过期，手机号:%s", user.getPhone());
         }
         user.setPhone(newPhone);
         userDao.update(user);

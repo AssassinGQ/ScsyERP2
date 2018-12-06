@@ -53,7 +53,7 @@
     <security:authentication-manager alias="myAuthenticationManager">
         <security:authentication-provider user-service-ref="userDetailsService"/>
     </security:authentication-manager>
-    <bean id="userDetailsService" class="cn.AssassinG.scsycc.common.security.MyUserDetailService"/>
+    <bean id="userDetailsService" class="cn.AssassinG.ScsyERP.WebBoss.security.MyUserDetailService"/>
 
     <!--自定义支持Ehcache的UserDetailsService-->
     <!--<bean Id="cachingUserDetailsService" class="org.springframework.security.config.authentication.CachingUserDetailsService">-->

@@ -2,13 +2,13 @@ package cn.AssassinG.ScsyERP.OutStorage.facade.entity;
 
 import cn.AssassinG.ScsyERP.OutStorage.facade.enums.OutStorageFormStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
-import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
 
 import java.util.Date;
 import java.util.Set;
 
-public class OutStorageForm extends BaseEntity {
+public class OutStorageForm extends FormEntity {
     @Valid(varType = Valid.VarType.Number)
     private Long Project;
     @Valid(varType = Valid.VarType.Other)
@@ -210,6 +210,7 @@ public class OutStorageForm extends BaseEntity {
                 ", RealOutStorageWeight=" + RealOutStorageWeight +
                 ", DriveWorkerAverageWeight=" + DriveWorkerAverageWeight +
                 ", LiftWorkerAverageWeight=" + LiftWorkerAverageWeight +
+                ", IfCompleted=" + IfCompleted +
                 ", Id=" + Id +
                 ", Corporation=" + Corporation +
                 ", CreateTime=" + CreateTime +

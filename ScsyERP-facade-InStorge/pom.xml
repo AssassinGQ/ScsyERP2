@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ScsyERP</groupId>
-    <artifactId>ScsyERP-facade-InStorge</artifactId>
+    <artifactId>ScsyERP-facade-InStorage</artifactId>
     <version>${ScsyERP-facade-InStorage.version}</version>
 
     <dependencies>

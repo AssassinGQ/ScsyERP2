@@ -1,9 +1,8 @@
-package cn.AssassinG.ScsyERP.BasicInfo.facade.service.impl;
+package cn.AssassinG.ScsyERP.common.core.service.impl;
 
-import cn.AssassinG.ScsyERP.BasicInfo.core.biz.UnLoginableBiz;
-import cn.AssassinG.ScsyERP.BasicInfo.facade.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.common.core.biz.BaseBiz;
-import cn.AssassinG.ScsyERP.common.core.service.BaseServiceImpl;
+import cn.AssassinG.ScsyERP.common.core.biz.UnLoginableBiz;
+import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
 import java.util.Map;

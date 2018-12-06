@@ -11,20 +11,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ScsyERP</groupId>
-    <artifactId>ScsyERP-service-Basicinfo</artifactId>
+    <artifactId>ScsyERP-service-BasicInfo</artifactId>
     <version>${ScsyERP-service-BasicInfo.version}</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>6</source>
-                    <target>6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>

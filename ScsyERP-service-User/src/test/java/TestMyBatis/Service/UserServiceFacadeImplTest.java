@@ -223,7 +223,7 @@ public class UserServiceFacadeImplTest {
     @Test
     public void changeUserName() {
         String newUserName = StringUtils.getRandomStr(8);
-        userService.ChangeUserName(userId, newUserName);
+        userService.ChangeUserName(userId, "todo", newUserName);//todo
         User user_check = userService.getById(userId);
         if( user_check!= null && user_check.getUserName().equals(newUserName)){
             logger.info("changeUserName succeed");
@@ -235,7 +235,7 @@ public class UserServiceFacadeImplTest {
     @Test
     public void changePhone() {
         String newPhone = "188" + StringUtils.getRandomStr(8, StringUtils.StrType.NUMBER);
-        userService.ChangePhone(userId, newPhone);
+        userService.ChangePhone(userId, "", newPhone);//todo
         User user_check = userService.getById(userId);
         if( user_check!= null && user_check.getPhone().equals(newPhone)){
             logger.info("changePhone succeed");

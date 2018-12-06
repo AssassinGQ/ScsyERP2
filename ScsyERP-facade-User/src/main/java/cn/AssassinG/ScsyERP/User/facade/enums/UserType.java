@@ -70,4 +70,6 @@ public enum UserType {
     public static UserType getEnumByClassName(String className){
         return ClassNameMap.get(className);
     }
+
+
 }

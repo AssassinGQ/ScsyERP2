@@ -1,14 +1,14 @@
 package cn.AssassinG.ScsyERP.InStorage.facade.entity;
 
-import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
 import cn.AssassinG.ScsyERP.InStorage.facade.enums.InStorageFormStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
-import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.entity.FormEntity;
+import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
 
 import java.util.Date;
 import java.util.Set;
 
-public class InStorageForm extends BaseEntity {
+public class InStorageForm extends FormEntity {
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
     private Long Project;
     @Valid(varType = Valid.VarType.Other)
@@ -34,6 +34,8 @@ public class InStorageForm extends BaseEntity {
     @Valid(varType = Valid.VarType.Number, nullAble = true, maxValue = 99999)
     private Double TotalWeight;
     private Set<Long> Products;
+    @Valid(varType = Valid.VarType.Number, nullAble = true, maxValue = 99999)
+    private Long WorkingProduct;//正在运输的货物
 
     public InStorageForm() {
         super();
@@ -159,6 +161,14 @@ public class InStorageForm extends BaseEntity {
         Products = products;
     }
 
+    public Long getWorkingProduct() {
+        return WorkingProduct;
+    }
+
+    public void setWorkingProduct(Long workingProduct) {
+        this.WorkingProduct = workingProduct;
+    }
+
     @Override
     public String toString() {
         return "InStorageForm{" +
@@ -177,6 +187,8 @@ public class InStorageForm extends BaseEntity {
                 ", TotalVolume=" + TotalVolume +
                 ", TotalWeight=" + TotalWeight +
                 ", Products=" + Products +
+                ", WorkingProduct=" + WorkingProduct +
+                ", IfCompleted=" + IfCompleted +
                 ", Id=" + Id +
                 ", Corporation=" + Corporation +
                 ", CreateTime=" + CreateTime +

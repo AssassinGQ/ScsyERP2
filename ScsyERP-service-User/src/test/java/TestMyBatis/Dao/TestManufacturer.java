@@ -26,7 +26,7 @@ public class TestManufacturer {
 
     @Test
     public void testGetById() {
-        Long manufacturer_id = 1L;
+        Long manufacturer_id = 2L;
         Manufacturer manufacturer = manufacturerDao.getById(manufacturer_id);
         if(manufacturer == null || manufacturer.getId() == null || manufacturer.getId().longValue() != manufacturer_id.longValue()){
             throw  new RuntimeException("getById failed");
@@ -145,7 +145,7 @@ public class TestManufacturer {
     @Test
     public void testGetBy() {
         Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("IfDeleted", true);
+        paramMap.put("IfDeleted", false);
         paramMap.put("Id", 1L);
         Manufacturer manufacturer = manufacturerDao.getBy(paramMap);
         if(manufacturer.getId().longValue() != 1L){

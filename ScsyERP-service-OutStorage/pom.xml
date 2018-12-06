@@ -39,6 +39,30 @@
             <version>${ScsyERP-facade-OutStorage.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-BasicInfo</artifactId>
+            <version>${ScsyERP-facade-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-BasicInfo</artifactId>
+            <version>${ScsyERP-service-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-Fee</artifactId>
+            <version>${ScsyERP-facade-Fee.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-Fee</artifactId>
+            <version>${ScsyERP-service-Fee.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

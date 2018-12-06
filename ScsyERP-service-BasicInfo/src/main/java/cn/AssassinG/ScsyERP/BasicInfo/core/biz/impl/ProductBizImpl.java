@@ -5,7 +5,7 @@ import cn.AssassinG.ScsyERP.BasicInfo.core.dao.ProductDao;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Product;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.enums.PacketType;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.exceptions.ProductBizException;
-import cn.AssassinG.ScsyERP.common.core.biz.BaseBizImpl;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.UnLoginableBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Map;
 
 @Component("ProductBiz")
-public class ProductBizImpl extends BaseBizImpl<Product> implements ProductBiz {
+public class ProductBizImpl extends UnLoginableBizImpl<Product> implements ProductBiz {
     @Autowired
     private ProductDao productDao;
     protected BaseDao<Product> getDao() {

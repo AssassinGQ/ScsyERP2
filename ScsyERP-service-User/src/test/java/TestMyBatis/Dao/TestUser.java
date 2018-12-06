@@ -199,6 +199,21 @@ public class TestUser {
         logger.info("The user who's username = "+username+" : "+ userDao.findByUserName(username));
     }
 
+    @Test
+    public void testId() {
+        User user = new User();
+        user.setUserName("asddf");
+        user.setPassWord("d123456");
+        user.setPhone("156");
+        user.setUserType(UserType.Corporation);
+        user.setUserInfo(1L);
+        user.setCorporation(1L);
+        userDao.insert(user);
+        logger.info("user.id = " + user.getId());
+        user.setPassWord("1231231");
+        userDao.update(user);
+    }
+
 //    @Test
 //    public void testFindRoleById() {
 //        UserWithRole userWithRole = userDao.findRoleById(1);

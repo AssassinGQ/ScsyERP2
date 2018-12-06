@@ -13,15 +13,15 @@
     <context:annotation-config />
 
     <!-- 配置要扫描的包 -->
+    <context:component-scan base-package="cn.AssassinG.ScsyERP" />
 
     <!-- 读入配置属性文件 -->
-    <context:property-placeholder location="classpath:jdbc.properties" />
+    <!--<context:property-placeholder location="classpath:jdbc.properties" />-->
     <context:property-placeholder location="classpath:log4j.properties" />
 
     <!-- proxy-target-class默认"false",更改为"ture"使用CGLib动态代理 -->
     <aop:aspectj-autoproxy proxy-target-class="true" />
 
-    <!--<import resource="beans/UserServiceImpl.xml" />-->
     <import resource="spring-security.xml" />
     <!--<import resource="spring-mvc.xml" />-->
 </beans>

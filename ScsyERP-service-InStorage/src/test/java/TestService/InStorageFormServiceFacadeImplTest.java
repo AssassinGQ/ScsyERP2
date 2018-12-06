@@ -41,7 +41,7 @@ public class InStorageFormServiceFacadeImplTest {
         InStorageForm inStorageForm = new InStorageForm();
         inStorageForm.setCorporation(1L);
         inStorageForm.setProject(1L);
-        inStorageForm.setInStorageStatus(InStorageFormStatus.Workging);
+        inStorageForm.setInStorageStatus(InStorageFormStatus.Working);
         inStorageForm.setInStorageNumber(StringUtils.getRandomStr(8));
         inStorageForm.setInStorageTime(new Date());
         inStorageForm.setWarehouse(1L);
@@ -62,10 +62,10 @@ public class InStorageFormServiceFacadeImplTest {
         InStorageForm inStorageForm = new InStorageForm();
         inStorageForm.setCorporation(1L);
         inStorageForm.setProject(1L);
-        inStorageForm.setInStorageStatus(InStorageFormStatus.Workging);
+        inStorageForm.setInStorageStatus(InStorageFormStatus.Working);
         inStorageForm.setInStorageNumber(StringUtils.getRandomStr(8));
         inStorageForm.setInStorageTime(new Date());
-        inStorageForm.setWarehouse(1L);
+        inStorageForm.setWarehouse(3L);
         inStorageForm.setTruck(1L);
         inStorageForm.setPickWorker(1L);
         inStorageForm.setLister(1L);

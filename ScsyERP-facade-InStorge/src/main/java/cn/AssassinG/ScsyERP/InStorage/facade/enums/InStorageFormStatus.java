@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum InStorageFormStatus {
-    Workging("正在入库", 0), Done("入库完成", 1);
+    Working("正在入库", 0), Done("入库完成", 1);
     private String Name;
     private Integer Value;
 

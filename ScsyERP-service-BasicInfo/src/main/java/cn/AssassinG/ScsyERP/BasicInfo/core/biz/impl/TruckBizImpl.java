@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.BasicInfo.core.biz.TruckBiz;
 import cn.AssassinG.ScsyERP.BasicInfo.core.dao.TruckDao;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Truck;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.exceptions.TruckBizException;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.UnLoginableBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

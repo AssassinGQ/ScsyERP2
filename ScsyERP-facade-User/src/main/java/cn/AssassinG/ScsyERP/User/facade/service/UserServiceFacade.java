@@ -13,11 +13,11 @@ public interface UserServiceFacade extends BaseService<User> {
     User findUserByPhone(String phone);
     String getVcode(String phone);
     boolean login(String userName, String password);
-    void ChangePSW(String phone, String vcode, String password);
-    void ChangeUserName(Long userId, String newUserName);
-    void ChangeUserName(User user, String newUserName);
-    void ChangePhone(Long userId, String newPhone);
-    void ChangePhone(User user, String newPhone);
+    void ChangePSW(String phone, String vcode, String newPassWord);
+    void ChangeUserName(Long userId, String Vcode, String newUserName);
+    void ChangeUserName(User user, String Vcode, String newUserName);
+    void ChangePhone(Long userId, String Vcode, String newPhone);
+    void ChangePhone(User user, String Vcode, String newPhone);
 
     Set<Role> findUserRoles(Long userid);
     List<Role> findAllRoles();

@@ -4,7 +4,7 @@ import cn.AssassinG.ScsyERP.OnWayWatch.core.biz.WarnBiz;
 import cn.AssassinG.ScsyERP.OnWayWatch.facade.entity.Warn;
 import cn.AssassinG.ScsyERP.OnWayWatch.facade.service.WarnServiceFacade;
 import cn.AssassinG.ScsyERP.common.core.biz.BaseBiz;
-import cn.AssassinG.ScsyERP.common.core.service.BaseServiceImpl;
+import cn.AssassinG.ScsyERP.common.core.service.impl.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

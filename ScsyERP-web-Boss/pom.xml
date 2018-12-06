@@ -21,8 +21,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <!--<maven.compiler.source>1.7</maven.compiler.source>-->
+        <!--<maven.compiler.target>1.7</maven.compiler.target>-->
     </properties>
 
     <dependencies>
@@ -54,6 +54,72 @@
             <groupId>ScsyERP</groupId>
             <artifactId>ScsyERP-facade-User</artifactId>
             <version>${ScsyERP-facade-User.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-User</artifactId>
+            <version>${ScsyERP-service-User.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-BasicInfo</artifactId>
+            <version>${ScsyERP-facade-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-BasicInfo</artifactId>
+            <version>${ScsyERP-service-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-OnWayWatch</artifactId>
+            <version>${ScsyERP-facade-OnWayWatch.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-OnWayWatch</artifactId>
+            <version>${ScsyERP-service-OnWayWatch.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-Fee</artifactId>
+            <version>${ScsyERP-facade-Fee.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-Fee</artifactId>
+            <version>${ScsyERP-service-Fee.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-InStorage</artifactId>
+            <version>${ScsyERP-facade-InStorage.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-InStorage</artifactId>
+            <version>${ScsyERP-service-InStorage.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-OutStorage</artifactId>
+            <version>${ScsyERP-facade-OutStorage.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-OutStorage</artifactId>
+            <version>${ScsyERP-service-OutStorage.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

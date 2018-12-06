@@ -1,13 +1,13 @@
 package cn.AssassinG.ScsyERP.BasicInfo.facade.entity;
 
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
-import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
 import java.util.Set;
 
-public class Project extends BaseEntity {
-    @Valid(varType = Valid.VarType.String, maxLength = 30)
-    private String Name;
+public class Project extends UnLoginableEntity {
+//    @Valid(varType = Valid.VarType.String, maxLength = 30)
+//    private String Name;
     @Valid(varType = Valid.VarType.String, maxLength = 30)
     private String ProjectNumber;
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
@@ -22,14 +22,6 @@ public class Project extends BaseEntity {
 
     public Project() {
         super();
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
     }
 
     public String getProjectNumber() {
@@ -83,13 +75,14 @@ public class Project extends BaseEntity {
     @Override
     public String toString() {
         return "Project{" +
-                "Name='" + Name + '\'' +
-                ", ProjectNumber='" + ProjectNumber + '\'' +
+                "ProjectNumber='" + ProjectNumber + '\'' +
                 ", Customer=" + Customer +
                 ", Manufacturer=" + Manufacturer +
                 ", Consignee=" + Consignee +
                 ", Admin=" + Admin +
                 ", Materials=" + Materials +
+                ", Name='" + Name + '\'' +
+                ", Phone='" + Phone + '\'' +
                 ", Id=" + Id +
                 ", Corporation=" + Corporation +
                 ", CreateTime=" + CreateTime +

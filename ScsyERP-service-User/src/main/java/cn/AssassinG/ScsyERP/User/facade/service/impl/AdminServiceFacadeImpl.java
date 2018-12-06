@@ -7,7 +7,7 @@ import cn.AssassinG.ScsyERP.User.facade.service.AdminServiceFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("AdminServiceFacade")
 public class AdminServiceFacadeImpl extends LoginableServiceImpl<Admin> implements AdminServiceFacade {
     @Autowired
     private AdminBiz adminBiz;

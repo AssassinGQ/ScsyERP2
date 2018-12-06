@@ -35,8 +35,20 @@
         </dependency>
         <dependency>
             <groupId>ScsyERP</groupId>
-            <artifactId>ScsyERP-facade-InStorge</artifactId>
+            <artifactId>ScsyERP-facade-InStorage</artifactId>
             <version>${ScsyERP-facade-InStorage.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-BasicInfo</artifactId>
+            <version>${ScsyERP-facade-BasicInfo.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-BasicInfo</artifactId>
+            <version>${ScsyERP-service-BasicInfo.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

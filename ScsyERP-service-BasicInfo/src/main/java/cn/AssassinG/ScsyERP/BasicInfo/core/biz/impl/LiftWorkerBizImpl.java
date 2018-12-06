@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.BasicInfo.core.biz.LiftWorkerBiz;
 import cn.AssassinG.ScsyERP.BasicInfo.core.dao.LiftWorkerDao;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.LiftWorker;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.exceptions.DriveWorkerBizException;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.UnLoginableBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

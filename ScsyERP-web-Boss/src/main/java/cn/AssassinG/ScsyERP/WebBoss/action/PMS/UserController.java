@@ -1,8 +1,14 @@
 package cn.AssassinG.ScsyERP.WebBoss.action.PMS;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
+import cn.AssassinG.ScsyERP.User.facade.service.CorporationServiceFacade;
+import cn.AssassinG.ScsyERP.User.facade.service.GovernmentServiceFacade;
 import cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.base.BaseController;
+import cn.AssassinG.ScsyERP.WebBoss.enums.RetStatusType;
+import cn.AssassinG.ScsyERP.common.core.service.BaseService;
+import cn.AssassinG.ScsyERP.common.exceptions.BizException;
+import cn.AssassinG.ScsyERP.common.exceptions.DaoException;
 import cn.AssassinG.ScsyERP.common.utils.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.log4j.Logger;
@@ -16,29 +22,39 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
-public class UserController extends BaseController {
+public class UserController extends BaseController<User> {
     private static Logger logger = Logger.getLogger(UserController.class);
     @Autowired
-    private UserServiceFacade userService;
+    private UserServiceFacade userServiceFacade;
+    @Autowired
+    private CorporationServiceFacade corporationServiceFacade;
+    @Autowired
+    private GovernmentServiceFacade governmentServiceFacade;
+
+    @Override
+    protected BaseService<User> getService() {
+        return this.userServiceFacade;
+    }
+
+    @Override
+    protected String getClassDesc() {
+        return "登录信息";
+    }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)//测试页面
     public String toTest(ModelMap model){
         return "test/test";
     }
 
-    @RequestMapping(value = "/reg", method = RequestMethod.GET)//注册页面
-    public String toReg(ModelMap model){
-        model.put("registe_info", "");
-        return "user/register";
-    }
-
     @RequestMapping(value = "/getVcode", method = RequestMethod.GET)//获取验证码
     @ResponseBody
     public JSONObject toReg(@RequestParam("phone") String phone){
-        User user = userService.findUserByPhone(phone);
+        User user = userServiceFacade.findUserByPhone(phone);
         String vcode = StringUtils.getRandomStr(6);
         if(user == null){
             User new_user = new User();
@@ -46,12 +62,12 @@ public class UserController extends BaseController {
             new_user.setVcode(vcode);
             new_user.setVcodeTime(new Date());
             System.out.println(new_user);
-            userService.create(new_user);
+            userServiceFacade.create(new_user);
         }else{
             user.setVcode(vcode);
             user.setVcodeTime(new Date());
             System.out.println(user);
-            userService.update(user);
+            userServiceFacade.update(user);
         }
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("status", 1);
@@ -72,7 +88,7 @@ public class UserController extends BaseController {
             jsonObject.put("data", null);
             return jsonObject;
         }else{
-            User user_uname = userService.findUserByUname(user.getUserName());
+            User user_uname = userServiceFacade.findUserByUname(user.getUserName());
             if(user_uname != null){
                 jsonObject.put("status", 0);
                 jsonObject.put("msg", "用户名不可用");
@@ -86,7 +102,7 @@ public class UserController extends BaseController {
             jsonObject.put("data", null);
             return jsonObject;
         }
-        User p_user = userService.findUserByPhone(user.getPhone());
+        User p_user = userServiceFacade.findUserByPhone(user.getPhone());
         if(p_user == null || (!p_user.getVcode().equals(user.getVcode()))){
             jsonObject.put("status", 0);
             jsonObject.put("msg", "验证码不正确");
@@ -104,7 +120,7 @@ public class UserController extends BaseController {
             }
             p_user.setUserName(user.getUserName());
             p_user.setPassWord(user.getPassWord());
-            userService.update(p_user);
+            userServiceFacade.update(p_user);
             jsonObject.put("status", 1);
             jsonObject.put("msg", "注册成功");
             jsonObject.put("data", null);
@@ -159,7 +175,7 @@ public class UserController extends BaseController {
 //        return model;
 //
 //        model.put("User", user);
-//        User p_user = userService.findUserByUname(user.getUserName());
+//        User p_user = userServiceFacade.findUserByUname(user.getUserName());
 //        if(p_user == null){
 //            model.put("login_info", "查无此用户");
 //            return "user/login";
@@ -171,4 +187,95 @@ public class UserController extends BaseController {
 //            return "user/login";
 //        }
 //    }
+
+    private static final int AccountTypeCorporation = 0;
+    private static final int AccountTypeGovernment = 1;
+    @RequestMapping(value = "/getAccount", method = RequestMethod.POST)//生成账号
+    @ResponseBody
+    public JSONObject getAccount(String token, Integer type, Integer Name, User user){
+        if(type == null || (type != AccountTypeGovernment && type != AccountTypeCorporation)){
+            return getResultJSON("请选择正确的申请账户类型");
+        }else{
+            try{
+                Map<String, Object> paramMap = new HashMap<>();
+                paramMap.put("name", Name);
+                Long Id;
+                if(type == AccountTypeCorporation){
+                    Id = corporationServiceFacade.create(token, user, paramMap);
+                }else{
+                    Id = governmentServiceFacade.create(token, user, paramMap);
+                }
+                if(Id == null || Id == -1L){
+                    return getResultJSON("创建账户失败");
+                }else{
+                    JSONObject contentObject = new JSONObject();
+                    contentObject.put("userId", Id);
+                    return getResultJSON(RetStatusType.StatusSuccess, "创建账户成功", contentObject);
+                }
+            }catch (BizException | DaoException e) {
+                return getResultJSON(e.getMessage());
+            }
+
+        }
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)//登录
+    @ResponseBody
+    public JSONObject login(String UserName, String PassWord){
+        try{
+            if(userServiceFacade.login(UserName, PassWord)){
+                return getResultJSON(RetStatusType.StatusSuccess, "登录成功", null);
+            }else{
+                return getResultJSON("登录失败");
+            }
+        }catch(DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/getVcode", method = RequestMethod.POST)//获取验证码
+    @ResponseBody
+    public JSONObject getVcode(String Phone){
+        try{
+            String Vcode = userServiceFacade.getVcode(Phone);
+            JSONObject contentObject = new JSONObject();
+            contentObject.put("Vcode", Vcode);
+            return getResultJSON(RetStatusType.StatusSuccess, "", contentObject);
+        }catch(DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/changePsw", method = RequestMethod.POST)//修改密码
+    @ResponseBody
+    public JSONObject changePsw(String Phone, String Vcode, String newPassWord){
+        try{
+            userServiceFacade.ChangePSW(Phone, Vcode, newPassWord);
+            return getResultJSON(RetStatusType.StatusSuccess, "密码修改成功", null);
+        }catch(DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/changeUname", method = RequestMethod.POST)//修改用户名
+    @ResponseBody
+    public JSONObject changeUname(Long userId, String Vcode, String newUserName){
+        try{
+            userServiceFacade.ChangeUserName(userId, Vcode, newUserName);
+            return getResultJSON(RetStatusType.StatusSuccess, "用户名修改成功", null);
+        }catch(DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/changePhone", method = RequestMethod.POST)//修改手机号
+    @ResponseBody
+    public JSONObject changePhone(Long userId, String Vcode, String newPhone){
+        try{
+            userServiceFacade.ChangePhone(userId, Vcode, newPhone);
+            return getResultJSON(RetStatusType.StatusSuccess, "手机号修改成功", null);
+        }catch(DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
 }

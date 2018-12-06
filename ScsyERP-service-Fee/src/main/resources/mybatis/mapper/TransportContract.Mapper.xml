@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_transport_contract"> t_transport_contract </sql>
 
-	<resultMap id="beanMap" type="TransportContract" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+	<resultMap id="beanMap" type="TransportContract" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
         <result column="contract_number" property="ContractNumber" />
         <result column="ontruck_form" property="OnTruckForm" />
         <result column="project" property="Project" />
@@ -27,21 +27,21 @@
 	<insert id="insert" parameterType="TransportContract" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_transport_contract"/> (corporation, create_time, update_time, delete_time, is_deleted,
                           contract_number, ontruck_form, project, out_storage_form, truck, supplier, product_insurance, real_weight,
-                          fare_by_weight, total_fare_by_weight, fare_by_truck, prepay, oil_card_type, oil_card_number, oil_card_money, pre_repair_fee)
+                          fare_by_weight, total_fare_by_weight, fare_by_truck, prepay, oil_card_type, oil_card_number, oil_card_money, pre_repair_fee, if_completed)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{ContractNumber}, #{OnTruckForm}, #{Project}, #{OutStorageForm}, #{Truck}, #{Supplier},
                   #{ProductInsurance}, #{RealWeight}, #{FareByWeight}, #{TotalFareByWeight}, #{FareByTruck}, #{PrePay},
-                  #{OilCardType,typeHandler=cn.AssassinG.ScsyERP.Fee.core.dao.MyBatisHandler.OilCardTypeHandler}, #{OilCardNumber}, #{OilCardMoney}, #{PreRepairFee})
+                  #{OilCardType,typeHandler=cn.AssassinG.ScsyERP.Fee.core.dao.MyBatisHandler.OilCardTypeHandler}, #{OilCardNumber}, #{OilCardMoney}, #{PreRepairFee}, #{IfCompleted})
 	</insert>
 
 	<insert id="batchInsert" parameterType="List" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_transport_contract"/> (corporation, create_time, update_time, delete_time, is_deleted,
                           contract_number, ontruck_form, project, out_storage_form, truck, supplier, product_insurance, real_weight,
-                          fare_by_weight, total_fare_by_weight, fare_by_truck, prepay, oil_card_type, oil_card_number, oil_card_money, pre_repair_fee)
+                          fare_by_weight, total_fare_by_weight, fare_by_truck, prepay, oil_card_type, oil_card_number, oil_card_money, pre_repair_fee, if_completed)
 		values
         <foreach collection="list" item="obj" separator=",">
             (#{obj.Corporation}, now(), now(), NULL, FALSE, #{obj.ContractNumber}, #{obj.OnTruckForm}, #{obj.Project}, #{obj.OutStorageForm}, #{obj.Truck},
             #{obj.Supplier}, #{obj.ProductInsurance}, #{obj.RealWeight}, #{obj.FareByWeight}, #{obj.TotalFareByWeight}, #{obj.FareByTruck}, #{obj.PrePay},
-            #{obj.OilCardType,typeHandler=cn.AssassinG.ScsyERP.Fee.core.dao.MyBatisHandler.OilCardTypeHandler}, #{obj.OilCardNumber}, #{obj.OilCardMoney}, #{obj.PreRepairFee})
+            #{obj.OilCardType,typeHandler=cn.AssassinG.ScsyERP.Fee.core.dao.MyBatisHandler.OilCardTypeHandler}, #{obj.OilCardNumber}, #{obj.OilCardMoney}, #{obj.PreRepairFee}, #{obj.IfCompleted})
         </foreach>
 	</insert>
 	
@@ -63,7 +63,8 @@
             oil_card_type = #{OilCardType,typeHandler=cn.AssassinG.ScsyERP.Fee.core.dao.MyBatisHandler.OilCardTypeHandler},
             oil_card_number = #{OilCardNumber},
             oil_card_money = #{OilCardMoney},
-            pre_repair_fee = #{PreRepairFee}
+            pre_repair_fee = #{PreRepairFee},
+            if_completed = #{IfCompleted}
 		</set>
 		<where>
 			id = #{Id}
@@ -183,6 +184,13 @@
                     </if>
                 </foreach>
             </trim>
+            <trim prefix="if_completed =case" suffix="end,">
+                <foreach collection="list" item="item">
+                    <if test="item.IfCompleted!=null">
+                        when id=#{item.Id} then #{item.IfCompleted}
+                    </if>
+                </foreach>
+            </trim>
         </trim>
         <where>
             <foreach collection="list" separator="or" item="item">
@@ -255,6 +263,7 @@
         <if test="OilCardMoneyEnd != null"> and oil_card_money &lt;= #{OilCardMoneyEnd}</if>
         <if test="PreRepairFeeBegin != null"> and pre_repair_fee &gt;= #{PreRepairFeeBegin}</if>
         <if test="PreRepairFeeEnd != null"> and pre_repair_fee &lt;= #{PreRepairFeeEnd}</if>
+        <if test="IfCompleted != null"> and if_completed = #{IfCompleted}</if>
 		<!-- Like query -->
 		<if test="Supplier != null and Supplier != ''"> and supplier like CONCAT(CONCAT('%', #{Supplier}), '%')</if>
 		<if test="OilCardNumber != null and OilCardNumber != ''"> and oil_card_number like CONCAT(CONCAT('%', #{OilCardNumber}), '%')</if>

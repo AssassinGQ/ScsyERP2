@@ -37,7 +37,7 @@ public class TestInStorageForm {
         InStorageForm inStorageForm = new InStorageForm();
         inStorageForm.setCorporation(1L);
         inStorageForm.setProject(1L);
-        inStorageForm.setInStorageStatus(InStorageFormStatus.Workging);
+        inStorageForm.setInStorageStatus(InStorageFormStatus.Working);
         inStorageForm.setInStorageNumber("rkd123456");
         inStorageForm.setInStorageTime(new Date());
         inStorageForm.setWarehouse(1L);
@@ -58,7 +58,7 @@ public class TestInStorageForm {
         InStorageForm inStorageForm = new InStorageForm();
         inStorageForm.setCorporation(1L);
         inStorageForm.setProject(1L);
-        inStorageForm.setInStorageStatus(InStorageFormStatus.Workging);
+        inStorageForm.setInStorageStatus(InStorageFormStatus.Working);
         inStorageForm.setInStorageNumber("rkd123456");
         inStorageForm.setInStorageTime(new Date());
         inStorageForm.setWarehouse(1L);
@@ -68,7 +68,7 @@ public class TestInStorageForm {
         InStorageForm inStorageForm2 = new InStorageForm();
         inStorageForm2.setCorporation(1L);
         inStorageForm2.setProject(1L);
-        inStorageForm2.setInStorageStatus(InStorageFormStatus.Workging);
+        inStorageForm2.setInStorageStatus(InStorageFormStatus.Working);
         inStorageForm2.setInStorageNumber("rkd123456");
         inStorageForm2.setInStorageTime(new Date());
         inStorageForm2.setWarehouse(1L);

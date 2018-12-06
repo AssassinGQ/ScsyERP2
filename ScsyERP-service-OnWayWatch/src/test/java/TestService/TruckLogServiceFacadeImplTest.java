@@ -158,17 +158,8 @@ public class TruckLogServiceFacadeImplTest {
 //        paramMap.put("TimeEnd", truckLog.getTime());
         paramMap.put("Time", truckLog.getTime());
         List<TruckLog> truckLogs = truckLogService.listBy(paramMap);
-        if(truckLogs.size() > 1){
-            throw new RuntimeException("listBy failed, 返回多个结果");
-        }else if(truckLogs.size() == 1){
-            if(truckLogs.get(0).getTime().getTime() != truckLog.getTime().getTime()){
-                throw new RuntimeException("listBy failed, 查询到错误的结果");
-            }else{
-                logger.info("listBy succeed");
-            }
-        }else{
-            logger.info("listBy succeed");
-        }
+        for (int i = 0; i < truckLogs.size(); i++)
+            logger.info("Item" + i + ":" + truckLogs.get(i));
     }
 
     @Test

@@ -1,7 +1,9 @@
-package cn.AssassinG.ScsyERP.common.core.biz;
+package cn.AssassinG.ScsyERP.common.core.biz.impl;
 
+import cn.AssassinG.ScsyERP.common.core.biz.BaseBiz;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.exceptions.BizException;
 import cn.AssassinG.ScsyERP.common.page.PageBean;
 import cn.AssassinG.ScsyERP.common.page.PageParam;
 import cn.AssassinG.ScsyERP.common.utils.ValidUtils;
@@ -22,6 +24,9 @@ public abstract class BaseBizImpl<T extends BaseEntity> implements BaseBiz<T> {
 
     public void update(T entity) {
         ValidUtils.ValidationWithExp(entity);
+        if(entity.getIfDeleted()){
+            throw new BizException(00000000, "对象已被删除，不能更新");
+        }
         getDao().update(entity);
     }
 

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class PageParam implements Serializable{
 
 	private static final long serialVersionUID = 5082659347680232620L;
-	private int pageNum; // 当前页数
+	private int pageNum; // 当前页数,从1开始？
 	private int numPerPage; // 每页记录数
 
 	public PageParam(int pageNum, int numPerPage) {

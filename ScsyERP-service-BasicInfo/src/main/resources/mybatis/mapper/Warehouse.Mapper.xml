@@ -32,7 +32,7 @@
 			name =  #{Name},
 			phone = #{Phone},
 			address = #{Address},
-			admin = #{Admin}
+			admin = #{Admin},
 			drive_workers = #{DriveWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler},
 			lift_workers = #{LiftWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}
 		</set>

@@ -10,7 +10,7 @@ public class Manufacturer extends LoginableEntity {
     private String Address;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 20)
     private String ManName;
-    private Set<Long> WorkShops;
+    private Set<Long> Workshops;
 
     public Manufacturer() {
     }
@@ -36,12 +36,12 @@ public class Manufacturer extends LoginableEntity {
         ManName = manName;
     }
 
-    public Set<Long> getWorkShops() {
-        return WorkShops;
+    public Set<Long> getWorkshops() {
+        return Workshops;
     }
 
-    public void setWorkShops(Set<Long> workShops) {
-        WorkShops = workShops;
+    public void setWorkshops(Set<Long> workshops) {
+        Workshops = workshops;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Manufacturer extends LoginableEntity {
         return "Manufacturer{" +
                 "Address='" + Address + '\'' +
                 ", ManName='" + ManName + '\'' +
-                ", WorkShops=" + WorkShops +
+                ", Workshops=" + Workshops +
                 ", Id=" + Id +
                 ", CreateTime=" + CreateTime +
                 ", UpdateTime=" + UpdateTime +

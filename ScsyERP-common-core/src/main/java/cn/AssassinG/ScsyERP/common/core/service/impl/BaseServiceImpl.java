@@ -1,6 +1,7 @@
-package cn.AssassinG.ScsyERP.common.core.service;
+package cn.AssassinG.ScsyERP.common.core.service.impl;
 
 import cn.AssassinG.ScsyERP.common.core.biz.BaseBiz;
+import cn.AssassinG.ScsyERP.common.core.service.BaseService;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 import cn.AssassinG.ScsyERP.common.page.PageBean;
 import cn.AssassinG.ScsyERP.common.page.PageParam;

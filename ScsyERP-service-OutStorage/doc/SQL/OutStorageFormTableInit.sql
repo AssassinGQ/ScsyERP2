@@ -27,10 +27,11 @@ create table t_out_storage_form (
   real_outstorage_weight  DOUBLE(5,2)                     COMMENT '实际出库重量',
   drive_worker_average_weight  DOUBLE(5,2)                COMMENT '行车工平均重量',
   lift_worker_average_weight  DOUBLE(5,2)                 COMMENT '起重工平均重量',
+  if_completed  BOOLEAN     NOT NULL DEFAULT FALSE      COMMENT '当前出库单是否已经完成',
   PRIMARY KEY (id)
 );
 
 alter table t_out_storage_form comment '入库单信息表';
 
 ## 权限的初始化数据
-insert into t_out_storage_form(corporation, project, outstorage_status, outstorage_number, outstorage_time, warehouse, truck, pick_worker, lister) values (1, 1, "正在入库", "rkh12345", now(), 1, 1, 1, 1);
+insert into t_out_storage_form(corporation, project, outstorage_status, outstorage_number, outstorage_time, warehouse, truck, pick_worker, lister, if_completed) values (1, 1, "正在入库", "rkh12345", now(), 1, 1, 1, 1, false);

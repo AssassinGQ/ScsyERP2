@@ -4,7 +4,7 @@ import cn.AssassinG.ScsyERP.BasicInfo.core.biz.MaterialBiz;
 import cn.AssassinG.ScsyERP.BasicInfo.core.dao.MaterialDao;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Material;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.exceptions.MaterialBizException;
-import cn.AssassinG.ScsyERP.common.core.biz.BaseBizImpl;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.UnLoginableBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Map;
 
 @Component("MaterialBiz")
-public class MaterialBizImpl extends BaseBizImpl<Material> implements MaterialBiz {
+public class MaterialBizImpl extends UnLoginableBizImpl<Material> implements MaterialBiz {
     @Autowired
     private MaterialDao materialDao;
     protected BaseDao<Material> getDao() {

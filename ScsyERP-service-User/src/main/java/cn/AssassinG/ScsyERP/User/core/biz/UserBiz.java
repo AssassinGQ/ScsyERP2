@@ -55,28 +55,28 @@ public interface UserBiz extends BaseBiz<User> {
      * @param newUserName 新用户名
      * 抛出运行异常：用户主键为空、没有符合条件的用户、用户不合法、新用户名为空、新用户名被占用、DAO异常
      */
-    void ChangeUserName(Long userId, String newUserName);
+    void ChangeUserName(Long userId, String Vcode, String newUserName);
 
     /**
      * @param user 用户信息
      * @param newUserName 新用户名
      * 抛出运行异常：用户不合法、新用户名为空、新用户名被占用、DAO异常
      */
-    void ChangeUserName(User user, String newUserName);
+    void ChangeUserName(User user, String Vcode, String newUserName);
 
     /**
      * @param userId 用户登录信息主键
      * @param newPhone 新手机号
      * 抛出运行异常：用户主键为空、没有符合条件的用户、用户不合法、新手机号为空、新手机号被占用、DAO异常
      */
-    void ChangePhone(Long userId, String newPhone);
+    void ChangePhone(Long userId, String Vcode, String newPhone);
 
     /**
      * @param user 用户信息
      * @param newPhone 新手机号
      * 抛出运行异常：用户不合法、新手机号为空、新手机号被占用、DAO异常
      */
-    void ChangePhone(User user, String newPhone);
+    void ChangePhone(User user, String Vcode, String newPhone);
 
     //auth
     /**

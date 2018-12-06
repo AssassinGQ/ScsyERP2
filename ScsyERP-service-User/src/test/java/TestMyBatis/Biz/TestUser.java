@@ -6,6 +6,7 @@ import cn.AssassinG.ScsyERP.User.core.dao.PermissionDao;
 import cn.AssassinG.ScsyERP.User.core.dao.RoleDao;
 import cn.AssassinG.ScsyERP.User.core.dao.UserDao;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
+import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.common.page.PageBean;
 import cn.AssassinG.ScsyERP.common.page.PageParam;
 import cn.AssassinG.ScsyERP.common.utils.StringUtils;
@@ -39,8 +40,12 @@ public class TestUser {
         User user = new User();
         user.setUserName("asddf");
         user.setPassWord("d123456");
-        user.setPhone("18868187538");
+        user.setPhone("18868182333");
+        user.setUserType(UserType.Government);
+        user.setUserInfo(1L);
+        user.setCorporation(1L);
         userBiz.create(user);
+        System.out.println(user);
         Long id = user.getId();
         if(id == null){
             throw new RuntimeException("Create nothing");
@@ -141,10 +146,6 @@ public class TestUser {
         }else{
             logger.info("findUserByPhone succeed");
         }
-    }
-
-    public void testGetVcode(){
-        
     }
 
 }

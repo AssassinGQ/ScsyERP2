@@ -19,7 +19,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -35,6 +35,17 @@
     <orderEntry type="module" module-name="ScsyERP-common-config" />
     <orderEntry type="module" module-name="ScsyERP-common-core" />
     <orderEntry type="module" module-name="ScsyERP-facade-User" />
+    <orderEntry type="module" module-name="ScsyERP-service-User" />
+    <orderEntry type="module" module-name="ScsyERP-facade-BasicInfo" />
+    <orderEntry type="module" module-name="ScsyERP-service-BasicInfo" />
+    <orderEntry type="module" module-name="ScsyERP-facade-OnWayWatch" />
+    <orderEntry type="module" module-name="ScsyERP-service-OnWayWatch" />
+    <orderEntry type="module" module-name="ScsyERP-facade-Fee" />
+    <orderEntry type="module" module-name="ScsyERP-service-Fee" />
+    <orderEntry type="module" module-name="ScsyERP-facade-InStorge" />
+    <orderEntry type="module" module-name="ScsyERP-service-InStorage" />
+    <orderEntry type="module" module-name="ScsyERP-facade-OutStorage" />
+    <orderEntry type="module" module-name="ScsyERP-service-OutStorage" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.0.4.RELEASE" level="project" />

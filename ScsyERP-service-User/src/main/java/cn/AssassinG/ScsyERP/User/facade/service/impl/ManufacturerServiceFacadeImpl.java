@@ -15,4 +15,14 @@ public class ManufacturerServiceFacadeImpl extends LoginableServiceImpl<Manufact
     protected LoginableBiz<Manufacturer> getLoginableBiz() {
         return this.manufacturerBiz;
     }
+
+    @Override
+    public void addWorkshops(Long entityId, String jsonArrayStr) {
+        this.manufacturerBiz.addWorkshops(entityId, jsonArrayStr);
+    }
+
+    @Override
+    public void removeWorkshop(Long entityId, Long workshopId) {
+        this.manufacturerBiz.removeWorkshop(entityId, workshopId);
+    }
 }

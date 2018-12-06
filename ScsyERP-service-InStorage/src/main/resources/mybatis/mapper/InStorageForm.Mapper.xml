@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_in_storage_form"> t_in_storage_form </sql>
 
-	<resultMap id="beanMap" type="InStorageForm" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+	<resultMap id="beanMap" type="InStorageForm" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
         <result column="project" property="Project" />
         <result column="instorage_status" property="InStorageStatus" typeHandler="cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler" />
         <result column="instorage_number" property="InStorageNumber" />
@@ -21,18 +21,19 @@
         <result column="total_volume" property="TotalVolume" />
         <result column="total_weight" property="TotalWeight" />
         <result column="products" property="Products" typeHandler="cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler" />
+        <result column="working_product" property="WorkingProduct" />
 	</resultMap>
 
 	<insert id="insert" parameterType="InStorageForm" keyProperty="id" useGeneratedKeys="true">
-		insert into <include refid="t_in_storage_form"/> (corporation, create_time, update_time, delete_time, is_deleted, project, instorage_status, instorage_number, instorage_time, warehouse, truck, pick_worker, lister, drive_worker, lift_worker, account_status, total_amount, total_volume, total_weight, products)
-		values (#{Corporation}, now(), now(), NULL , FALSE, #{Project}, #{InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler}, #{InStorageNumber}, #{InStorageTime}, #{Warehouse}, #{Truck}, #{PickWorker}, #{Lister}, #{DriveWorker,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{LiftWorker,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{TotalAmount}, #{TotalVolume}, #{TotalWeight}, #{Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler})
+		insert into <include refid="t_in_storage_form"/> (corporation, create_time, update_time, delete_time, is_deleted, project, instorage_status, instorage_number, instorage_time, warehouse, truck, pick_worker, lister, drive_workers, lift_workers, account_status, total_amount, total_volume, total_weight, products, if_completed)
+		values (#{Corporation}, now(), now(), NULL , FALSE, #{Project}, #{InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler}, #{InStorageNumber}, #{InStorageTime}, #{Warehouse}, #{Truck}, #{PickWorker}, #{Lister}, #{DriveWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{LiftWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{TotalAmount}, #{TotalVolume}, #{TotalWeight}, #{Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{IfCompleted})
 	</insert>
 
 	<insert id="batchInsert" parameterType="List" keyProperty="id" useGeneratedKeys="true">
-		insert into <include refid="t_in_storage_form"/> (corporation, create_time, update_time, delete_time, is_deleted, project, instorage_status, instorage_number, instorage_time, warehouse, truck, pick_worker, lister, drive_worker, lift_worker, account_status, total_amount, total_volume, total_weight, products)
+		insert into <include refid="t_in_storage_form"/> (corporation, create_time, update_time, delete_time, is_deleted, project, instorage_status, instorage_number, instorage_time, warehouse, truck, pick_worker, lister, drive_workers, lift_workers, account_status, total_amount, total_volume, total_weight, products, if_completed)
 		values
         <foreach collection="list" item="obj" separator=",">
-            (#{obj.Corporation}, now(), now(), NULL, FALSE, #{obj.Project}, #{obj.InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler}, #{obj.InStorageNumber}, #{obj.InStorageTime}, #{obj.Warehouse}, #{obj.Truck}, #{obj.PickWorker}, #{obj.Lister}, #{obj.DriveWorker,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{obj.LiftWorker,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{obj.AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{obj.TotalAmount}, #{obj.TotalVolume}, #{obj.TotalWeight}, #{obj.Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler})
+            (#{obj.Corporation}, now(), now(), NULL, FALSE, #{obj.Project}, #{obj.InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler}, #{obj.InStorageNumber}, #{obj.InStorageTime}, #{obj.Warehouse}, #{obj.Truck}, #{obj.PickWorker}, #{obj.Lister}, #{obj.DriveWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{obj.LiftWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{obj.AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{obj.TotalAmount}, #{obj.TotalVolume}, #{obj.TotalWeight}, #{obj.Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{obj.IfCompleted})
         </foreach>
 	</insert>
 	
@@ -40,18 +41,20 @@
 		update <include refid="t_in_storage_form"/>
 		<set>
 			update_time = now(),
-            instorage_status = #{InStorageStatus},
+            instorage_status = #{InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler},
 			warehouse =  #{Warehouse},
 			truck = #{Truck},
             pick_worker =  #{PickWorker},
             lister =  #{Lister},
             drive_workers = #{DriveWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler},
             lift_workers = #{LiftWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler},
-            account_status =  #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.AccountStatusHandler},
+            account_status =  #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler},
             total_amount =  #{TotalAmount},
             total_volume =  #{TotalVolume},
             total_weight =  #{TotalWeight},
-            products = #{Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}
+            products = #{Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler},
+            working_product = #{WorkingProduct},
+            if_completed = #{IfCompleted}
 		</set>
 		<where>
 			id = #{Id}
@@ -69,7 +72,7 @@
             <trim prefix="instorage_status =case" suffix="end,">
                 <foreach collection="list" item="item">
                     <if test="item.InStorageStatus!=null">
-                        when id=#{item.Id} then #{item.InStorageStatus}
+                        when id=#{item.Id} then #{item.InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler}
                     </if>
                 </foreach>
             </trim>
@@ -118,7 +121,7 @@
             <trim prefix="account_status =case" suffix="end,">
                 <foreach collection="list" item="item">
                     <if test="item.AccountStatus!=null">
-                        when id=#{item.Id} then #{item.AccountStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.AccountStatusHandler}
+                        when id=#{item.Id} then #{item.AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}
                     </if>
                 </foreach>
             </trim>
@@ -147,6 +150,20 @@
                 <foreach collection="list" item="item">
                     <if test="item.Products!=null">
                         when id=#{item.Id} then #{item.Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="working_product =case" suffix="end,">
+                <foreach collection="list" item="item">
+                    <if test="item.WorkingProduct!=null">
+                        when id=#{item.Id} then #{item.WorkingProduct}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="if_completed =case" suffix="end,">
+                <foreach collection="list" item="item">
+                    <if test="item.IfCompleted!=null">
+                        when id=#{item.Id} then #{item.IfCompleted}
                     </if>
                 </foreach>
             </trim>
@@ -209,13 +226,14 @@
         <if test="Truck != null"> and truck = #{Truck}</if>
         <if test="PickWorker != null"> and pick_worker = #{PickWorker}</if>
         <if test="Lister != null"> and lister = #{Lister}</if>
-        <if test="AccountStatus != null"> and account_status = #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.AccountStatusHandler}</if>
+        <if test="AccountStatus != null"> and account_status = #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}</if>
         <if test="TotalAmountBegin != null"> and total_amount &gt;= #{TotalAmountBegin}</if>
         <if test="TotalAmountEnd != null"> and total_amount &lt;= #{TotalAmountEnd}</if>
         <if test="TotalWeightBegin != null"> and total_weight &gt;= #{TotalWeightBegin}</if>
         <if test="TotalWeightEnd != null"> and total_weight &lt;= #{TotalWeightEnd}</if>
         <if test="TotalVolumeBegin != null"> and total_volume &gt;= #{TotalVolumeBegin}</if>
         <if test="TotalVolumeEnd != null"> and total_volume &lt;= #{TotalVolumeEnd}</if>
+        <if test="IfCompleted != null"> and if_completed = #{IfCompleted}</if>
         <!-- Like query -->
 		<if test="InStorageNumber != null and InStorageNumber != ''"> and instorage_number like CONCAT(CONCAT('%', #{InStorageNumber}), '%')</if>
 	</sql>

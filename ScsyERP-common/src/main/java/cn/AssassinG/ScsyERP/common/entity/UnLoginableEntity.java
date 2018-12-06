@@ -6,7 +6,7 @@ public abstract class UnLoginableEntity extends BaseEntity {
     @Valid(varType = Valid.VarType.String, maxLength = 30)
     protected String Name;
     @Valid(varType = Valid.VarType.String, nullAble = true, minLength = 11, maxLength = 11)
-    protected String Phone;
+    protected String Phone;//对于Material、Project、Product，此项无效，一直为空
 
     public String getName() {
         return Name;

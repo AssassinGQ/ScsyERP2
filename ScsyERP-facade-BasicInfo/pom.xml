@@ -12,7 +12,7 @@
 
     <groupId>ScsyERP</groupId>
     <artifactId>ScsyERP-facade-BasicInfo</artifactId>
-    <version>${ScsyERP-service-BasicInfo.version}</version>
+    <version>${ScsyERP-facade-BasicInfo.version}</version>
 
     <dependencies>
         <dependency>

@@ -2,8 +2,10 @@ package cn.AssassinG.ScsyERP.WebBoss.action.PMS;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.Permission;
 import cn.AssassinG.ScsyERP.User.facade.entity.Role;
+import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.base.BaseController;
+import cn.AssassinG.ScsyERP.common.core.service.BaseService;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.log4j.Logger;
@@ -20,7 +22,7 @@ import java.util.Set;
 
 @Controller
 @RequestMapping("/auth")
-public class AuthController extends BaseController {
+public class AuthController extends BaseController<User> {
     private static Logger logger = Logger.getLogger(AuthController.class);
     @Autowired
     private UserServiceFacade userService;
@@ -157,6 +159,16 @@ public class AuthController extends BaseController {
         jsonObject.put("msg", "请求成功");
         jsonObject.put("data", jsonArray);
         return jsonObject;
+    }
+
+    @Override
+    protected BaseService<User> getService() {
+        return null;
+    }
+
+    @Override
+    protected String getClassDesc() {
+        return null;
     }
 
 //    @RequestMapping(value="/authconfig/getRolesPermission", method = RequestMethod.GET)

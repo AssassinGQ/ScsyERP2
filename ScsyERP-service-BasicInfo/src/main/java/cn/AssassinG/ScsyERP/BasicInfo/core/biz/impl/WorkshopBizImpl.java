@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.BasicInfo.core.biz.WorkshopBiz;
 import cn.AssassinG.ScsyERP.BasicInfo.core.dao.WorkshopDao;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Workshop;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.exceptions.WorkshopBizException;
+import cn.AssassinG.ScsyERP.common.core.biz.impl.UnLoginableBizImpl;
 import cn.AssassinG.ScsyERP.common.core.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

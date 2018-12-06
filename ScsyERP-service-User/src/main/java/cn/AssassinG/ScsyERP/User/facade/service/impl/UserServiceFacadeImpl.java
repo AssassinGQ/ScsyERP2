@@ -6,7 +6,7 @@ import cn.AssassinG.ScsyERP.User.facade.entity.Role;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade;
 import cn.AssassinG.ScsyERP.common.core.biz.BaseBiz;
-import cn.AssassinG.ScsyERP.common.core.service.BaseServiceImpl;
+import cn.AssassinG.ScsyERP.common.core.service.impl.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,28 +49,28 @@ public class UserServiceFacadeImpl extends BaseServiceImpl<User> implements User
     }
 
     @Override
-    public void ChangePSW(String phone, String vcode, String password) {
-        userBiz.ChangePSW(phone, vcode, password);
+    public void ChangePSW(String phone, String Vcode, String newPassWord) {
+        userBiz.ChangePSW(phone, Vcode, newPassWord);
     }
 
     @Override
-    public void ChangeUserName(Long userId, String newUserName) {
-        userBiz.ChangeUserName(userId, newUserName);
+    public void ChangeUserName(Long userId, String Vcode, String newUserName) {
+        userBiz.ChangeUserName(userId, Vcode, newUserName);
     }
 
     @Override
-    public void ChangeUserName(User user, String newUserName) {
-        userBiz.ChangeUserName(user, newUserName);
+    public void ChangeUserName(User user, String Vcode, String newUserName) {
+        userBiz.ChangeUserName(user, Vcode, newUserName);
     }
 
     @Override
-    public void ChangePhone(Long userId, String newPhone) {
-        userBiz.ChangePhone(userId, newPhone);
+    public void ChangePhone(Long userId, String Vcode, String newPhone) {
+        userBiz.ChangePhone(userId, Vcode, newPhone);
     }
 
     @Override
-    public void ChangePhone(User user, String newPhone) {
-        userBiz.ChangePhone(user, newPhone);
+    public void ChangePhone(User user, String Vcode, String newPhone) {
+        userBiz.ChangePhone(user, Vcode, newPhone);
     }
 
     public Set<Role> findUserRoles(Long userid) {

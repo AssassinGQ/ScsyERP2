@@ -15,6 +15,8 @@
     <!-- 配置要扫描的包 -->
     <context:component-scan base-package="cn.AssassinG.ScsyERP.User.facade" />
     <context:component-scan base-package="cn.AssassinG.ScsyERP.User.core" />
+    <context:component-scan base-package="cn.AssassinG.ScsyERP.BasicInfo.facade" />
+    <context:component-scan base-package="cn.AssassinG.ScsyERP.BasicInfo.core" />
 
     <!-- 读入配置属性文件 -->
     <context:property-placeholder location="classpath:jdbc.properties" />

@@ -3,15 +3,13 @@ package cn.AssassinG.ScsyERP.BasicInfo.facade.entity;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.enums.PacketType;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.enums.ProductStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
-import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
-public class Product extends BaseEntity {
+public class Product extends UnLoginableEntity {
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
     private Long Project;
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
     private Long Material;
-    @Valid(varType = Valid.VarType.String, maxLength = 30)
-    private String Name;
     @Valid(varType = Valid.VarType.Other)
     private ProductStatus Status;
     @Valid(varType = Valid.VarType.String, maxLength = 30)
@@ -20,9 +18,9 @@ public class Product extends BaseEntity {
     private Long Warehouse;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 30)
     private String WarehouseLocation;
-    @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
+    @Valid(varType = Valid.VarType.Number, nullAble = true)
     private Long InStorageForm;
-    @Valid(varType = Valid.VarType.Number, nullAble = true, minLength = 20, maxLength = 20)
+    @Valid(varType = Valid.VarType.Number, nullAble = true)
     private Long OutStorageForm;
     @Valid(varType = Valid.VarType.Other)
     private PacketType PacketType;
@@ -56,14 +54,6 @@ public class Product extends BaseEntity {
 
     public void setMaterial(Long material) {
         Material = material;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
     }
 
     public ProductStatus getStatus() {
@@ -167,7 +157,6 @@ public class Product extends BaseEntity {
         return "Product{" +
                 "Project=" + Project +
                 ", Material=" + Material +
-                ", Name='" + Name + '\'' +
                 ", Status=" + Status +
                 ", PacketNumber='" + PacketNumber + '\'' +
                 ", Warehouse=" + Warehouse +
@@ -180,6 +169,8 @@ public class Product extends BaseEntity {
                 ", Length=" + Length +
                 ", Weight=" + Weight +
                 ", Volume=" + Volume +
+                ", Name='" + Name + '\'' +
+                ", Phone='" + Phone + '\'' +
                 ", Id=" + Id +
                 ", Corporation=" + Corporation +
                 ", CreateTime=" + CreateTime +

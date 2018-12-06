@@ -1,9 +1,9 @@
 package cn.AssassinG.ScsyERP.Fee.facade.entity;
 
 import cn.AssassinG.ScsyERP.Fee.facade.enums.OilCardType;
-import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 
-public class TransportContract extends BaseEntity {
+public class TransportContract extends FormEntity {
     private String ContractNumber;
     private Long OnTruckForm;
     private Long Project;
@@ -172,6 +172,7 @@ public class TransportContract extends BaseEntity {
                 ", OilCardNumber='" + OilCardNumber + '\'' +
                 ", OilCardMoney=" + OilCardMoney +
                 ", PreRepairFee=" + PreRepairFee +
+                ", IfCompleted=" + IfCompleted +
                 ", Id=" + Id +
                 ", Corporation=" + Corporation +
                 ", CreateTime=" + CreateTime +

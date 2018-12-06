@@ -4,7 +4,7 @@ import cn.AssassinG.ScsyERP.User.core.biz.LoginableBiz;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.service.LoginableService;
 import cn.AssassinG.ScsyERP.common.core.biz.BaseBiz;
-import cn.AssassinG.ScsyERP.common.core.service.BaseServiceImpl;
+import cn.AssassinG.ScsyERP.common.core.service.impl.BaseServiceImpl;
 import cn.AssassinG.ScsyERP.common.entity.LoginableEntity;
 
 import java.util.Map;

@@ -1,12 +1,12 @@
 package cn.AssassinG.ScsyERP.Fee.facade.entity;
 
-import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
 
 import java.util.Date;
 import java.util.Set;
 
-public class OnTruckForm extends BaseEntity {
+public class OnTruckForm extends FormEntity {
     private String FormNumber;
     private Long Project;
     private Long OutStorageForm;
@@ -105,6 +105,7 @@ public class OnTruckForm extends BaseEntity {
                 ", SignTime=" + SignTime +
                 ", AccountStatus=" + AccountStatus +
                 ", Pictures=" + Pictures +
+                ", IfCompleted=" + IfCompleted +
                 ", Id=" + Id +
                 ", Corporation=" + Corporation +
                 ", CreateTime=" + CreateTime +

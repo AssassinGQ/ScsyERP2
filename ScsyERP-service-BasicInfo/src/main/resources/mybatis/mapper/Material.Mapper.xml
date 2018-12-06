@@ -5,8 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_material"> t_material </sql>
 
-	<resultMap id="beanMap" type="Material" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
-		<result column="name" property="Name" />
+	<resultMap id="beanMap" type="Material" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 		<result column="figure_number" property="FigureNumber" />
 	</resultMap>
 
