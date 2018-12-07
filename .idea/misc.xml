@@ -30,6 +30,8 @@
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/pom.xml" />
         <option value="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/pom.xml" />
         <option value="$PROJECT_DIR$/ScsyERP-service-Basicinfo/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-facade-File/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-File/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
