@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/ScsyERP-common-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-facade-BasicInfo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-facade-Fee" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-facade-File" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-facade-InStorge" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-facade-OnWayWatch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-facade-OutStorage" charset="UTF-8" />
@@ -15,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/ScsyERP-facade-User" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-Fee" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-File" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-InStorage" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-OutStorage" charset="UTF-8" />

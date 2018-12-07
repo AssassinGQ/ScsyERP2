@@ -122,6 +122,18 @@
             <version>${ScsyERP-service-OutStorage.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-facade-File</artifactId>
+            <version>${ScsyERP-facade-File.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ScsyERP</groupId>
+            <artifactId>ScsyERP-service-File</artifactId>
+            <version>${ScsyERP-service-File.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

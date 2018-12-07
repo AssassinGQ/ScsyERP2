@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/doc/SQL/WorkshopTableInit.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-Fee/doc/SQL/OnTruckFormTableInit.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-Fee/doc/SQL/TransportContractTableInit.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ScsyERP-service-File/doc/SQL/MyFileTableInit.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-InStorage/doc/SQL/InStorageFormTableInit.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/doc/SQL/TruckLogTableInit.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/doc/SQL/WarnTableInit.sql" dialect="MySQL" />

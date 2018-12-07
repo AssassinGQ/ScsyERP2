@@ -12,6 +12,7 @@
         <module name="ScsyERP-common-web" />
         <module name="ScsyERP-facade-BasicInfo" />
         <module name="ScsyERP-facade-Fee" />
+        <module name="ScsyERP-facade-File" />
         <module name="ScsyERP-facade-InStorge" />
         <module name="ScsyERP-facade-OnWayWatch" />
         <module name="ScsyERP-facade-OutStorage" />
@@ -19,6 +20,7 @@
         <module name="ScsyERP-facade-User" />
         <module name="ScsyERP-service-BasicInfo" />
         <module name="ScsyERP-service-Fee" />
+        <module name="ScsyERP-service-File" />
         <module name="ScsyERP-service-InStorage" />
         <module name="ScsyERP-service-OnWayWatch" />
         <module name="ScsyERP-service-OutStorage" />
@@ -27,33 +29,29 @@
         <module name="ScsyERP-web-Boss" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ScsyERP-common" target="1.5" />
-      <module name="ScsyERP-common-config" target="1.5" />
-      <module name="ScsyERP-common-core" target="1.5" />
-      <module name="ScsyERP-common-parent" target="1.5" />
-      <module name="ScsyERP-common-web" target="1.5" />
-      <module name="ScsyERP-facade-BasicInfo" target="1.5" />
-      <module name="ScsyERP-facade-Fee" target="1.5" />
-      <module name="ScsyERP-facade-InStorge" target="1.5" />
-      <module name="ScsyERP-facade-LoginableBasicInfo" target="1.5" />
-      <module name="ScsyERP-facade-OnWayWatch" target="1.5" />
-      <module name="ScsyERP-facade-OutStorage" target="1.5" />
-      <module name="ScsyERP-facade-Statistics" target="1.5" />
-      <module name="ScsyERP-facade-UnLoginableBasicInfo" target="1.5" />
-      <module name="ScsyERP-facade-User" target="1.5" />
-      <module name="ScsyERP-service-BasicInfo" target="6" />
-      <module name="ScsyERP-service-Fee" target="6" />
-      <module name="ScsyERP-service-InStorage" target="1.5" />
-      <module name="ScsyERP-service-LoginableBasicInfo" target="1.5" />
-      <module name="ScsyERP-service-OnWayWatch" target="1.5" />
-      <module name="ScsyERP-service-OutStorage" target="1.5" />
-      <module name="ScsyERP-service-Statistics" target="1.5" />
-      <module name="ScsyERP-service-UnLoginableBasicInfo" target="1.5" />
-      <module name="ScsyERP-service-user" target="1.5" />
-      <module name="ScsyERP-service-User" target="6" />
-      <module name="ScsyERP-Web-boss" target="1.5" />
-      <module name="ScsyERP-web-Boss" target="1.7" />
+    <bytecodeTargetLevel target="8">
+      <module name="ScsyERP-common" target="8" />
+      <module name="ScsyERP-common-config" target="8" />
+      <module name="ScsyERP-common-core" target="8" />
+      <module name="ScsyERP-common-parent" target="8" />
+      <module name="ScsyERP-common-web" target="8" />
+      <module name="ScsyERP-facade-BasicInfo" target="8" />
+      <module name="ScsyERP-facade-Fee" target="8" />
+      <module name="ScsyERP-facade-File" target="8" />
+      <module name="ScsyERP-facade-InStorge" target="8" />
+      <module name="ScsyERP-facade-OnWayWatch" target="8" />
+      <module name="ScsyERP-facade-OutStorage" target="8" />
+      <module name="ScsyERP-facade-Statistics" target="8" />
+      <module name="ScsyERP-facade-User" target="8" />
+      <module name="ScsyERP-service-BasicInfo" target="8" />
+      <module name="ScsyERP-service-Fee" target="8" />
+      <module name="ScsyERP-service-File" target="8" />
+      <module name="ScsyERP-service-InStorage" target="8" />
+      <module name="ScsyERP-service-OnWayWatch" target="8" />
+      <module name="ScsyERP-service-OutStorage" target="8" />
+      <module name="ScsyERP-service-Statistics" target="8" />
+      <module name="ScsyERP-service-User" target="8" />
+      <module name="ScsyERP-web-Boss" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
