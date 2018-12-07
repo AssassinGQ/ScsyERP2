@@ -18,6 +18,7 @@
 
     <!-- 读入配置属性文件 -->
     <context:property-placeholder location="classpath:jdbc.properties" />
+    <context:property-placeholder location="classpath:service.properties" />
     <context:property-placeholder location="classpath:log4j.properties" />
 
     <!-- proxy-target-class默认"false",更改为"ture"使用CGLib动态代理 -->
@@ -25,6 +26,7 @@
 
     <!--<import resource="beans/UserServiceImpl.xml" />-->
     <import resource="spring-mybatis.xml" />
+    <import resource="spring-dubbo-provider.xml" />
     <!--<import resource="spring-security.xml" />-->
     <!--<import resource="spring-mvc.xml" />-->
 </beans>
