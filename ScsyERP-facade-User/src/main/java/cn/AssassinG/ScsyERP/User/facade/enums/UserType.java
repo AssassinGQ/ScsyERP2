@@ -12,7 +12,8 @@ public enum UserType {
     Escort(cn.AssassinG.ScsyERP.User.facade.entity.Escort.class.getSimpleName(), 4, cn.AssassinG.ScsyERP.User.facade.entity.Escort.class.getName()),
     Customer(cn.AssassinG.ScsyERP.User.facade.entity.Customer.class.getSimpleName(), 5, cn.AssassinG.ScsyERP.User.facade.entity.Customer.class.getName()),
     Manufacturer(cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer.class.getSimpleName(), 6, cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer.class.getName()),
-    Consignee(cn.AssassinG.ScsyERP.User.facade.entity.Consignee.class.getSimpleName(), 7, cn.AssassinG.ScsyERP.User.facade.entity.Consignee.class.getName());
+    Consignee(cn.AssassinG.ScsyERP.User.facade.entity.Consignee.class.getSimpleName(), 7, cn.AssassinG.ScsyERP.User.facade.entity.Consignee.class.getName()),
+    SuperAdmin("SuperAdmin", 8, "NoneSuperAdminClass");
 
     private String Name;
     private Integer Value;
@@ -70,6 +71,5 @@ public enum UserType {
     public static UserType getEnumByClassName(String className){
         return ClassNameMap.get(className);
     }
-
 
 }

@@ -56,15 +56,15 @@ import ManufacturerView from './views/manufacturer'
 
 const TodoView = { render: h => h('div', 'todo') }
 import {
-    TYPE_BUYER,
     TYPE_CORP,
     TYPE_CORP_ADMIN,
-    TYPE_SELLER,
     TYPE_SUPERADMIN,
-    TYPE_MANU,
+    TYPE_MANUFACTURER,
     TYPE_DRIVER,
     TYPE_ESCORT,
-    TYPE_GOV
+    TYPE_GOV,
+    TYPE_CUSTOMER,
+    TYPE_CONSIGNEE
 } from './store/modules/user'
 
 const router = new VueRouter({
@@ -72,201 +72,22 @@ const router = new VueRouter({
     routes: [{
         path: '/',
         // redirect: '/driver',
-        redirect: '/login',
+        // redirect: '/login',
         component: DashboardView,
         children: [{
             path: 'GetAccount',
             component: GetAccountView,
             meta: {
-                group: '用户管理', title: '生成账号'
-                // permission: [TYPE_SUPERADMIN]
+                group: '用户管理', title: '生成账号',
+                permission: [TYPE_SUPERADMIN]
             },
-        }, {
-            path: '',//增删查改角色，修改角色的权限、父角色
-            component: GetAccountView,
-            meta: {
-                group: '用户管理', title: '角色管理'
-                // permission: [TYPE_SUPERADMIN]
-            },
-        }, {
-            path: '',//为用户分配角色（多个）、屏蔽权限、特殊权限
-            component: GetAccountView,
-            meta: {
-                group: '用户管理', title: '用户管理'
-                // permission: [TYPE_SUPERADMIN]
-            },
-        }, {
-            path: 'Corporation',//查询承运方信息；修改承运方信息（仅承运方）
-            component: CorporationView,
-            meta: {
-                group: '基本信息', title: '承运方信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'Government',
-            component: GovernmentView,//查询政府信息；修改政府信息（仅政府）
-            meta: {
-                group: '基本信息', title: '政府信息',
-                permission: [TYPE_GOV]
-            }
-        }, {
-            path: 'Admin',
-            component: AdministratorView,//增删查改管理员信息
-            meta: {
-                group: '基本信息', title: '管理员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'Driver',
-            component: DriverView,
-            children: [{ path: ':viewType?' }],
-            props: ({ params: { viewType = 'driver' } }) => ({ viewType }),
-            meta: {
-                group: '基本信息', title: '驾押员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_GOV, TYPE_DRIVER, TYPE_ESCORT]
-            },
-        }, {
-            path: 'Client',
-            component: ClientView,
-            props: ({ params: { viewType = 'seller' } }) => ({ viewType }),
-            meta: {
-                group: '基本信息', title: '客户信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_SELLER, TYPE_BUYER]
-            },
-            children: [{ path: ':viewType?' }]
-        }, {
-            path: 'Manufacturer',
-            component: ManufacturerView,
-            meta: {
-                group: '基本信息', title: '设备生产商信息',
-                permission: [TYPE_MANU]
-            }
-        }, {
-            path: 'Consignee',
-            component: ClientView,
-            props: ({ params: { viewType = 'seller' } }) => ({ viewType }),
-            meta: {
-                group: '基本信息', title: '客户信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_SELLER, TYPE_BUYER]
-            },
-            children: [{ path: ':viewType?' }]
-        }, {
-            path: 'DriveWorker',
-            component: AdministratorView,//增删查改管理员信息
-            meta: {
-                group: '基本信息', title: '管理员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'LiftWorker',
-            component: AdministratorView,//增删查改管理员信息
-            meta: {
-                group: '基本信息', title: '管理员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'Truck',
-            component: VehicleView,
-            props: ({ params: { viewType = 'truck' } }) => ({ viewType }),
-            meta: {
-                group: '基本信息', title: '车辆信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            },
-            children: [{ path: ':viewType?' }]
-        }, {
-            path: 'Warehouse',
-            component: AdministratorView,//增删查改管理员信息
-            meta: {
-                group: '基本信息', title: '管理员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'Workshop',
-            component: AdministratorView,//增删查改管理员信息
-            meta: {
-                group: '基本信息', title: '管理员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'Material',
-            component: AdministratorView,//增删查改管理员信息
-            meta: {
-                group: '基本信息', title: '管理员信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'Product',
-            component: GoodsView,
-            meta: {
-                group: '基本信息', title: '货物信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'order-place',//创建工程，入库，在库盘点，出库
-            component: OrderPlaceView,
-            meta: {
-                group: '电子运单', title: '下达订单',
-                permission: [TYPE_SELLER]
-            }
-        }, {
-            path: 'order',
-            component: OrderView,
-            meta: {
-                group: '费用结算', title: '订单查询',//随车清单、运输合同
-                permission: [TYPE_SELLER, TYPE_BUYER, TYPE_CORP_ADMIN, TYPE_CORP]
-            }
-        }, {
-            path: 'latest-log',
-            component: LatestLogView,
-            props: ({ params: { viewType = 'trucks' } }) => ({ viewType }),
-            meta: {
-                group: '在途监控', title: '最新日志',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            },
-            children: [{ path: ':viewType?' }]
-        }, {
-            path: 'data',
-            component: DataView,
-            meta: {
-                group: '在途监控', title: '历史日志',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'accidentquery',
-            component: AccidentqueryView,
-            meta: {
-                group: '在途监控', title: '异常信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'lock',
-            component: LockView,
-            meta: {
-                group: '在途监控', title: '开锁管理',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'realtime',
-            component: NoteView,
-            meta: {
-                group: '在途监控', title: '实时消息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'accident-stats',
-            component: AccidentStatsView,
-            meta: {
-                group: '数据统计', title: '事故统计',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            },
-            props: ({ params: { viewType = 'time' } }) => ({ viewType }),
-            children: [{ path: ':viewType?' }]
+
         }, {
             path: 'order-stats',
             component: OrderStatsView,
             meta: {
                 group: '数据统计', title: '订单统计',
-                permission: [TYPE_SELLER, TYPE_CORP, TYPE_CORP_ADMIN]
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
             },
             props: ({ params: { viewType = 'time' } }) => ({ viewType }),
             children: [{ path: ':viewType?' }]

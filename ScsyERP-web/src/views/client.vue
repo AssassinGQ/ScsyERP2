@@ -17,8 +17,8 @@ import TableView from '../components/table-view'
 import {
     TYPE_CORP_ADMIN,
     TYPE_SUPERADMIN,
-    TYPE_SELLER,
-    TYPE_BUYER,
+    TYPE_CUSTOMER,
+    TYPE_CONSIGNEE,
     TYPE_CORP
 } from '../store/modules/user'
 import store from '../store'
@@ -45,8 +45,8 @@ export default {
             UserName: '用户名',
             password: '密码',
         },
-        isSeller: store.getters.user.type === TYPE_SELLER,
-        isBuyer: store.getters.user.type === TYPE_BUYER,
+        isSeller: store.getters.user.type === TYPE_CUSTOMER,
+        isBuyer: store.getters.user.type === TYPE_CONSIGNEE,
         isCorp: store.getters.user.type === TYPE_CORP,
         isCorpAdmin: store.getters.user.type === TYPE_CORP_ADMIN,
         isSuperAdmin: store.getters.user.type === TYPE_SUPERADMIN

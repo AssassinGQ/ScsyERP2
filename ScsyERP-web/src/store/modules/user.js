@@ -33,6 +33,7 @@ export const TYPE_ESCORT = 4 // 押运员
 export const TYPE_CUSTOMER = 5 // 客户
 export const TYPE_MANUFACTURER = 6 // 生产厂家
 export const TYPE_CONSIGNEE = 7 // 收货方
+export const TYPE_SUPERADMIN = 8 // 超级管理员
 
 const getters = {
     user: state => state.user,
@@ -45,6 +46,7 @@ const getters = {
     isCustomer: state => state.user.type === TYPE_CUSTOMER,
     isManufacturer: state => state.user.type === TYPE_MANUFACTURER,
     isConsignee: state => state.user.type === TYPE_CONSIGNEE,
+    isSuper: state => state.user.type === TYPE_SUPERADMIN,
 }
 
 export default { state, mutations, actions, getters }

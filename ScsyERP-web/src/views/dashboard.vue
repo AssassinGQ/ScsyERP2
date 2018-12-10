@@ -64,6 +64,8 @@ export default {
         routes() {
             let { user } = this.$store.getters
             let { routes } = this.$router.options
+            console.log(user);
+            console.log(routes);
             let root = routes.find(r => r.path === '/')
             return root.children.reduce((map, route) => {
                 if (
@@ -82,24 +84,24 @@ export default {
         }
 
     },
-    mounted() {
-        socket.onopen = () => {
-            console.log('socket open')
-            socket.send(JSON.stringify({
-                type: store.getters.user.type,
-                sid: store.getters.user.usersid,
-                token: store.getters.user.token
-            }))
-        }
-        socket.onmessage = msg => {
-            let data = JSON.parse(msg.data)
-            console.log(data)
-            if (data.type) {
-                data.time = Date.now()
-                this.$store.commit('receivePushMessage', data)
-            }
-        }
-    }
+    // mounted() {
+    //     socket.onopen = () => {
+    //         console.log('socket open')
+    //         socket.send(JSON.stringify({
+    //             type: store.getters.user.type,
+    //             sid: store.getters.user.usersid,
+    //             token: store.getters.user.token
+    //         }))
+    //     }
+    //     socket.onmessage = msg => {
+    //         let data = JSON.parse(msg.data)
+    //         console.log(data)
+    //         if (data.type) {
+    //             data.time = Date.now()
+    //             this.$store.commit('receivePushMessage', data)
+    //         }
+    //     }
+    // }
 }
 </script>
 <style module>

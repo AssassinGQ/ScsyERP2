@@ -18,6 +18,9 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         httpServletResponse.setContentType("application/json;charset=utf-8");
+        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        httpServletResponse.setHeader("Access-Control-Allow-Credentials", "true");
+        httpServletResponse.setHeader("Access-Control-Allow-METHODS", "POST,GET,OPTIONS");
         PrintWriter out = httpServletResponse.getWriter();
         JSONObject retObject = new JSONObject();
         retObject.put("status", RetStatusType.StatusFailure.getStatus());

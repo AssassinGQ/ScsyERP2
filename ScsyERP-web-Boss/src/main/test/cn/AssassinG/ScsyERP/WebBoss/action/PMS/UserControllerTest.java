@@ -59,6 +59,13 @@ public class UserControllerTest {
 
     @Test
     public void getVcode() {
+        try{
+            Map<String, String> paramMap = new HashMap<>();
+            paramMap.put("Phone", "18868187538");
+            System.out.println(HttpUtils.Post("http://127.0.0.1:8080/user/getVcode",paramMap));
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test

@@ -2,7 +2,7 @@ import { DEBUG } from '../util'
 
 import axios from 'axios'
 
-export const ENDPOINT = '120.76.219.196:85'
+export const ENDPOINT = '127.0.0.1:8080'
 
 import store from '../store'
 
@@ -38,6 +38,7 @@ const encode = encodeURIComponent
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     transformRequest: (data = {}) => {
+        console.log(data);
         let { token } = store.getters.user
         if (token) data.token = token
         return !data ? '' : Object.keys(data).reduce((result, key) => result + `${encode(key)}=${encode(data[key])}&`, '').slice(0, -1)
@@ -74,5 +75,5 @@ if (DEBUG) {
     window.get = GET
 }
 
-export const socket = new WebSocket(`ws://${ENDPOINT}/wsshake`)
-socket.onerror = msg => {app.$notify.error({ title: 'socket错误', message: msg })}
+// export const socket = new WebSocket(`ws://${ENDPOINT}/wsshake`)
+// socket.onerror = msg => {app.$notify.error({ title: 'socket错误', message: msg })}

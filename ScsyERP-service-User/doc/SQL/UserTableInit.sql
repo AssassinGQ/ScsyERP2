@@ -25,5 +25,5 @@ create table t_user (
 alter table t_user comment '用户信息表';
 
 ## 用户的初始化数据(密码123456)
-insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "superadmin", "{noop}123456", true, 18888888888, "Corporation", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "superadmin", "{noop}123456", true, 18888888888, "SuperAdmin", 1);
 insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "hgq", "{noop}123456", true, 18868187538, "Corporation", 1);
