@@ -5,10 +5,10 @@
 	<!-- 用户信息表 -->
 	<sql id="t_escort"> t_escort </sql>
 
-	<resultMap id="beanMap" type="Escort" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
+	<resultMap id="beanMap" type="EscortBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
 	</resultMap>
 
-	<insert id="insert" parameterType="Escort" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="EscortBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_escort"/> (corporation, create_time, update_time, delete_time, is_deleted, name)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name})
 	</insert>
@@ -21,7 +21,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Escort">
+	<update id="update" parameterType="EscortBean">
 		update <include refid="t_escort"/>
 		<set>
 			update_time = now(),
@@ -55,7 +55,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Escort">
+    <update id="delete" parameterType="EscortBean">
         update <include refid="t_escort"/>
         <set>
             delete_time = now(),

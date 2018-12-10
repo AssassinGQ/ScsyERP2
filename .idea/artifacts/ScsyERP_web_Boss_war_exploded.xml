@@ -19,44 +19,23 @@
           <element id="archive" name="ScsyERP-facade-User-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-User" />
           </element>
-          <element id="archive" name="ScsyERP-service-User-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-User" />
-          </element>
           <element id="archive" name="ScsyERP-facade-BasicInfo-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-BasicInfo" />
-          </element>
-          <element id="archive" name="ScsyERP-service-BasicInfo-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-BasicInfo" />
           </element>
           <element id="archive" name="ScsyERP-facade-OnWayWatch-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-OnWayWatch" />
           </element>
-          <element id="archive" name="ScsyERP-service-OnWayWatch-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-OnWayWatch" />
-          </element>
           <element id="archive" name="ScsyERP-facade-Fee-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-Fee" />
-          </element>
-          <element id="archive" name="ScsyERP-service-Fee-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-Fee" />
           </element>
           <element id="archive" name="ScsyERP-facade-InStorage-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-InStorge" />
           </element>
-          <element id="archive" name="ScsyERP-service-InStorage-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-InStorage" />
-          </element>
           <element id="archive" name="ScsyERP-facade-OutStorage-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-OutStorage" />
           </element>
-          <element id="archive" name="ScsyERP-service-OutStorage-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-OutStorage" />
-          </element>
           <element id="archive" name="ScsyERP-facade-File-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ScsyERP-facade-File" />
-          </element>
-          <element id="archive" name="ScsyERP-service-File-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="ScsyERP-service-File" />
           </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.4.RELEASE" />

@@ -138,7 +138,7 @@ export default {
         },
         queryAll(){
         	var argu = {token:store.getters.user.token,trucksid:this.acc_query.trucksid,status:this.acc_query.status,warntype:this.acc_query.warntype,warntime:{min:Number(this.acc_query.min),max:Number(this.acc_query.max)}}
-        	GET('/warn/query',argu).then(({ data })=>{
+        	GET('/warnId/query',argu).then(({ data })=>{
         		//console.log(data)
         		this.d = data;
         		this.result_num = data.length

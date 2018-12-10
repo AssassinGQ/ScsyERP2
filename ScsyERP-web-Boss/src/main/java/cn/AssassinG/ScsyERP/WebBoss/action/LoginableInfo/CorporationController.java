@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/basic_info/corporation")
+@RequestMapping("/BasicInfo/Corporation")
 public class CorporationController extends LoginableBaseController<Corporation> {
     @Autowired
     private CorporationServiceFacade corporationServiceFacade;

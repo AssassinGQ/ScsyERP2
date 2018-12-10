@@ -5,12 +5,12 @@
 	<!-- 用户信息表 -->
 	<sql id="t_consignee"> t_consignee </sql>
 
-	<resultMap id="beanMap" type="Consignee" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
+	<resultMap id="beanMap" type="ConsigneeBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
 		<result column="address" property="Address" />
 		<result column="man_name" property="ManName" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Consignee" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="ConsigneeBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_consignee"/> (corporation, create_time, update_time, delete_time, is_deleted, name, address, man_name)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{Address}, #{ManName})
 	</insert>
@@ -23,7 +23,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Consignee">
+	<update id="update" parameterType="ConsigneeBean">
 		update <include refid="t_consignee"/>
 		<set>
 			update_time = now(),
@@ -73,7 +73,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Consignee">
+    <update id="delete" parameterType="ConsigneeBean">
         update <include refid="t_consignee"/>
         <set>
             delete_time = now(),

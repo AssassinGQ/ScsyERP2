@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Service
+@Service("MyFileServiceFacade")
 public class MyFileServiceFacadeImpl extends BaseServiceImpl<MyFile> implements MyFileServiceFacade {
     @Autowired
     private MyFileBiz myFileBiz;

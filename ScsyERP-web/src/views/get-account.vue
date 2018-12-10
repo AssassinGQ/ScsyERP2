@@ -26,7 +26,7 @@
             type: '',
             name: '',
             phone: '',
-            username: '',
+            UserName: '',
             password: '',
             options: [{
                 value: '0',
@@ -42,7 +42,7 @@
         methods: {
             getAccount() {
                 let {type, name, phone, username, password} = this
-                POST('/user/getAccount', {type, name, phone, username, password})
+                POST('/user/getAccount', {type, name, phone, username: UserName, password})
                     .then(response=>{
                         this.username = response.username;
                         this.password = response.password;

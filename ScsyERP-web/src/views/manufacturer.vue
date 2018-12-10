@@ -15,7 +15,7 @@ export default {
         manufacturer: {
             name: undefined,
             phone: undefined,
-            username: undefined,
+            UserName: undefined,
             password: undefined,
         },
         fields: [

@@ -1,6 +1,6 @@
 <template>
     <el-tabs :value="viewType" @tab-click="handleClick">
-        <el-tab-pane label="牵引车信息" name="truck">
+        <el-tab-pane label="牵引车信息" name="truckId">
             <table-view :fields="truckFields" :custom-actions="customActions" base-url="/basic_info/truck_info"/>
         </el-tab-pane>
         <el-tab-pane label="半挂车信息" name="trailer">
@@ -20,7 +20,7 @@ export default {
     components: { TableView },
     props: {
         viewType: String, // 'truck' or 'trailer',
-        default: 'truck'
+        default: 'truckId'
     },
 
     data: () => ({

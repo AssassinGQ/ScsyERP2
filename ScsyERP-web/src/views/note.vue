@@ -18,7 +18,7 @@
             <detail-view v-if="fields[sidType] && detail" :fields="fields[sidType]" :target="detail"/>
             <template v-if="sidType === SID_TYPE_HW_TEST && detail">
                 <h1 :class="$style.title">异常信息</h1>
-                <detail-view :fields="WARN_FIELDS" :target="detail.warn"/>
+                <detail-view :fields="WARN_FIELDS" :target="detail.warnId"/>
                 <h1 :class="$style.title">行车记录</h1>
                 <detail-view :fields="TRUCK_LOG_FIELDS" :target="detail.trucklog"/>
             </template>
@@ -42,7 +42,7 @@ const SID_TYPE_HW_TEST = 3
 const QUERY_URLS = {
     [SID_TYPE_ORDER]: '/order/query',
     [SID_TYPE_LOCK]: '/lock/query',
-    [SID_TYPE_WARNING]: '/warn/query',
+    [SID_TYPE_WARNING]: '/warnId/query',
 }
 
 const TEST_WARN = {
@@ -114,7 +114,7 @@ export default {
                 // { sid: '404951311595864064', type: '00', time: Date.now() }
                 {
                     type: '31', time: Date.now(),
-                    content: JSON.stringify({ warn: TEST_WARN, trucklog: {} })
+                    content: JSON.stringify({ warnId: TEST_WARN, trucklog: {} })
                 }
             )
         },

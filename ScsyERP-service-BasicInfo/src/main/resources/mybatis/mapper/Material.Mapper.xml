@@ -5,11 +5,11 @@
 	<!-- 用户信息表 -->
 	<sql id="t_material"> t_material </sql>
 
-	<resultMap id="beanMap" type="Material" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
+	<resultMap id="beanMap" type="MaterialBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 		<result column="figure_number" property="FigureNumber" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Material" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="MaterialBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_material"/> (corporation, create_time, update_time, delete_time, is_deleted, name, figure_number)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{FigureNumber})
 	</insert>
@@ -22,7 +22,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Material">
+	<update id="update" parameterType="MaterialBean">
 		update <include refid="t_material"/>
 		<set>
 			update_time = now(),
@@ -64,7 +64,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Material">
+    <update id="delete" parameterType="MaterialBean">
         update <include refid="t_material"/>
         <set>
             delete_time = now(),

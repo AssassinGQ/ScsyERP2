@@ -7,7 +7,7 @@ import cn.AssassinG.ScsyERP.User.facade.service.ManufacturerServiceFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("ManufacturerServiceFacade")
 public class ManufacturerServiceFacadeImpl extends LoginableServiceImpl<Manufacturer> implements ManufacturerServiceFacade {
     @Autowired
     private ManufacturerBiz manufacturerBiz;

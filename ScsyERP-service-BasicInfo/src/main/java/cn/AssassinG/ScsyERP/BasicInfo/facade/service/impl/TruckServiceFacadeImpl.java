@@ -8,7 +8,7 @@ import cn.AssassinG.ScsyERP.common.core.service.impl.UnLoginableServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("TruckServiceFacade")
 public class TruckServiceFacadeImpl extends UnLoginableServiceImpl<Truck> implements TruckServiceFacade {
     @Autowired
     private TruckBiz truckBiz;

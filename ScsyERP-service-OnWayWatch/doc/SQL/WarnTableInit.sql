@@ -12,7 +12,7 @@ create table t_warn (
   out_storage_form    BIGINT(20)  NOT NULL                 COMMENT '对应出库单',
   truck               BIGINT(20)  NOT NULL                 COMMENT '对应车辆',
   truck_log           BIGINT(20)  NOT NULL                 COMMENT '对应行车日志',
-  time          DATETIME    NOT NULL DEFAULT now()        COMMENT '日志时间',
+  time                DATETIME    NOT NULL DEFAULT now()  COMMENT '日志时间',
   gpsx                DOUBLE(6,2) NOT NULL                 COMMENT '经度',
   gpsy                DOUBLE(6,2) NOT NULL                 COMMENT '纬度',
   warn_type           VARCHAR(10) NOT NULL                 COMMENT '异常类型',

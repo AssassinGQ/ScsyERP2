@@ -15,7 +15,7 @@ export default {
         corporation: {
             name: undefined,
             phone: undefined,
-            username: undefined,
+            UserName: undefined,
             password: undefined,
         },
         fields: [

@@ -8,7 +8,7 @@ import cn.AssassinG.ScsyERP.common.core.service.impl.FormServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("TransportContractServiceFacade")
 public class TransportContractServiceFacadeImpl extends FormServiceImpl<TransportContract> implements TransportContractServiceFacade {
     @Autowired
     private TransportContractBiz transportContractBiz;

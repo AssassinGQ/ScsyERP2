@@ -10,9 +10,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ScsyERP</groupId>
     <artifactId>ScsyERP-facade-Statistics</artifactId>
     <version>${ScsyERP-facade-Statistics.version}</version>
-
+    <packaging>jar</packaging>
 
 </project>

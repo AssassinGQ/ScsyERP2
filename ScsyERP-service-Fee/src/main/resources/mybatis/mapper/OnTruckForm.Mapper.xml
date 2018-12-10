@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_ontruck_form"> t_ontruck_form </sql>
 
-	<resultMap id="beanMap" type="OnTruckForm" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
+	<resultMap id="beanMap" type="OnTruckFormBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
 		<result column="form_number" property="FormNumber" />
 		<result column="project" property="Project" />
 		<result column="out_storage_form" property="OutStorageForm" />
@@ -17,7 +17,7 @@
 		<result column="pictures" property="Pictures" typeHandler="cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler" />
 	</resultMap>
 
-	<insert id="insert" parameterType="OnTruckForm" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="OnTruckFormBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_ontruck_form"/> (corporation, create_time, update_time, delete_time, is_deleted, form_number, project, out_storage_form, tally_man, quality_test_man, sign_man, sign_time, account_status, pictures, if_completed)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{FormNumber}, #{Project}, #{OutStorageForm}, #{TallyMan}, #{QualityTestMan}, #{SignMan}, #{SignTime}, #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{Pictures,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{IfCompleted})
 	</insert>
@@ -30,7 +30,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="OnTruckForm">
+	<update id="update" parameterType="OnTruckFormBean">
 		update <include refid="t_ontruck_form"/>
 		<set>
 			update_time = now(),
@@ -128,7 +128,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="OnTruckForm">
+    <update id="delete" parameterType="OnTruckFormBean">
         update <include refid="t_ontruck_form"/>
         <set>
             delete_time = now(),

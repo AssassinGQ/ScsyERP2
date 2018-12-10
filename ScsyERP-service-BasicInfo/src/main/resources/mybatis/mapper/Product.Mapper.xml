@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_product"> t_product </sql>
 
-	<resultMap id="beanMap" type="Product" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
+	<resultMap id="beanMap" type="ProductBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 		<result column="project" property="Project" />
 		<result column="status" property="Status" typeHandler="cn.AssassinG.ScsyERP.BasicInfo.core.dao.MyBatisHandler.ProductStatusHandler" />
 		<result column="packet_number" property="PacketNumber" />
@@ -21,7 +21,7 @@
 		<result column="volume" property="Volume" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Product" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="ProductBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_product"/> (corporation, create_time, update_time, delete_time, is_deleted, name, project, material, status, packet_number, warehouse, warehouse_location, in_storage_form, out_storage_form, packet_type, width, length, height, weight, volume)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{Project}, #{Material}, #{Status,typeHandler=cn.AssassinG.ScsyERP.BasicInfo.core.dao.MyBatisHandler.ProductStatusHandler}, #{PacketNumber}, #{Warehouse}, #{WarehouseLocation}, #{InStorageForm}, #{OutStorageForm}, #{PacketType,typeHandler=cn.AssassinG.ScsyERP.BasicInfo.core.dao.MyBatisHandler.PacketTypeHandler}, #{Width}, #{Length}, #{Height}, #{Weight}, #{Volume})
 	</insert>
@@ -34,7 +34,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Product">
+	<update id="update" parameterType="ProductBean">
 		update <include refid="t_product"/>
 		<set>
 			update_time = now(),
@@ -164,7 +164,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Product">
+    <update id="delete" parameterType="ProductBean">
         update <include refid="t_product"/>
         <set>
             delete_time = now(),

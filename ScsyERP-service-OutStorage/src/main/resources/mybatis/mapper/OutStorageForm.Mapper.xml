@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_out_storage_form"> t_out_storage_form </sql>
 
-	<resultMap id="beanMap" type="OutStorageForm" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
+	<resultMap id="beanMap" type="OutStorageFormBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
         <result column="project" property="Project" />
         <result column="outstorage_status" property="OutStorageStatus" typeHandler="cn.AssassinG.ScsyERP.OutStorage.core.dao.MyBatisHandler.OutStorageStatusHandler" />
         <result column="outstorage_number" property="OutStorageNumber" />
@@ -26,7 +26,7 @@
         <result column="lift_worker_average_weight" property="LiftWorkerAverageWeight" />
 	</resultMap>
 
-	<insert id="insert" parameterType="OutStorageForm" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="OutStorageFormBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_out_storage_form"/> (corporation, create_time, update_time, delete_time, is_deleted, project, outstorage_status, outstorage_number, outstorage_time, warehouse, truck, pick_worker, lister, account_status, total_amount, total_volume, total_weight, real_outstorage_weight, drive_worker_average_weight, lift_worker_average_weight, if_completed)
 		values (#{Corporation}, now(), now(), NULL , FALSE, #{Project}, #{OutStorageStatus,typeHandler=cn.AssassinG.ScsyERP.OutStorage.core.dao.MyBatisHandler.OutStorageStatusHandler}, #{OutStorageNumber}, #{OutStorageTime}, #{Warehouse}, #{Truck}, #{PickWorker}, #{Lister}, #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{TotalAmount}, #{TotalVolume}, #{TotalWeight}, #{RealOutStorageWeight}, #{DriveWorkerAverageWeight}, #{LiftWorkerAverageWeight}, #{IfCompleted})
 	</insert>
@@ -39,7 +39,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="OutStorageForm">
+	<update id="update" parameterType="OutStorageFormBean">
 		update <include refid="t_out_storage_form"/>
 		<set>
 			update_time = now(),
@@ -185,7 +185,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="OutStorageForm">
+    <update id="delete" parameterType="OutStorageFormBean">
         update <include refid="t_out_storage_form"/>
         <set>
             delete_time = now(),

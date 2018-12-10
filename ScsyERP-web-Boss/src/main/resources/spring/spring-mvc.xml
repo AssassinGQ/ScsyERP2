@@ -40,7 +40,7 @@
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <list>
-                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.AdminDeptConverter" />
+                <!--<bean class="cn.AssassinG.ScsyERP.WebBoss.converters.AdminDeptConverter" />-->
             </list>
         </property>
     </bean>

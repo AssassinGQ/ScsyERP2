@@ -39,19 +39,19 @@
 
 	 <!--类型别名是为Java类型命名一个短的名字。 它只和 XML配置有关,只用来减少类完全限定名的多余部分-->
 	<typeAliases>
-		<typeAlias alias="User" type="cn.AssassinG.ScsyERP.User.facade.entity.User" />
-		<typeAlias alias="UserRole" type="cn.AssassinG.ScsyERP.User.facade.entity.User_Role" />
-		<typeAlias alias="Role" type="cn.AssassinG.ScsyERP.User.facade.entity.Role" />
-		<typeAlias alias="RolePermission" type="cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission" />
-		<typeAlias alias="Permission" type="cn.AssassinG.ScsyERP.User.facade.entity.Permission" />
-		<typeAlias alias="Corporation" type="cn.AssassinG.ScsyERP.User.facade.entity.Corporation" />
-		<typeAlias alias="Government" type="cn.AssassinG.ScsyERP.User.facade.entity.Government" />
-		<typeAlias alias="Admin" type="cn.AssassinG.ScsyERP.User.facade.entity.Admin" />
-		<typeAlias alias="Driver" type="cn.AssassinG.ScsyERP.User.facade.entity.Driver" />
-		<typeAlias alias="Escort" type="cn.AssassinG.ScsyERP.User.facade.entity.Escort" />
-		<typeAlias alias="Customer" type="cn.AssassinG.ScsyERP.User.facade.entity.Customer" />
-		<typeAlias alias="Manufacturer" type="cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer" />
-		<typeAlias alias="Consignee" type="cn.AssassinG.ScsyERP.User.facade.entity.Consignee" />
+		<typeAlias alias="UserBean" type="cn.AssassinG.ScsyERP.User.facade.entity.User" />
+		<typeAlias alias="UserRoleBean" type="cn.AssassinG.ScsyERP.User.facade.entity.User_Role" />
+		<typeAlias alias="RoleBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Role" />
+		<typeAlias alias="RolePermissionBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Role_Permission" />
+		<typeAlias alias="PermissionBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Permission" />
+		<typeAlias alias="CorporationBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Corporation" />
+		<typeAlias alias="GovernmentBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Government" />
+		<typeAlias alias="AdminBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Admin" />
+		<typeAlias alias="DriverBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Driver" />
+		<typeAlias alias="EscortBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Escort" />
+		<typeAlias alias="CustomerBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Customer" />
+		<typeAlias alias="ManufacturerBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer" />
+		<typeAlias alias="ConsigneeBean" type="cn.AssassinG.ScsyERP.User.facade.entity.Consignee" />
 	</typeAliases>
 
 	<mappers>

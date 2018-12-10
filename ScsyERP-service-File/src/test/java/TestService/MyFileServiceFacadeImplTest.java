@@ -26,7 +26,7 @@ import java.util.Map;
 public class MyFileServiceFacadeImplTest {
     private static Logger logger = Logger.getLogger(MyFileServiceFacadeImplTest.class);
     @Autowired
-    private MyFileServiceFacade myFileService;
+    private MyFileServiceFacade myFileServiceFacade;
     @Autowired
     private MyFileBiz myFileBiz;
     @Autowired
@@ -58,7 +58,7 @@ public class MyFileServiceFacadeImplTest {
         myFile.setName(StringUtils.getRandomStr(6));
         myFile.setExtension("jpg");
         myFile.setContent(StringUtils.getRandomStr(100));
-        Long id = myFileService.create(myFile);
+        Long id = myFileServiceFacade.create(myFile);
         if(id == null){
             throw new RuntimeException("Create nothing");
         }else {
@@ -72,7 +72,7 @@ public class MyFileServiceFacadeImplTest {
         String new_name = StringUtils.getRandomStr(6);
         logger.info("Before Update: "+myFile);
         myFile.setName(new_name);
-        myFileService.update(myFile);
+        myFileServiceFacade.update(myFile);
         MyFile myFile_check = myFileDao.getById(myFileId);
         if(!myFile_check.getName().equals(new_name)){
             throw new RuntimeException("Update failed");
@@ -83,7 +83,7 @@ public class MyFileServiceFacadeImplTest {
 
     @Test
     public void deleteById() {
-        myFileService.deleteById(myFileId);
+        myFileServiceFacade.deleteById(myFileId);
         MyFile myFile_check = myFileDao.getById(myFileId);
         if(myFile_check != null){
             throw new RuntimeException("Delete failed");
@@ -95,7 +95,7 @@ public class MyFileServiceFacadeImplTest {
     @Test
     public void delete() {
         MyFile myFile_test = myFileDao.getById(myFileId);
-        myFileService.delete(myFile_test);
+        myFileServiceFacade.delete(myFile_test);
         MyFile myFile_check = myFileDao.getById(myFileId);
         if(myFile_check != null){
             throw new RuntimeException("Delete failed");
@@ -106,7 +106,7 @@ public class MyFileServiceFacadeImplTest {
 
     @Test
     public void getById() {
-        MyFile myFile = myFileService.getById(myFileId);
+        MyFile myFile = myFileServiceFacade.getById(myFileId);
         if(myFile == null || myFile.getIfDeleted()){
             throw new RuntimeException("getById null");
         }else{
@@ -123,7 +123,7 @@ public class MyFileServiceFacadeImplTest {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("IfDeleted", false);
         paramMap.put("Id", myFileId);
-        MyFile myFile = myFileService.getBy(paramMap);
+        MyFile myFile = myFileServiceFacade.getBy(paramMap);
         if(myFile.getId() != myFileId){
             throw new RuntimeException("getBy failed");
         }else{
@@ -137,7 +137,7 @@ public class MyFileServiceFacadeImplTest {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("IfDeleted", false);
         paramMap.put("Name", myFile.getName());
-        List<MyFile> myFiles = myFileService.listBy(paramMap);
+        List<MyFile> myFiles = myFileServiceFacade.listBy(paramMap);
         for (int i = 0; i < myFiles.size(); i++)
             logger.info("Item" + i + ":" + myFiles.get(i));
     }
@@ -147,7 +147,7 @@ public class MyFileServiceFacadeImplTest {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("IfDeleted", false);
         PageParam pageParam = new PageParam(2, 2);
-        PageBean<MyFile> pageBean = myFileService.listPage(pageParam, paramMap);
+        PageBean<MyFile> pageBean = myFileServiceFacade.listPage(pageParam, paramMap);
         logger.info(pageBean);
         List<MyFile> myFiles = pageBean.getRecordList();
         for (int i = 0; i < myFiles.size(); i++)
@@ -164,7 +164,7 @@ public class MyFileServiceFacadeImplTest {
 //        user.setPassWord("d123456");
 //        user.setPhone("188" + StringUtils.getRandomStr(8, StringUtils.StrType.NUMBER));
 //        user.setCorporation(1L);
-//        myFileService.createWithUser(myFile, user);
+//        myFileServiceFacade.createWithUser(myFile, user);
 //        if(user.getUserType() != UserType.MyFile || user.getUserInfo().longValue() != myFile.getId().longValue()){
 //            throw new RuntimeException("createWithUser failed");
 //        }else {
@@ -177,7 +177,7 @@ public class MyFileServiceFacadeImplTest {
         String new_name = StringUtils.getRandomStr(6);
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("Name", new_name);
-        myFileService.updateByMap(myFileId, paramMap);
+        myFileServiceFacade.updateByMap(myFileId, paramMap);
         MyFile myFile_check = myFileDao.getById(myFileId);
         if(!myFile_check.getName().equals(new_name)){
             throw new RuntimeException("updateByMap failed");
@@ -188,7 +188,7 @@ public class MyFileServiceFacadeImplTest {
 
 //    @Test
 //    public void deleteByUserId() {
-//        myFileService.deleteByUserId(userId);
+//        myFileServiceFacade.deleteByUserId(userId);
 //        User user_check = userDao.getById(userId);
 //        if(user_check == null || !user_check.getIfDeleted() || user_check.getUserType().getValue().intValue() != UserType.MyFile.getValue().intValue()){
 //            throw new RuntimeException("deleteByUserId failed");

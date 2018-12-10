@@ -10,9 +10,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ScsyERP</groupId>
     <artifactId>ScsyERP-facade-OnWayWatch</artifactId>
     <version>${ScsyERP-facade-OnWayWatch.version}</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>

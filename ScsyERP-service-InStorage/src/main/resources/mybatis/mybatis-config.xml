@@ -38,7 +38,7 @@
 
 	 <!--类型别名是为Java类型命名一个短的名字。 它只和 XML配置有关,只用来减少类完全限定名的多余部分-->
 	<typeAliases>
-		<typeAlias alias="InStorageForm" type="cn.AssassinG.ScsyERP.InStorage.facade.entity.InStorageForm" />
+		<typeAlias alias="InStorageFormBean" type="cn.AssassinG.ScsyERP.InStorage.facade.entity.InStorageForm" />
 	</typeAliases>
 
 	<mappers>

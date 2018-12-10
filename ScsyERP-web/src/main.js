@@ -75,42 +75,49 @@ const router = new VueRouter({
         redirect: '/login',
         component: DashboardView,
         children: [{
-            path: 'get-account',
+            path: 'GetAccount',
             component: GetAccountView,
             meta: {
-                group: '用户管理', title: '生成账号',
-                permission: [TYPE_SUPERADMIN]
+                group: '用户管理', title: '生成账号'
+                // permission: [TYPE_SUPERADMIN]
             },
         }, {
-            path: 'corporation',
+            path: '',//增删查改角色，修改角色的权限、父角色
+            component: GetAccountView,
+            meta: {
+                group: '用户管理', title: '角色管理'
+                // permission: [TYPE_SUPERADMIN]
+            },
+        }, {
+            path: '',//为用户分配角色（多个）、屏蔽权限、特殊权限
+            component: GetAccountView,
+            meta: {
+                group: '用户管理', title: '用户管理'
+                // permission: [TYPE_SUPERADMIN]
+            },
+        }, {
+            path: 'Corporation',//查询承运方信息；修改承运方信息（仅承运方）
             component: CorporationView,
             meta: {
                 group: '基本信息', title: '承运方信息',
                 permission: [TYPE_CORP, TYPE_CORP_ADMIN]
             }
         }, {
-            path: 'government',
-            component: GovernmentView,
+            path: 'Government',
+            component: GovernmentView,//查询政府信息；修改政府信息（仅政府）
             meta: {
                 group: '基本信息', title: '政府信息',
                 permission: [TYPE_GOV]
             }
         }, {
-            path: 'manufacturer',
-            component: ManufacturerView,
-            meta: {
-                group: '基本信息', title: '设备生产商信息',
-                permission: [TYPE_MANU]
-            }
-        }, {
-            path: 'administrator',
-            component: AdministratorView,
+            path: 'Admin',
+            component: AdministratorView,//增删查改管理员信息
             meta: {
                 group: '基本信息', title: '管理员信息',
                 permission: [TYPE_CORP, TYPE_CORP_ADMIN]
             }
         }, {
-            path: 'driver',
+            path: 'Driver',
             component: DriverView,
             children: [{ path: ':viewType?' }],
             props: ({ params: { viewType = 'driver' } }) => ({ viewType }),
@@ -119,16 +126,7 @@ const router = new VueRouter({
                 permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_GOV, TYPE_DRIVER, TYPE_ESCORT]
             },
         }, {
-            path: 'vehicle',
-            component: VehicleView,
-            props: ({ params: { viewType = 'truck' } }) => ({ viewType }),
-            meta: {
-                group: '基本信息', title: '车辆信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            },
-            children: [{ path: ':viewType?' }]
-        }, {
-            path: 'client',
+            path: 'Client',
             component: ClientView,
             props: ({ params: { viewType = 'seller' } }) => ({ viewType }),
             meta: {
@@ -137,21 +135,74 @@ const router = new VueRouter({
             },
             children: [{ path: ':viewType?' }]
         }, {
-            path: 'goods',
+            path: 'Manufacturer',
+            component: ManufacturerView,
+            meta: {
+                group: '基本信息', title: '设备生产商信息',
+                permission: [TYPE_MANU]
+            }
+        }, {
+            path: 'Consignee',
+            component: ClientView,
+            props: ({ params: { viewType = 'seller' } }) => ({ viewType }),
+            meta: {
+                group: '基本信息', title: '客户信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_SELLER, TYPE_BUYER]
+            },
+            children: [{ path: ':viewType?' }]
+        }, {
+            path: 'DriveWorker',
+            component: AdministratorView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '管理员信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'LiftWorker',
+            component: AdministratorView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '管理员信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Truck',
+            component: VehicleView,
+            props: ({ params: { viewType = 'truck' } }) => ({ viewType }),
+            meta: {
+                group: '基本信息', title: '车辆信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+            },
+            children: [{ path: ':viewType?' }]
+        }, {
+            path: 'Warehouse',
+            component: AdministratorView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '管理员信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Workshop',
+            component: AdministratorView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '管理员信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Material',
+            component: AdministratorView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '管理员信息',
+                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Product',
             component: GoodsView,
             meta: {
                 group: '基本信息', title: '货物信息',
                 permission: [TYPE_CORP, TYPE_CORP_ADMIN]
             }
         }, {
-            path: 'route',
-            component: RouteView,
-            meta: {
-                group: '基本信息', title: '路线信息',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'order-place',
+            path: 'order-place',//创建工程，入库，在库盘点，出库
             component: OrderPlaceView,
             meta: {
                 group: '电子运单', title: '下达订单',
@@ -161,15 +212,8 @@ const router = new VueRouter({
             path: 'order',
             component: OrderView,
             meta: {
-                group: '电子运单', title: '订单查询',
+                group: '费用结算', title: '订单查询',//随车清单、运输合同
                 permission: [TYPE_SELLER, TYPE_BUYER, TYPE_CORP_ADMIN, TYPE_CORP]
-            }
-        }, {
-            path: 'fee-check',
-            component: FeeCheckView,
-            meta: {
-                group: '电子运单', title: '费用审核',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
             }
         }, {
             path: 'latest-log',
@@ -226,55 +270,6 @@ const router = new VueRouter({
             },
             props: ({ params: { viewType = 'time' } }) => ({ viewType }),
             children: [{ path: ':viewType?' }]
-        }, {
-            path: 'car-info',
-            component: CarInfoView,
-            meta: {
-                group: '设备管理', title: '车辆档案',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_MANU]
-            }
-        }, {
-            path: 'repair-log',
-            component: RepairLogView,
-            meta: {
-                group: '设备管理', title: '维修记录',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN, TYPE_MANU]
-            }
-        }, {
-            path: 'dae-auth',
-            component: DaeAuthView,
-            meta: {
-                group: '学习考试', title: '权限管理',
-                permission: [TYPE_SUPERADMIN]
-            },
-        }, {
-            path: 'exams',
-            component: ExamsView,
-            meta: {
-                group: '学习考试', title: '试卷管理',
-                permission: [TYPE_CORP_ADMIN]
-            },
-        }, {
-            path: 'documents',
-            component: DocumentsView,
-            meta: {
-                group: '学习考试', title: '学习资料管理',
-                permission: [TYPE_CORP_ADMIN]
-            }
-        }, {
-            path: 'scores',
-            component: ScoresView,
-            meta: {
-                group: '学习考试', title: '考试成绩查询',
-                permission: [TYPE_CORP_ADMIN, TYPE_DRIVER]
-            },
-        }, {
-            path: 'reading-stats',
-            component: ReadingStatusView,
-            meta: {
-                group: '学习考试', title: '学习时长查询',
-                permission: [TYPE_CORP_ADMIN, TYPE_DRIVER]
-            },
         }]
     }, {
         path: '/login',

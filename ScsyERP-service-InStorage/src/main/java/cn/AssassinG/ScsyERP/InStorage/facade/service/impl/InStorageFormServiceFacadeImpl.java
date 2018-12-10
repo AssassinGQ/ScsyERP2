@@ -8,7 +8,7 @@ import cn.AssassinG.ScsyERP.common.core.service.impl.FormServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("InStorageFormServiceFacade")
 public class InStorageFormServiceFacadeImpl extends FormServiceImpl<InStorageForm> implements InStorageFormServiceFacade {
     @Autowired
     private InStorageFormBiz inStorageFormBiz;

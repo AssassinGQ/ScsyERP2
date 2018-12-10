@@ -36,8 +36,9 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
     protected SqlSessionTemplate getSessionTemplate() {
         return sessionTemplate;
     }
+
     @Autowired
-    @Qualifier("sessionTemplate")
+    @Qualifier("sqlSessionTemplate")
     public void setSessionTemplate(SqlSessionTemplate sessionTemplate) {
         this.sessionTemplate = sessionTemplate;
     }
@@ -45,11 +46,26 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
     public SqlSession getSqlSession() {
         return super.getSqlSession();
     }
+
     @Autowired
-    @Qualifier("sessionTemplate")
+    @Qualifier("sqlSessionTemplate")
     public void setSqlSession(SqlSessionTemplate sessionTemplate){
         super.setSqlSessionTemplate(sessionTemplate);
     }
+//todo 注入问题该怎么解决：在idea中使用单元测试没问题，打包后就找不到SqlSessionTemplate
+//    protected SqlSessionTemplate sessionTemplate;
+//
+//    protected SqlSessionTemplate getSessionTemplate() {
+//        return sessionTemplate;
+//    }
+//
+//    public void setSessionTemplate(SqlSessionTemplate sessionTemplate) {
+//        this.sessionTemplate = sessionTemplate;
+//    }
+//
+//    public SqlSession getSqlSession() {
+//        return super.getSqlSession();
+//    }
 
     public long insert(T entity) {
         if(entity == null)

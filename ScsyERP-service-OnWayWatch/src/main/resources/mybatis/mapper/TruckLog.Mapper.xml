@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_truck_log"> t_truck_log </sql>
 
-	<resultMap id="beanMap" type="TruckLog" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+	<resultMap id="beanMap" type="TruckLogBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
         <result column="out_storage_form" property="OutStorageForm" />
         <result column="truck" property="Truck" />
         <result column="time" property="Time" />
@@ -23,7 +23,7 @@
         <result column="warn" property="Warn" />
 	</resultMap>
 
-	<insert id="insert" parameterType="TruckLog" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="TruckLogBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_truck_log"/> (corporation, create_time, update_time, delete_time, is_deleted, out_storage_form, truck, time, distance,
                                       gpsx, gpsy, speed, fuel_vol, left_tire_pressure, right_tire_pressure, left_tire_temp, right_tire_temp, posture, has_warn, warn)
 		values (#{Corporation}, now(), now(), NULL , FALSE, #{OutStorageForm}, #{Truck}, #{Time}, #{Distance}, #{GPSX}, #{GPSY}, #{Speed}, #{FuelVol},
@@ -40,7 +40,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="TruckLog">
+	<update id="update" parameterType="TruckLogBean">
 		update <include refid="t_truck_log"/>
 		<set>
 			update_time = now(),
@@ -186,7 +186,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="TruckLog">
+    <update id="delete" parameterType="TruckLogBean">
         update <include refid="t_truck_log"/>
         <set>
             delete_time = now(),

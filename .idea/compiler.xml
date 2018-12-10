@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ScsyERP-common" />
         <module name="ScsyERP-common-config" />
         <module name="ScsyERP-common-core" />
-        <module name="ScsyERP-common-parent" />
         <module name="ScsyERP-common-web" />
         <module name="ScsyERP-facade-BasicInfo" />
         <module name="ScsyERP-facade-Fee" />
@@ -53,5 +53,31 @@
       <module name="ScsyERP-service-User" target="8" />
       <module name="ScsyERP-web-Boss" target="8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ScsyERP-common" options="-nowarn" />
+      <module name="ScsyERP-common-config" options="-nowarn" />
+      <module name="ScsyERP-common-core" options="-nowarn" />
+      <module name="ScsyERP-common-parent" options="-nowarn" />
+      <module name="ScsyERP-common-web" options="-nowarn" />
+      <module name="ScsyERP-facade-BasicInfo" options="-nowarn" />
+      <module name="ScsyERP-facade-Fee" options="-nowarn" />
+      <module name="ScsyERP-facade-File" options="-nowarn" />
+      <module name="ScsyERP-facade-InStorge" options="-nowarn" />
+      <module name="ScsyERP-facade-OnWayWatch" options="-nowarn" />
+      <module name="ScsyERP-facade-OutStorage" options="-nowarn" />
+      <module name="ScsyERP-facade-Statistics" options="-nowarn" />
+      <module name="ScsyERP-facade-User" options="-nowarn" />
+      <module name="ScsyERP-service-BasicInfo" options="-nowarn" />
+      <module name="ScsyERP-service-Fee" options="-nowarn" />
+      <module name="ScsyERP-service-File" options="-nowarn" />
+      <module name="ScsyERP-service-InStorage" options="-nowarn" />
+      <module name="ScsyERP-service-OnWayWatch" options="-nowarn" />
+      <module name="ScsyERP-service-OutStorage" options="-nowarn" />
+      <module name="ScsyERP-service-Statistics" options="-nowarn" />
+      <module name="ScsyERP-service-User" options="-nowarn" />
+      <module name="ScsyERP-web-Boss" options="-nowarn" />
+    </option>
   </component>
 </project>

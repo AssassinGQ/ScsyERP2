@@ -176,7 +176,7 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
         if(user_checkuname != null && !user_checkuname.getIfDeleted() && user_checkuname.getId().longValue() != user.getId().longValue()){
             throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "用户名被占用:%s", newUserName);
         }
-        if(!user.getVcode().equals(Vcode) || System.currentTimeMillis() - user.getVcodeTime().getTime() > 1000*60*60*4){//验证码有效期四个小时
+        if(!user.getVcode().equals(Vcode) || System.currentTimeMillis() - user.getVcodeTime().getTime() > 1000*60*60*4){//验证码有效期四个小时//todo 應該用user的id查一下，其他幾個地方同理
             throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "验证码过期，手机号:%s", user.getPhone());
         }
         user.setUserName(newUserName);

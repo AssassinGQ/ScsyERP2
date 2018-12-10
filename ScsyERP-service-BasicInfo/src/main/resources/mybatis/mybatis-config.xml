@@ -38,14 +38,14 @@
 
 	 <!--类型别名是为Java类型命名一个短的名字。 它只和 XML配置有关,只用来减少类完全限定名的多余部分-->
 	<typeAliases>
-		<typeAlias alias="DriveWorker" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.DriveWorker" />
-		<typeAlias alias="LiftWorker" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.LiftWorker" />
-		<typeAlias alias="Workshop" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Workshop" />
-		<typeAlias alias="Warehouse" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Warehouse" />
-		<typeAlias alias="Truck" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Truck" />
-		<typeAlias alias="Project" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Project" />
-		<typeAlias alias="Material" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Material" />
-		<typeAlias alias="Product" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Product" />
+		<typeAlias alias="DriveWorkerBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.DriveWorker" />
+		<typeAlias alias="LiftWorkerBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.LiftWorker" />
+		<typeAlias alias="WorkshopBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Workshop" />
+		<typeAlias alias="WarehouseBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Warehouse" />
+		<typeAlias alias="TruckBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Truck" />
+		<typeAlias alias="ProjectBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Project" />
+		<typeAlias alias="MaterialBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Material" />
+		<typeAlias alias="ProductBean" type="cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Product" />
 	</typeAliases>
 
 	<mappers>

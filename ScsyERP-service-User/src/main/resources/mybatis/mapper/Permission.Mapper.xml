@@ -5,12 +5,12 @@
     <!-- 用户信息表 -->
     <sql id="t_permission"> t_permission </sql>
 
-    <resultMap id="beanMap" type="Permission" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+    <resultMap id="beanMap" type="PermissionBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
         <result column="permission_name" property="PermissionName" />
         <result column="permission_desc" property="PermissionDesc" />
     </resultMap>
 
-    <insert id="insert" parameterType="Permission" keyProperty="id" useGeneratedKeys="true">
+    <insert id="insert" parameterType="PermissionBean" keyProperty="id" useGeneratedKeys="true">
         insert into <include refid="t_permission"/> (corporation, create_time, update_time, delete_time, is_deleted, permission_name, permission_desc)
         values (#{Corporation}, now(), now(), NULL, FALSE, #{PermissionName}, #{PermissionDesc})
     </insert>
@@ -23,7 +23,7 @@
         </foreach>
     </insert>
 
-    <update id="update" parameterType="Permission">
+    <update id="update" parameterType="PermissionBean">
         update <include refid="t_permission"/>
         <set>
             update_time = now(),
@@ -65,7 +65,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Permission">
+    <update id="delete" parameterType="PermissionBean">
         update <include refid="t_permission"/>
         <set>
             delete_time = now(),

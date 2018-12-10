@@ -26,10 +26,9 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
-        <!--<property name="configLocation" value="classpath:mybatis/mybatis-common-config.xml.bak"/>-->
     </bean>
 
-    <bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
         <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
@@ -40,7 +39,7 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
 
     <!--<bean Id="baseDao" class="cn.AssassinG.scsycc.common.dao.BaseDaoImpl" abstract="true">-->
-        <!--<property name="sessionTemplate" ref="sqlSessionTemplate"/>-->
+        <!--<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>-->
         <!--<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>-->
     <!--</bean>-->
     <!--<bean Id="userDao" class="cn.AssassinG.scsycc.entitys.User.dao.UserDaoImpl" parent="baseDao"/>-->

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Service
+@Service("TruckLogServiceFacade")
 public class TruckLogServiceFacadeImpl extends BaseServiceImpl<TruckLog> implements TruckLogServiceFacade {
     @Autowired
     private TruckLogBiz truckLogBiz;

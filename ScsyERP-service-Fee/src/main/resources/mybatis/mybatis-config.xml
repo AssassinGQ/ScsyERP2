@@ -38,8 +38,8 @@
 
 	 <!--类型别名是为Java类型命名一个短的名字。 它只和 XML配置有关,只用来减少类完全限定名的多余部分-->
 	<typeAliases>
-		<typeAlias alias="OnTruckForm" type="cn.AssassinG.ScsyERP.Fee.facade.entity.OnTruckForm" />
-		<typeAlias alias="TransportContract" type="cn.AssassinG.ScsyERP.Fee.facade.entity.TransportContract" />
+		<typeAlias alias="OnTruckFormBean" type="cn.AssassinG.ScsyERP.Fee.facade.entity.OnTruckForm" />
+		<typeAlias alias="TransportContractBean" type="cn.AssassinG.ScsyERP.Fee.facade.entity.TransportContract" />
 	</typeAliases>
 
 	<mappers>

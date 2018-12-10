@@ -5,13 +5,13 @@
     <!-- 用户信息表 -->
     <sql id="t_role"> t_role </sql>
 
-    <resultMap id="beanMap" type="Role" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+    <resultMap id="beanMap" type="RoleBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
         <result column="role_name" property="RoleName" />
         <result column="role_desc" property="RoleDesc" />
         <result column="superrole_name" property="SuperRoleName" />
     </resultMap>
 
-    <insert id="insert" parameterType="Role" keyProperty="id" useGeneratedKeys="true">
+    <insert id="insert" parameterType="RoleBean" keyProperty="id" useGeneratedKeys="true">
         insert into <include refid="t_role"/> (corporation, create_time, update_time, delete_time, is_deleted, role_name, role_desc, superrole_name)
         values (#{Corporation}, now(), now(), NULL, FALSE, #{RoleName}, #{RoleDesc}, #{SuperRoleName})
     </insert>
@@ -24,7 +24,7 @@
         </foreach>
     </insert>
 
-    <update id="update" parameterType="Role">
+    <update id="update" parameterType="RoleBean">
         update <include refid="t_role"/>
         <set>
             update_time = now(),
@@ -73,7 +73,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Role">
+    <update id="delete" parameterType="RoleBean">
         update <include refid="t_role"/>
         <set>
             delete_time = now(),

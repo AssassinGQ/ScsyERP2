@@ -5,11 +5,11 @@
 	<!-- 用户信息表 -->
 	<sql id="t_government"> t_government </sql>
 
-	<resultMap id="beanMap" type="Government" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
+	<resultMap id="beanMap" type="GovernmentBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
 		<result column="dept" property="Dept" typeHandler="cn.AssassinG.ScsyERP.User.core.dao.MyBatisHandler.GovernmentDeptTypeHandler" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Government" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="GovernmentBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_government"/> (corporation, create_time, update_time, delete_time, is_deleted, name, dept)
 		values (-1, now(), now(), NULL , FALSE , #{Name}, #{Dept,typeHandler=cn.AssassinG.ScsyERP.User.core.dao.MyBatisHandler.GovernmentDeptTypeHandler})
 	</insert>
@@ -22,7 +22,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Government">
+	<update id="update" parameterType="GovernmentBean">
 		update <include refid="t_government"/>
 		<set>
 			update_time = now(),
@@ -64,7 +64,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Government">
+    <update id="delete" parameterType="GovernmentBean">
         update <include refid="t_government"/>
         <set>
             delete_time = now(),

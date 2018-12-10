@@ -27,13 +27,13 @@ import {
 export default {
     name: 'login',
     data: () => ({
-        username: '',
+        UserName: '',
         password: ''
     }),
     methods: {
         login() {
             let { username, password } = this
-            POST('/user/login', { username, password })
+            POST('/user/login', { username: UserName, password })
                 .then(user => {
                     this.$store.commit('receiveUser', user);
                     if(user.type == TYPE_SUPERADMIN){

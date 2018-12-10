@@ -17,4 +17,4 @@
 [INFO ][20181123 23:06:07,852][DriveWorkerServiceFacadeImplTest:147] Item1:DriveWorker{Name='6AaWr2', Phone='null', Id=13, Corporation=1, CreateTime=Sat Nov 24 07:06:07 CST 2018, UpdateTime=Sat Nov 24 07:06:07 CST 2018, DeleteTime=null, IfDeleted=false}
 [INFO ][20181123 23:06:07,876][DriveWorkerServiceFacadeImplTest:84] Delete succeed
 [INFO ][20181123 23:06:07,883][AbstractApplicationContext:989] Closing org.springframework.context.support.GenericApplicationContext@704a52ec: startup date [Fri Nov 23 23:06:04 CST 2018]; root of context hierarchy
-[WARN ][20181123 23:06:07,886][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+[WARN ][20181123 23:06:07,886][DisposableBeanAdapter:347] Invocation of destroy method 'close' failed on bean with name 'sqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

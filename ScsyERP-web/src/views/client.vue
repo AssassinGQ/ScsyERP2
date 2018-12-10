@@ -42,7 +42,7 @@ export default {
             { key: 'password', label: '密码' },
         ],
         createResultLabels: {
-            username: '用户名',
+            UserName: '用户名',
             password: '密码',
         },
         isSeller: store.getters.user.type === TYPE_SELLER,

@@ -35,7 +35,7 @@ export default {
             label: '邮箱',
         }],
         createResultLabels: {
-            username: '用户名',
+            UserName: '用户名',
             password: '密码'
         }
     })

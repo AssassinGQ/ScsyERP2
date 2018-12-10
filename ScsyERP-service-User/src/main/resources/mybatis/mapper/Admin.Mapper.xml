@@ -5,11 +5,11 @@
 	<!-- 用户信息表 -->
 	<sql id="t_admin"> t_admin </sql>
 
-	<resultMap id="beanMap" type="Admin" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
+	<resultMap id="beanMap" type="AdminBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
 		<result column="dept" property="Dept" typeHandler="cn.AssassinG.ScsyERP.User.core.dao.MyBatisHandler.AdminDeptTypeHandler" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Admin" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="AdminBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_admin"/> (corporation, create_time, update_time, delete_time, is_deleted, name, dept)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{Dept,typeHandler=cn.AssassinG.ScsyERP.User.core.dao.MyBatisHandler.AdminDeptTypeHandler})
 	</insert>
@@ -22,7 +22,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Admin">
+	<update id="update" parameterType="AdminBean">
 		update <include refid="t_admin"/>
 		<set>
 			update_time = now(),
@@ -64,7 +64,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Admin">
+    <update id="delete" parameterType="AdminBean">
         update <include refid="t_admin"/>
         <set>
             delete_time = now(),

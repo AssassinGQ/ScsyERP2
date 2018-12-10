@@ -5,8 +5,6 @@
       <configuration>
         <fileset id="fileset" name="Spring Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-context.xml</file>
-        </fileset>
-        <fileset id="fileset2" name="Spring Mybatis" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mybatis.xml</file>
         </fileset>
         <fileset id="fileset3" name="Spring Dubbo Provider" removed="false">

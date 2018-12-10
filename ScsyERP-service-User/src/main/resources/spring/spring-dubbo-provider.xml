@@ -24,14 +24,14 @@
 	<!-- 和本地bean一样实现服务 -->
 	<!-- 声明需要暴露的服务接口 -->
 	<!-- 用户管理 -->
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade" ref="userServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.CorporationServiceFacade" ref="corporationServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.GovernmentServiceFacade" ref="governmentServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.AdminServiceFacade" ref="adminServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.CustomerServiceFacade" ref="customerServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.ManufacturerServiceFacade" ref="manufacturerServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.ConsigneeServiceFacade" ref="consigneeServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.DriverServiceFacade" ref="driverServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.EscortServiceFacade" ref="escortServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade" ref="UserServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.CorporationServiceFacade" ref="CorporationServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.GovernmentServiceFacade" ref="GovernmentServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.AdminServiceFacade" ref="AdminServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.CustomerServiceFacade" ref="CustomerServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.ManufacturerServiceFacade" ref="ManufacturerServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.ConsigneeServiceFacade" ref="ConsigneeServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.DriverServiceFacade" ref="DriverServiceFacade" />
+	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.User.facade.service.EscortServiceFacade" ref="EscortServiceFacade" />
 
 </beans>  

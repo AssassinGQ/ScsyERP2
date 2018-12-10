@@ -27,7 +27,7 @@
             </el-tabs>
         </el-tab-pane>
         <el-tab-pane label="按条目统计" name="item">
-            <table-view :fields="itemFields" base-url="/warn" :actions="false" ref="table1"/>
+            <table-view :fields="itemFields" base-url="/warnId" :actions="false" ref="table1"/>
             <el-button class="searchButton"  type="primary" size="small" @click="setChart">统计异常数目</el-button>
             <chart-view class="chart2" :title="chart2.title" :xaxis="chart2.xaxis" :data="chart2.data" :width="1000" :height="250"/>
         </el-tab-pane>
@@ -153,7 +153,7 @@ export default {
             delete params.page
             delete params.total
             var sum = Array(11).fill(0)
-            GET("/warn/query", { ...params }).then(({data}) => {
+            GET("/warnId/query", { ...params }).then(({data}) => {
                 data.forEach(i => sum[i.warntype-1]++)
                 this.chart2.xaxis = this.warntype
                 this.chart2.data = sum

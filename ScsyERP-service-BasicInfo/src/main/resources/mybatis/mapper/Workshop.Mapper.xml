@@ -5,13 +5,13 @@
 	<!-- 用户信息表 -->
 	<sql id="t_workshop"> t_workshop </sql>
 
-	<resultMap id="beanMap" type="Workshop" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
+	<resultMap id="beanMap" type="WorkshopBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 		<result column="address" property="Address" />
 		<result column="manufacturer" property="Manufacturer" />
 		<result column="man_name" property="ManName" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Workshop" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="WorkshopBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_workshop"/> (corporation, create_time, update_time, delete_time, is_deleted, name, phone, address, manufacturer, man_name)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{Phone}, #{Address}, #{Manufacturer}, #{ManName})
 	</insert>
@@ -24,7 +24,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Workshop">
+	<update id="update" parameterType="WorkshopBean">
 		update <include refid="t_workshop"/>
 		<set>
 			update_time = now(),
@@ -90,7 +90,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Workshop">
+    <update id="delete" parameterType="WorkshopBean">
         update <include refid="t_workshop"/>
         <set>
             delete_time = now(),

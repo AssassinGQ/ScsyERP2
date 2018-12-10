@@ -1,2 +1,2 @@
-<%response.sendRedirect("/home");%>
+<%response.sendRedirect("/login");%>
 <%--<jsp:forward page="/user/Login"/>--%>

@@ -5,14 +5,14 @@
 	<!-- 用户信息表 -->
 	<sql id="t_my_file"> t_my_file </sql>
 
-	<resultMap id="beanMap" type="MyFile" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+	<resultMap id="beanMap" type="MyFileBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
 		<result column="type" property="Type" typeHandler="cn.AssassinG.ScsyERP.File.core.dao.MyBatisHandler.FileTypeHandler"/>
 		<result column="name" property="Name" />
 		<result column="extension" property="Extension" />
 		<result column="content" property="Content" />
 	</resultMap>
 
-	<insert id="insert" parameterType="MyFile" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="MyFileBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_my_file"/> (corporation, create_time, update_time, delete_time, is_deleted, type, name, extension, content)
 		values (#{Corporation}, now(), now(), NULL , FALSE, #{Type,typeHandler=cn.AssassinG.ScsyERP.File.core.dao.MyBatisHandler.FileTypeHandler}, #{Name}, #{Extension}, #{Content})
 	</insert>
@@ -25,7 +25,7 @@
         </foreach>
 	</insert>
 	
-	<!--<update id="update" parameterType="MyFile">-->
+	<!--<update id="update" parameterType="MyFileBean">-->
 		<!--update <include refid="t_my_file"/>-->
 		<!--<set>-->
 			<!--update_time = now(),-->
@@ -123,7 +123,7 @@
         <!--</where>-->
     <!--</update>-->
 
-    <update id="delete" parameterType="MyFile">
+    <update id="delete" parameterType="MyFileBean">
         delete from <include refid="t_my_file"/>
         <where>
             id = #{Id}

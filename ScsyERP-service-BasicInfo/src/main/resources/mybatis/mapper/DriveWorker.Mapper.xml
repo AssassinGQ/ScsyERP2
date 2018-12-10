@@ -5,10 +5,10 @@
 	<!-- 用户信息表 -->
 	<sql id="t_drive_worker"> t_drive_worker </sql>
 
-	<resultMap id="beanMap" type="DriveWorker" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
+	<resultMap id="beanMap" type="DriveWorkerBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 	</resultMap>
 
-	<insert id="insert" parameterType="DriveWorker" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="DriveWorkerBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_drive_worker"/> (corporation, create_time, update_time, delete_time, is_deleted, name, phone)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{Phone})
 	</insert>
@@ -21,7 +21,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="DriveWorker">
+	<update id="update" parameterType="DriveWorkerBean">
 		update <include refid="t_drive_worker"/>
 		<set>
 			update_time = now(),
@@ -63,7 +63,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="DriveWorker">
+    <update id="delete" parameterType="DriveWorkerBean">
         update <include refid="t_drive_worker"/>
         <set>
             delete_time = now(),

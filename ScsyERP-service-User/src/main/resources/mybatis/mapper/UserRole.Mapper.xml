@@ -5,12 +5,12 @@
     <!-- 用户信息表 -->
     <sql id="t_userrole"> t_user_role </sql>
 
-    <resultMap id="beanMap" type="UserRole" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
+    <resultMap id="beanMap" type="UserRoleBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.BaseEntityMap">
         <result column="user_id" property="UserId" />
         <result column="role_id" property="RoleId" />
     </resultMap>
 
-    <insert id="insert" parameterType="UserRole" keyProperty="id" useGeneratedKeys="true">
+    <insert id="insert" parameterType="UserRoleBean" keyProperty="id" useGeneratedKeys="true">
         insert into <include refid="t_userrole"/> (corporation, create_time, update_time, delete_time, is_deleted, user_id, role_id)
         values (#{Corporation}, now(), now(), NULL, FALSE, #{UserId}, #{RoleId})
     </insert>
@@ -23,7 +23,7 @@
         </foreach>
     </insert>
 
-    <update id="update" parameterType="UserRole">
+    <update id="update" parameterType="UserRoleBean">
         update <include refid="t_userrole"/>
         <set>
             update_time = now(),
@@ -65,7 +65,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="UserRole">
+    <update id="delete" parameterType="UserRoleBean">
         update <include refid="t_userrole"/>
         <set>
             delete_time = now(),

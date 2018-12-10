@@ -13,6 +13,7 @@ import cn.AssassinG.ScsyERP.common.utils.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller
+@Controller("UserController")
 @RequestMapping("/user")
 public class UserController extends BaseController<User> {
     private static Logger logger = Logger.getLogger(UserController.class);
@@ -78,121 +79,11 @@ public class UserController extends BaseController<User> {
         return jsonObject;
     }
 
-    @RequestMapping(value = "/reg", method = RequestMethod.POST)//提交注册
-    @ResponseBody
-    public JSONObject doReg(User user){
-        JSONObject jsonObject = new JSONObject();
-        if(user.getUserName() == null || user.getUserName().isEmpty()){
-            jsonObject.put("status", 0);
-            jsonObject.put("msg", "请输入用户名");
-            jsonObject.put("data", null);
-            return jsonObject;
-        }else{
-            User user_uname = userServiceFacade.findUserByUname(user.getUserName());
-            if(user_uname != null){
-                jsonObject.put("status", 0);
-                jsonObject.put("msg", "用户名不可用");
-                jsonObject.put("data", null);
-                return jsonObject;
-            }
-        }
-        if(user.getPassWord() == null || user.getPassWord().isEmpty()){
-            jsonObject.put("status", 0);
-            jsonObject.put("msg", "请输入密码");
-            jsonObject.put("data", null);
-            return jsonObject;
-        }
-        User p_user = userServiceFacade.findUserByPhone(user.getPhone());
-        if(p_user == null || (!p_user.getVcode().equals(user.getVcode()))){
-            jsonObject.put("status", 0);
-            jsonObject.put("msg", "验证码不正确");
-            jsonObject.put("data", null);
-            return jsonObject;
-        }else{
-            long vcodetime = p_user.getVcodeTime().getTime();
-            long nowtime = System.currentTimeMillis();
-            long dur = nowtime - vcodetime;
-            if(dur > 1000*60*5){
-                jsonObject.put("status", 0);
-                jsonObject.put("msg", "验证码已过期");
-                jsonObject.put("data", null);
-                return jsonObject;
-            }
-            p_user.setUserName(user.getUserName());
-            p_user.setPassWord(user.getPassWord());
-            userServiceFacade.update(p_user);
-            jsonObject.put("status", 1);
-            jsonObject.put("msg", "注册成功");
-            jsonObject.put("data", null);
-            return jsonObject;
-        }
-    }
-
-    @RequestMapping(value="/login", method = RequestMethod.GET)
-    public ModelAndView toLogin(
-            @RequestParam(value = "error", required = false) String error,
-            @RequestParam(value = "logout", required = false) String logout){
-        logger.info("get login");
-        ModelAndView model = new ModelAndView();
-        if(error != null){
-            model.addObject("login_info", "用户名或密码不正确!");
-        }
-        if(logout != null){
-            model.addObject("login_info", "您已成功注销系统.");
-        }
-        model.setViewName("user/login");
-        return model;
-    }
-
-//    @Autowired
-//    private AuthenticationManager authenticationManager;
-//    @RequestMapping(value="/Login", method = RequestMethod.POST)
-//    public ModelAndView doLogin(
-//            @RequestParam(defaultValue = "") String username,
-//            @RequestParam(defaultValue = "") String password,
-//            HttpServletRequest request){
-//        logger.info("post login:" + username+":"+password);
-//        username = username.trim();
-//        ModelAndView model = new ModelAndView();
-//        model.setViewName("user/login");
-//        if(username == null || username.isEmpty() ||
-//                password == null || password.isEmpty()) {
-//            model.addObject("login_info", "请输入用户名和密码");
-//            return model;
-//        }
-//
-//        model.setViewName("home");
-//        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-//        try{
-//            Authentication authentication = authenticationManager.authenticate(authenticationToken);
-//            SecurityContextHolder.getContext().setAuthentication(authentication);
-//            HttpSession session = request.getSession();
-//            session.setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext());
-//        }catch (AuthenticationException ex){
-//            model.setViewName("user/login");
-//            model.addObject("login_info", "用户名或密码不正确!");
-//        }
-//        return model;
-//
-//        model.put("User", user);
-//        User p_user = userServiceFacade.findUserByUname(user.getUserName());
-//        if(p_user == null){
-//            model.put("login_info", "查无此用户");
-//            return "user/login";
-//        }
-//        if(p_user.getPassWord().equals(user.getPassWord()))
-//            return "redirect:/home";
-//        else {
-//            model.put("login_info", "密码错误");
-//            return "user/login";
-//        }
-//    }
-
     private static final int AccountTypeCorporation = 0;
     private static final int AccountTypeGovernment = 1;
     @RequestMapping(value = "/getAccount", method = RequestMethod.POST)//生成账号
     @ResponseBody
-    public JSONObject getAccount(String token, Integer type, Integer Name, User user){
+    public JSONObject getAccount(String token, Integer type, String Name, User user){
         if(type == null || (type != AccountTypeGovernment && type != AccountTypeCorporation)){
             return getResultJSON("请选择正确的申请账户类型");
         }else{
@@ -219,20 +110,6 @@ public class UserController extends BaseController<User> {
         }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)//登录
-    @ResponseBody
-    public JSONObject login(String UserName, String PassWord){
-        try{
-            if(userServiceFacade.login(UserName, PassWord)){
-                return getResultJSON(RetStatusType.StatusSuccess, "登录成功", null);
-            }else{
-                return getResultJSON("登录失败");
-            }
-        }catch(DaoException | BizException e){
-            return getResultJSON(e.getMessage());
-        }
-    }
-
     @RequestMapping(value = "/getVcode", method = RequestMethod.POST)//获取验证码
     @ResponseBody
     public JSONObject getVcode(String Phone){
@@ -246,6 +123,7 @@ public class UserController extends BaseController<User> {
         }
     }
 
+    @Secured("ROLE_PAGE_HOME")
     @RequestMapping(value = "/changePsw", method = RequestMethod.POST)//修改密码
     @ResponseBody
     public JSONObject changePsw(String Phone, String Vcode, String newPassWord){
@@ -278,4 +156,89 @@ public class UserController extends BaseController<User> {
             return getResultJSON(e.getMessage());
         }
     }
+
+    /**
+     * 返回登录页面，不是登录处理，用于SpringSecurity
+     * @param error
+     * @param logout
+     * @return
+     */
+    @RequestMapping(value="/login", method = RequestMethod.GET)
+    public ModelAndView toLogin(
+            @RequestParam(value = "error", required = false) String error,
+            @RequestParam(value = "logout", required = false) String logout){
+        logger.info("get login");
+        ModelAndView model = new ModelAndView();
+        if(error != null){
+            model.addObject("login_info", "用户名或密码不正确!");
+        }
+        if(logout != null){
+            model.addObject("login_info", "您已成功注销系统.");
+        }
+        model.setViewName("user/login");
+        return model;
+    }
+    //    @RequestMapping(value = "/login", method = RequestMethod.POST)//登录
+//    @ResponseBody
+//    public JSONObject login(String UserName, String PassWord){
+//        try{
+//            if(userServiceFacade.login(UserName, PassWord)){
+//                return getResultJSON(RetStatusType.StatusSuccess, "登录成功", null);
+//            }else{
+//                return getResultJSON("登录失败");
+//            }
+//        }catch(DaoException | BizException e){
+//            return getResultJSON(e.getMessage());
+//        }
+//    }
+
+//    @RequestMapping(value = "/reg", method = RequestMethod.POST)//提交注册
+//    @ResponseBody
+//    public JSONObject doReg(User user){
+//        JSONObject jsonObject = new JSONObject();
+//        if(user.getUserName() == null || user.getUserName().isEmpty()){
+//            jsonObject.put("status", 0);
+//            jsonObject.put("msg", "请输入用户名");
+//            jsonObject.put("data", null);
+//            return jsonObject;
+//        }else{
+//            User user_uname = userServiceFacade.findUserByUname(user.getUserName());
+//            if(user_uname != null){
+//                jsonObject.put("status", 0);
+//                jsonObject.put("msg", "用户名不可用");
+//                jsonObject.put("data", null);
+//                return jsonObject;
+//            }
+//        }
+//        if(user.getPassWord() == null || user.getPassWord().isEmpty()){
+//            jsonObject.put("status", 0);
+//            jsonObject.put("msg", "请输入密码");
+//            jsonObject.put("data", null);
+//            return jsonObject;
+//        }
+//        User p_user = userServiceFacade.findUserByPhone(user.getPhone());
+//        if(p_user == null || (!p_user.getVcode().equals(user.getVcode()))){
+//            jsonObject.put("status", 0);
+//            jsonObject.put("msg", "验证码不正确");
+//            jsonObject.put("data", null);
+//            return jsonObject;
+//        }else{
+//            long vcodetime = p_user.getVcodeTime().getTime();
+//            long nowtime = System.currentTimeMillis();
+//            long dur = nowtime - vcodetime;
+//            if(dur > 1000*60*5){
+//                jsonObject.put("status", 0);
+//                jsonObject.put("msg", "验证码已过期");
+//                jsonObject.put("data", null);
+//                return jsonObject;
+//            }
+//            p_user.setUserName(user.getUserName());
+//            p_user.setPassWord(user.getPassWord());
+//            userServiceFacade.update(p_user);
+//            jsonObject.put("status", 1);
+//            jsonObject.put("msg", "注册成功");
+//            jsonObject.put("data", null);
+//            return jsonObject;
+//        }
+//    }
 }

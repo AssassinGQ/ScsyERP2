@@ -33,7 +33,7 @@ public class InStorageFormBizImpl extends FormBizImpl<InStorageForm> implements 
         ValidUtils.ValidationWithExp(inStorageForm);
         Map<String, Object> queryMap = new HashMap<String, Object>();
         queryMap.put("IfDeleted", false);
-        queryMap.put("Warehouse", inStorageForm.getWarehouse());
+        queryMap.put("WarehouseId", inStorageForm.getWarehouse());
         queryMap.put("IfCompleted", false);
         List<InStorageForm> inStorageForms = inStorageFormDao.listBy(queryMap);
         if(inStorageForms.size() > 1){

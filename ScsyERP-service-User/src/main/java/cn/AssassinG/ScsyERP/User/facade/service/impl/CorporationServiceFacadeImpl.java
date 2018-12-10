@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Service
+@Service("CorporationServiceFacade")
 public class CorporationServiceFacadeImpl extends LoginableServiceImpl<Corporation> implements CorporationServiceFacade {
     @Autowired
     private CorporationBiz corporationBiz;

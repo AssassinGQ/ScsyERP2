@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_transport_contract"> t_transport_contract </sql>
 
-	<resultMap id="beanMap" type="TransportContract" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
+	<resultMap id="beanMap" type="TransportContractBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
         <result column="contract_number" property="ContractNumber" />
         <result column="ontruck_form" property="OnTruckForm" />
         <result column="project" property="Project" />
@@ -24,7 +24,7 @@
         <result column="pre_repair_fee" property="PreRepairFee" />
 	</resultMap>
 
-	<insert id="insert" parameterType="TransportContract" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="TransportContractBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_transport_contract"/> (corporation, create_time, update_time, delete_time, is_deleted,
                           contract_number, ontruck_form, project, out_storage_form, truck, supplier, product_insurance, real_weight,
                           fare_by_weight, total_fare_by_weight, fare_by_truck, prepay, oil_card_type, oil_card_number, oil_card_money, pre_repair_fee, if_completed)
@@ -45,7 +45,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="TransportContract">
+	<update id="update" parameterType="TransportContractBean">
 		update <include refid="t_transport_contract"/>
 		<set>
 			update_time = now(),
@@ -199,7 +199,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="TransportContract">
+    <update id="delete" parameterType="TransportContractBean">
         update <include refid="t_transport_contract"/>
         <set>
             delete_time = now(),

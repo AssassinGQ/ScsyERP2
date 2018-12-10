@@ -5,14 +5,14 @@
 	<!-- 用户信息表 -->
 	<sql id="t_warehouse"> t_warehouse </sql>
 
-	<resultMap id="beanMap" type="Warehouse" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
+	<resultMap id="beanMap" type="WarehouseBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.UnLoginableEntityMap">
 		<result column="address" property="Address" />
 		<result column="admin" property="Admin" />
 		<result column="drive_workers" property="DriveWorkers" typeHandler="cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler" />
 		<result column="lift_workers" property="LiftWorkers" typeHandler="cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Warehouse" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="WarehouseBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_warehouse"/> (corporation, create_time, update_time, delete_time, is_deleted, name, phone, address, admin, drive_workers, lift_workers)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{Phone}, #{Address}, #{Admin}, #{DriveWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{LiftWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler})
 	</insert>
@@ -25,7 +25,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Warehouse">
+	<update id="update" parameterType="WarehouseBean">
 		update <include refid="t_warehouse"/>
 		<set>
 			update_time = now(),
@@ -99,7 +99,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Warehouse">
+    <update id="delete" parameterType="WarehouseBean">
         update <include refid="t_warehouse"/>
         <set>
             delete_time = now(),

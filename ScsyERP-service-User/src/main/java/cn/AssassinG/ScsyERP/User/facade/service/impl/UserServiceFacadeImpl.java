@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-@Service
+@Service("UserServiceFacade")
 public class UserServiceFacadeImpl extends BaseServiceImpl<User> implements UserServiceFacade {
 
     @Autowired

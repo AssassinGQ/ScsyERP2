@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Service
+@Service("WarnServiceFacade")
 public class WarnServiceFacadeImpl extends BaseServiceImpl<Warn> implements WarnServiceFacade {
     @Autowired
     private WarnBiz warnBiz;

@@ -5,13 +5,13 @@
 	<!-- 用户信息表 -->
 	<sql id="t_driver"> t_driver </sql>
 
-	<resultMap id="beanMap" type="Driver" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
+	<resultMap id="beanMap" type="DriverBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.LoginableEntityMap">
 		<result column="driver_license" property="DriverLicense" />
 		<result column="capable_car" property="CapableCar" />
 		<result column="id_card_photo" property="IDCardPhoto" />
 	</resultMap>
 
-	<insert id="insert" parameterType="Driver" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="DriverBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_driver"/> (corporation, create_time, update_time, delete_time, is_deleted, name, driver_license, capable_car, id_card_photo)
 		values (#{Corporation}, now(), now(), NULL , FALSE , #{Name}, #{DriverLicense}, #{CapableCar}, #{IDCardPhoto})
 	</insert>
@@ -24,7 +24,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="Driver">
+	<update id="update" parameterType="DriverBean">
 		update <include refid="t_driver"/>
 		<set>
 			update_time = now(),
@@ -82,7 +82,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="Driver">
+    <update id="delete" parameterType="DriverBean">
         update <include refid="t_driver"/>
         <set>
             delete_time = now(),
@@ -125,7 +125,7 @@
 		<if test="deleteTimeBegin != null"> and delete_time &gt;= #{deleteTimeBegin}</if>
 		<if test="deleteTimeEnd != null"> and delete_time &lt;= #{deleteTimeEnd}</if>
 		<if test="IfDeleted != null"> and is_deleted = #{IfDeleted}</if>
-		<if test="driver_license != null"> and dept = #{DriverLicense}</if>
+		<if test="DriverLicense != null"> and driver_license = #{DriverLicense}</if>
 		<!-- Like query -->
 		<if test="Name != null and Name != ''"> and name like CONCAT(CONCAT('%', #{Name}), '%')</if>
         <if test="CapableCar != null and CapableCar != ''"> and capable_car like CONCAT(CONCAT('%', #{CapableCar}), '%')</if>

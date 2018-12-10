@@ -5,7 +5,7 @@
 	<!-- 用户信息表 -->
 	<sql id="t_in_storage_form"> t_in_storage_form </sql>
 
-	<resultMap id="beanMap" type="InStorageForm" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
+	<resultMap id="beanMap" type="InStorageFormBean" extends="cn.AssassinG.ScsyERP.common.entity.BaseEntity.FormEntityMap">
         <result column="project" property="Project" />
         <result column="instorage_status" property="InStorageStatus" typeHandler="cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler" />
         <result column="instorage_number" property="InStorageNumber" />
@@ -24,7 +24,7 @@
         <result column="working_product" property="WorkingProduct" />
 	</resultMap>
 
-	<insert id="insert" parameterType="InStorageForm" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insert" parameterType="InStorageFormBean" keyProperty="id" useGeneratedKeys="true">
 		insert into <include refid="t_in_storage_form"/> (corporation, create_time, update_time, delete_time, is_deleted, project, instorage_status, instorage_number, instorage_time, warehouse, truck, pick_worker, lister, drive_workers, lift_workers, account_status, total_amount, total_volume, total_weight, products, if_completed)
 		values (#{Corporation}, now(), now(), NULL , FALSE, #{Project}, #{InStorageStatus,typeHandler=cn.AssassinG.ScsyERP.InStorage.core.dao.MyBatisHandler.InStorageStatusHandler}, #{InStorageNumber}, #{InStorageTime}, #{Warehouse}, #{Truck}, #{PickWorker}, #{Lister}, #{DriveWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{LiftWorkers,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{AccountStatus,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.AccountStatusHandler}, #{TotalAmount}, #{TotalVolume}, #{TotalWeight}, #{Products,typeHandler=cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler.HashSetTypeHandler}, #{IfCompleted})
 	</insert>
@@ -37,7 +37,7 @@
         </foreach>
 	</insert>
 	
-	<update id="update" parameterType="InStorageForm">
+	<update id="update" parameterType="InStorageFormBean">
 		update <include refid="t_in_storage_form"/>
 		<set>
 			update_time = now(),
@@ -175,7 +175,7 @@
         </where>
     </update>
 
-    <update id="delete" parameterType="InStorageForm">
+    <update id="delete" parameterType="InStorageFormBean">
         update <include refid="t_in_storage_form"/>
         <set>
             delete_time = now(),

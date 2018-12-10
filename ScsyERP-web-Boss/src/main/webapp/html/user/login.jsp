@@ -6,4 +6,4 @@
     <h5>${login_info}</h5>
     <input type="submit" value=<spring:message code="submit"/>>
 </form>
-<a href="/html/user/register.jsp">注册</a>
+<a href="/html/user/register.jsp">修改密码</a>
