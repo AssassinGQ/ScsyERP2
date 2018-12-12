@@ -28,7 +28,7 @@ public class TruckLogBizImpl extends BaseBizImpl<TruckLog> implements TruckLogBi
      * @param entityId
      * @param paramMap 行车日志信息字段(啥都不能修改)
      */
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
 
     }
 

@@ -3,6 +3,7 @@ package cn.AssassinG.ScsyERP.File.facade.entity;
 import cn.AssassinG.ScsyERP.File.facade.enums.FileType;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,12 +23,27 @@ public class MyFile extends BaseEntity {
         super();
     }
 
+    @JSONField(serialize = false)
     public FileType getType() {
         return Type;
     }
 
+    @JSONField(deserialize = false)
     public void setType(FileType type) {
         Type = type;
+    }
+
+    @JSONField(name = "type")
+    public String getFileTypeName(){
+        if(Type != null)
+            return this.Type.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "type")
+    public void setFileTypeName(String name){
+        this.Type = FileType.getEnum(name);
     }
 
     public String getName() {

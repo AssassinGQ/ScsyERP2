@@ -5,7 +5,7 @@ import java.util.Map;
 
 public enum AdminDeptType {
 
-    WarehouseAdmin("WarehouseAdmin", 0), ProjectAdmin("ProjectAdmin", 1), FinancialAdmin("FinancialAdmin", 2);
+    WarehouseAdmin("仓库管理员", 0), ProjectAdmin("项目管理员", 1), FinancialAdmin("财务管理员", 2);
     private String Name;
     private Integer Value;
 
@@ -39,5 +39,15 @@ public enum AdminDeptType {
 
     public static AdminDeptType getEnum(String name){
         return enumMap.get(name);
+    }
+
+    static Map<Integer, AdminDeptType> intMap = new HashMap<>();
+    static{
+        for(AdminDeptType type : AdminDeptType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static AdminDeptType getEnum(Integer value){
+        return intMap.get(value);
     }
 }

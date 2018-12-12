@@ -18,5 +18,5 @@ public class MyFileServiceFacadeImpl extends BaseServiceImpl<MyFile> implements 
         return this.myFileBiz;
     }
 
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {}
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {}
 }

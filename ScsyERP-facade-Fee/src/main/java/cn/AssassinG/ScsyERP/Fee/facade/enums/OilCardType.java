@@ -39,4 +39,13 @@ public enum OilCardType {
     public static OilCardType getEnum(String name){
         return enumMap.get(name);
     }
+    static Map<Integer, OilCardType> intMap = new HashMap<>();
+    static{
+        for(OilCardType type : OilCardType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static OilCardType getEnum(Integer value){
+        return intMap.get(value);
+    }
 }

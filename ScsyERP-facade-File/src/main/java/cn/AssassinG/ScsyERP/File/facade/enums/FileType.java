@@ -39,4 +39,13 @@ public enum FileType {
     public static FileType getEnum(String name){
         return enumMap.get(name);
     }
+    static Map<Integer, FileType> intMap = new HashMap<>();
+    static{
+        for(FileType type : FileType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static FileType getEnum(Integer value){
+        return intMap.get(value);
+    }
 }

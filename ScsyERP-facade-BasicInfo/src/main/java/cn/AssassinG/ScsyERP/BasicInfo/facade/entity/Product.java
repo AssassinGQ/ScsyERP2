@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.BasicInfo.facade.enums.PacketType;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.enums.ProductStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
+import com.alibaba.fastjson.annotation.JSONField;
 
 public class Product extends UnLoginableEntity {
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
@@ -56,12 +57,27 @@ public class Product extends UnLoginableEntity {
         Material = material;
     }
 
+    @JSONField(serialize = false)
     public ProductStatus getStatus() {
         return Status;
     }
 
+    @JSONField(deserialize = false)
     public void setStatus(ProductStatus status) {
         Status = status;
+    }
+
+    @JSONField(name = "status")
+    public String getStatusName(){
+        if(Status != null)
+            return this.Status.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "status")
+    public void setStatusName(String name){
+        this.Status = ProductStatus.getEnum(name);
     }
 
     public String getPacketNumber() {
@@ -104,12 +120,27 @@ public class Product extends UnLoginableEntity {
         OutStorageForm = outStorageForm;
     }
 
+    @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.BasicInfo.facade.enums.PacketType getPacketType() {
         return PacketType;
     }
 
+    @JSONField(deserialize = false)
     public void setPacketType(cn.AssassinG.ScsyERP.BasicInfo.facade.enums.PacketType packetType) {
         PacketType = packetType;
+    }
+
+    @JSONField(name = "packetType")
+    public String getPacketTypeName(){
+        if(PacketType != null)
+            return this.PacketType.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "packetType")
+    public void setPacketTypeName(String name){
+        this.PacketType = cn.AssassinG.ScsyERP.BasicInfo.facade.enums.PacketType.getEnum(name);
     }
 
     public Double getWidth() {

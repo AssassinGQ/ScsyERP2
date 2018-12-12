@@ -192,8 +192,8 @@ public class InStorageFormServiceFacadeImplTest {
         }else{
             accountStatus = AccountStatus.WRZ;
         }
-        Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("accountStatus", accountStatus);
+        Map<String, String> paramMap = new HashMap<String, String>();
+        paramMap.put("accountStatus", accountStatus.getName());
         inStorageFormService.updateByMap(inStorageFormId, paramMap);
         inStorageForm_check = inStorageFormDao.getById(inStorageFormId);
         if(inStorageForm_check.getAccountStatus().getValue().intValue() != accountStatus.getValue().intValue()){

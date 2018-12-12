@@ -40,4 +40,14 @@ public enum GovernmentDeptType {
     public static GovernmentDeptType getEnum(String name){
         return enumMap.get(name);
     }
+
+    static Map<Integer, GovernmentDeptType> intMap = new HashMap<>();
+    static{
+        for(GovernmentDeptType type : GovernmentDeptType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static GovernmentDeptType getEnum(Integer value){
+        return intMap.get(value);
+    }
 }

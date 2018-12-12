@@ -59,7 +59,7 @@
       <module name="ScsyERP-common" options="-nowarn" />
       <module name="ScsyERP-common-config" options="-nowarn" />
       <module name="ScsyERP-common-core" options="-nowarn" />
-      <module name="ScsyERP-common-parent" options="-nowarn" />
+      <module name="ScsyERP-common-parent" options="" />
       <module name="ScsyERP-common-web" options="-nowarn" />
       <module name="ScsyERP-facade-BasicInfo" options="-nowarn" />
       <module name="ScsyERP-facade-Fee" options="-nowarn" />

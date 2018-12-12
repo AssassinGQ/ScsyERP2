@@ -187,8 +187,8 @@ public class WarnServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("status", WarnStatus.Handled);
+        Map<String, String> paramMap = new HashMap<String, String>();
+        paramMap.put("status", WarnStatus.Handled.getName());
         warnService.updateByMap(warnId, paramMap);
         Warn warn_check = warnDao.getById(warnId);
         if(warn_check.getStatus().getValue().intValue() != WarnStatus.Handled.getValue().intValue()){

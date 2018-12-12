@@ -31,7 +31,7 @@ public class ConsigneeBizImpl extends LoginableBizImpl<Consignee> implements Con
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new ConsigneeBizException(ConsigneeBizException.CONSIGNEEBIZ_PARAMS_ILLEGAL, "收货单位基本信息主键不能为空");
         }
@@ -39,9 +39,9 @@ public class ConsigneeBizImpl extends LoginableBizImpl<Consignee> implements Con
         if(consignee == null || consignee.getIfDeleted()){
             throw new ConsigneeBizException(ConsigneeBizException.CONSIGNEEBIZ_NOSUIT_RESULT, "没有符合条件的收货单位基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String address = (String) paramMap.get("address");
-        String manName = (String) paramMap.get("manName");
+        String name = paramMap.get("name");
+        String address = paramMap.get("address");
+        String manName = paramMap.get("manName");
         boolean flag = false;
         if(name != null && !name.isEmpty()) {
             consignee.setName(name);

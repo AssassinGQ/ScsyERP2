@@ -73,11 +73,11 @@ public class GovernmentBizImpl extends LoginableBizImpl<Government> implements G
         }
         //创建登录信息
         User user_insert = new User();
-        if(user.getUserName() == null)
+        if(user.getUserName() == null || user.getUserName().isEmpty())
             user_insert.setUserName("-1");
         else
             user_insert.setUserName(user.getUserName());
-        if(user.getPassWord() == null)
+        if(user.getPassWord() == null || user.getPassWord().isEmpty())
             user_insert.setPassWord("123456");
         else
             user_insert.setPassWord(user.getPassWord());
@@ -85,11 +85,6 @@ public class GovernmentBizImpl extends LoginableBizImpl<Government> implements G
         user_insert.setUserType(UserType.Government);
         user_insert.setUserInfo(infoId);
         user_insert.setCorporation(-1L);
-        if(user_insert.getPassWord() == null || user_insert.getPassWord().isEmpty()){
-            user_insert.setPassWord("123456");
-        }else{
-            user_insert.setPassWord(user.getPassWord());
-        }
         long userId = userBiz.create(user_insert);
         if(user.getUserName() == null || user.getUserName().isEmpty()){
             user_insert.setUserName("username" + userId);
@@ -110,7 +105,7 @@ public class GovernmentBizImpl extends LoginableBizImpl<Government> implements G
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new GovernmentBizException(GovernmentBizException.GOVERNMENTBIZ_PARAMS_ILLEGAL, "政府基本信息主键不能为空");
         }
@@ -118,7 +113,7 @@ public class GovernmentBizImpl extends LoginableBizImpl<Government> implements G
         if(government == null || government.getIfDeleted()){
             throw new GovernmentBizException(GovernmentBizException.GOVERNMENTBIZ_PARAMS_ILLEGAL, "没有符合条件的政府基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
+        String name = paramMap.get("name");
         if(name != null && !name.isEmpty()) {
             government.setName(name);
             this.update(government);

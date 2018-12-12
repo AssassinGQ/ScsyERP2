@@ -29,7 +29,7 @@ public abstract class LoginableServiceImpl<T extends LoginableEntity> extends Ba
     public Long createWithUser(T entity, User user){
         return getLoginableBiz().createWithUser(entity, user);
     }
-    public void updateByMap(Long entityId, Map<String, Object> paramMap){
+    public void updateByMap(Long entityId, Map<String, String> paramMap){
         getLoginableBiz().updateByMap(entityId, paramMap);
     }
     public void deleteByUserId(Long userId){

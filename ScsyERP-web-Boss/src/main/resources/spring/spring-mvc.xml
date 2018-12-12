@@ -36,11 +36,25 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    
+    <!--<mvc:cors>-->
+        <!--<mvc:mapping path="/**"/>-->
+    <!--</mvc:cors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <list>
-                <!--<bean class="cn.AssassinG.ScsyERP.WebBoss.converters.AdminDeptConverter" />-->
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.AdminDeptConverter" />
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.GovernmentDeptConverter" />
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.PacketTypeConverter" />
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.ProductStatusConverter" />
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.UserTypeConverter" />
             </list>
         </property>
     </bean>

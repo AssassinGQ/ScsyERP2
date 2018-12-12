@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.OutStorage.facade.enums.OutStorageFormStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.Date;
 import java.util.Set;
@@ -53,12 +54,27 @@ public class OutStorageForm extends FormEntity {
         Project = project;
     }
 
+    @JSONField(serialize = false)
     public OutStorageFormStatus getOutStorageStatus() {
         return OutStorageStatus;
     }
 
+    @JSONField(deserialize = false)
     public void setOutStorageStatus(OutStorageFormStatus outStorageStatus) {
         OutStorageStatus = outStorageStatus;
+    }
+
+    @JSONField(name = "outStorageStatus")
+    public String getOutStorageFormStatusName(){
+        if(OutStorageStatus != null)
+            return this.OutStorageStatus.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "outStorageStatus")
+    public void setOutStorageFormStatusName(String name){
+        this.OutStorageStatus = OutStorageFormStatus.getEnum(name);
     }
 
     public String getOutStorageNumber() {
@@ -125,12 +141,27 @@ public class OutStorageForm extends FormEntity {
         LiftWorkers = liftWorkers;
     }
 
+    @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.common.enums.AccountStatus getAccountStatus() {
         return AccountStatus;
     }
 
+    @JSONField(deserialize = false)
     public void setAccountStatus(cn.AssassinG.ScsyERP.common.enums.AccountStatus accountStatus) {
         AccountStatus = accountStatus;
+    }
+
+    @JSONField(name = "accountStatus")
+    public String getAccountStatusName(){
+        if(AccountStatus != null)
+            return this.AccountStatus.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "accountStatus")
+    public void setAccountStatusName(String name){
+        this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.getEnum(name);
     }
 
     public Integer getTotalAmount() {

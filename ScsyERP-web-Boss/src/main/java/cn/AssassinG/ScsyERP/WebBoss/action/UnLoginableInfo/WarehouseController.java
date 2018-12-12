@@ -2,6 +2,7 @@ package cn.AssassinG.ScsyERP.WebBoss.action.UnLoginableInfo;
 
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Warehouse;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.service.WarehouseServiceFacade;
+import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
 import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.WebBoss.base.UnLoginableBaseController;
 import cn.AssassinG.ScsyERP.WebBoss.enums.RetStatusType;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/basic_info/warehouse")
+@RequestMapping("/BasicInfo/Warehouse")
 public class WarehouseController extends UnLoginableBaseController<Warehouse> {
     @Autowired
     private WarehouseServiceFacade warehouseServiceFacade;
@@ -40,14 +43,15 @@ public class WarehouseController extends UnLoginableBaseController<Warehouse> {
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)//更新信息
     @ResponseBody
-    public JSONObject update(Long EntityId, Map<String, Object> paramMap){
-        return super.updateImpl(EntityId, paramMap);
+    public JSONObject update(Long entityId, HttpServletRequest request){
+        Map<String, String> paramMap = (Map<String, String>) request.getAttribute(HttpRequestIntercepter.MAPKEY);
+        return super.updateImpl(entityId, paramMap);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)//删除信息
     @ResponseBody
-    public JSONObject delete(Long EntityId){
-        return super.deleteImpl(EntityId);
+    public JSONObject delete(Long entityId){
+        return super.deleteImpl(entityId);
     }
 
     @RequestMapping(value = "/query", method = RequestMethod.GET)//查询信息
@@ -56,11 +60,17 @@ public class WarehouseController extends UnLoginableBaseController<Warehouse> {
         return super.queryImpl(paramMap);
     }
 
+    @RequestMapping(value = "/getById", method = RequestMethod.GET)//查询信息
+    @ResponseBody
+    public JSONObject getById(Long entityId){
+        return super.getByIdImpl(entityId);
+    }
+
     @RequestMapping(value = "/addDriveWorkers", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addDriveWorkers(Long Warehouse, String jsonArrayStr){
+    public JSONObject addDriveWorkers(Long warehouse, String jsonArrayStr){
         try{
-            warehouseServiceFacade.addDriveWorkers(Warehouse, jsonArrayStr);
+            warehouseServiceFacade.addDriveWorkers(warehouse, jsonArrayStr);
             return getResultJSON(RetStatusType.StatusSuccess, "仓库添加行车工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -69,9 +79,9 @@ public class WarehouseController extends UnLoginableBaseController<Warehouse> {
 
     @RequestMapping(value = "/removeDriveWorker", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject removeDriveWorker(Long Warehouse, Long driveWorkerId){
+    public JSONObject removeDriveWorker(Long warehouse, Long driveWorkerId){
         try{
-            warehouseServiceFacade.removeDriveWorker(Warehouse, driveWorkerId);
+            warehouseServiceFacade.removeDriveWorker(warehouse, driveWorkerId);
             return getResultJSON(RetStatusType.StatusSuccess, "仓库移除行车工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -80,9 +90,9 @@ public class WarehouseController extends UnLoginableBaseController<Warehouse> {
 
     @RequestMapping(value = "/addLiftWorkers", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addLiftWorkers(Long Warehouse, String jsonArrayStr){
+    public JSONObject addLiftWorkers(Long warehouse, String jsonArrayStr){
         try{
-            warehouseServiceFacade.addLiftWorkers(Warehouse, jsonArrayStr);
+            warehouseServiceFacade.addLiftWorkers(warehouse, jsonArrayStr);
             return getResultJSON(RetStatusType.StatusSuccess, "仓库添加起重工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -91,9 +101,9 @@ public class WarehouseController extends UnLoginableBaseController<Warehouse> {
 
     @RequestMapping(value = "/removeLiftWorker", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject removeLiftWorker(Long Warehouse, Long liftWorkerId){
+    public JSONObject removeLiftWorker(Long warehouse, Long liftWorkerId){
         try{
-            warehouseServiceFacade.removeLiftWorker(Warehouse, liftWorkerId);
+            warehouseServiceFacade.removeLiftWorker(warehouse, liftWorkerId);
             return getResultJSON(RetStatusType.StatusSuccess, "仓库移除起重工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());

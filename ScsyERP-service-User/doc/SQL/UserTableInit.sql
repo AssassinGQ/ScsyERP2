@@ -26,4 +26,18 @@ alter table t_user comment '用户信息表';
 
 ## 用户的初始化数据(密码123456)
 insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "superadmin", "{noop}123456", true, 18888888888, "SuperAdmin", 1);
-insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "hgq", "{noop}123456", true, 18868187538, "Corporation", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "corporation1", "{noop}123456", true, 18868187537, "Corporation", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "corporation2", "{noop}123456", true, 18868187536, "Corporation", 2);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "government1", "{noop}123456", true, 18868187535, "Government", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "government2", "{noop}123456", true, 18868187534, "Government", 2);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "government3", "{noop}123456", true, 18868187533, "Government", 3);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "government4", "{noop}123456", true, 18868187532, "Government", 4);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "government5", "{noop}123456", true, 18868187531, "Government", 5);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "admin1", "{noop}123456", true, 18868187530, "Admin", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "admin2", "{noop}123456", true, 18868187529, "Admin", 2);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "admin3", "{noop}123456", true, 18868187528, "Admin", 3);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "customer1", "{noop}123456", true, 18868187527, "Customer", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "manufacturer1", "{noop}123456", true, 18868187526, "Manufacturer", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "consignee1", "{noop}123456", true, 18868187525, "Consignee", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "driver1", "{noop}123456", true, 18868187524, "Driver", 1);
+insert into t_user (corporation, user_name, _password, if_registered, phone, user_type, user_info) values (1, "escort1", "{noop}123456", true, 18868187523, "Escort", 1);

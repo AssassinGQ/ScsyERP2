@@ -30,7 +30,7 @@ public abstract class UnLoginableBaseController<T extends UnLoginableEntity> ext
         }
     }
 
-    protected JSONObject updateImpl(Long entityId, Map<String, Object> paramMap){
+    protected JSONObject updateImpl(Long entityId, Map<String, String> paramMap){
         try{
             getUnLoginableService().updateByMap(entityId, paramMap);
             return getResultJSON(RetStatusType.StatusSuccess, "修改"+getClassDesc()+"信息成功", null);

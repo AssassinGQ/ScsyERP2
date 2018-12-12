@@ -31,7 +31,7 @@ public class AdminBizImpl extends LoginableBizImpl<Admin> implements AdminBiz {
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new AdminBizException(AdminBizException.ADMINBIZ_PARAMS_ILLEGAL, "承运方管理员基本信息主键不能为空");
         }
@@ -39,7 +39,7 @@ public class AdminBizImpl extends LoginableBizImpl<Admin> implements AdminBiz {
         if(admin == null || admin.getIfDeleted()){
             throw new AdminBizException(AdminBizException.ADMINBIZ_NOSUIT_RESULT, "没有符合条件的承运方管理员基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
+        String name = paramMap.get("name");
         if(name != null && !name.isEmpty()) {
             admin.setName(name);
             this.update(admin);

@@ -3,6 +3,7 @@ package cn.AssassinG.ScsyERP.User.facade.entity;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import javax.persistence.Entity;
 import java.util.Date;
@@ -78,12 +79,27 @@ public class User extends BaseEntity {
         IfRegistered = ifRegistered;
     }
 
+    @JSONField(serialize = false)
     public UserType getUserType() {
         return UserType;
     }
 
+    @JSONField(deserialize = false)
     public void setUserType(UserType userType) {
         UserType = userType;
+    }
+
+    @JSONField(name = "userType")
+    public String getUserTypeName(){
+        if(UserType != null)
+            return this.UserType.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "userType")
+    public void setUserTypeName(String name){
+        this.UserType = cn.AssassinG.ScsyERP.User.facade.enums.UserType.getEnumByName(name);
     }
 
     public Long getUserInfo() {

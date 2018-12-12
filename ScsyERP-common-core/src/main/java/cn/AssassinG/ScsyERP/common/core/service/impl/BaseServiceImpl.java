@@ -26,15 +26,22 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		getBiz().delete(entity);
 	}
 	public T getById(Long entityId){
-		return getBiz().getById(entityId);
+		T entity = getBiz().getById(entityId);
+		if(entity.getIfDeleted())
+			return null;
+		else
+			return entity;
 	}
 	public T getBy(Map<String, Object> paramMap){
+		paramMap.put("IfDeleted", false);
 		return getBiz().getBy(paramMap);
 	}
 	public List<T> listBy(Map<String, Object> paramMap){
+		paramMap.put("IfDeleted", false);
 		return getBiz().listBy(paramMap);
 	}
 	public PageBean<T> listPage(PageParam pageParam, Map<String, Object> paramMap){
+		paramMap.put("IfDeleted", false);
 		return getBiz().listPage(pageParam, paramMap);
 	}
 }

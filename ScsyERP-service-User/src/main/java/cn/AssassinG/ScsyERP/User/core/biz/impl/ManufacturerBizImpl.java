@@ -34,7 +34,7 @@ public class ManufacturerBizImpl extends LoginableBizImpl<Manufacturer> implemen
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产厂家基本信息主键不能为空");
         }
@@ -42,9 +42,9 @@ public class ManufacturerBizImpl extends LoginableBizImpl<Manufacturer> implemen
         if(manufacturer == null || manufacturer.getIfDeleted()){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产厂家基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String address = (String) paramMap.get("address");
-        String manName = (String) paramMap.get("manName");
+        String name = paramMap.get("name");
+        String address = paramMap.get("address");
+        String manName = paramMap.get("manName");
         boolean flag = false;
         if(name != null && !name.isEmpty()) {
             manufacturer.setName(name);

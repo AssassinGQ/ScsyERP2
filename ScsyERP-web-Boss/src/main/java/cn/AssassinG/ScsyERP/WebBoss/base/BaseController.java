@@ -7,6 +7,7 @@ import cn.AssassinG.ScsyERP.common.exceptions.BizException;
 import cn.AssassinG.ScsyERP.common.exceptions.DaoException;
 import cn.AssassinG.ScsyERP.common.page.PageBean;
 import cn.AssassinG.ScsyERP.common.page.PageParam;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
@@ -17,6 +18,9 @@ public abstract class BaseController<T extends BaseEntity> {
 
     protected abstract BaseService<T> getService();
     protected abstract String getClassDesc();
+    protected static final String RET_STATUS = "status";
+    protected static final String RET_MSG = "msg";
+    protected static final String RET_CONTENT = "content";
 
     protected JSONObject getResultJSON(String msg){
         return getResultJSON(RetStatusType.StatusFailure, msg, null);
@@ -28,9 +32,9 @@ public abstract class BaseController<T extends BaseEntity> {
 
     protected JSONObject getResultJSON(RetStatusType status, String msg, JSONObject contentObject){
         JSONObject retObject = new JSONObject();
-        retObject.put("status", status.getStatus());
-        retObject.put("msg", msg);
-        retObject.put("content", contentObject);
+        retObject.put(RET_STATUS, status.getStatus());
+        retObject.put(RET_MSG, msg);
+        retObject.put(RET_CONTENT, contentObject);
         return retObject;
     }
 
@@ -62,7 +66,7 @@ public abstract class BaseController<T extends BaseEntity> {
         }
     }
 
-    protected JSONObject updateImpl(Long entityId, Map<String, Object> paramMap){
+    protected JSONObject updateImpl(Long entityId, Map<String, String> paramMap){
         try{
             getService().updateByMap(entityId, paramMap);
             return getResultJSON(RetStatusType.StatusSuccess, "修改"+getClassDesc()+"信息成功", null);
@@ -96,6 +100,15 @@ public abstract class BaseController<T extends BaseEntity> {
             }else{
                 return getResultJSON("查询"+getClassDesc()+"信息成功", getService().listBy(paramMap));
             }
+        }catch (DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
+
+    protected JSONObject getByIdImpl(Long entityId){
+        try{
+            BaseEntity baseEntity = getService().getById(entityId);
+            return getResultJSON(RetStatusType.StatusSuccess, "查询成功", (JSONObject) JSON.toJSON(baseEntity));
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
         }

@@ -2,6 +2,7 @@ package cn.AssassinG.ScsyERP.WebBoss.action.OutStorage;
 
 import cn.AssassinG.ScsyERP.OutStorage.facade.entity.OutStorageForm;
 import cn.AssassinG.ScsyERP.OutStorage.facade.service.OutStorageFormServiceFacade;
+import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
 import cn.AssassinG.ScsyERP.WebBoss.base.BaseController;
 import cn.AssassinG.ScsyERP.WebBoss.enums.RetStatusType;
 import cn.AssassinG.ScsyERP.common.core.service.BaseService;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/out_storage_info")
+@RequestMapping("/OutStorageForm")
 public class OutStorageFormController extends BaseController<OutStorageForm> {
     @Autowired
     private OutStorageFormServiceFacade outStorageFormServiceFacade;
@@ -39,14 +42,15 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)//更新信息
     @ResponseBody
-    public JSONObject update(Long EntityId, Map<String, Object> paramMap){
-        return super.updateImpl(EntityId, paramMap);
+    public JSONObject update(Long entityId, HttpServletRequest request){
+        Map<String, String> paramMap = (Map<String, String>) request.getAttribute(HttpRequestIntercepter.MAPKEY);
+        return super.updateImpl(entityId, paramMap);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)//删除信息
     @ResponseBody
-    public JSONObject delete(Long EntityId){
-        return super.deleteImpl(EntityId);
+    public JSONObject delete(Long entityId){
+        return super.deleteImpl(entityId);
     }
 
     @RequestMapping(value = "/query", method = RequestMethod.GET)//查询信息
@@ -55,11 +59,17 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
         return super.queryImpl(paramMap);
     }
 
+    @RequestMapping(value = "/getById", method = RequestMethod.GET)//查询信息
+    @ResponseBody
+    public JSONObject getById(Long entityId){
+        return super.getByIdImpl(entityId);
+    }
+
     @RequestMapping(value = "/addDriveWorkers", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addDriveWorkers(Long OutStorageForm, String jsonArrayStr){
+    public JSONObject addDriveWorkers(Long outStorageForm, String jsonArrayStr){
         try{
-            outStorageFormServiceFacade.addDriveWorkers(OutStorageForm, jsonArrayStr);
+            outStorageFormServiceFacade.addDriveWorkers(outStorageForm, jsonArrayStr);
             return getResultJSON(RetStatusType.StatusSuccess, "出库单添加行车工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -68,9 +78,9 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
 
     @RequestMapping(value = "/removeDriveWorker", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject removeDriveWorker(Long OutStorageForm, Long driveWorkerId){
+    public JSONObject removeDriveWorker(Long outStorageForm, Long driveWorkerId){
         try{
-            outStorageFormServiceFacade.removeDriveWorker(OutStorageForm, driveWorkerId);
+            outStorageFormServiceFacade.removeDriveWorker(outStorageForm, driveWorkerId);
             return getResultJSON(RetStatusType.StatusSuccess, "出库单移除行车工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -79,9 +89,9 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
 
     @RequestMapping(value = "/addLiftWorkers", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addLiftWorkers(Long OutStorageForm, String jsonArrayStr){
+    public JSONObject addLiftWorkers(Long outStorageForm, String jsonArrayStr){
         try{
-            outStorageFormServiceFacade.addLiftWorkers(OutStorageForm, jsonArrayStr);
+            outStorageFormServiceFacade.addLiftWorkers(outStorageForm, jsonArrayStr);
             return getResultJSON(RetStatusType.StatusSuccess, "出库单添加起重工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -90,9 +100,9 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
 
     @RequestMapping(value = "/removeLiftWorker", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject removeLiftWorker(Long OutStorageForm, Long liftWorkerId){
+    public JSONObject removeLiftWorker(Long outStorageForm, Long liftWorkerId){
         try{
-            outStorageFormServiceFacade.removeLiftWorker(OutStorageForm, liftWorkerId);
+            outStorageFormServiceFacade.removeLiftWorker(outStorageForm, liftWorkerId);
             return getResultJSON(RetStatusType.StatusSuccess, "出库单移除起重工信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -101,9 +111,9 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addProduct(Long OutStorageForm, Long productId){
+    public JSONObject addProduct(Long outStorageForm, Long productId){
         try{
-            outStorageFormServiceFacade.addProduct(OutStorageForm, productId);
+            outStorageFormServiceFacade.addProduct(outStorageForm, productId);
             return getResultJSON(RetStatusType.StatusSuccess, "出库单添加货物信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -112,9 +122,9 @@ public class OutStorageFormController extends BaseController<OutStorageForm> {
 
     @RequestMapping(value = "/removeProduct", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject removeProduct(Long OutStorageForm, Long productId){
+    public JSONObject removeProduct(Long outStorageForm, Long productId){
         try{
-            outStorageFormServiceFacade.removeProduct(OutStorageForm, productId);
+            outStorageFormServiceFacade.removeProduct(outStorageForm, productId);
             return getResultJSON(RetStatusType.StatusSuccess, "出库单移除货物信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());

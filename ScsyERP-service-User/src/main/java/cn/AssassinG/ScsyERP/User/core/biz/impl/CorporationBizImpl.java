@@ -66,11 +66,11 @@ public class CorporationBizImpl extends LoginableBizImpl<Corporation> implements
         }
         //创建登录信息
         User user_insert = new User();
-        if(user.getUserName() == null)
+        if(user.getUserName() == null || user.getUserName().isEmpty())
             user_insert.setUserName("-1");
         else
             user_insert.setUserName(user.getUserName());
-        if(user.getPassWord() == null)
+        if(user.getPassWord() == null || user.getPassWord().isEmpty())
             user_insert.setPassWord("123456");
         else
             user_insert.setPassWord(user.getPassWord());
@@ -78,11 +78,6 @@ public class CorporationBizImpl extends LoginableBizImpl<Corporation> implements
         user_insert.setUserType(UserType.Corporation);
         user_insert.setUserInfo(infoId);
         user_insert.setCorporation(-1L);
-        if(user_insert.getPassWord() == null || user_insert.getPassWord().isEmpty()){
-            user_insert.setPassWord("123456");
-        }else{
-            user_insert.setPassWord(user.getPassWord());
-        }
         long userId = userBiz.create(user_insert);
         if(user_insert.getUserName().equals("-1")){
             user_insert.setUserName(User.class.getSimpleName() + userId);
@@ -97,7 +92,7 @@ public class CorporationBizImpl extends LoginableBizImpl<Corporation> implements
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new CorporationBizException(CorporationBizException.CORPORATIONBIZ_PARAMS_ILLEGAL, "承运方基本信息主键不能为空");
         }
@@ -105,7 +100,7 @@ public class CorporationBizImpl extends LoginableBizImpl<Corporation> implements
         if(corporation == null || corporation.getIfDeleted()){
             throw new CorporationBizException(CorporationBizException.CORPORATIONBIZ_PARAMS_ILLEGAL, "没有符合条件的承运方基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
+        String name = paramMap.get("name");
         if(name != null && !name.isEmpty()) {
             corporation.setName(name);
             this.update(corporation);

@@ -170,7 +170,7 @@ public class TruckServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("name", new_name);
         truckService.updateByMap(truckId, paramMap);
         Truck truck_check = truckDao.getById(truckId);

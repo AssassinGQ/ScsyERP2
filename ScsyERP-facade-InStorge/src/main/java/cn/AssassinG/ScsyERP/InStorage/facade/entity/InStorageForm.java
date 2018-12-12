@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.InStorage.facade.enums.InStorageFormStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.Date;
 import java.util.Set;
@@ -49,12 +50,27 @@ public class InStorageForm extends FormEntity {
         Project = project;
     }
 
+    @JSONField(serialize = false)
     public InStorageFormStatus getInStorageStatus() {
         return InStorageStatus;
     }
 
+    @JSONField(deserialize = false)
     public void setInStorageStatus(InStorageFormStatus inStorageStatus) {
         InStorageStatus = inStorageStatus;
+    }
+
+    @JSONField(name = "inStorageStatus")
+    public String getInStorageFormStatusName(){
+        if(InStorageStatus != null)
+            return this.InStorageStatus.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "inStorageStatus")
+    public void setInStorageFormStatusName(String name){
+        this.InStorageStatus = InStorageFormStatus.getEnum(name);
     }
 
     public String getInStorageNumber() {
@@ -121,12 +137,27 @@ public class InStorageForm extends FormEntity {
         LiftWorkers = liftWorkers;
     }
 
+    @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.common.enums.AccountStatus getAccountStatus() {
         return AccountStatus;
     }
 
+    @JSONField(deserialize = false)
     public void setAccountStatus(cn.AssassinG.ScsyERP.common.enums.AccountStatus accountStatus) {
         AccountStatus = accountStatus;
+    }
+
+    @JSONField(name = "accountStatus")
+    public String getAccountStatusName(){
+        if(AccountStatus != null)
+            return this.AccountStatus.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "accountStatus")
+    public void setAccountStatusName(String name){
+        this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.getEnum(name);
     }
 
     public Integer getTotalAmount() {

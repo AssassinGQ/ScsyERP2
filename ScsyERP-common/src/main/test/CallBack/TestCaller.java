@@ -2,6 +2,7 @@ package CallBack;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.parser.ParserConfig;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -35,6 +36,13 @@ public class TestCaller {
         System.out.println(jsonArray_pre.toJSONString());
         JSONArray jsonArray_after = JSONArray.parseArray(jsonArray_pre.toJSONString());
         System.out.println(jsonArray_after.toJSONString());
+    }
+
+    @Test
+    public void testJSONObject(){
+        TestBean testBean = new TestBean("a", 1L, 2.2, TestEnum.Enum1);
+        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(testBean, new ParserConfig());
+        System.out.println(jsonObject.toJSONString());
     }
 
     @Test

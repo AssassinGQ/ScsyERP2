@@ -185,7 +185,7 @@ public class CustomerServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("name", new_name);
         customerService.updateByMap(customerId, paramMap);
         Customer customer_check = customerDao.getById(customerId);

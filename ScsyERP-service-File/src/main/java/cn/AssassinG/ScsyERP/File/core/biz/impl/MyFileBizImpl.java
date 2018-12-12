@@ -19,5 +19,5 @@ public class MyFileBizImpl extends BaseBizImpl<MyFile> implements MyFileBiz {
     }
 
     //啥都不能修改
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {}
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {}
 }

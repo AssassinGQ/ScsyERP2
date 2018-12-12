@@ -21,7 +21,7 @@
         <!--username-parameter为登录页面中登录表单中用户名字段名，password-parameter为登录页面中登录表单中密码字段名-->
         <security:form-login
                 login-page="/user/login" login-processing-url="/user/dologin"
-                username-parameter="UserName" password-parameter="PassWord"
+                username-parameter="userName" password-parameter="passWord"
                 authentication-success-handler-ref="loginSuccessHandler"
                 authentication-failure-handler-ref="loginFailureHandler" />
         <security:logout delete-cookies="JSESSIONID"/>

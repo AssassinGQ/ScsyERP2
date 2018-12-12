@@ -39,4 +39,14 @@ public enum OutStorageFormStatus {
     public static OutStorageFormStatus getEnum(String name){
         return enumMap.get(name);
     }
+
+    static Map<Integer, OutStorageFormStatus> intMap = new HashMap<>();
+    static{
+        for(OutStorageFormStatus type : OutStorageFormStatus.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static OutStorageFormStatus getEnum(Integer value){
+        return intMap.get(value);
+    }
 }

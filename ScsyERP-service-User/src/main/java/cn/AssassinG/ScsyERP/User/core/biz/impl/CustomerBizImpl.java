@@ -31,7 +31,7 @@ public class CustomerBizImpl extends LoginableBizImpl<Customer> implements Custo
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new CustomerBizException(CustomerBizException.CUSTOMERBIZ_PARAMS_ILLEGAL, "客户基本信息主键不能为空");
         }
@@ -39,10 +39,10 @@ public class CustomerBizImpl extends LoginableBizImpl<Customer> implements Custo
         if(customer == null || customer.getIfDeleted()){
             throw new CustomerBizException(CustomerBizException.CUSTOMERBIZ_NOSUIT_RESULT, "没有符合条件的客户基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String address = (String) paramMap.get("address");
-        String bank = (String) paramMap.get("bank");
-        String taxNumber = (String) paramMap.get("taxNumber");
+        String name = paramMap.get("name");
+        String address = paramMap.get("address");
+        String bank = paramMap.get("bank");
+        String taxNumber = paramMap.get("taxNumber");
         boolean flag = false;
         if(name != null && !name.isEmpty()) {
             customer.setName(name);

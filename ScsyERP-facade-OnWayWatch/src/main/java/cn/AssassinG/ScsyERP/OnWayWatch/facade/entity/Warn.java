@@ -4,6 +4,7 @@ import cn.AssassinG.ScsyERP.OnWayWatch.facade.enums.WarnStatus;
 import cn.AssassinG.ScsyERP.OnWayWatch.facade.enums.WarnType;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.Date;
 import java.util.Set;
@@ -79,20 +80,50 @@ public class Warn extends BaseEntity {
         this.GPSY = GPSY;
     }
 
+    @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.OnWayWatch.facade.enums.WarnType getWarnType() {
         return WarnType;
     }
 
+    @JSONField(deserialize = false)
     public void setWarnType(cn.AssassinG.ScsyERP.OnWayWatch.facade.enums.WarnType warnType) {
         WarnType = warnType;
     }
 
+    @JSONField(name = "warnType")
+    public String getWarnTypeName(){
+        if(WarnType != null)
+            return this.WarnType.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "warnType")
+    public void setWarnTypeName(String name){
+        this.WarnType = cn.AssassinG.ScsyERP.OnWayWatch.facade.enums.WarnType.getEnum(name);
+    }
+
+    @JSONField(serialize = false)
     public WarnStatus getStatus() {
         return Status;
     }
 
+    @JSONField(deserialize = false)
     public void setStatus(WarnStatus status) {
         Status = status;
+    }
+
+    @JSONField(name = "status")
+    public String getWarnStatusName(){
+        if(Status != null)
+            return this.Status.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "status")
+    public void setWarnStatusName(String name){
+        this.Status = WarnStatus.getEnum(name);
     }
 
     public String getWarnValue() {

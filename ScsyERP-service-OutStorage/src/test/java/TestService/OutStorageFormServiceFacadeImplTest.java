@@ -192,8 +192,8 @@ public class OutStorageFormServiceFacadeImplTest {
         }else{
             accountStatus = AccountStatus.WRZ;
         }
-        Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("accountStatus", accountStatus);
+        Map<String, String> paramMap = new HashMap<String, String>();
+        paramMap.put("accountStatus", accountStatus.getName());
         outStorageFormService.updateByMap(outStorageFormId, paramMap);
         outStorageForm_check = outStorageFormDao.getById(outStorageFormId);
         if(outStorageForm_check.getAccountStatus().getValue().intValue() != accountStatus.getValue().intValue()){

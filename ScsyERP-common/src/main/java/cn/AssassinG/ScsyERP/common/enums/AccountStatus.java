@@ -8,13 +8,6 @@ public enum AccountStatus {
     private String Name;
     private Integer Value;
 
-    static Map<String, AccountStatus> enumMap = new HashMap<String, AccountStatus>();
-    static{
-        for(AccountStatus type : AccountStatus.values()){
-            enumMap.put(type.getName(), type);
-        }
-    }
-
     private AccountStatus(String name, Integer value) {
         Name = name;
         Value = value;
@@ -36,7 +29,22 @@ public enum AccountStatus {
         Value = value;
     }
 
+    static Map<String, AccountStatus> enumMap = new HashMap<String, AccountStatus>();
+    static{
+        for(AccountStatus type : AccountStatus.values()){
+            enumMap.put(type.getName(), type);
+        }
+    }
     public static AccountStatus getEnum(String name){
         return enumMap.get(name);
+    }
+    static Map<Integer, AccountStatus> intMap = new HashMap<>();
+    static{
+        for(AccountStatus type : AccountStatus.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static AccountStatus getEnum(Integer value){
+        return intMap.get(value);
     }
 }

@@ -2,6 +2,7 @@ package cn.AssassinG.ScsyERP.Fee.facade.entity;
 
 import cn.AssassinG.ScsyERP.Fee.facade.enums.OilCardType;
 import cn.AssassinG.ScsyERP.common.entity.FormEntity;
+import com.alibaba.fastjson.annotation.JSONField;
 
 public class TransportContract extends FormEntity {
     private String ContractNumber;
@@ -121,12 +122,27 @@ public class TransportContract extends FormEntity {
         PrePay = prePay;
     }
 
+    @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.Fee.facade.enums.OilCardType getOilCardType() {
         return OilCardType;
     }
 
+    @JSONField(deserialize = false)
     public void setOilCardType(cn.AssassinG.ScsyERP.Fee.facade.enums.OilCardType oilCardType) {
         OilCardType = oilCardType;
+    }
+
+    @JSONField(name = "oilCardType")
+    public String getOilCardTypeName(){
+        if(OilCardType != null)
+            return this.OilCardType.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "oilCardType")
+    public void setOilCardTypeName(String name){
+        this.OilCardType = cn.AssassinG.ScsyERP.Fee.facade.enums.OilCardType.getEnum(name);
     }
 
     public String getOilCardNumber() {

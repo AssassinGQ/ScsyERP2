@@ -26,7 +26,7 @@ public class WarnBizImpl extends BaseBizImpl<Warn> implements WarnBiz {
      * @param paramMap 异常信息字段(status)
      */
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new WarnBizException(WarnBizException.WARNBIZ_PARAMS_ILLEGAL, "异常信息主键不能为空");
         }
@@ -34,15 +34,10 @@ public class WarnBizImpl extends BaseBizImpl<Warn> implements WarnBiz {
         if(warn == null || warn.getIfDeleted()){
             throw new WarnBizException(WarnBizException.WARNBIZ_NOSUIT_RESULT, "没有符合条件的异常信息，entityId: %d", entityId);
         }
-        WarnStatus status = (WarnStatus)paramMap.get("status");
-//        boolean flag = false;
+        WarnStatus status = WarnStatus.getEnum(paramMap.get("status"));
         if(status != null) {
             warn.setStatus(status);
             this.update(warn);
-//            flag = true;
         }
-//        if (flag) {
-//            this.update(warn);
-//        }
     }
 }

@@ -1,18 +1,26 @@
 package cn.AssassinG.ScsyERP.WebBoss.base;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
+import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.User.facade.service.LoginableService;
+import cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.enums.RetStatusType;
 import cn.AssassinG.ScsyERP.common.core.service.BaseService;
 import cn.AssassinG.ScsyERP.common.entity.LoginableEntity;
 import cn.AssassinG.ScsyERP.common.exceptions.BizException;
 import cn.AssassinG.ScsyERP.common.exceptions.DaoException;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class LoginableBaseController<T extends LoginableEntity> extends BaseController<T> {
 
+    @Autowired
+    private UserServiceFacade userServiceFacade;
     protected abstract LoginableService<T> getLoginableService();//todo pom.xml中能够不引入service工程（在idea中，如果不引入，会报错：spring无法autowired。测试一下是不是是idea的问题，实际运行没有问题）
 
     @Override
@@ -31,7 +39,7 @@ public abstract class LoginableBaseController<T extends LoginableEntity> extends
         }
     }
 
-    protected JSONObject updateImpl(Long entityId, Map<String, Object> paramMap){
+    protected JSONObject updateImpl(Long entityId, Map<String, String> paramMap){
         try{
             getLoginableService().updateByMap(entityId, paramMap);
             return getResultJSON(RetStatusType.StatusSuccess, "修改"+getClassDesc()+"信息成功", null);
@@ -48,26 +56,30 @@ public abstract class LoginableBaseController<T extends LoginableEntity> extends
             return getResultJSON(e.getMessage());
         }
     }
-//
-//    protected JSONObject queryImpl(Map<String, Object> paramMap){
-//        try{
-//            Integer limit = (Integer) paramMap.get("limit");
-//            Integer page = (Integer)paramMap.get("page");
-//            if(limit != null || page != null){
-//                if(page == null)
-//                    page = 1;
-//                if(limit == null)
-//                    limit = 20;
-//                PageParam pageParam = new PageParam(page, limit);
-//                paramMap.remove("limit");
-//                paramMap.remove("page");
-//                return getResultJSON("查询"+getClassDesc()+"信息成功", getLoginableService().listPage(pageParam, paramMap));
-//            }else{
-//                return getResultJSON("查询"+getClassDesc()+"信息成功", getLoginableService().listBy(paramMap));
-//            }
-//        }catch (DaoException | BizException e){
-//            return getResultJSON(e.getMessage());
-//        }
-//    }
+
+    protected JSONObject getByIdImpl(Long entityId){
+        try{
+            LoginableEntity loginableEntity = getLoginableService().getById(entityId);
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("IfDeleted", false);
+            paramMap.put("UserType", UserType.getEnumByClassName(loginableEntity.getClass().getName()));
+            paramMap.put("UserInfo", loginableEntity.getId());
+            List<User> users = userServiceFacade.listBy(paramMap);
+            if(users.size() > 1){
+                return getResultJSON(RetStatusType.StatusFailure, "一个"+getClassDesc()+"信息被多个登录信息关联，entityId："+entityId, null);
+            }else if(users.size() == 0){
+                return getResultJSON(RetStatusType.StatusFailure, getClassDesc()+"信息没有关联的登录信息", null);
+            }else{
+                JSONObject contentObject = (JSONObject) JSON.toJSON(loginableEntity);
+                User user = users.get(0);
+                contentObject.put("userName", user.getUserName());
+                contentObject.put("passWord", user.getPassWord());
+                contentObject.put("phone", user.getPhone());
+                return getResultJSON(RetStatusType.StatusSuccess, "查询成功", contentObject);
+            }
+        }catch (DaoException | BizException e){
+            return getResultJSON(e.getMessage());
+        }
+    }
 
 }

@@ -70,7 +70,7 @@ public class UserBizImpl extends BaseBizImpl<User> implements UserBiz {
     }
 
     @Override
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         throw new UserBizException(UserBizException.USERBIZ_CANNOTOPERATE, "UserBiz的updateByMap方法被屏蔽");
     }
 

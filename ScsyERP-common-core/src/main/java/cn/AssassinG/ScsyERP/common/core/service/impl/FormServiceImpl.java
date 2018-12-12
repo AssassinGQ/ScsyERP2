@@ -15,7 +15,7 @@ public abstract class FormServiceImpl<T extends FormEntity> extends BaseServiceI
         return this.getFormBiz();
     }
 
-    public void updateByMap(Long entityId, Map<String, Object> paramMap){
+    public void updateByMap(Long entityId, Map<String, String> paramMap){
         getFormBiz().updateByMap(entityId, paramMap);
     }
 

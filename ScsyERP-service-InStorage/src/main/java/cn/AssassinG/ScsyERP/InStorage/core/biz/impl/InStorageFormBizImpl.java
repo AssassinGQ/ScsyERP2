@@ -29,11 +29,12 @@ public class InStorageFormBizImpl extends FormBizImpl<InStorageForm> implements 
         return this.inStorageFormDao;
     }
 
+    //TODO 从仓库引入行车工，起重工，出库单同理
     public Long create(InStorageForm inStorageForm) {
         ValidUtils.ValidationWithExp(inStorageForm);
         Map<String, Object> queryMap = new HashMap<String, Object>();
         queryMap.put("IfDeleted", false);
-        queryMap.put("WarehouseId", inStorageForm.getWarehouse());
+        queryMap.put("Warehouse", inStorageForm.getWarehouse());
         queryMap.put("IfCompleted", false);
         List<InStorageForm> inStorageForms = inStorageFormDao.listBy(queryMap);
         if(inStorageForms.size() > 1){
@@ -62,7 +63,7 @@ public class InStorageFormBizImpl extends FormBizImpl<InStorageForm> implements 
      * @param paramMap 入库单基本信息字段(warehouse,truck,pickWorker,lister,accountStatus,totalAmount,totalVolume,totalWeight)
      */
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new InStorageFormBizException(InStorageFormBizException.INSTORAGEFORMBIZ_PARAMS_ILLEGAL, "入库单基本信息主键不能为空");
         }
@@ -70,49 +71,53 @@ public class InStorageFormBizImpl extends FormBizImpl<InStorageForm> implements 
         if(inStorageForm == null || inStorageForm.getIfDeleted()){
             throw new InStorageFormBizException(InStorageFormBizException.INSTORAGEFORMBIZ_NOSUIT_RESULT, "没有符合条件的入库单基本信息，entityId: %d", entityId);
         }
-        Long warehouse = (Long) paramMap.get("warehouse");
-        Long truck = (Long) paramMap.get("truck");
-        Long pickWorker = (Long) paramMap.get("pickWorker");
-        Long lister = (Long) paramMap.get("lister");
-        AccountStatus accountStatus = (AccountStatus) paramMap.get("accountStatus");
-        Integer totalAmount = (Integer) paramMap.get("totalAmount");
-        Double totalVolume = (Double) paramMap.get("totalVolume");
-        Double totalWeight = (Double) paramMap.get("totalWeight");
-        boolean flag = false;
-        if(warehouse != null) {
-            inStorageForm.setWarehouse(warehouse);
-            flag = true;
-        }
-        if(truck != null) {
-            inStorageForm.setWarehouse(truck);
-            flag = true;
-        }
-        if(pickWorker != null) {
-            inStorageForm.setWarehouse(pickWorker);
-            flag = true;
-        }
-        if(lister != null) {
-            inStorageForm.setWarehouse(lister);
-            flag = true;
-        }
-        if(accountStatus != null) {
-            inStorageForm.setAccountStatus(accountStatus);
-            flag = true;
-        }
-        if(totalAmount != null) {
-            inStorageForm.setTotalAmount(totalAmount);
-            flag = true;
-        }
-        if(totalVolume != null) {
-            inStorageForm.setTotalVolume(totalVolume);
-            flag = true;
-        }
-        if(totalWeight != null) {
-            inStorageForm.setTotalWeight(totalWeight);
-            flag = true;
-        }
-        if (flag) {
-            this.update(inStorageForm);
+        try{
+            Long warehouse = paramMap.get("warehouse") == null ? null : Long.valueOf(paramMap.get("warehouse"));
+            Long truck = paramMap.get("truck") == null ? null : Long.valueOf(paramMap.get("truck"));
+            Long pickWorker = paramMap.get("pickWorker") == null ? null : Long.valueOf(paramMap.get("pickWorker"));
+            Long lister = paramMap.get("lister") == null ? null : Long.valueOf(paramMap.get("lister"));
+            AccountStatus accountStatus = AccountStatus.getEnum(paramMap.get("accountStatus"));
+            Integer totalAmount = paramMap.get("totalAmount") == null ? null : Integer.valueOf(paramMap.get("totalAmount"));
+            Double totalVolume = paramMap.get("totalVolume") == null ? null : Double.valueOf(paramMap.get("totalVolume"));
+            Double totalWeight = paramMap.get("totalWeight") == null ? null : Double.valueOf(paramMap.get("totalWeight"));
+            boolean flag = false;
+            if(warehouse != null) {
+                inStorageForm.setWarehouse(warehouse);
+                flag = true;
+            }
+            if(truck != null) {
+                inStorageForm.setWarehouse(truck);
+                flag = true;
+            }
+            if(pickWorker != null) {
+                inStorageForm.setWarehouse(pickWorker);
+                flag = true;
+            }
+            if(lister != null) {
+                inStorageForm.setWarehouse(lister);
+                flag = true;
+            }
+            if(accountStatus != null) {
+                inStorageForm.setAccountStatus(accountStatus);
+                flag = true;
+            }
+            if(totalAmount != null) {
+                inStorageForm.setTotalAmount(totalAmount);
+                flag = true;
+            }
+            if(totalVolume != null) {
+                inStorageForm.setTotalVolume(totalVolume);
+                flag = true;
+            }
+            if(totalWeight != null) {
+                inStorageForm.setTotalWeight(totalWeight);
+                flag = true;
+            }
+            if (flag) {
+                this.update(inStorageForm);
+            }
+        }catch(NumberFormatException e){
+            throw new InStorageFormBizException(InStorageFormBizException.INSTORAGEFORMBIZ_NOSUIT_RESULT, "参数格式错误："+e.getMessage());
         }
     }
 

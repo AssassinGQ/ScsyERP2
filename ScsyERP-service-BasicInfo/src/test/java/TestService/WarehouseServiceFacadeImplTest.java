@@ -172,7 +172,7 @@ public class WarehouseServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("name", new_name);
         warehouseService.updateByMap(warehouseId, paramMap);
         Warehouse warehouse_check = warehouseDao.getById(warehouseId);

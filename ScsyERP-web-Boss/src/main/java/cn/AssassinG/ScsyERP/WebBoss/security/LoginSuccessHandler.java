@@ -34,13 +34,13 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         if(principal instanceof UserDetails){
             User user = userServiceFacade.findUserByUname(((UserDetails)principal).getUsername());
             if(user != null && !user.getIfDeleted()){
-                contentObject.put("Id", user.getId());
-                contentObject.put("UserName", user.getUserName());
-                contentObject.put("UserTypeName", user.getUserType().getName());
-                contentObject.put("UserType", user.getUserType().getValue());
-                contentObject.put("UserInfo", user.getUserInfo());
-                contentObject.put("Corporation", user.getCorporation());
-                contentObject.put("Phone", user.getPhone());
+                contentObject.put("id", user.getId());
+                contentObject.put("userName", user.getUserName());
+                contentObject.put("userTypeName", user.getUserType().getName());
+                contentObject.put("userType", user.getUserType().getValue());
+                contentObject.put("userInfo", user.getUserInfo());
+                contentObject.put("corporation", user.getCorporation());
+                contentObject.put("phone", user.getPhone());
             }
         }
         retObject.put("content", contentObject);

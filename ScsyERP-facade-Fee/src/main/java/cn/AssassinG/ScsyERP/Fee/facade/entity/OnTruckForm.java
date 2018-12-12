@@ -2,6 +2,7 @@ package cn.AssassinG.ScsyERP.Fee.facade.entity;
 
 import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.Date;
 import java.util.Set;
@@ -77,12 +78,27 @@ public class OnTruckForm extends FormEntity {
         SignTime = signTime;
     }
 
+    @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.common.enums.AccountStatus getAccountStatus() {
         return AccountStatus;
     }
 
+    @JSONField(deserialize = false)
     public void setAccountStatus(cn.AssassinG.ScsyERP.common.enums.AccountStatus accountStatus) {
         AccountStatus = accountStatus;
+    }
+
+    @JSONField(name = "accountStatus")
+    public String getAccountStatusName(){
+        if(AccountStatus != null)
+            return this.AccountStatus.getName();
+        else
+            return "";
+    }
+
+    @JSONField(name = "accountStatus")
+    public void setAccountStatusName(String name){
+        this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.getEnum(name);
     }
 
     public Set<Long> getPictures() {

@@ -170,7 +170,7 @@ public class OnTruckFormServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("signMan", new_name);
         onTruckFormService.updateByMap(onTruckFormId, paramMap);
         OnTruckForm onTruckForm_check = onTruckFormDao.getById(onTruckFormId);

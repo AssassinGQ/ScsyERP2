@@ -31,7 +31,7 @@ public class WarehouseBizImpl extends UnLoginableBizImpl<Warehouse> implements W
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new WarehouseBizException(WarehouseBizException.WAREHOUSEBIZ_PARAMS_ILLEGAL, "仓库基本信息主键不能为空");
         }
@@ -39,29 +39,33 @@ public class WarehouseBizImpl extends UnLoginableBizImpl<Warehouse> implements W
         if(warehouse == null || warehouse.getIfDeleted()){
             throw new WarehouseBizException(WarehouseBizException.WAREHOUSEBIZ_NOSUIT_RESULT, "没有符合条件的仓库基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String phone = (String) paramMap.get("phone");
-        String address = (String) paramMap.get("address");
-        Long admin = (Long) paramMap.get("admin");
-        boolean flag = false;
-        if(name != null && !name.isEmpty()) {
-            warehouse.setName(name);
-            flag = true;
-        }
-        if(phone != null && !phone.isEmpty()) {
-            warehouse.setPhone(phone);
-            flag = true;
-        }
-        if(address != null && !address.isEmpty()) {
-            warehouse.setAddress(address);
-            flag = true;
-        }
-        if(admin != null) {
-            warehouse.setAdmin(admin);
-            flag = true;
-        }
-        if (flag) {
-            this.update(warehouse);
+        try{
+            String name = paramMap.get("name");
+            String phone = paramMap.get("phone");
+            String address = paramMap.get("address");
+            Long admin = paramMap.get("admin") == null ? null : Long.valueOf(paramMap.get("admin"));
+            boolean flag = false;
+            if(name != null && !name.isEmpty()) {
+                warehouse.setName(name);
+                flag = true;
+            }
+            if(phone != null && !phone.isEmpty()) {
+                warehouse.setPhone(phone);
+                flag = true;
+            }
+            if(address != null && !address.isEmpty()) {
+                warehouse.setAddress(address);
+                flag = true;
+            }
+            if(admin != null) {
+                warehouse.setAdmin(admin);
+                flag = true;
+            }
+            if (flag) {
+                this.update(warehouse);
+            }
+        }catch(NumberFormatException e){
+            throw new WarehouseBizException(WarehouseBizException.WAREHOUSEBIZ_NOSUIT_RESULT, "参数格式错误："+e.getMessage());
         }
     }
 

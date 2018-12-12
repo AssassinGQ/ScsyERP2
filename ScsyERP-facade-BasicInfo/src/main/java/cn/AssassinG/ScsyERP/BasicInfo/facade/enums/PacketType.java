@@ -39,4 +39,13 @@ public enum PacketType {
     public static PacketType getEnum(String name){
         return enumMap.get(name);
     }
+    static Map<Integer, PacketType> intMap = new HashMap<>();
+    static{
+        for(PacketType type : PacketType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static PacketType getEnum(Integer value){
+        return intMap.get(value);
+    }
 }

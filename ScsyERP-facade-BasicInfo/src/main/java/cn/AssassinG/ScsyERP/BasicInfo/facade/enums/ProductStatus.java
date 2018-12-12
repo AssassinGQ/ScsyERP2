@@ -39,4 +39,13 @@ public enum ProductStatus {
     public static ProductStatus getEnum(String name){
         return enumMap.get(name);
     }
+    static Map<Integer, ProductStatus> intMap = new HashMap<>();
+    static{
+        for(ProductStatus type : ProductStatus.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static ProductStatus getEnum(Integer value){
+        return intMap.get(value);
+    }
 }

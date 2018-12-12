@@ -11,7 +11,7 @@ public interface BaseService<T extends BaseEntity> {
 
 	Long create(T entity);
 	void update(T entity);
-	void updateByMap(Long entityId, Map<String, Object> paramMap);
+	void updateByMap(Long entityId, Map<String, String> paramMap);
 	void deleteById(Long entityId);
 	void delete(T entity);
 

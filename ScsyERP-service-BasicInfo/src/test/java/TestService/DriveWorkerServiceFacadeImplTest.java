@@ -168,7 +168,7 @@ public class DriveWorkerServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("name", new_name);
         driveWorkerService.updateByMap(driveWorkerId, paramMap);
         DriveWorker driveWorker_check = driveWorkerDao.getById(driveWorkerId);

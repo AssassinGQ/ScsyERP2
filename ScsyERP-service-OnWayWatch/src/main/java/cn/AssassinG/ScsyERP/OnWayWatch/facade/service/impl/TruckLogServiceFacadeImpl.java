@@ -32,7 +32,7 @@ public class TruckLogServiceFacadeImpl extends BaseServiceImpl<TruckLog> impleme
         return truckLogBiz.createWithWarn(truckLog, warn);
     }
 
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         this.truckLogBiz.updateByMap(entityId, paramMap);
     }
 }

@@ -168,7 +168,7 @@
 		<if test="IfDeleted != null"> and is_deleted = #{IfDeleted}</if>
 		<if test="PassWord != null and PassWord != ''"> and _password = #{PassWord}</if>
 		<if test="IfRegistered != null and IfRegistered != ''"> and if_registered = #{IfRegistered}</if>
-		<if test="UserType != null and UserType != ''"> and user_type = #{UserType,typeHandler=cn.AssassinG.ScsyERP.User.core.dao.MyBatisHandler.UserTypeHandler}</if>
+		<if test="UserType != null"> and user_type = #{UserType,typeHandler=cn.AssassinG.ScsyERP.User.core.dao.MyBatisHandler.UserTypeHandler}</if>
 		<if test="UserInfo != null and UserInfo != ''"> and user_info = #{UserInfo}</if>
 		<!-- Like query -->
 		<if test="UserName != null and UserName != ''"> and user_name like CONCAT(CONCAT('%', #{UserName}), '%')</if>

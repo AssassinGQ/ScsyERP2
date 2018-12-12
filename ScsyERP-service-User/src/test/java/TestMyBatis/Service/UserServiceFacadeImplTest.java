@@ -146,8 +146,9 @@ public class UserServiceFacadeImplTest {
     public void listBy() {
         User user = userDao.getById(userId);
         Map<String, Object> paramMap = new HashMap<String, Object>();
-//        paramMap.put("IsDeleted", false);
-        paramMap.put("UserName", user.getUserName());
+        paramMap.put("IsDeleted", false);
+//        paramMap.put("UserName", user.getUserName());
+        paramMap.put("UserType", UserType.Admin);
         List<User> users = userService.listBy(paramMap);
         for (int i = 0; i < users.size(); i++)
             logger.info("Item" + i + ":" + users.get(i));
@@ -157,6 +158,7 @@ public class UserServiceFacadeImplTest {
     public void listPage() {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("IfDeleted", false);
+        paramMap.put("UserType", UserType.Admin);
         PageParam pageParam = new PageParam(2, 2);
         PageBean<User> pageBean = userService.listPage(pageParam, paramMap);
         logger.info(pageBean);

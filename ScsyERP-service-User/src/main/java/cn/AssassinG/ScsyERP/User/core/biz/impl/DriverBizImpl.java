@@ -31,7 +31,7 @@ public class DriverBizImpl extends LoginableBizImpl<Driver> implements DriverBiz
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new DriverBizException(DriverBizException.DRIVERBIZ_PARAMS_ILLEGAL, "驾驶员基本信息主键不能为空");
         }
@@ -39,29 +39,33 @@ public class DriverBizImpl extends LoginableBizImpl<Driver> implements DriverBiz
         if(driver == null || driver.getIfDeleted()){
             throw new DriverBizException(DriverBizException.DRIVERBIZ_NOSUIT_RESULT, "没有符合条件的驾驶员基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String driverLicense = (String) paramMap.get("driverLicense");
-        String capableCar = (String) paramMap.get("capableCar");
-        Long iDCardPhoto = (Long) paramMap.get("iDCardPhoto");
-        boolean flag = false;
-        if(name != null && !name.isEmpty()) {
-            driver.setName(name);
-            flag = true;
+        try{
+            String name = paramMap.get("name");
+            String driverLicense = paramMap.get("driverLicense");
+            String capableCar = paramMap.get("capableCar");
+            Long iDCardPhoto = paramMap.get("iDCardPhoto") == null ? null : Long.valueOf(paramMap.get("iDCardPhoto"));
+            boolean flag = false;
+            if(name != null && !name.isEmpty()) {
+                driver.setName(name);
+                flag = true;
+            }
+            if(driverLicense != null && !driverLicense.isEmpty()){
+                driver.setDriverLicense(driverLicense);
+                flag = true;
+            }
+            if(capableCar != null && !capableCar.isEmpty()){
+                driver.setCapableCar(capableCar);
+                flag = true;
+            }
+            if(iDCardPhoto != null && iDCardPhoto > 0){
+                driver.setIDCardPhoto(iDCardPhoto);
+                flag = true;
+            }
+            if(flag)
+                this.update(driver);
+        }catch(NumberFormatException e){
+            throw new DriverBizException(DriverBizException.DRIVERBIZ_NOSUIT_RESULT, "参数格式错误："+e.getMessage());
         }
-        if(driverLicense != null && !driverLicense.isEmpty()){
-            driver.setDriverLicense(driverLicense);
-            flag = true;
-        }
-        if(capableCar != null && !capableCar.isEmpty()){
-            driver.setCapableCar(capableCar);
-            flag = true;
-        }
-        if(iDCardPhoto != null && iDCardPhoto > 0){
-            driver.setIDCardPhoto(iDCardPhoto);
-            flag = true;
-        }
-        if(flag)
-            this.update(driver);
     }
 
     @Override

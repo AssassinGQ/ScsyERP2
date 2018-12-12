@@ -187,7 +187,7 @@ public class GovernmentServiceFacadeImplTest {
     @Test
     public void updateByMap() {
         String new_name = StringUtils.getRandomStr(6);
-        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("name", new_name);
         governmentService.updateByMap(governmentId, paramMap);
         Government government_check = governmentDao.getById(governmentId);

@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
@@ -29,7 +31,7 @@ public class OnTruckFormBizImpl extends FormBizImpl<OnTruckForm> implements OnTr
      * @param paramMap 随车清单字段(tallyMan,qualityTestMan,signMan,signTime,accountStatus)
      */
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new OnTruckFormBizException(OnTruckFormBizException.ONTRUCKFORMBIZ_PARAMS_ILLEGAL, "随车清单基本信息主键不能为空");
         }
@@ -37,34 +39,39 @@ public class OnTruckFormBizImpl extends FormBizImpl<OnTruckForm> implements OnTr
         if(inStorageForm == null || inStorageForm.getIfDeleted()){
             throw new OnTruckFormBizException(OnTruckFormBizException.ONTRUCKFORMBIZ_NOSUIT_RESULT, "没有符合条件的随车清单基本信息，entityId: %d", entityId);
         }
-        Long tallyMan = (Long) paramMap.get("tallyMan");
-        Long qualityTestMan = (Long) paramMap.get("qualityTestMan");
-        String signMan = (String) paramMap.get("signMan");
-        Date signTime = (Date) paramMap.get("signTime");
-        AccountStatus accountStatus = (AccountStatus) paramMap.get("accountStatus");
-        boolean flag = false;
-        if(tallyMan != null) {
-            inStorageForm.setTallyMan(tallyMan);
-            flag = true;
-        }
-        if(qualityTestMan != null) {
-            inStorageForm.setQualityTestMan(qualityTestMan);
-            flag = true;
-        }
-        if(signMan != null && !signMan.isEmpty()) {
-            inStorageForm.setSignMan(signMan);
-            flag = true;
-        }
-        if(signTime != null) {
-            inStorageForm.setSignTime(signTime);
-            flag = true;
-        }
-        if(accountStatus != null) {
-            inStorageForm.setAccountStatus(accountStatus);
-            flag = true;
-        }
-        if (flag) {
-            this.update(inStorageForm);
+        try{
+            Long tallyMan = paramMap.get("tallyMan") == null ? null : Long.valueOf(paramMap.get("tallyMan"));
+            Long qualityTestMan = paramMap.get("qualityTestMan") == null ? null : Long.valueOf(paramMap.get("qualityTestMan"));
+            String signMan = paramMap.get("signMan");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss");
+            Date signTime = paramMap.get("signTime") == null ? null : sdf.parse(paramMap.get("signTime"));
+            AccountStatus accountStatus = AccountStatus.getEnum(paramMap.get("accountStatus"));
+            boolean flag = false;
+            if(tallyMan != null) {
+                inStorageForm.setTallyMan(tallyMan);
+                flag = true;
+            }
+            if(qualityTestMan != null) {
+                inStorageForm.setQualityTestMan(qualityTestMan);
+                flag = true;
+            }
+            if(signMan != null && !signMan.isEmpty()) {
+                inStorageForm.setSignMan(signMan);
+                flag = true;
+            }
+            if(signTime != null) {
+                inStorageForm.setSignTime(signTime);
+                flag = true;
+            }
+            if(accountStatus != null) {
+                inStorageForm.setAccountStatus(accountStatus);
+                flag = true;
+            }
+            if (flag) {
+                this.update(inStorageForm);
+            }
+        }catch(NumberFormatException | ParseException e){
+            throw new OnTruckFormBizException(OnTruckFormBizException.ONTRUCKFORMBIZ_NOSUIT_RESULT, "参数格式错误："+e.getMessage());
         }
     }
 

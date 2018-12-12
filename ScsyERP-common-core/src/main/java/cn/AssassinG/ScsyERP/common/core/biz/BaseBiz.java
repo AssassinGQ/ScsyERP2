@@ -11,7 +11,7 @@ public interface BaseBiz<T extends BaseEntity> {
     Long create(T entity);
 //    int create(List<T> list);
     void update(T entity);
-    void updateByMap(Long entityId, Map<String, Object> paramMap);
+    void updateByMap(Long entityId, Map<String, String> paramMap);
 //    long update(List<T> list);
     void deleteById(long id);
     void delete(T entity);

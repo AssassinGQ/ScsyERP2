@@ -72,4 +72,14 @@ public enum UserType {
         return ClassNameMap.get(className);
     }
 
+    static Map<Integer, UserType> intMap = new HashMap<>();
+    static{
+        for(UserType type : UserType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static UserType getEnum(Integer value){
+        return intMap.get(value);
+    }
+
 }

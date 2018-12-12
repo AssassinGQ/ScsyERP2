@@ -26,7 +26,7 @@ public class WorkshopBizImpl extends UnLoginableBizImpl<Workshop> implements Wor
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new WorkshopBizException(WorkshopBizException.WORKSHOPBIZ_PARAMS_ILLEGAL, "生产厂家基本信息主键不能为空");
         }
@@ -34,34 +34,38 @@ public class WorkshopBizImpl extends UnLoginableBizImpl<Workshop> implements Wor
         if(workshop == null || workshop.getIfDeleted()){
             throw new WorkshopBizException(WorkshopBizException.WORKSHOPBIZ_NOSUIT_RESULT, "没有符合条件的生产厂家基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String phone = (String) paramMap.get("phone");
-        String address = (String) paramMap.get("address");
-        Long manufacturer = (Long) paramMap.get("manufacturer");
-        String manName = (String) paramMap.get("manName");
-        boolean flag = false;
-        if(name != null && !name.isEmpty()) {
-            workshop.setName(name);
-            flag = true;
-        }
-        if(phone != null && !phone.isEmpty()) {
-            workshop.setPhone(phone);
-            flag = true;
-        }
-        if(address != null && !address.isEmpty()) {
-            workshop.setAddress(address);
-            flag = true;
-        }
-        if(manufacturer != null) {
-            workshop.setManufacturer(manufacturer);
-            flag = true;
-        }
-        if(manName != null && !manName.isEmpty()) {
-            workshop.setManName(manName);
-            flag = true;
-        }
-        if (flag) {
-            this.update(workshop);
+        try{
+            String name = paramMap.get("name");
+            String phone = paramMap.get("phone");
+            String address = paramMap.get("address");
+            Long manufacturer = paramMap.get("manufacturer") == null ? null : Long.valueOf(paramMap.get("manufacturer"));
+            String manName = paramMap.get("manName");
+            boolean flag = false;
+            if(name != null && !name.isEmpty()) {
+                workshop.setName(name);
+                flag = true;
+            }
+            if(phone != null && !phone.isEmpty()) {
+                workshop.setPhone(phone);
+                flag = true;
+            }
+            if(address != null && !address.isEmpty()) {
+                workshop.setAddress(address);
+                flag = true;
+            }
+            if(manufacturer != null) {
+                workshop.setManufacturer(manufacturer);
+                flag = true;
+            }
+            if(manName != null && !manName.isEmpty()) {
+                workshop.setManName(manName);
+                flag = true;
+            }
+            if (flag) {
+                this.update(workshop);
+            }
+        }catch(NumberFormatException e){
+            throw new WorkshopBizException(WorkshopBizException.WORKSHOPBIZ_NOSUIT_RESULT, "参数格式错误："+e.getMessage());
         }
     }
 }

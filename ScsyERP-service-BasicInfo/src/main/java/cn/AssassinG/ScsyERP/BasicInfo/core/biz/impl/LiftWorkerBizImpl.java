@@ -26,7 +26,7 @@ public class LiftWorkerBizImpl extends UnLoginableBizImpl<LiftWorker> implements
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new DriveWorkerBizException(DriveWorkerBizException.DRIVEWORKERBIZ_PARAMS_ILLEGAL, "起重工基本信息主键不能为空");
         }
@@ -34,8 +34,8 @@ public class LiftWorkerBizImpl extends UnLoginableBizImpl<LiftWorker> implements
         if(liftWorker == null || liftWorker.getIfDeleted()){
             throw new DriveWorkerBizException(DriveWorkerBizException.DRIVEWORKERBIZ_NOSUIT_RESULT, "没有符合条件的起重工基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
-        String phone = (String) paramMap.get("phone");
+        String name = paramMap.get("name");
+        String phone = paramMap.get("phone");
         boolean flag = false;
         if(name != null && !name.isEmpty()) {
             liftWorker.setName(name);

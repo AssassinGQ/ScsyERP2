@@ -31,7 +31,7 @@ public class EscortBizImpl extends LoginableBizImpl<Escort> implements EscortBiz
      */
     @Override
     @Transactional
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         if(entityId == null){
             throw new EscortBizException(EscortBizException.ESCORTBIZ_PARAMS_ILLEGAL, "押运员基本信息主键不能为空");
         }
@@ -39,7 +39,7 @@ public class EscortBizImpl extends LoginableBizImpl<Escort> implements EscortBiz
         if(escort == null || escort.getIfDeleted()){
             throw new EscortBizException(EscortBizException.ESCORTBIZ_NOSUIT_RESULT, "没有符合条件的押运员基本信息，entityId: %d", entityId);
         }
-        String name = (String) paramMap.get("name");
+        String name = paramMap.get("name");
         if(name != null && !name.isEmpty()) {
             escort.setName(name);
             this.update(escort);

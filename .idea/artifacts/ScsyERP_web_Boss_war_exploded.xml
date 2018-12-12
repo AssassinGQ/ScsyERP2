@@ -1,6 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="ScsyERP-web-Boss:war exploded">
     <output-path>$PROJECT_DIR$/ScsyERP-web-Boss/target/ScsyERP-web-Boss</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>ScsyERP-web-Boss</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

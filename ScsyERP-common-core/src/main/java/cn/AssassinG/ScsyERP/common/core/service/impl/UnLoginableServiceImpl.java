@@ -27,7 +27,7 @@ public abstract class UnLoginableServiceImpl<T extends UnLoginableEntity> extend
     public Long createWithNameCheck(T entity){
         return getUnLoginableBiz().createWithNameCheck(entity);
     }
-    public void updateByMap(Long entityId, Map<String, Object> paramMap){
+    public void updateByMap(Long entityId, Map<String, String> paramMap){
         getUnLoginableBiz().updateByMap(entityId, paramMap);
     }
 }

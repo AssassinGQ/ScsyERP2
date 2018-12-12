@@ -26,7 +26,7 @@ public class UserServiceFacadeImpl extends BaseServiceImpl<User> implements User
     }
 
     @Override
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         userBiz.updateByMap(entityId, paramMap);
     }
 

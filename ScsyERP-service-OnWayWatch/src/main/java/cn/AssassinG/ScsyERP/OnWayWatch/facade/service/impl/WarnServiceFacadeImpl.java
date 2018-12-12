@@ -18,7 +18,7 @@ public class WarnServiceFacadeImpl extends BaseServiceImpl<Warn> implements Warn
         return this.warnBiz;
     }
 
-    public void updateByMap(Long entityId, Map<String, Object> paramMap) {
+    public void updateByMap(Long entityId, Map<String, String> paramMap) {
         this.warnBiz.updateByMap(entityId, paramMap);
     }
 }

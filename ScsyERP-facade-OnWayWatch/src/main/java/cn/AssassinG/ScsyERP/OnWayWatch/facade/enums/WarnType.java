@@ -41,4 +41,13 @@ public enum WarnType {
     public static WarnType getEnum(String name){
         return enumMap.get(name);
     }
+    static Map<Integer, WarnType> intMap = new HashMap<>();
+    static{
+        for(WarnType type : WarnType.values()){
+            intMap.put(type.getValue(), type);
+        }
+    }
+    public static WarnType getEnum(Integer value){
+        return intMap.get(value);
+    }
 }
