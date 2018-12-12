@@ -69,7 +69,7 @@ export default {
             let root = routes.find(r => r.path === '/')
             return root.children.reduce((map, route) => {
                 if (
-                    (route.meta.permission && !route.meta.permission.includes(user.userType)) || // 无权限
+                    (route.meta.permission && !route.meta.permission.includes(user.type)) || // 无权限
                     !route.meta.group // 无权限
                 ) {
                     return map

@@ -14,7 +14,7 @@ export const ensureFieldOptions = fields => Promise.all(fields.map(field => {
     if (optionsUrl && (type === 'select' || type === 'multi-select')) {
         let promise = GET(optionsUrl).then(({ data }) => {
             Vue.set(field, 'options', data.map(d => ({
-                value: d.sid,
+                value: d.id,
                 label: d[optionDisplayKey] || d.name || d.title,
                 data: d
             })))

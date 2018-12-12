@@ -35,28 +35,42 @@ const handleResponse_NOERROR = ({ data }, { showSuccessMessage = false } = {}) =
 }
 
 const encode = encodeURIComponent
+const Qs = require('qs');
+// export const POSTKV = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
+//     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//     // headers: { 'Content-Type': 'application/json' }
+//     // transformRequest: (data = {}) => {
+//     //     return !data ? '' : Object.keys(data).reduce((result, key) => result + `${encode(key)}=${encode(data[key])}&`, '').slice(0, -1)
+//     // }
+//     transformRequest:[function (data){
+//         data = Qs.stringify({data:JSON.stringify(data)});
+//         return data;
+//     }]
+// }).then(data => handleResponse(data, { showSuccessMessage: true }))
+
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     transformRequest: (data = {}) => {
-        console.log(data);
-        let { token } = store.getters.user
-        if (token) data.token = token
+        if(data){
+            for(let x in data){
+                if(!data[x])
+                    delete(data[x]);
+            }
+        }
         return !data ? '' : Object.keys(data).reduce((result, key) => result + `${encode(key)}=${encode(data[key])}&`, '').slice(0, -1)
     }
 }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const GET = (path, params) => axios.get(`http://${ENDPOINT}${path}`, {
     params: {
-        token: store.getters.user.token,
-        corporationsid: store.getters.user.corporationsid,
+        Corporation: store.getters.user.Corporation,
         ...params,
     }
 }).then(handleResponse)
 
 export const GET_NOERROR = (path, params) => axios.get(`http://${ENDPOINT}${path}`, {
     params: {
-        token: store.getters.user.token,
-        corporationsid: store.getters.user.corporationsid,
+        Corporation: store.getters.user.Corporation,
         ...params,
     }
 }).then(handleResponse_NOERROR)

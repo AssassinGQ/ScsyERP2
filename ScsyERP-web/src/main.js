@@ -20,39 +20,37 @@ Vue.prototype.$echarts = echarts
 import store from './store'
 import App from './app.vue'
 
-import LoginView from './views/login'
 import DashboardView from './views/dashboard'
-import AdministratorView from './views/administrator'
-import DriverView from './views/driver'
-import VehicleView from './views/vehicle'
-import RouteView from './views/route'
 import OrderView from './views/order'
 import GoodsView from './views/goods'
-import FeeCheckView from './views/fee-check'
-import RepairLogView from './views/repair-log'
-import CarInfoView from './views/car-info'
-import ClientView from './views/client'
-import ExamsView from './views/exams'
-import DocumentsView from './views/documents'
-import ScoresView from './views/scores'
-import ReadingStatusView from './views/reading-stats'
-import CorporationView from './views/corporation'
 import OrderPlaceView from './views/order-place'
 import LatestLogView from './views/latest-log'
 
-//by qiu
-import NoteView from './views/note'
-import AccidentqueryView from './views/accidentquery'
-import LockView from './views/lock'
-import DataView from './views/data'
-import AccidentStatsView from './views/accident-stats'
-import OrderStatsView from './views/order-stats'
+import LoginView from './views/PMS/login'
+import GetAccountView from './views/PMS/get-account'
 
-//by hgq
-import DaeAuthView from './views/dae-auth'
-import GetAccountView from './views/get-account'
-import GovernmentView from './views/government'
-import ManufacturerView from './views/manufacturer'
+import CorporationView from './views/LoginViews/corporation'
+import GovernmentView from './views/LoginViews/government'
+import AdministratorView from './views/LoginViews/administrator'
+import CustomerView from './views/LoginViews/customer'
+import ManufacturerView from './views/LoginViews/manufacturer'
+import ConsigneeView from './views/LoginViews/consignee'
+import DriverView from './views/LoginViews/driver'
+import EscortView from './views/LoginViews/escort'
+
+import DriveWorkeViewr from './views/UnLoginViews/drive-worker'
+import LiftWorkerView from './views/UnLoginViews/lift-worker'
+import TruckView from './views/UnLoginViews/truck'
+import WarehouseView from './views/UnLoginViews/warehouse'
+import WorkshopView from './views/UnLoginViews/workshop'
+import MaterialView from './views/UnLoginViews/material'
+import ProductView from './views/UnLoginViews/product'
+import ProjectView from './views/UnLoginViews/project'
+
+import InStorageFormView from './views/FormViews/in-storage-form'
+import OutStorageFormView from './views/FormViews/out-storage-form'
+import OnTruckFormView from './views/FormViews/on-truck-form'
+import TransportContractView from './views/FormViews/transport-contract'
 
 const TodoView = { render: h => h('div', 'todo') }
 import {
@@ -71,23 +69,221 @@ const router = new VueRouter({
     mode: 'history',
     routes: [{
         path: '/',
-        // redirect: '/driver',
-        // redirect: '/login',
         component: DashboardView,
         children: [{
             path: 'GetAccount',
             component: GetAccountView,
             meta: {
-                group: '用户管理', title: '生成账号',
+                group: '权限管理', title: '生成账号',
                 permission: [TYPE_SUPERADMIN]
             },
-
+        }, {
+            path: 'Role',//增删查改角色，修改角色的权限、父角色
+            component: GetAccountView,
+            meta: {
+                group: '权限管理', title: '角色管理',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP_ADMIN]
+            },
+        }, {
+            path: 'Permission',//为用户分配角色（多个）、屏蔽权限、特殊权限
+            component: GetAccountView,
+            meta: {
+                group: '权限管理', title: '用户管理',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP_ADMIN]
+            },
+        }, {
+            path: 'Corporation',//查询承运方信息；修改承运方信息（仅承运方）
+            component: CorporationView,
+            meta: {
+                group: '用户管理', title: '承运方信息'
+            }
+        }, {
+            path: 'Government',
+            component: GovernmentView,//查询政府信息；修改政府信息（仅政府）
+            meta: {
+                group: '用户管理', title: '政府信息',
+                permission: [TYPE_SUPERADMIN, TYPE_GOV]
+            }
+        }, {
+            path: 'Admin',
+            component: AdministratorView,//增删查改管理员信息
+            meta: {
+                group: '用户管理', title: '管理员信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Customer',
+            component: CustomerView,
+            meta: {
+                group: '用户管理', title: '客户信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN, TYPE_CUSTOMER]
+            },
+        }, {
+            path: 'Manufacturer',
+            component: ManufacturerView,
+            meta: {
+                group: '用户管理', title: '生产厂家信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN, TYPE_MANUFACTURER]
+            }
+        }, {
+            path: 'Consignee',
+            component: ConsigneeView,
+            meta: {
+                group: '用户管理', title: '收货方信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN, TYPE_CONSIGNEE]
+            },
+        }, {
+            path: 'Driver',
+            component: DriverView,
+            meta: {
+                group: '用户管理', title: '驾驶员信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN, TYPE_GOV, TYPE_DRIVER, TYPE_ESCORT]
+            },
+        }, {
+            path: 'Escort',
+            component: EscortView,
+            meta: {
+                group: '用户管理', title: '押运员信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN, TYPE_GOV, TYPE_DRIVER, TYPE_ESCORT]
+            },
+        }, {
+            path: 'DriveWorker',
+            component: DriveWorkeViewr,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '行车工信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'LiftWorker',
+            component: LiftWorkerView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '起重工信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Truck',
+            component: TruckView,
+            props: ({ params: { viewType = 'truck' } }) => ({ viewType }),
+            meta: {
+                group: '基本信息', title: '车辆信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            },
+            children: [{ path: ':viewType?' }]
+        }, {
+            path: 'Warehouse',
+            component: WarehouseView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '仓库信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Workshop',
+            component: WorkshopView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '生产车间信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Material',
+            component: MaterialView,//增删查改管理员信息
+            meta: {
+                group: '基本信息', title: '物料信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Product',//增删查改，在库盘点
+            component: ProductView,
+            meta: {
+                group: '基本信息', title: '货物信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'Project',//创建工程（下单）,修改工程，删除工程，查询工程
+            component: ProjectView,
+            meta: {
+                group: '工程项目', title: '下达订单',
+                permission: [TYPE_SUPERADMIN, TYPE_CUSTOMER]
+            }
+        }, {
+            path: 'InStorage',//入库，增查改，添加明细，修改行车工，起重工
+            component: InStorageFormView,
+            meta: {
+                group: '入库流程', title: '下达订单',
+                permission: [TYPE_SUPERADMIN, TYPE_CUSTOMER]
+            }
+        }, {
+            path: 'OutStorage',//出库，增查改，添加明细，修改行车工，起重工
+            component: OutStorageFormView,
+            meta: {
+                group: '出库流程', title: '下达订单',
+                permission: [TYPE_SUPERADMIN, TYPE_CUSTOMER]
+            }
+        }, {
+            path: 'OnTruckForm',
+            component: OnTruckFormView,
+            meta: {
+                group: '费用结算', title: '随车清单',
+                permission: [TYPE_SUPERADMIN, TYPE_CONSIGNEE]
+            }
+        }, {
+            path: 'TransportContract',
+            component: TransportContractView,
+            meta: {
+                group: '费用结算', title: '运输合同',
+                permission: [TYPE_SUPERADMIN, TYPE_CONSIGNEE]
+            }
+        }, {
+            path: 'latest-log',
+            component: LatestLogView,
+            props: ({ params: { viewType = 'trucks' } }) => ({ viewType }),
+            meta: {
+                group: '在途监控', title: '最新日志',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            },
+            children: [{ path: ':viewType?' }]
+        }, {
+            path: 'data',
+            component: DataView,
+            meta: {
+                group: '在途监控', title: '历史日志',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'accidentquery',
+            component: DataView,
+            meta: {
+                group: '在途监控', title: '异常信息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'lock',
+            component: DataView,
+            meta: {
+                group: '在途监控', title: '开锁管理',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'realtime',
+            component: DataView,
+            meta: {
+                group: '在途监控', title: '实时消息',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            }
+        }, {
+            path: 'accident-stats',
+            component: DataView,
+            meta: {
+                group: '数据统计', title: '事故统计',
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
+            },
+            props: ({ params: { viewType = 'time' } }) => ({ viewType }),
+            children: [{ path: ':viewType?' }]
         }, {
             path: 'order-stats',
-            component: OrderStatsView,
+            component: DataView,
             meta: {
                 group: '数据统计', title: '订单统计',
-                permission: [TYPE_CORP, TYPE_CORP_ADMIN]
+                permission: [TYPE_SUPERADMIN, TYPE_CORP, TYPE_CORP_ADMIN]
             },
             props: ({ params: { viewType = 'time' } }) => ({ viewType }),
             children: [{ path: ':viewType?' }]
@@ -103,11 +299,12 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.path !== '/login' && !store.getters.user.token) {
-        next({ path: '/login', replace: true })
-    } else {
-        next()
-    }
+    next();
+    // if (to.path !== '/login' && !store.getters.user.token) {
+    //     next({ path: '/login', replace: true })
+    // } else {
+    //     next()
+    // }
 })
 
 /* Global Filters */
@@ -145,10 +342,10 @@ router.afterEach(() => {
 import { handlers } from './api'
 
 handlers.error = ({ msg: message }) => {
-    if (message === 'token失效') {
-        store.commit('resetUser')
-        router.replace('/login')
-    }
+    // if (message === 'token失效') {
+    //     store.commit('resetUser')
+    //     router.replace('/login')
+    // }
     app.$notify.error({ title: '错误', message })
 }
 handlers.success = ({ msg: message }) => {
@@ -157,6 +354,9 @@ handlers.success = ({ msg: message }) => {
 // handlers.message = message => app.$notify.success({ message })
 
 import { DEBUG } from './util'
+import InStorageForm from "./fields/FormFields/InStorageForm";
+import OnTruckForm from "./fields/FormFields/OnTruckForm";
+import TransportContract from "./fields/FormFields/TransportContract";
 
 if (DEBUG) {
     window.router = router

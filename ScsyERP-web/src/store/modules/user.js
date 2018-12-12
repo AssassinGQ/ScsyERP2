@@ -1,10 +1,10 @@
 const defaultUser = () => ({
-    Id: undefined,
-    UserName: undefined,
-    UserType: undefined,
-    UserInfo:undefined,
-    Corporation: undefined,
-    Phone: undefined
+    id: undefined,
+    userName: undefined,
+    userType: undefined,
+    userInfo:undefined,
+    corporation: undefined,
+    phone: undefined
 })
 
 const state = {
@@ -13,8 +13,8 @@ const state = {
 }
 
 const mutations = {
-    receiveUser: (state, { Id, UserName, UserType, UserInfo, Corporation, Phone }) => {
-        state.user = { Id, UserName, UserType, UserInfo, Corporation, Phone }
+    receiveUser: (state, { id, userName, userType, userInfo, corporation, phone }) => {
+        state.user = { id, userName, userType, userInfo, corporation, phone }
     },
     resetUser: state => state.user = defaultUser(),
     receivePushMessage: (state, message) => {
@@ -38,15 +38,15 @@ export const TYPE_SUPERADMIN = 8 // 超级管理员
 const getters = {
     user: state => state.user,
     pushMessages: state => state.pushMessages,
-    isCorp: state => state.user.type === TYPE_CORP, // 承运方
-    isGov: state => state.user.type === TYPE_GOV, // 政府
-    isCorpAdmin: state => state.user.type === TYPE_CORP_ADMIN, // 承运方管理员
-    isDriver: state => state.user.type === TYPE_DRIVER,
-    isEscort: state => state.user.type === TYPE_ESCORT,
-    isCustomer: state => state.user.type === TYPE_CUSTOMER,
-    isManufacturer: state => state.user.type === TYPE_MANUFACTURER,
-    isConsignee: state => state.user.type === TYPE_CONSIGNEE,
-    isSuper: state => state.user.type === TYPE_SUPERADMIN,
+    isCorp: state => state.user.userType === TYPE_CORP, // 承运方
+    isGov: state => state.user.userType === TYPE_GOV, // 政府
+    isCorpAdmin: state => state.user.userType === TYPE_CORP_ADMIN, // 承运方管理员
+    isDriver: state => state.user.userType === TYPE_DRIVER,
+    isEscort: state => state.user.userType === TYPE_ESCORT,
+    isCustomer: state => state.user.userType === TYPE_CUSTOMER,
+    isManufacturer: state => state.user.userType === TYPE_MANUFACTURER,
+    isConsignee: state => state.user.userType === TYPE_CONSIGNEE,
+    isSuper: state => state.user.userType === TYPE_SUPERADMIN,
 }
 
 export default { state, mutations, actions, getters }

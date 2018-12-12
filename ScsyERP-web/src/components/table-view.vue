@@ -8,6 +8,7 @@
                                v-model="searchParams[key]" :multiple="type === 'multi-select'"
                                clearable :placeholder="label">
                         <template v-if="Array.isArray(options)">
+                            <!--value = 0;label = 仓库管理员;key = dept-->
                             <el-option v-for="{label, value} in options" :label="label"
                                        :key="value" :value="value"/>
                         </template>
@@ -64,7 +65,7 @@
                     <template slot-scope="scope">
                         <template
                                 v-if="type === 'select' && fieldsByKey[key].options && fieldsByKey[key].options[scope.row[key]]">
-                            {{ fieldsByKey[key].options[scope.row[key]] }}
+                            {{ fieldsByKey[key].options[scope.row[key]].label }}
                         </template>
                         <template v-else-if="type === 'date'">
                             {{ scope.row[key] | format }}
@@ -176,7 +177,7 @@ export default {
         },
         // 条目的id字段
         idField: {
-            default: 'sid',
+            default: 'id',
             type: String
         },
         // 若传入，则在创建记录后展示创建结果（例:创建管理员后的账号信息）
@@ -247,6 +248,13 @@ export default {
                 return map
             }, {})
         },
+        findOutContent(key, label, field, id){
+            console.info("key = " + key);
+            console.info("label = " + label);
+            console.info("field = " + field);
+            console.info("id = " + id);
+            return "test";
+        },
         editFields() {
             return [].concat(this.fields, this.additionalFields)
         }
@@ -254,6 +262,7 @@ export default {
     methods: {
         search() {
             let { queryUrl, baseUrl, limit, searchParams } = this
+            console.log("searchParams = " + searchParams);
             let url = typeof queryUrl === 'function' ? queryUrl(searchParams) : queryUrl
             let params = { ...searchParams }
             this.fields.forEach(({ key, type }) => {
@@ -262,8 +271,10 @@ export default {
                 }
             })
             return GET(url || `${baseUrl}/query`, { limit, ...params })
-                .then(({ data, total }) => {
-                    this.searchParams.total = total
+                .then(({ data, TotalCount }) => {
+                    console.info("total = " + TotalCount)
+                    console.info("data = " + data)
+                    this.searchParams.total = TotalCount
                     this.result = data
                 })
                 .catch(e => {
@@ -291,9 +302,25 @@ export default {
         },
         delete() {
             let { deleteUrl, baseUrl, currentRow, idField } = this
-            let id = currentRow[idField]
+            // let id = currentRow[idField]
+            let delete_key_name, delete_key;
+            let realDeleteUrl = deleteUrl || `${baseUrl}/delete`
+            if(realDeleteUrl.indexOf("Corporation") != -1 ||
+                realDeleteUrl.indexOf("Admin") != -1 ||
+                realDeleteUrl.indexOf("Government") != -1 ||
+                realDeleteUrl.indexOf("Customer") != -1 ||
+                realDeleteUrl.indexOf("Manufacturer") != -1 ||
+                realDeleteUrl.indexOf("Consignee") != -1 ||
+                realDeleteUrl.indexOf("Driver") != -1 ||
+                realDeleteUrl.indexOf("Escort") != -1){
+                delete_key_name = "userId";
+                delete_key = currentRow.userId;
+            }else{
+                delete_key_name = "entityId";
+                delete_key = currentRow.id;
+            }
             this.$confirm('删除操作不可撤销', '确认删除吗?')
-                .then(() => POST((deleteUrl || `${baseUrl}/delete`), { [idField]: id }))
+                .then(() => POST(realDeleteUrl, { [delete_key_name]: delete_key }))
                 .then(this.search)
                 .catch((e) => {
                     console.log(e)
@@ -302,6 +329,13 @@ export default {
         submit() {
             let { editingRow, idField, updateUrl, createUrl, baseUrl } = this
             let isEdit = editingRow[idField]
+            if(isEdit){
+                editingRow.entityId = editingRow[idField]
+            }
+            // for(let x in editingRow){
+            //     console.info("editingRow["+x+"] = "+editingRow[x]);
+            // }
+            delete(editingRow[idField])
             POST(isEdit
                 ? (updateUrl || `${baseUrl}/update`)
                 : (createUrl || `${baseUrl}/create`), editingRow)

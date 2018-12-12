@@ -15,8 +15,8 @@ export default {
         government: {
             name: undefined,
             phone: undefined,
-            UserName: undefined,
-            password: undefined,
+            userName: undefined,
+            passWord: undefined,
         },
         fields: [
             { key: 'name', label: '名称', type: 'name' },

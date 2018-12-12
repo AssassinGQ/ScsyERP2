@@ -10,9 +10,10 @@
                         :value="item.value"/>
             </el-select>
             <el-input :class="$style.field" placeholder="名称" v-model="name" type="name"/>
-            <el-input :class="$style.field" placeholder="用户名(不填则由系统生成)" v-model="username" name="username"/>
-            <el-input :class="$style.field" placeholder="密码(不填则由系统生成)" v-model="password" name="password"/>
+            <el-input :class="$style.field" placeholder="用户名(不填则由系统生成)" v-model="userName" name="username"/>
+            <el-input :class="$style.field" placeholder="密码(不填则由系统生成)" v-model="passWord" name="password"/>
             <el-input :class="$style.field" placeholder="手机号" v-model="phone" type="phone"/>
+            <el-input :class="$style.field" placeholder="权限码" v-model="token" type="token"/>
             <el-button :class="$style.field" @click="getAccount" type="primary">生成账号</el-button>
         </div>
     </div>
@@ -23,29 +24,27 @@
     export default {
         name: 'getAccount',
         data: () => ({
+            token: '',
             type: '',
             name: '',
+            userName: '',
+            passWord: '',
             phone: '',
-            UserName: '',
-            password: '',
             options: [{
                 value: '0',
                 label: '承运方'
             }, {
                 value: '1',
                 label: '政府'
-            }, {
-                value: '2',
-                label: '设备生产商'
             }]
         }),
         methods: {
             getAccount() {
-                let {type, name, phone, username, password} = this
-                POST('/user/getAccount', {type, name, phone, username: UserName, password})
+                let {token, type, name, userName, passWord, phone } = this
+                POST('/user/getAccount', {token , type, name, UserName: userName, PassWord: passWord, Phone: phone})
                     .then(response=>{
-                        this.username = response.username;
-                        this.password = response.password;
+                        this.userName = response.userName;
+                        this.passWord = response.passWord;
                     })
             }
         }
