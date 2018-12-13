@@ -32,6 +32,17 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
                 }
                 request.setAttribute(MAPKEY, paramMap);
             }
+
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            response.setHeader("Access-Control-Allow-Credentials", "true");
+            response.setHeader("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
+            response.setHeader("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With, Origin");
+            response.setHeader("X-Powered-By","Jetty");
+            String method= request.getMethod();
+            if (method.equals("OPTIONS")){
+                response.setStatus(200);
+                return false;
+            }
             return true;
         }
         /**

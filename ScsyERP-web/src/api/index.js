@@ -49,7 +49,7 @@ const Qs = require('qs');
 // }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Method': 'POST' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': 'http://120.76.219.196', 'Access-Control-Allow-Methods': 'POST' },
     transformRequest: (data = {}) => {
         if(data){
             for(let x in data){
@@ -62,7 +62,7 @@ export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data
 }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const GET = (path, params) => axios.get(`http://${ENDPOINT}${path}`, {
-    headers: { 'Access-Control-Allow-Origin': '*' },
+    headers: { 'Access-Control-Allow-Origin': 'http://120.76.219.196', 'Access-Control-Allow-Methods': 'GET' },
     params: {
         Corporation: store.getters.user.Corporation,
         ...params,
