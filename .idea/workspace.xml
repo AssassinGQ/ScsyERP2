@@ -6,141 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.VUE中，引用同目录下的xxx.js，需要&quot;./xxx.js&quot;，而直接&quot;xxx.js&quot;会报错&#10;2.解决了一下跨域问题&#10;3.使用advice对httprequest进行预处理&#10;4.debug了原vue工程，使之能够与现有后台配合工作，然后下饺子做了登录信息，非登录信息，出入库的初步网页">
-      <change afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestEnum.java" afterDir="false" />
+    <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.maven的xml文件中添加了跳过测试配置">
       <change afterPath="$PROJECT_DIR$/ScsyERP-service-User/logs/rc-web-boss.log.2018-12-09" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/ExceptionInterceptorLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/test/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/AdminControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ScsyERP_web_Boss_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ScsyERP_web_Boss_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ScsyERP_web_Boss_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ScsyERP_web_Boss_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fdb917c0-0ac8-4d21-a53b-c68327fddbde.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fdb917c0-0ac8-4d21-a53b-c68327fddbde.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/biz/BaseBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/biz/BaseBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/impl/BaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/impl/BaseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/impl/FormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/impl/FormServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/impl/UnLoginableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/service/impl/UnLoginableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common/ScsyERP-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common/ScsyERP-common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-common/src/main/java/cn/AssassinG/ScsyERP/common/enums/AccountStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/java/cn/AssassinG/ScsyERP/common/enums/AccountStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/facade/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/facade/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/facade/enums/PacketType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/facade/enums/PacketType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/facade/enums/ProductStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/facade/enums/ProductStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/facade/entity/OnTruckForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/facade/entity/OnTruckForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/facade/entity/TransportContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/facade/entity/TransportContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/facade/enums/OilCardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/facade/enums/OilCardType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-File/src/main/java/cn/AssassinG/ScsyERP/File/facade/entity/MyFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-File/src/main/java/cn/AssassinG/ScsyERP/File/facade/entity/MyFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-File/src/main/java/cn/AssassinG/ScsyERP/File/facade/enums/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-File/src/main/java/cn/AssassinG/ScsyERP/File/facade/enums/FileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-InStorge/src/main/java/cn/AssassinG/ScsyERP/InStorage/facade/entity/InStorageForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-InStorge/src/main/java/cn/AssassinG/ScsyERP/InStorage/facade/entity/InStorageForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-InStorge/src/main/java/cn/AssassinG/ScsyERP/InStorage/facade/enums/InStorageFormStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-InStorge/src/main/java/cn/AssassinG/ScsyERP/InStorage/facade/enums/InStorageFormStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/entity/Warn.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/entity/Warn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/enums/WarnStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/enums/WarnStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/enums/WarnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/enums/WarnType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-OutStorage/src/main/java/cn/AssassinG/ScsyERP/OutStorage/facade/entity/OutStorageForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-OutStorage/src/main/java/cn/AssassinG/ScsyERP/OutStorage/facade/entity/OutStorageForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-OutStorage/src/main/java/cn/AssassinG/ScsyERP/OutStorage/facade/enums/OutStorageFormStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-OutStorage/src/main/java/cn/AssassinG/ScsyERP/OutStorage/facade/enums/OutStorageFormStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/Government.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/Government.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/User_Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/entity/User_Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/AdminDeptType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/AdminDeptType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/GovernmentDeptType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/GovernmentDeptType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/UserPermissionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/UserPermissionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-facade-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/enums/UserType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/DriveWorkerBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/DriveWorkerBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/LiftWorkerBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/LiftWorkerBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/MaterialBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/MaterialBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/ProductBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/ProductBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/ProjectBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/ProjectBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/TruckBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/TruckBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/WarehouseBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/WarehouseBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/WorkshopBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/java/cn/AssassinG/ScsyERP/BasicInfo/core/biz/impl/WorkshopBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/DriveWorkerServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/DriveWorkerServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/LiftWorkerServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/LiftWorkerServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/MaterialServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/MaterialServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/ProductServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/ProductServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/ProjectServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/ProjectServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/TruckServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/TruckServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/WarehouseServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/WarehouseServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/WorkshopServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/test/java/TestService/WorkshopServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-Fee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-Fee/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/core/biz/impl/OnTruckFormBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/core/biz/impl/OnTruckFormBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/core/biz/impl/TransportContractBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-Fee/src/main/java/cn/AssassinG/ScsyERP/Fee/core/biz/impl/TransportContractBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-Fee/src/test/java/TestService/OnTruckFormServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-Fee/src/test/java/TestService/OnTruckFormServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-Fee/src/test/java/TestService/TransportContractServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-Fee/src/test/java/TestService/TransportContractServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-File/src/main/java/cn/AssassinG/ScsyERP/File/core/biz/impl/MyFileBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-File/src/main/java/cn/AssassinG/ScsyERP/File/core/biz/impl/MyFileBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-File/src/main/java/cn/AssassinG/ScsyERP/File/facade/service/impl/MyFileServiceFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-File/src/main/java/cn/AssassinG/ScsyERP/File/facade/service/impl/MyFileServiceFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-File/src/test/java/TestService/MyFileServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-File/src/test/java/TestService/MyFileServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-InStorage/src/main/java/cn/AssassinG/ScsyERP/InStorage/core/biz/impl/InStorageFormBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-InStorage/src/main/java/cn/AssassinG/ScsyERP/InStorage/core/biz/impl/InStorageFormBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-InStorage/src/test/java/TestService/InStorageFormServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-InStorage/src/test/java/TestService/InStorageFormServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/core/biz/impl/TruckLogBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/core/biz/impl/TruckLogBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/core/biz/impl/WarnBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/core/biz/impl/WarnBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/service/impl/TruckLogServiceFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/service/impl/TruckLogServiceFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/service/impl/WarnServiceFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/java/cn/AssassinG/ScsyERP/OnWayWatch/facade/service/impl/WarnServiceFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/test/java/TestService/WarnServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/test/java/TestService/WarnServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OutStorage/src/main/java/cn/AssassinG/ScsyERP/OutStorage/core/biz/impl/OutStorageFormBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OutStorage/src/main/java/cn/AssassinG/ScsyERP/OutStorage/core/biz/impl/OutStorageFormBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-OutStorage/src/test/java/TestService/OutStorageFormServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-OutStorage/src/test/java/TestService/OutStorageFormServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/AdminTableInit.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/AdminTableInit.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/UserTableInit.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/doc/SQL/UserTableInit.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/jdbc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/logs/rc-web-boss.log" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/logs/rc-web-boss.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/AdminBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/AdminBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ConsigneeBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ConsigneeBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/CorporationBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/CorporationBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/CustomerBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/CustomerBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/DriverBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/DriverBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/EscortBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/EscortBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/GovernmentBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/GovernmentBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/UserBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/UserBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/service/impl/LoginableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/service/impl/LoginableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/service/impl/UserServiceFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/facade/service/impl/UserServiceFacadeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/User.Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/User.Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/CallBack/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/CallBack/OnClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/OnClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/CallBack/TestCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestCaller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/AdminServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/AdminServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/ConsigneeServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/ConsigneeServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/CorporationServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/CorporationServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/CustomerServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/CustomerServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/DriverServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/DriverServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/EscortServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/EscortServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/GovernmentServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/GovernmentServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/ManufacturerServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/ManufacturerServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/UserServiceFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/test/java/TestMyBatis/Service/UserServiceFacadeImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/Fee/OnTruckFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/Fee/OnTruckFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/Fee/TransportContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/Fee/TransportContractController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/File/MyFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/File/MyFileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/InStorage/InStorageFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/InStorage/InStorageFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ConsigneeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ConsigneeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/CorporationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/CorporationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/DriverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/EscortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/EscortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/GovernmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/GovernmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ManufacturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ManufacturerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OnWayWatch/TruckLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OnWayWatch/TruckLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OnWayWatch/WarnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OnWayWatch/WarnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OutStorage/OutStorageFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OutStorage/OutStorageFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/DriveWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/DriveWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/LiftWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/LiftWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/MaterialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/MaterialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/TruckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/TruckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/WorkshopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/WorkshopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/LoginableBaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/LoginableBaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/UnLoginableBaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/UnLoginableBaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/converters/AdminDeptConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/converters/AdminDeptConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-LoginableBasicInfo/target/" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-user/target/" />
@@ -202,12 +73,10 @@
   </component>
   <component name="ExecutionTargetDialog">
     <checked>
-      <node key="3ccf68e5-baad-46e3-95c5-8cf7912957cf">
-        <node key="scsycc" />
-      </node>
+      <node key="fdb917c0-0ac8-4d21-a53b-c68327fddbde" />
     </checked>
     <expanded>
-      <node key="3ccf68e5-baad-46e3-95c5-8cf7912957cf" />
+      <node key="fdb917c0-0ac8-4d21-a53b-c68327fddbde" />
     </expanded>
   </component>
   <component name="FavoritesManager">
@@ -216,35 +85,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/AdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="132" selection-start-line="1" selection-start-column="132" selection-end-line="1" selection-end-column="132" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/views/order.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="186" column="6" selection-start-line="186" selection-start-column="6" selection-end-line="186" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScsyERP-common/pom.xml">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common-config/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common-core/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -253,48 +109,125 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/test/java/TestFacade/TestDriverWorker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/service.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-facade-InStorge/src/test/java/TestFacade/TestInstorageForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="88" column="21" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="88" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScsyERP-service-Fee/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
+            <state relative-caret-position="2024">
               <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/components/table-view.vue">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-File/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4416">
-              <caret line="197" column="27" selection-start-line="197" selection-start-column="8" selection-end-line="197" selection-end-column="27" />
+            <state relative-caret-position="2024">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-InStorage/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2024">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2024">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-OutStorage/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2024">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-Fee/src/main/resources/spring/spring-dubbo-consumer.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-Fee/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-File/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1863">
+              <caret line="81" column="20" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-InStorage/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-OutStorage/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/spring/spring-dubbo-provider.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -386,12 +319,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ScsyERP-web/src/views/UnLoginViews/workshop.vue" />
-        <option value="$PROJECT_DIR$/ScsyERP-web/src/views/UnLoginViews/warehouse.vue" />
-        <option value="$PROJECT_DIR$/ScsyERP-web/src/views/UnLoginViews/material.vue" />
-        <option value="$PROJECT_DIR$/ScsyERP-web/src/views/UnLoginViews/project.vue" />
-        <option value="$PROJECT_DIR$/ScsyERP-web/src/views/UnLoginViews/product.vue" />
-        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/InStorage/InStorageFormController.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web/src/views/FormViews/in-storage-form.vue" />
         <option value="$PROJECT_DIR$/ScsyERP-web/src/views/FormViews/out-storage-form.vue" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/OnWayWatch/WarnController.java" />
@@ -437,6 +364,12 @@
         <option value="$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue" />
         <option value="$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml" />
         <option value="$PROJECT_DIR$/ScsyERP-service-Fee/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-File/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-InStorage/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-OnWayWatch/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-OutStorage/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-User/pom.xml" />
+        <option value="$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/jdbc.properties" />
       </list>
     </option>
   </component>
@@ -482,8 +415,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="72" />
-    <option name="y" value="83" />
+    <option name="x" value="121" />
+    <option name="y" value="91" />
     <option name="width" value="1803" />
     <option name="height" value="1006" />
   </component>
@@ -652,184 +585,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-Fee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-Fee" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-Fee" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-Fee" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-File" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-File" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-File" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-File" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-InStorge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-InStorge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-InStorge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-InStorge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-InStorge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-InStorge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="TestFacade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OnWayWatch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OnWayWatch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OnWayWatch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OnWayWatch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OutStorage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OutStorage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OutStorage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OutStorage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-OutStorage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-Statistics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-User" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-facade-User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
               <item name="ScsyERP-service-BasicInfo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-service-Fee" type="462c0819:PsiDirectoryNode" />
+              <item name="ScsyERP-service-BasicInfo" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-service-BasicInfo" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="SQL" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -844,7 +618,7 @@
     <property name="SearchEverywhereHistoryKey" value="projectId&#9;PSI&#9;JAVA://TestService.ProjectServiceFacadeImplTest#projectId" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544617590856" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544672059151" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -1177,7 +951,8 @@
       <workItem from="1544580587867" duration="1431000" />
       <workItem from="1544590001188" duration="1964000" />
       <workItem from="1544601844842" duration="2533000" />
-      <workItem from="1544617232890" duration="256000" />
+      <workItem from="1544617232890" duration="4632000" />
+      <workItem from="1544668788229" duration="1139000" />
     </task>
     <task id="LOCAL-00001" summary="第二次commit">
       <created>1540973324704</created>
@@ -1242,7 +1017,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544589369198</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="进度推进：&#10;1.maven的xml文件中添加了跳过测试配置">
+      <created>1544617941643</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1544617941643</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1278,7 +1060,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="680450000" />
+    <option name="totallyTimeSpent" value="685965000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1293,7 +1075,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838883" visible="true" weight="0.2185501" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838883" visible="true" weight="0.22121535" />
       <window_info id="Structure" order="1" sideWeight="0.50053704" side_tool="true" weight="0.20575693" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1306,7 +1088,7 @@
       <window_info anchor="bottom" id="Application Servers" order="1" weight="0.32975295" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" sideWeight="0.49946696" weight="0.22986037" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49840087" visible="true" weight="0.08261803" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49840087" visible="true" weight="0.37017167" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.3404941" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -1335,7 +1117,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32995737" />
       <window_info anchor="right" x="92" y="92" width="1736" height="866" id="DSM" order="12" type="FLOATING" />
-      <window_info anchor="right" id="Maven" order="13" visible="true" weight="0.32995737" />
+      <window_info anchor="right" id="Maven" order="13" weight="0.32995737" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838883" visible="true" weight="0.20735608" />
@@ -1393,7 +1175,8 @@
     <MESSAGE value="进度推进：&#10;1.添加了Dubbo的xml配置&#10;2.push一下 换电脑" />
     <MESSAGE value="进度推进：&#10;1.Spring配置文件中不能写多个：&lt;context:property-placeholder location=&quot;classpath:service.properties&quot; /&gt;，如果要引入多个properties文件，可以写成：&lt;context:property-placeholder location=&quot;classpath:jdbc.properties,classpath:service.properties,classpath:log4j.properties&quot; /&gt;&#10;2.添加了dubbo的配置文件&#10;3.添加了dubbo可部署的jar的maven打包配置&#10;4.打包了common工程，facade工程和BasicInfoService工程&#10;5.启动了zookeeper、BasinInfoService，并在dubbo-admin中成功发现服务&#10;6.dubbo provider中service的ref是对bean的引用，应该和ServiceFacade中定义的一致。而consumer中的id是定义了一个新的bean。要注意上述两者不能相同，否則会导致bean定义重复&#10;6.发现了一个重大bug：在idea中运行时，不会报错，但打包成jar，在zookeeper中跑时，报错误，SqlSessionTemplate这个bean找不到，初始化UserDao失败。SqlSessionTemplate是在BaseDaoImpl抽象父类中进行Autowired。在一开始还是单机项目的时候，这个抽象父类的属性注入就出现过问题，所以想当然的觉得这个问题在单机项目转化为RPC项目后，又出现了：虽然在IDEA中运行没问题，打包后运行可能spring无法识别到子类中的spring-mybatis.xml中定义的SqlSessionTemplate bean了。卡了好久，最后发现并不是所有的子服务都会报这个错误，如果在webboss中只引用了不会报错的子服务，项目可以运行，可以进行操作（对数据库进项增删查改），所以开始意识到这不是BaseDaoImpl父类的问题，而是子类中出现了问题。进一步对出问题的子服务进行研究，在全log文件中发现了真正的bug，是spring-mybatis.xml加载失败，由于spring-mybatis.xml中存在错误（不是定义在spring-mybatis.xml中的SqlSessionTemplate无法注入到父类中）。进一步探索，是spring-mybatis.xml中应用的Mapper文件中存在错误，这些Mapper中定义的ResultMap中的某个column的property属性也就是bean的某个字段名，和该子服务中其他Mapper中定义的ResultMap的type重复了。我的在JavaBean中对外键的字段名直接使用了对应类的类名，然后Mapper中定义类的别名时，也使用了类的类名，这就导致了MyBatis无法区分到底是在ResultMap中定义了一个字段还是定义一个关联的ResultMap。修改Mapper中定义的类的别名后，问题解决。总结一下：第一要看全日志，不然无法知道真正的原因。第二MyBatis中ResultMap的type和JavaBean中定义的字段名不要重复&#10;7.开始着手spring mvc做controller，结合SpringSecurity，vue做纯前端，采用restful风格。只需要在vue中的登录请求向controller中传递，有SpringSecurity拦截，进行权限验证后，通过自定义SpringSecurity的AuthenticationSuccessHandler，返回json给vue即可。然后SpringSecurity通过方法注解进行权限管理" />
     <MESSAGE value="进度推进：&#10;1.VUE中，引用同目录下的xxx.js，需要&quot;./xxx.js&quot;，而直接&quot;xxx.js&quot;会报错&#10;2.解决了一下跨域问题&#10;3.使用advice对httprequest进行预处理&#10;4.debug了原vue工程（危化品的VUE工程移植过来出现了很多bug），使之能够与现有后台配合工作，然后下饺子做了登录信息，非登录信息，出入库的初步网页" />
-    <option name="LAST_COMMIT_MESSAGE" value="进度推进：&#10;1.VUE中，引用同目录下的xxx.js，需要&quot;./xxx.js&quot;，而直接&quot;xxx.js&quot;会报错&#10;2.解决了一下跨域问题&#10;3.使用advice对httprequest进行预处理&#10;4.debug了原vue工程（危化品的VUE工程移植过来出现了很多bug），使之能够与现有后台配合工作，然后下饺子做了登录信息，非登录信息，出入库的初步网页" />
+    <MESSAGE value="进度推进：&#10;1.maven的xml文件中添加了跳过测试配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="进度推进：&#10;1.maven的xml文件中添加了跳过测试配置" />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
@@ -1404,107 +1187,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/legacy2/views/accident-stats.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="29" column="72" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/legacy2/views/car-info.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/lock.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/UnLoginableInfo/ProjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/InStorage/InStorageFormController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/views/UnLoginViews/product.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/FormFields/OutStorageForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/FormFields/OnTruckForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/FormFields/InStorageForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/FormFields/TransportContract.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/fareform.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/views/goods.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/BaseFields/BaseField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/BaseFields/FormField.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/BaseFields/LoginField.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/BaseFields/UnloginField.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/LoginFields/Admin.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/LoginFields/Consignee.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/LoginFields/Corporation.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1665,12 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-facade-BasicInfo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-facade-BasicInfo/src/test/java/TestFacade/TestDriverWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -1685,17 +1361,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml">
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common-config/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common-core/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="88" column="21" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="88" selection-end-column="21" />
+        <state relative-caret-position="506">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-facade-BasicInfo/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/service.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-service-Fee/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
+        <state relative-caret-position="2024">
           <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-File/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-InStorage/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-OutStorage/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-Fee/src/main/resources/spring/spring-dubbo-consumer.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-Fee/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-File/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-BasicInfo/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1863">
+          <caret line="81" column="20" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-InStorage/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-OnWayWatch/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-OutStorage/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/spring/spring-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common-config/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
