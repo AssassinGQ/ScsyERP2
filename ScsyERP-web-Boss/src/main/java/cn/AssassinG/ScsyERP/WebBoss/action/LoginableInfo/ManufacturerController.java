@@ -146,9 +146,9 @@ public class ManufacturerController extends LoginableBaseController<Manufacturer
         return super.getByIdImpl(entityId);
     }
 
-    @RequestMapping(value = "/addWorkshops", method = RequestMethod.POST)
+    @RequestMapping(value = "/addWorkshop", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addWorkshops(Long manufacturer, String jsonArrayStr){
+    public JSONObject addWorkshop(Long manufacturer, String jsonArrayStr){
         try{
             manufacturerServiceFacade.addWorkshops(manufacturer, jsonArrayStr);
             return getResultJSON(RetStatusType.StatusSuccess, "生产厂家添加生产车间信息成功", null);

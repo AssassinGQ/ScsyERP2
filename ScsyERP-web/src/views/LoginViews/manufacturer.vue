@@ -16,9 +16,9 @@ export default {
             },
             addWorkshopActions: [{
                 label: '确认装货',
-                url: '/order/load',
+                url: '/BasicInfo/Manufacturer/addWorkshops',
                 fields: [
-                    { key: 'loadweight', label: '装货重量' },
+                    { key: 'manufacturer', label: '生产厂家', type: 'select', optionsUrl: '/BasicInfo/Manufacturer/query?IfDeleted=',},
                     { key: 'zbweight', label: '折白重量' }
                 ]
             }],

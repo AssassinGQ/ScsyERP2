@@ -55,6 +55,7 @@
                 <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.PacketTypeConverter" />
                 <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.ProductStatusConverter" />
                 <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.UserTypeConverter" />
+                <bean class="cn.AssassinG.ScsyERP.WebBoss.converters.BooleanConverter" />
             </list>
         </property>
     </bean>

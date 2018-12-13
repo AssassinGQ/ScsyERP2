@@ -34,14 +34,15 @@ public class MyResponseBodyAdvice implements ResponseBodyAdvice {
         HttpServletResponse resp = ssResp.getServletResponse();
         String originHeader = "Access-Control-Allow-Origin";
         if(!resp.containsHeader(originHeader)) {
-            String origin = req.getHeader("Origin");
-            if(origin == null) {
-                String referer = req.getHeader("Referer");
-                if(referer != null) {
-                    origin = referer.substring(0, referer.indexOf("/", 7));
-                }
-            }
-            resp.setHeader("Access-Control-Allow-Origin", origin);
+//            String origin = req.getHeader("Origin");
+//            if(origin == null) {
+//                String referer = req.getHeader("Referer");
+//                if(referer != null) {
+//                    origin = referer.substring(0, referer.indexOf("/", 7));
+//                }
+//            }
+//            resp.setHeader("Access-Control-Allow-Origin", origin);
+            resp.setHeader(originHeader, "*");
         }
 
         String credentialHeader = "Access-Control-Allow-Credentials";

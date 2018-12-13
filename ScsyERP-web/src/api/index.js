@@ -2,7 +2,7 @@ import { DEBUG } from '../util'
 
 import axios from 'axios'
 
-export const ENDPOINT = '127.0.0.1:8080'
+export const ENDPOINT = '120.76.219.196:8082'
 
 import store from '../store'
 
@@ -49,7 +49,7 @@ const Qs = require('qs');
 // }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': '*' },
     transformRequest: (data = {}) => {
         if(data){
             for(let x in data){
@@ -62,6 +62,7 @@ export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data
 }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const GET = (path, params) => axios.get(`http://${ENDPOINT}${path}`, {
+    headers: { 'Access-Control-Allow-Origin': '*' },
     params: {
         Corporation: store.getters.user.Corporation,
         ...params,

@@ -51,7 +51,7 @@ public class UserControllerTest {
             Map<String, String> paramMap = new HashMap<>();
             paramMap.put("UserName", "hgq");
             paramMap.put("PassWord", "123456");
-            System.out.println(HttpUtils.Post("http://127.0.0.1:8080/user/dologin",paramMap));
+            System.out.println(HttpUtils.Post("http://120.76.219.196:8082/user/dologin",paramMap));
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
