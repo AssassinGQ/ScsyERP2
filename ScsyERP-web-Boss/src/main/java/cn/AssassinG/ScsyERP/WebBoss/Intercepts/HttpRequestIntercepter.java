@@ -61,11 +61,11 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
             String credentialHeader = "Access-Control-Allow-Credentials";
             response.setHeader(credentialHeader, "true");
 
-            String method= request.getMethod();
-            if (method.equals("OPTIONS")){
-                response.setStatus(200);
-                return false;
-            }
+//            String method= request.getMethod();
+//            if (method.equals("OPTIONS")){
+//                response.setStatus(200);
+//                return false;
+//            }
             return true;
         }
         /**
