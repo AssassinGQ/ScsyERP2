@@ -25,7 +25,8 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         httpServletResponse.setContentType("application/json;charset=utf-8");
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         httpServletResponse.setHeader("Access-Control-Allow-Credentials", "true");
-        httpServletResponse.setHeader("Access-Control-Allow-METHODS", "POST,GET,OPTIONS");
+        httpServletResponse.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
+        httpServletResponse.setHeader("Access-Control-Allow-Headers", "X-Requested-With,accept,origin,content-type");
         JSONObject retObject = new JSONObject();
         retObject.put("status", RetStatusType.StatusSuccess.getStatus());
         retObject.put("msg", "登录成功");

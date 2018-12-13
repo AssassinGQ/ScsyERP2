@@ -49,7 +49,7 @@ const Qs = require('qs');
 // }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': '*' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Method': 'POST' },
     transformRequest: (data = {}) => {
         if(data){
             for(let x in data){

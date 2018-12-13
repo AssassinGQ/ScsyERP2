@@ -50,10 +50,16 @@ public class MyResponseBodyAdvice implements ResponseBodyAdvice {
             resp.setHeader(credentialHeader, "true");
         }
 
-        String methodsHeader = "Access-Control-Allow-METHODS";
+        String methodsHeader = "Access-Control-Allow-Methods";
         if(!resp.containsHeader(methodsHeader)) {
             resp.setHeader(methodsHeader, "POST,GET,OPTIONS");
         }
+
+        String headerHeader = "Access-Control-Allow-Headers";
+        if(!resp.containsHeader(headerHeader)){
+            resp.setHeader(headerHeader, "X-Requested-With,accept,origin,content-type");
+        }
+
         return body;
     }
 }
