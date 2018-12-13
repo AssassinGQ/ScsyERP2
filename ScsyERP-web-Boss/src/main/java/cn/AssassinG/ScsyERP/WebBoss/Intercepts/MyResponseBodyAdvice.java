@@ -6,13 +6,12 @@ import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.http.server.ServletServerHttpResponse;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class MyResponseBodyAdvice implements ResponseBodyAdvice {
     @Override
     public boolean supports(MethodParameter methodParameter, Class aClass) {
@@ -34,15 +33,14 @@ public class MyResponseBodyAdvice implements ResponseBodyAdvice {
         HttpServletResponse resp = ssResp.getServletResponse();
         String originHeader = "Access-Control-Allow-Origin";
         if(!resp.containsHeader(originHeader)) {
-//            String origin = req.getHeader("Origin");
-//            if(origin == null) {
-//                String referer = req.getHeader("Referer");
-//                if(referer != null) {
-//                    origin = referer.substring(0, referer.indexOf("/", 7));
-//                }
-//            }
-//            resp.setHeader("Access-Control-Allow-Origin", origin);
-            resp.setHeader(originHeader, "*");
+            String origin = req.getHeader("Origin");
+            if(origin == null) {
+                String referer = req.getHeader("Referer");
+                if(referer != null) {
+                    origin = referer.substring(0, referer.indexOf("/", 7));
+                }
+            }
+            resp.setHeader("Access-Control-Allow-Origin", origin);
         }
 
         String credentialHeader = "Access-Control-Allow-Credentials";

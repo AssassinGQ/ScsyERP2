@@ -49,7 +49,8 @@ const Qs = require('qs');
 // }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': 'http://120.76.219.196', 'Access-Control-Allow-Methods': 'POST' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196:8082', 'Access-Control-Request-Methods': 'POST' },
+    // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     transformRequest: (data = {}) => {
         if(data){
             for(let x in data){
@@ -62,7 +63,8 @@ export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data
 }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
 export const GET = (path, params) => axios.get(`http://${ENDPOINT}${path}`, {
-    headers: { 'Access-Control-Allow-Origin': 'http://120.76.219.196', 'Access-Control-Allow-Methods': 'GET' },
+    // headers: { 'Access-Control-Allow-Origin': 'http://120.76.219.196', 'Access-Control-Allow-Methods': 'GET' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196:8082', 'Access-Control-Request-Methods': 'POST' },
     params: {
         Corporation: store.getters.user.Corporation,
         ...params,

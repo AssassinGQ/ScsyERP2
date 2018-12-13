@@ -10,12 +10,16 @@ import './load-font-awesome'
 import FA from './components/fa'
 import MAP from './components/map-box'
 import TableView from './components/table-view'
+// import Axios from 'axios'
 
 Vue.component('fa', FA)
 Vue.component('map-box', MAP)
 Vue.component('table-view', TableView)
 
-Vue.prototype.$echarts = echarts
+// Vue.prototype.$echarts = echarts
+// Vue.prototype.$axios = Axios
+// Axios.defaults.baseURL = '/api'
+// Axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 import store from './store'
 import App from './app.vue'

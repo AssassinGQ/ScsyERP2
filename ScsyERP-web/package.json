@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "危化品运输管理平台",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot",
+    "start": "webpack-dev-server --inline --hot  --host 0.0.0.0",
     "start.production": "cross-env NODE_ENV=production webpack-dev-server --inline --hot",
     "analyze": "cross-env NODE_ENV=production webpack --config bundle-analyzer-config.js -p",
     "build": "cross-env NODE_ENV=production webpack -p"
