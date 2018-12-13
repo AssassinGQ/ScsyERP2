@@ -3,7 +3,11 @@ package cn.AssassinG.ScsyERP.User.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Permission extends BaseEntity {
+    private static final long serialVersionUID = 6617581552453941673L;
     @Valid(varType = Valid.VarType.String, maxLength = 50)
     private String PermissionName;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 50)

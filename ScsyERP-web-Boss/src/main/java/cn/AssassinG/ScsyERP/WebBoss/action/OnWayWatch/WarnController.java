@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/Warn")
 public class WarnController extends BaseController<Warn> {
+    private static final long serialVersionUID = -8700906070481756657L;
     @Autowired
     private WarnServiceFacade warnServiceFacade;
     @Override

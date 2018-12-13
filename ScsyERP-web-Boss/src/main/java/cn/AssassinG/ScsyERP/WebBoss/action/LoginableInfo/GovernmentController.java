@@ -1,10 +1,7 @@
 package cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.Government;
-import cn.AssassinG.ScsyERP.User.facade.entity.Government;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
-import cn.AssassinG.ScsyERP.User.facade.enums.AdminDeptType;
-import cn.AssassinG.ScsyERP.User.facade.enums.GovernmentDeptType;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.User.facade.service.GovernmentServiceFacade;
 import cn.AssassinG.ScsyERP.User.facade.service.LoginableService;
@@ -32,6 +29,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/BasicInfo/Government")
 public class GovernmentController extends LoginableBaseController<Government> {
+    private static final long serialVersionUID = -2535502180322988013L;
     @Autowired
     private GovernmentServiceFacade governmentServiceFacade;
     @Autowired

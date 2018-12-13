@@ -6,7 +6,11 @@ import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Product extends UnLoginableEntity {
+    private static final long serialVersionUID = -4055954878508954177L;
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
     private Long Project;
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)

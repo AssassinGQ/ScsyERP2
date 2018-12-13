@@ -23,6 +23,6 @@
 
 	<!-- 和本地bean一样实现服务 -->
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.File.facade.service.MyFileServiceFacade" ref="MyFileServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.File.facade.service.MyFileServiceFacade" ref="MyFileServiceFacade" />
 
 </beans>  

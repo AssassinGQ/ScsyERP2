@@ -5,7 +5,11 @@ import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.LoginableEntity;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Government extends LoginableEntity {
+    private static final long serialVersionUID = 356231780079113838L;
     @Valid(varType = Valid.VarType.Other)
     private GovernmentDeptType Dept;
 

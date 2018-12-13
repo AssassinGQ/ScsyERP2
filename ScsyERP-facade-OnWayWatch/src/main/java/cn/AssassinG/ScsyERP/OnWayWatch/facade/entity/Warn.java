@@ -6,10 +6,13 @@ import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
 import java.util.Date;
 import java.util.Set;
 
+@Entity
 public class Warn extends BaseEntity {
+    private static final long serialVersionUID = -8047870212524375383L;
     @Valid(varType = Valid.VarType.Number)
     private Long OutStorageForm;
     @Valid(varType = Valid.VarType.Number)

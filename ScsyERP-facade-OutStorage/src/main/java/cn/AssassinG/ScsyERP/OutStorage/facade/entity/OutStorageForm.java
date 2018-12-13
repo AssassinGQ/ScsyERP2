@@ -6,10 +6,13 @@ import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
 import java.util.Date;
 import java.util.Set;
 
+@Entity
 public class OutStorageForm extends FormEntity {
+    private static final long serialVersionUID = 8400459278449181844L;
     @Valid(varType = Valid.VarType.Number)
     private Long Project;
     @Valid(varType = Valid.VarType.Other)

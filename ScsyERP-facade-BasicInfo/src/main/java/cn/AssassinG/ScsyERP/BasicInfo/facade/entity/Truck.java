@@ -3,7 +3,11 @@ package cn.AssassinG.ScsyERP.BasicInfo.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Truck extends UnLoginableEntity {
+    private static final long serialVersionUID = -2242931955277110814L;
     @Valid(varType = Valid.VarType.String, maxLength = 30)
     private String CarNumber;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 30)

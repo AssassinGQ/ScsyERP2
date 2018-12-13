@@ -11,10 +11,11 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public abstract class BaseController<T extends BaseEntity> {
+public abstract class BaseController<T extends BaseEntity> implements Serializable {
 
     protected abstract BaseService<T> getService();
     protected abstract String getClassDesc();

@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 public abstract class BaseEntity implements Serializable {
-    private static final long serialVersionUID = -7382559001417714129L;
     @Valid(varType = Valid.VarType.Number, nullAble = true)
     protected Long Id;
     @Valid(varType = Valid.VarType.Number, minValue = -1)

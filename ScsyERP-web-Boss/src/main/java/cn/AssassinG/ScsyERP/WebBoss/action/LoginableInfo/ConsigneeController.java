@@ -1,6 +1,5 @@
 package cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo;
 
-import cn.AssassinG.ScsyERP.User.facade.entity.Admin;
 import cn.AssassinG.ScsyERP.User.facade.entity.Consignee;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
@@ -30,6 +29,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/BasicInfo/Consignee")
 public class ConsigneeController extends LoginableBaseController<Consignee> {
+    private static final long serialVersionUID = -957554472439288234L;
     @Autowired
     private ConsigneeServiceFacade consigneeServiceFacade;
     @Autowired

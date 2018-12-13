@@ -2,8 +2,11 @@ package cn.AssassinG.ScsyERP.BasicInfo.facade.entity;
 
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
-public class DriveWorker extends UnLoginableEntity {
+import javax.persistence.Entity;
 
+@Entity
+public class DriveWorker extends UnLoginableEntity {
+    private static final long serialVersionUID = 2175767730937590200L;
     public DriveWorker() {
         super();
     }

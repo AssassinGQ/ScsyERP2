@@ -1,11 +1,10 @@
 package cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer;
-import cn.AssassinG.ScsyERP.User.facade.entity.Manufacturer;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
-import cn.AssassinG.ScsyERP.User.facade.service.ManufacturerServiceFacade;
 import cn.AssassinG.ScsyERP.User.facade.service.LoginableService;
+import cn.AssassinG.ScsyERP.User.facade.service.ManufacturerServiceFacade;
 import cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
 import cn.AssassinG.ScsyERP.WebBoss.base.LoginableBaseController;
@@ -30,6 +29,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/BasicInfo/Manufacturer")
 public class ManufacturerController extends LoginableBaseController<Manufacturer> {
+    private static final long serialVersionUID = -8008104586300778029L;
     @Autowired
     private ManufacturerServiceFacade manufacturerServiceFacade;
     @Autowired

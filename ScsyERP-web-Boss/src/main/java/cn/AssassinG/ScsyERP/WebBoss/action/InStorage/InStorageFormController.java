@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/InStorageForm")
 public class InStorageFormController extends BaseController<InStorageForm> {
+    private static final long serialVersionUID = -6911275633006355328L;
     @Autowired
     private InStorageFormServiceFacade inStorageFormServiceFacade;
     @Override

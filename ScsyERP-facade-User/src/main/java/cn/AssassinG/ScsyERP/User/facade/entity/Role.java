@@ -3,7 +3,11 @@ package cn.AssassinG.ScsyERP.User.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Role extends BaseEntity {
+    private static final long serialVersionUID = 2042668549268930779L;
     @Valid(varType = Valid.VarType.String, maxLength = 50)
     private String RoleName;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 50)

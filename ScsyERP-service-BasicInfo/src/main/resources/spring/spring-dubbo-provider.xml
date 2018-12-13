@@ -24,13 +24,13 @@
 	<!-- 和本地bean一样实现服务 -->
 	<!-- 声明需要暴露的服务接口 -->
 	<!-- 用户管理 -->
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.DriveWorkerServiceFacade" ref="DriveWorkerServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.LiftWorkerServiceFacade" ref="LiftWorkerServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.TruckServiceFacade" ref="TruckServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.WarehouseServiceFacade" ref="WarehouseServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.WorkshopServiceFacade" ref="WorkshopServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.MaterialServiceFacade" ref="MaterialServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.ProductServiceFacade" ref="ProductServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.ProjectServiceFacade" ref="ProjectServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.DriveWorkerServiceFacade" ref="DriveWorkerServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.LiftWorkerServiceFacade" ref="LiftWorkerServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.TruckServiceFacade" ref="TruckServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.WarehouseServiceFacade" ref="WarehouseServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.WorkshopServiceFacade" ref="WorkshopServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.MaterialServiceFacade" ref="MaterialServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.ProductServiceFacade" ref="ProductServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.BasicInfo.facade.service.ProjectServiceFacade" ref="ProjectServiceFacade" />
 
 </beans>  

@@ -1,7 +1,6 @@
 package cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.Escort;
-import cn.AssassinG.ScsyERP.User.facade.entity.Escort;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.User.facade.service.EscortServiceFacade;
@@ -30,6 +29,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/BasicInfo/Escort")
 public class EscortController extends LoginableBaseController<Escort> {
+    private static final long serialVersionUID = 7779027509977251839L;
     @Autowired
     private EscortServiceFacade escortServiceFacade;
     @Autowired

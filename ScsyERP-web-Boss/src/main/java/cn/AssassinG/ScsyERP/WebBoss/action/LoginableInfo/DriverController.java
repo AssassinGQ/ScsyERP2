@@ -1,7 +1,6 @@
 package cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo;
 
 import cn.AssassinG.ScsyERP.User.facade.entity.Driver;
-import cn.AssassinG.ScsyERP.User.facade.entity.Driver;
 import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.enums.UserType;
 import cn.AssassinG.ScsyERP.User.facade.service.DriverServiceFacade;
@@ -30,6 +29,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/BasicInfo/Driver")
 public class DriverController extends LoginableBaseController<Driver> {
+    private static final long serialVersionUID = 9071983936393245491L;
     @Autowired
     private DriverServiceFacade driverServiceFacade;
     @Autowired

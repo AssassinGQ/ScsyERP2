@@ -3,7 +3,11 @@ package cn.AssassinG.ScsyERP.User.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.LoginableEntity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Driver extends LoginableEntity {
+    private static final long serialVersionUID = 5696934169554087963L;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 50)
     private String DriverLicense;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 50)

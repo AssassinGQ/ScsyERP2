@@ -3,8 +3,8 @@ package cn.AssassinG.ScsyERP.WebBoss.action.UnLoginableInfo;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Workshop;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.service.WorkshopServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
-import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.WebBoss.base.UnLoginableBaseController;
+import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/BasicInfo/Workshop")
 public class WorkshopController extends UnLoginableBaseController<Workshop> {
+    private static final long serialVersionUID = -1361759819532327832L;
     @Autowired
     private WorkshopServiceFacade workshopServiceFacade;
 

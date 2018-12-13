@@ -5,11 +5,14 @@ import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Base64;
 
+@Entity
 public class MyFile extends BaseEntity {
+    private static final long serialVersionUID = 5316079170608205903L;
     @Valid(varType = Valid.VarType.Other)
     private FileType Type;
     @Valid(varType = Valid.VarType.String, maxLength = 100)

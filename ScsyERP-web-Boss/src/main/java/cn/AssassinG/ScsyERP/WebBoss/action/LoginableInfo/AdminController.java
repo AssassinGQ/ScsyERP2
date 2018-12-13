@@ -29,6 +29,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/BasicInfo/Admin")
 public class AdminController extends LoginableBaseController<Admin> {
+    private static final long serialVersionUID = 963447180373283728L;
     @Autowired
     private AdminServiceFacade adminServiceFacade;
     @Autowired

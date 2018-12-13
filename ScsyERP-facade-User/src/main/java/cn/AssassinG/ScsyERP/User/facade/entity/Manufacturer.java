@@ -3,9 +3,12 @@ package cn.AssassinG.ScsyERP.User.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.LoginableEntity;
 
+import javax.persistence.Entity;
 import java.util.Set;
 
+@Entity
 public class Manufacturer extends LoginableEntity {
+    private static final long serialVersionUID = 2755912778165888234L;
     @Valid(varType = Valid.VarType.String, maxLength = 100)
     private String Address;
     @Valid(varType = Valid.VarType.String, nullAble = true, maxLength = 20)

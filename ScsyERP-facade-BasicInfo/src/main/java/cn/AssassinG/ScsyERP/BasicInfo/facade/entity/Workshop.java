@@ -3,7 +3,11 @@ package cn.AssassinG.ScsyERP.BasicInfo.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Workshop extends UnLoginableEntity {
+    private static final long serialVersionUID = 866150178967338732L;
     @Valid(varType = Valid.VarType.String, maxLength = 100)
     private String Address;
     @Valid(varType = Valid.VarType.Number, nullAble = true, minLength = 20, maxLength = 20)

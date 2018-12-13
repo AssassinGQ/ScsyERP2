@@ -4,7 +4,6 @@ import cn.AssassinG.ScsyERP.User.facade.entity.User;
 import cn.AssassinG.ScsyERP.User.facade.service.CorporationServiceFacade;
 import cn.AssassinG.ScsyERP.User.facade.service.GovernmentServiceFacade;
 import cn.AssassinG.ScsyERP.User.facade.service.UserServiceFacade;
-import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
 import cn.AssassinG.ScsyERP.WebBoss.base.BaseController;
 import cn.AssassinG.ScsyERP.WebBoss.enums.RetStatusType;
 import cn.AssassinG.ScsyERP.common.core.service.BaseService;
@@ -23,13 +22,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller("UserController")
 @RequestMapping("/user")
 public class UserController extends BaseController<User> {
+    private static final long serialVersionUID = 5090626130218960363L;
     private static Logger logger = Logger.getLogger(UserController.class);
     @Autowired
     private UserServiceFacade userServiceFacade;

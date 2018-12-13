@@ -3,9 +3,9 @@ package cn.AssassinG.ScsyERP.WebBoss.action.UnLoginableInfo;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Project;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.service.ProjectServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
-import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.WebBoss.base.UnLoginableBaseController;
 import cn.AssassinG.ScsyERP.WebBoss.enums.RetStatusType;
+import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.common.exceptions.BizException;
 import cn.AssassinG.ScsyERP.common.exceptions.DaoException;
 import com.alibaba.fastjson.JSONObject;
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/BasicInfo/Project")
 public class ProjectController extends UnLoginableBaseController<Project> {
+    private static final long serialVersionUID = -608545008044136193L;
     @Autowired
     private ProjectServiceFacade projectServiceFacade;
 

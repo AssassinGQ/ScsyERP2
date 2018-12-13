@@ -5,7 +5,11 @@ import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
+
+@Entity
 public class User_Permission extends BaseEntity {
+    private static final long serialVersionUID = 3407160624215612374L;
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)
     private Long UserId;
     @Valid(varType = Valid.VarType.Number, minLength = 20, maxLength = 20)

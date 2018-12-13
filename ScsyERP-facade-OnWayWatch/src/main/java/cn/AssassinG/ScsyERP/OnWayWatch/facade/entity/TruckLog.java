@@ -3,9 +3,12 @@ package cn.AssassinG.ScsyERP.OnWayWatch.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.BaseEntity;
 
+import javax.persistence.Entity;
 import java.util.Date;
 
+@Entity
 public class TruckLog extends BaseEntity {
+    private static final long serialVersionUID = -8850413390381763073L;
     @Valid(varType = Valid.VarType.Number)
     private Long OutStorageForm;
     @Valid(varType = Valid.VarType.Number)

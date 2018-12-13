@@ -21,6 +21,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/OnTruckForm")
 public class OnTruckFormController extends BaseController<OnTruckForm> {
+    private static final long serialVersionUID = 7466262427346817940L;
     @Autowired
     private OnTruckFormServiceFacade onTruckFormServiceFacade;
     @Override

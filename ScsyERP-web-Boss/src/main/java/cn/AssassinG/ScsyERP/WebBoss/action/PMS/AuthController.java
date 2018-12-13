@@ -24,6 +24,7 @@ import java.util.Set;
 @Controller
 @RequestMapping("/auth")
 public class AuthController extends BaseController<User> {
+    private static final long serialVersionUID = -3606429045407221972L;
     private static Logger logger = Logger.getLogger(AuthController.class);
     @Autowired
     @Qualifier("userServiceFacade")

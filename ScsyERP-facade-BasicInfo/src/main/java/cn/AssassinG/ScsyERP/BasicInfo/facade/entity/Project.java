@@ -3,10 +3,13 @@ package cn.AssassinG.ScsyERP.BasicInfo.facade.entity;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.UnLoginableEntity;
 
+import javax.persistence.Entity;
 import java.util.Set;
 
+@Entity
 public class Project extends UnLoginableEntity {
-//    @Valid(varType = Valid.VarType.String, maxLength = 30)
+    private static final long serialVersionUID = -1639306927016776025L;
+    //    @Valid(varType = Valid.VarType.String, maxLength = 30)
 //    private String Name;
     @Valid(varType = Valid.VarType.String, maxLength = 30)
     private String ProjectNumber;

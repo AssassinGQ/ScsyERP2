@@ -3,8 +3,8 @@ package cn.AssassinG.ScsyERP.WebBoss.action.UnLoginableInfo;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.entity.Truck;
 import cn.AssassinG.ScsyERP.BasicInfo.facade.service.TruckServiceFacade;
 import cn.AssassinG.ScsyERP.WebBoss.Intercepts.HttpRequestIntercepter;
-import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import cn.AssassinG.ScsyERP.WebBoss.base.UnLoginableBaseController;
+import cn.AssassinG.ScsyERP.common.core.service.UnLoginableService;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/BasicInfo/Truck")
 public class TruckController extends UnLoginableBaseController<Truck> {
+    private static final long serialVersionUID = 4787113217765300035L;
     @Autowired
     private TruckServiceFacade truckServiceFacade;
 

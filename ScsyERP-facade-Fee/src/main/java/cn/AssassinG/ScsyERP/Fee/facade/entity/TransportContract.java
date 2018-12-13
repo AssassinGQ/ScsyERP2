@@ -4,7 +4,11 @@ import cn.AssassinG.ScsyERP.Fee.facade.enums.OilCardType;
 import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import javax.persistence.Entity;
+
+@Entity
 public class TransportContract extends FormEntity {
+    private static final long serialVersionUID = 7197898279900082061L;
     private String ContractNumber;
     private Long OnTruckForm;
     private Long Project;

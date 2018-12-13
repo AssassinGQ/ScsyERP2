@@ -23,7 +23,7 @@
 
 	<!-- 和本地bean一样实现服务 -->
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.Fee.facade.service.OnTruckFormServiceFacade" ref="OnTruckFormServiceFacade" />
-	<dubbo:service retries="0" interface="cn.AssassinG.ScsyERP.Fee.facade.service.TransportContractServiceFacade" ref="TransportContractServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.Fee.facade.service.OnTruckFormServiceFacade" ref="OnTruckFormServiceFacade" />
+	<dubbo:service timeout="3000" retries="0" interface="cn.AssassinG.ScsyERP.Fee.facade.service.TransportContractServiceFacade" ref="TransportContractServiceFacade" />
 
 </beans>  

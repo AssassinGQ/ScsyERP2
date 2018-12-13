@@ -10,6 +10,7 @@ import java.util.Date;
 
 @Entity
 public class User extends BaseEntity {
+    private static final long serialVersionUID = 8059107020551314814L;
     @Valid(varType = Valid.VarType.String, maxLength = 30)
     private String UserName;
     @Valid(varType = Valid.VarType.String, maxLength = 30)

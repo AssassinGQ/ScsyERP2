@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/file")
 public class MyFileController extends BaseController<MyFile> {
+    private static final long serialVersionUID = -8594199719140351974L;
     @Autowired
     private MyFileServiceFacade myFileServiceFacade;
     @Override

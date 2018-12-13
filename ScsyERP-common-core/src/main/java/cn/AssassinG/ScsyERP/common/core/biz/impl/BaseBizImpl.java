@@ -63,7 +63,6 @@ public abstract class BaseBizImpl<T extends BaseEntity> implements BaseBiz<T> {
     }
 
     public PageBean listPage(PageParam pageParam, Map<String, Object> paramMap) {
-        System.out.println("In BaseBizImpl.listPage, Version = 1");
         return getDao().listPage(pageParam, paramMap);
     }
 

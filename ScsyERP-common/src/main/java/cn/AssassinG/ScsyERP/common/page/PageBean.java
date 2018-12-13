@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 public class PageBean<T extends BaseEntity> implements Serializable {
-
     private static final long serialVersionUID = 4047595971481103285L;
     // 指定的或是页面参数
 	private int currentPage; // 当前页
