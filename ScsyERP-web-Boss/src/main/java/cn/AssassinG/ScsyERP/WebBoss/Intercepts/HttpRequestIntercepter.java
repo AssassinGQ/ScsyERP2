@@ -12,6 +12,9 @@ import java.util.Map;
 public class HttpRequestIntercepter implements HandlerInterceptor {
 
         public static final String MAPKEY = "ParamMap";
+        private static final String originHeader = "Access-Control-Allow-Origin";
+        private static final String methodsHeader = "Access-Control-Allow-Methods";
+        private static final String headerHeader = "Access-Control-Allow-Headers";
         /**
          * 在请求处理之前执行，
          * 该方法主要是用于准备资源数据的，
@@ -33,7 +36,7 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
                 request.setAttribute(MAPKEY, paramMap);
             }
 
-            String originHeader = "Access-Control-Allow-Origin";
+
             if(!response.containsHeader(originHeader)) {
                 String origin = request.getHeader("Origin");
                 if(origin == null) {
@@ -45,15 +48,13 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
                 response.setHeader("Access-Control-Allow-Origin", origin);
             }
 
-            String methodsHeader = "Access-Control-Allow-Methods";
-            response.setHeader(methodsHeader, "POST,GET,OPTIONS");
 
-            String headerHeader = "Access-Control-Allow-Headers";
+            response.setHeader(methodsHeader, "POST,GET,OPTIONS");
             if(!response.containsHeader(headerHeader)){
                 response.setHeader(headerHeader, "X-Requested-With,accept,origin,content-type");
             }else{
-                response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
-                response.setHeader("Access-Control-Expose-Headers", request.getHeader("Access-Control-Request-Headers"));
+//                response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
+//                response.setHeader("Access-Control-Expose-Headers", request.getHeader("Access-Control-Request-Headers"));
             }
             // 预检命令（OPTIONS）缓存时间，单位：秒
             response.setHeader("Access-Control-Max-Age", "3600");
@@ -77,6 +78,14 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
         @Override
         public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 //            System.out.println("AppRequestInterceptor====>preHandle");
+            String method= request.getMethod();
+            if (method.equals("OPTIONS")){
+                response.setStatus(200);
+                response.setHeader("Access-Control-Allow-Origin", "*");
+                response.setHeader("Access-Control-Allow-Credentials", "true");
+                response.setHeader("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
+                response.setHeader("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With, Origin");
+            }
         }
 
         /**

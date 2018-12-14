@@ -9,12 +9,6 @@
     <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.配置WebBoss的maven pom，进行打包，加入到持续集成中">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-LoginableBasicInfo/target/" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-user/target/" />
@@ -140,15 +134,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1288">
-              <caret line="63" column="65" lean-forward="true" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
@@ -157,11 +142,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="28" selection-end-column="153" />
+            <state relative-caret-position="207">
+              <caret line="28" column="153" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="28" selection-end-column="153" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/test/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -180,6 +174,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -315,15 +318,15 @@
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/converters/BooleanConverter.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/converters/AccountStatusConverter.java" />
-        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/test/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserControllerTest.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web/package.json" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/MyResponseBodyAdvice.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web/src/main.js" />
         <option value="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" />
         <option value="$PROJECT_DIR$/ScsyERP-web/src/views/PMS/login.vue" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java" />
-        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" />
+        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/test/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" />
       </list>
     </option>
   </component>
@@ -614,6 +617,30 @@
               <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+              <item name="PMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -648,7 +675,7 @@
     <property name="SearchEverywhereHistoryKey" value="projectId&#9;PSI&#9;JAVA://TestService.ProjectServiceFacadeImplTest#projectId" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544718476965" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544753338818" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -722,7 +749,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerTest.login">
+  <component name="RunManager" selected="Tomcat Server.ScsyERP-web-Boss">
     <configuration name="AdminControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ScsyERP-web-Boss" />
       <extension name="coverage">
@@ -983,7 +1010,7 @@
       <workItem from="1544601844842" duration="2533000" />
       <workItem from="1544617232890" duration="4632000" />
       <workItem from="1544668788229" duration="25223000" />
-      <workItem from="1544752182449" duration="257000" />
+      <workItem from="1544752182449" duration="1095000" />
     </task>
     <task id="LOCAL-00001" summary="第二次commit">
       <created>1540973324704</created>
@@ -1119,7 +1146,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="710306000" />
+    <option name="totallyTimeSpent" value="711144000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1488,13 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/test/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-security.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345" />
@@ -1583,13 +1603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="63" column="65" lean-forward="true" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1597,10 +1610,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/test/cn/AssassinG/ScsyERP/WebBoss/action/PMS/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="28" selection-end-column="153" />
+        <state relative-caret-position="207">
+          <caret line="28" column="153" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="28" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
         </state>
       </provider>
     </entry>
