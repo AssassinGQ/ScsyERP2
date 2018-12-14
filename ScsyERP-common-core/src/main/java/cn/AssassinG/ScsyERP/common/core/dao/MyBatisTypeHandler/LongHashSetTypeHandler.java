@@ -47,7 +47,7 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
     public HashSet<Long> getNullableResult(ResultSet resultSet, String s) throws SQLException {
         String str = resultSet.getString(s);
         if(resultSet.wasNull()){
-            return null;
+            return new HashSet<Long>();
         }else{
             return String2Set(str);
         }
@@ -57,7 +57,7 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
     public HashSet<Long> getNullableResult(ResultSet resultSet, int i) throws SQLException {
         String str = resultSet.getString(i);
         if(resultSet.wasNull()){
-            return null;
+            return new HashSet<Long>();
         }else{
             return String2Set(str);
         }
@@ -67,7 +67,7 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
     public HashSet<Long> getNullableResult(CallableStatement callableStatement, int i) throws SQLException {
         String str = callableStatement.getString(i);
         if(callableStatement.wasNull()){
-            return null;
+            return new HashSet<Long>();
         }else{
             return String2Set(str);
         }
