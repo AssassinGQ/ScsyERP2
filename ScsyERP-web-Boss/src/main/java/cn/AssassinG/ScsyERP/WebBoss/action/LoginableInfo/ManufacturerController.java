@@ -148,9 +148,11 @@ public class ManufacturerController extends LoginableBaseController<Manufacturer
 
     @RequestMapping(value = "/addWorkshop", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addWorkshop(Long manufacturer, String jsonArrayStr){
+    public JSONObject addWorkshop(Long manufacturer, Long workshop){
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add(workshop);
         try{
-            manufacturerServiceFacade.addWorkshops(manufacturer, jsonArrayStr);
+            manufacturerServiceFacade.addWorkshops(manufacturer, jsonArray.toJSONString());
             return getResultJSON(RetStatusType.StatusSuccess, "生产厂家添加生产车间信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
@@ -159,9 +161,9 @@ public class ManufacturerController extends LoginableBaseController<Manufacturer
 
     @RequestMapping(value = "/removeWorkshop", method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject removeWorkshop(Long manufacturer, Long workshopId){
+    public JSONObject removeWorkshop(Long manufacturer, Long workshop){
         try{
-            manufacturerServiceFacade.removeWorkshop(manufacturer, workshopId);
+            manufacturerServiceFacade.removeWorkshop(manufacturer, workshop);
             return getResultJSON(RetStatusType.StatusSuccess, "生产厂家移除生产车间信息成功", null);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());

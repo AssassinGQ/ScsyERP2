@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import echarts from 'echarts'
-import VueResource from 'vue-resource'
 
-Vue.use(VueResource)
 Vue.use(VueRouter)
 import './load-element-ui'
 import './load-font-awesome'
@@ -12,7 +10,6 @@ import './load-font-awesome'
 import FA from './components/fa'
 import MAP from './components/map-box'
 import TableView from './components/table-view'
-// import Axios from 'axios'
 
 Vue.component('fa', FA)
 Vue.component('map-box', MAP)

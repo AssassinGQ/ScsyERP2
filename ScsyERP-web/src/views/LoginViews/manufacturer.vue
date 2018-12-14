@@ -14,28 +14,24 @@ export default {
                 UserName: '用户名',
                 password: '密码'
             },
-            addWorkshopActions: [{
-                label: '确认装货',
-                url: '/BasicInfo/Manufacturer/addWorkshops',
+            customActions: [{
+                label: '添加生产厂家',
+                url: '/BasicInfo/Manufacturer/addWorkshop',
                 fields: [
-                    { key: 'manufacturer', label: '生产厂家', type: 'select', optionsUrl: '/BasicInfo/Manufacturer/query?IfDeleted=',},
-                    { key: 'zbweight', label: '折白重量' }
+                    { key: 'manufacturer', label: '生产厂家', type: 'select', optionsUrl: '/BasicInfo/Manufacturer/query?Corporation=2', },
+                    { key: 'workshop', label: '生产车间', type: 'select', optionsUrl: '/BasicInfo/Workshop/query', }
                 ]
-            }],
-            removeWorkshopActions: [{
-                label: '确认卸货',
-                url: '/order/load',
+            },{
+                label: '移除生产厂家',
+                url: '/BasicInfo/Manufacturer/removeWorkshop',
                 fields: [
-                    { key: 'loadweight', label: '装货重量' },
-                    { key: 'zbweight', label: '折白重量' }
+                    { key: 'manufacturer', label: '生产厂家', type: 'select', optionsUrl: '/BasicInfo/Manufacturer/query?Corporation=2', },
+                    { key: 'workshop', label: '生产车间', type: 'select', optionsUrl: '/BasicInfo/Workshop/query', }
                 ]
             }],
         }),
-        computed: {
-            customActions() {[
-                ...this.addWorkshopActions,
-                ...this.removeWorkshopActions,
-            ]}
-        },
+        methods:{
+
+        }
 }
 </script>

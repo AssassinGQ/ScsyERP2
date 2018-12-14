@@ -10,6 +10,7 @@ import cn.AssassinG.ScsyERP.common.entity.LoginableEntity;
 import cn.AssassinG.ScsyERP.common.exceptions.BizException;
 import cn.AssassinG.ScsyERP.common.exceptions.DaoException;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -70,11 +71,15 @@ public abstract class LoginableBaseController<T extends LoginableEntity> extends
             }else if(users.size() == 0){
                 return getResultJSON(RetStatusType.StatusFailure, getClassDesc()+"信息没有关联的登录信息", null);
             }else{
-                JSONObject contentObject = (JSONObject) JSON.toJSON(loginableEntity);
+                JSONObject itemObject = (JSONObject) JSON.toJSON(loginableEntity);
                 User user = users.get(0);
-                contentObject.put("userName", user.getUserName());
-                contentObject.put("passWord", user.getPassWord());
-                contentObject.put("phone", user.getPhone());
+                itemObject.put("userName", user.getUserName());
+                itemObject.put("passWord", user.getPassWord());
+                itemObject.put("phone", user.getPhone());
+                JSONArray dataArray = new JSONArray();
+                dataArray.add(itemObject);
+                JSONObject contentObject = new JSONObject();
+                contentObject.put("data", dataArray);
                 return getResultJSON(RetStatusType.StatusSuccess, "查询成功", contentObject);
             }
         }catch (DaoException | BizException e){

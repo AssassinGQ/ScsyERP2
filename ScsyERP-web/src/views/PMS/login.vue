@@ -33,7 +33,7 @@ export default {
     methods: {
         login() {
             let { userName, passWord } = this
-            POST('/user/mmlogin', { userName, passWord })
+            POST('/user/dologin', { userName, passWord })
                 .then(user => {
                     this.$store.commit('receiveUser', user);
                     if(user.userType == TYPE_SUPERADMIN){

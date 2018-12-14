@@ -109,7 +109,11 @@ public abstract class BaseController<T extends BaseEntity> implements Serializab
     protected JSONObject getByIdImpl(Long entityId){
         try{
             BaseEntity baseEntity = getService().getById(entityId);
-            return getResultJSON(RetStatusType.StatusSuccess, "查询成功", (JSONObject) JSON.toJSON(baseEntity));
+            JSONArray dataArray = new JSONArray();
+            dataArray.add((JSONObject) JSON.toJSON(baseEntity));
+            JSONObject contentObject = new JSONObject();
+            contentObject.put("data", dataArray);
+            return getResultJSON(RetStatusType.StatusSuccess, "查询成功", contentObject);
         }catch (DaoException | BizException e){
             return getResultJSON(e.getMessage());
         }

@@ -13,6 +13,13 @@ export const ensureFieldOptions = fields => Promise.all(fields.map(field => {
     let { type, options, optionsUrl, optionDisplayKey } = field
     if (optionsUrl && (type === 'select' || type === 'multi-select')) {
         let promise = GET(optionsUrl).then(({ data }) => {
+            // console.log("in ensureFieldOptions, get data : ")
+            // for(let x in data){
+            //     console.log("data["+x+"]:"+data[x])
+            //     for(let y in data[x]){
+            //         console.log("data["+x+"]["+y+"]:"+data[x][y])
+            //     }
+            // }
             Vue.set(field, 'options', data.map(d => ({
                 value: d.id,
                 label: d[optionDisplayKey] || d.name || d.title,

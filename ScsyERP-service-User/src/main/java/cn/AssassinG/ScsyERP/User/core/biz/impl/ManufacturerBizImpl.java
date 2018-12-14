@@ -118,18 +118,19 @@ public class ManufacturerBizImpl extends LoginableBizImpl<Manufacturer> implemen
     }
 
     @Transactional
-    public void removeWorkshop(Long entityId, Long productId) {
+    public void removeWorkshop(Long entityId, Long workshopId) {
+        System.out.println("in removeWorkshop, ids :"+entityId+",,"+workshopId);
         if(entityId == null){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产厂家基本信息主键不能为空");
         }
-        if(productId == null){
+        if(workshopId == null){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_PARAMS_ILLEGAL, "生产车间基本信息主键不能为空");
         }
         Manufacturer manufacturer = this.getById(entityId);
         if(manufacturer == null || manufacturer.getIfDeleted()){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产厂家基本信息，entityId: %d", entityId);
         }
-        Workshop workshop = workshopServiceFacade.getById(productId);
+        Workshop workshop = workshopServiceFacade.getById(workshopId);
         if(workshop == null || workshop.getIfDeleted()){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产车间基本信息，entityId: %d", entityId);
         }

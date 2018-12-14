@@ -2,8 +2,8 @@ import { DEBUG } from '../util'
 
 import axios from 'axios'
 
-export const ENDPOINT = '120.76.219.196:8082'
-// export const ENDPOINT = '127.0.0.1:8090'
+// export const ENDPOINT = '120.76.219.196:8082'
+export const ENDPOINT = '127.0.0.1:8090'
 
 import store from '../store'
 
@@ -36,35 +36,10 @@ const handleResponse_NOERROR = ({ data }, { showSuccessMessage = false } = {}) =
 }
 
 const encode = encodeURIComponent
-const Qs = require('qs');
-// export const POSTKV = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-//     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//     // headers: { 'Content-Type': 'application/json' }
-//     // transformRequest: (data = {}) => {
-//     //     return !data ? '' : Object.keys(data).reduce((result, key) => result + `${encode(key)}=${encode(data[key])}&`, '').slice(0, -1)
-//     // }
-//     transformRequest:[function (data){
-//         data = Qs.stringify({data:JSON.stringify(data)});
-//         return data;
-//     }]
-// }).then(data => handleResponse(data, { showSuccessMessage: true }))
 
-function transformPostData(data) {
-        if(data){
-            for(let x in data){
-                if(!data[x])
-                    delete(data[x]);
-            }
-        }
-        return !data ? '' : Object.keys(data).reduce((result, key) => result + `${encode(key)}=${encode(data[key])}&`, '').slice(0, -1)
-}
-
-export const POST2 = (pointer, path, data) => pointer.$http.post(`http://${ENDPOINT}${path}`, transformPostData(data), {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196', 'Access-Control-Request-Methods': 'POST' }
-}).then(data => handleResponse(data, { showSuccessMessage: true }))
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Methods': 'POST' },
-    // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    // headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Methods': 'POST' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     transformRequest: (data = {}) => {
         if(data){
             for(let x in data){
