@@ -3,6 +3,7 @@ import { DEBUG } from '../util'
 import axios from 'axios'
 
 export const ENDPOINT = '120.76.219.196:8082'
+// export const ENDPOINT = '127.0.0.1:8090'
 
 import store from '../store'
 
@@ -77,7 +78,7 @@ export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data
 
 export const GET = (path, params) => axios.get(`http://${ENDPOINT}${path}`, {
     // headers: { 'Access-Control-Allow-Origin': 'http://120.76.219.196', 'Access-Control-Allow-Methods': 'GET' },
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196:8082', 'Access-Control-Request-Methods': 'POST' },
+    // headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196:8082', 'Access-Control-Request-Methods': 'POST' },
     params: {
         Corporation: store.getters.user.Corporation,
         ...params,
