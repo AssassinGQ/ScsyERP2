@@ -39,7 +39,7 @@
     
     <mvc:cors>
         <mvc:mapping path="/**"
-        allowed-origins="http://120.76.219.196:8082"
+        allowed-origins="http://127.0.0.1:2333"
         allowed-methods="*"
         allow-credentials="true"
         max-age="3600"/>
