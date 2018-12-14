@@ -1,6 +1,5 @@
 package cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler;
 
-import com.alibaba.fastjson.JSONArray;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
@@ -16,11 +15,11 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
     private String Set2String(HashSet<Long> hashSet){
         try{
             Iterator<Long> iterator = hashSet.iterator();
-            JSONArray jsonArray = new JSONArray();
+            StringBuilder sb = new StringBuilder();
             while(iterator.hasNext()){
-                jsonArray.add(iterator.next());
+                sb.append(String.valueOf(iterator.next())).append(",");
             }
-            return jsonArray.toJSONString();
+            return sb.toString();
         }catch(Exception e){
             return "";
         }
@@ -28,14 +27,14 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
 
     private HashSet<Long> String2Set(String string){
         try{
-            JSONArray jsonArray = JSONArray.parseArray(string);
-            HashSet<Long> hashSet = new HashSet<Long>();
-            for(int i = 0; i < jsonArray.size(); i++){
-                hashSet.add((Long) jsonArray.get(i));
+            HashSet<Long> hashSet = new HashSet<>();
+            String[] strs = string.split(",");
+            for(int i = 0; i < strs.length; i++){
+                hashSet.add(Long.parseLong(strs[i]));
             }
             return hashSet;
         }catch(Exception e){
-            return new HashSet<Long>();
+            return new HashSet<>();
         }
     }
 
