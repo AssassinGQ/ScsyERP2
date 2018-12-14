@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.zip.GZIPInputStream;
 
 public class TestCaller {
@@ -135,5 +137,17 @@ public class TestCaller {
             e.printStackTrace();
         }
         return out.toByteArray();
+    }
+
+    @Test
+    public void testSetRemove(){
+        Long LL1 = 1L;
+        Long LL2 = 1L;
+        Set<Long> longs = new HashSet<>();
+        longs.add(LL1);
+        longs.add(2L);
+        System.out.println(longs);
+        longs.remove(LL2);
+        System.out.println(longs);
     }
 }

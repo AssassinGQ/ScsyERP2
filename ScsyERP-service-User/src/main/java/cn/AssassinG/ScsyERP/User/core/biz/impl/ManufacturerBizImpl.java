@@ -104,11 +104,11 @@ public class ManufacturerBizImpl extends LoginableBizImpl<Manufacturer> implemen
         }
         boolean flag = true;
         for(int i = 0; i < jsonArray.size(); i++){
-            Workshop driveWorker_tmp = workshopServiceFacade.getById(jsonArray.getLong(i));
-            if(driveWorker_tmp == null || driveWorker_tmp.getIfDeleted()){
+            Workshop workshop = workshopServiceFacade.getById(jsonArray.getLong(i));
+            if(workshop == null || workshop.getIfDeleted()){
                 flag = false;
             }else{
-                manufacturer.getWorkshops().add(driveWorker_tmp.getId());
+                manufacturer.getWorkshops().add(workshop.getId());
             }
         }
         this.update(manufacturer);

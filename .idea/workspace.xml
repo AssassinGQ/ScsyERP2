@@ -7,7 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.配置WebBoss的maven pom，进行打包，加入到持续集成中">
+      <change afterPath="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/dao/MyBatisTypeHandler/LongHashSetTypeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestCaller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/Manufacturer.Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/Manufacturer.Mapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-LoginableBasicInfo/target/" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-user/target/" />
@@ -187,11 +191,50 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="141" column="49" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="49" />
+            <state relative-caret-position="301">
+              <caret line="142" column="9" lean-forward="true" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/dao/MyBatisTypeHandler/HashSetTypeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/dao/MyBatisTypeHandler/LongHashSetTypeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1334">
+              <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+              <folding>
+                <element signature="e#1020#1026#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/Manufacturer.Mapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="72" column="81" lean-forward="true" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestCaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="147" column="22" lean-forward="true" selection-start-line="147" selection-start-column="22" selection-end-line="147" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -257,8 +300,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>InfoException</find>
-      <find>username</find>
       <find>beforeEach</find>
       <find>token</find>
       <find>EntityId</find>
@@ -287,9 +328,10 @@
       <find>retries=&quot;0&quot;</find>
       <find>3000</find>
       <find>value</find>
+      <find>T</find>
+      <find>HashSetTypeHandler</find>
     </findStrings>
     <replaceStrings>
-      <replace>CustomerBean</replace>
       <replace>DriverBean</replace>
       <replace>EscortBean</replace>
       <replace>GovernmentBean</replace>
@@ -319,6 +361,7 @@
       <replace>timeout=&quot;3000&quot; interface</replace>
       <replace>timeout=&quot;3000&quot; retries=&quot;0&quot;</replace>
       <replace>8000</replace>
+      <replace>LongHashSetTypeHandler</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Workspace\Idea\ScsyERP2\ScsyERP-web-Boss</dir>
@@ -330,9 +373,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/InStorage/InStorageFormController.java" />
-        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/AdminController.java" />
-        <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/CorporationController.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ConsigneeController.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/CustomerController.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/DriverController.java" />
@@ -380,7 +420,10 @@
         <option value="$PROJECT_DIR$/ScsyERP-web/src/fields/LoginFields/Manufacturer.js" />
         <option value="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ManufacturerController.java" />
         <option value="$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue" />
+        <option value="$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestCaller.java" />
         <option value="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" />
+        <option value="$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/dao/MyBatisTypeHandler/LongHashSetTypeHandler.java" />
+        <option value="$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/Manufacturer.Mapper.xml" />
       </list>
     </option>
   </component>
@@ -601,6 +644,85 @@
           <expand>
             <path>
               <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="CallBack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="MyBatisTypeHandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
               <item name="ScsyERP-service-User" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -666,7 +788,52 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-service-User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="MyBatisHandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-service-User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-service-User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-service-User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScsyERP-service-User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
@@ -792,7 +959,7 @@
     <property name="SearchEverywhereHistoryKey" value="projectId&#9;PSI&#9;JAVA://TestService.ProjectServiceFacadeImplTest#projectId" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544768077098" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544769058850" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -813,9 +980,6 @@
     <property name="ts.external.directory.path" value="D:\Software\JDE\IDE\IDEA\IntelliJ IDEA 2018.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cn.AssassinG.ScsyERP.common.core.dao" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo" />
       <recent name="cn.AssassinG.ScsyERP.WebBoss.action.PMS" />
@@ -833,6 +997,13 @@
       <recent name="cn.AssassinG.ScsyERP.User.core.biz.impl" />
       <recent name="cn.AssassinG.ScsyERP.common.core.biz.impl" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\views\LoginViews" />
+      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\views\PMS" />
+      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\fields\base" />
+      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-service-File\src\main\resources" />
+      <recent name="D:\WorkSpace\Idea\ScsyERP2\ScsyERP-web-Boss\src\main\resources\dubbo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\views\FormViews" />
       <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\views\UnLoginViews" />
@@ -841,18 +1012,14 @@
       <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\legacy2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.AssassinG.ScsyERP.common.core.dao.MyBatisTypeHandler" />
       <recent name="cn.AssassinG.ScsyERP.WebBoss.converters" />
       <recent name="cn.AssassinG.ScsyERP.WebBoss.Intercepts" />
       <recent name="TestService" />
       <recent name="cn.AssassinG.ScsyERP.File.core.dao.MyBatisHandler" />
-      <recent name="cn.AssassinG.ScsyERP.File.facade.exceptions" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\views\LoginViews" />
-      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\views\PMS" />
-      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-web\src\fields\base" />
-      <recent name="D:\Workspace\Idea\ScsyERP2\ScsyERP-service-File\src\main\resources" />
-      <recent name="D:\WorkSpace\Idea\ScsyERP2\ScsyERP-web-Boss\src\main\resources\dubbo" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cn.AssassinG.ScsyERP.common.core.dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -867,23 +1034,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.ScsyERP-web-Boss">
-    <configuration name="AdminControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ScsyERP-web-Boss" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo" />
-      <option name="MAIN_CLASS_NAME" value="cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo.AdminControllerTest" />
-      <option name="METHOD_NAME" value="create" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCaller.testSetRemove">
     <configuration name="AdminControllerTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ScsyERP-web-Boss" />
       <extension name="coverage">
@@ -895,6 +1046,22 @@
       <option name="PACKAGE_NAME" value="cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo" />
       <option name="MAIN_CLASS_NAME" value="cn.AssassinG.ScsyERP.WebBoss.action.LoginableInfo.AdminControllerTest" />
       <option name="METHOD_NAME" value="query" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaller.testSetRemove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScsyERP-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CallBack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CallBack" />
+      <option name="MAIN_CLASS_NAME" value="CallBack.TestCaller" />
+      <option name="METHOD_NAME" value="testSetRemove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1042,7 +1209,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.AdminControllerTest.create" />
       <item itemvalue="JUnit.UserServiceFacadeImplTest.listBy" />
       <item itemvalue="JUnit.UserServiceFacadeImplTest.listPage" />
       <item itemvalue="JUnit.AdminControllerTest.query" />
@@ -1050,14 +1216,15 @@
       <item itemvalue="npm.Build" />
       <item itemvalue="npm.Start" />
       <item itemvalue="Tomcat Server.ScsyERP-web-Boss" />
+      <item itemvalue="JUnit.TestCaller.testSetRemove" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCaller.testSetRemove" />
         <item itemvalue="JUnit.UserControllerTest.login" />
         <item itemvalue="JUnit.AdminControllerTest.query" />
         <item itemvalue="JUnit.UserServiceFacadeImplTest.listPage" />
         <item itemvalue="JUnit.UserServiceFacadeImplTest.listBy" />
-        <item itemvalue="JUnit.AdminControllerTest.create" />
       </list>
     </recent_temporary>
   </component>
@@ -1128,7 +1295,7 @@
       <workItem from="1544601844842" duration="2533000" />
       <workItem from="1544617232890" duration="4632000" />
       <workItem from="1544668788229" duration="25223000" />
-      <workItem from="1544752182449" duration="13463000" />
+      <workItem from="1544752182449" duration="14446000" />
     </task>
     <task id="LOCAL-00001" summary="第二次commit">
       <created>1540973324704</created>
@@ -1232,12 +1399,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserServiceFacadeImplTest_listBy - 2018.12.11 at 14h 30m 20s.xml">
-      <configuration name="UserServiceFacadeImplTest.listBy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiceFacadeImplTest_listPage - 2018.12.11 at 14h 31m 13s.xml">
-      <configuration name="UserServiceFacadeImplTest.listPage" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AdminControllerTest_query - 2018.12.11 at 14h 34m 24s.xml">
       <configuration name="AdminControllerTest.query" configurationId="JUnit" />
     </history-entry>
@@ -1262,9 +1423,15 @@
     <history-entry file="UserControllerTest_login - 2018.12.14 at 11h 28m 31s.xml">
       <configuration name="UserControllerTest.login" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestCaller_testSetRemove - 2018.12.14 at 14h 21m 02s.xml">
+      <configuration name="TestCaller.testSetRemove" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCaller_testSetRemove - 2018.12.14 at 14h 21m 43s.xml">
+      <configuration name="TestCaller.testSetRemove" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="723512000" />
+    <option name="totallyTimeSpent" value="724495000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1397,34 +1564,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/dubbo/dubbo-reference-OutStorage.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/dubbo/dubbo-reference-User.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1817">
-          <caret line="88" column="21" selection-start-line="81" selection-start-column="12" selection-end-line="88" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="129" column="36" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-web/src/fields/BaseFields/BaseField.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -1752,6 +1891,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common/src/main/test/CallBack/TestCaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="147" column="22" lean-forward="true" selection-start-line="147" selection-start-column="22" selection-end-line="147" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/ManufacturerBiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1761,8 +1907,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="141" column="49" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="49" />
+        <state relative-caret-position="301">
+          <caret line="142" column="9" lean-forward="true" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/dao/MyBatisTypeHandler/HashSetTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-common-core/src/main/java/cn/AssassinG/ScsyERP/common/core/dao/MyBatisTypeHandler/LongHashSetTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding>
+            <element signature="e#1020#1026#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/resources/mybatis/mapper/Manufacturer.Mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="72" column="81" lean-forward="true" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
         </state>
       </provider>
     </entry>
