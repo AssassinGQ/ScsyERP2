@@ -7,21 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.配置WebBoss的maven pom，进行打包，加入到持续集成中">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/HttpRequestIntercepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ManufacturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/action/LoginableInfo/ManufacturerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/LoginableBaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/base/LoginableBaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginFailureHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/security/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/fields/LoginFields/Manufacturer.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/fields/LoginFields/Manufacturer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/fields/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/fields/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/views/LoginViews/manufacturer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/views/PMS/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/views/PMS/login.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-LoginableBasicInfo/target/" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-user/target/" />
@@ -204,8 +190,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+            <state relative-caret-position="379">
+              <caret line="141" column="49" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -440,8 +426,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="74" />
-    <option name="y" value="512" />
+    <option name="x" value="-156" />
+    <option name="y" value="412" />
     <option name="width" value="1803" />
     <option name="height" value="922" />
   </component>
@@ -806,7 +792,7 @@
     <property name="SearchEverywhereHistoryKey" value="projectId&#9;PSI&#9;JAVA://TestService.ProjectServiceFacadeImplTest#projectId" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544767665274" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544768077098" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -1142,7 +1128,7 @@
       <workItem from="1544601844842" duration="2533000" />
       <workItem from="1544617232890" duration="4632000" />
       <workItem from="1544668788229" duration="25223000" />
-      <workItem from="1544752182449" duration="13057000" />
+      <workItem from="1544752182449" duration="13463000" />
     </task>
     <task id="LOCAL-00001" summary="第二次commit">
       <created>1540973324704</created>
@@ -1278,7 +1264,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="723106000" />
+    <option name="totallyTimeSpent" value="723512000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1775,8 +1761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-service-User/src/main/java/cn/AssassinG/ScsyERP/User/core/biz/impl/ManufacturerBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+        <state relative-caret-position="379">
+          <caret line="141" column="49" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="49" />
         </state>
       </provider>
     </entry>

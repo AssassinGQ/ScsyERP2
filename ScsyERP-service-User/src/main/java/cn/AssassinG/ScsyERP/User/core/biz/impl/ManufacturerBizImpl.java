@@ -134,7 +134,12 @@ public class ManufacturerBizImpl extends LoginableBizImpl<Manufacturer> implemen
         if(workshop == null || workshop.getIfDeleted()){
             throw new ManufacturerBizException(ManufacturerBizException.MANUFACTURERBIZ_NOSUIT_RESULT, "没有符合条件的生产车间基本信息，entityId: %d", entityId);
         }
-        manufacturer.getWorkshops().remove(workshop.getId());
-        this.update(manufacturer);
+        System.out.println("in removeWorkshop, removing :"+workshop.getId()+" from "+manufacturer.getWorkshops());
+        if(manufacturer.getWorkshops().remove(workshop.getId())){
+            System.out.println("remove success");
+            this.update(manufacturer);
+        }else{
+            System.out.println("remove failure");
+        }
     }
 }
