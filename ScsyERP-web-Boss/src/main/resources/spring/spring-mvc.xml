@@ -37,9 +37,9 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
     
-    <!--<mvc:cors>-->
-        <!--<mvc:mapping path="/**"/>-->
-    <!--</mvc:cors>-->
+    <mvc:cors>
+        <mvc:mapping path="/**"/>
+    </mvc:cors>
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
