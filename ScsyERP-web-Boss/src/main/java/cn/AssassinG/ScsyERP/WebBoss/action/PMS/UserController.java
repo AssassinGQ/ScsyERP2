@@ -190,19 +190,12 @@ public class UserController extends BaseController<User> {
         model.setViewName("user/login");
         return model;
     }
-    //    @RequestMapping(value = "/login", method = RequestMethod.POST)//登录
-//    @ResponseBody
-//    public JSONObject login(String UserName, String PassWord){
-//        try{
-//            if(userServiceFacade.login(UserName, PassWord)){
-//                return getResultJSON(RetStatusType.StatusSuccess, "登录成功", null);
-//            }else{
-//                return getResultJSON("登录失败");
-//            }
-//        }catch(DaoException | BizException e){
-//            return getResultJSON(e.getMessage());
-//        }
-//    }
+
+    @RequestMapping(value = "/mmlogin", method = RequestMethod.POST)//登录
+    @ResponseBody
+    public JSONObject login(String UserName, String PassWord){
+       return getResultJSON(RetStatusType.StatusFailure, "登錄失敗");
+    }
 
 //    @RequestMapping(value = "/reg", method = RequestMethod.POST)//提交注册
 //    @ResponseBody
