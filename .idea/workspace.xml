@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.配置WebBoss的maven pom，进行打包，加入到持续集成中">
-      <change afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/CorsFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web-Boss/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScsyERP-web/src/api/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="37424b76-2fcc-4aec-99e0-d3b6cb42b938" name="Default Changelist" comment="进度推进：&#10;1.配置WebBoss的maven pom，进行打包，加入到持续集成中" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-LoginableBasicInfo/target/" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-user/target/" />
     <ignored path="$PROJECT_DIR$/ScsyERP-facade-OnWayWatch/target/" />
@@ -97,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/CorsFilter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
@@ -109,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -395,8 +390,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="41" />
-    <option name="y" value="323" />
+    <option name="x" value="131" />
+    <option name="y" value="151" />
     <option name="width" value="1803" />
     <option name="height" value="979" />
   </component>
@@ -583,52 +578,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="WebBoss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="WebBoss" type="462c0819:PsiDirectoryNode" />
-              <item name="Intercepts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScsyERP2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScsyERP-web-Boss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -644,7 +593,7 @@
     <property name="SearchEverywhereHistoryKey" value="projectId&#9;PSI&#9;JAVA://TestService.ProjectServiceFacadeImplTest#projectId" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544754085708" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544754388322" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -979,7 +928,7 @@
       <workItem from="1544601844842" duration="2533000" />
       <workItem from="1544617232890" duration="4632000" />
       <workItem from="1544668788229" duration="25223000" />
-      <workItem from="1544752182449" duration="1886000" />
+      <workItem from="1544752182449" duration="2187000" />
     </task>
     <task id="LOCAL-00001" summary="第二次commit">
       <created>1540973324704</created>
@@ -1115,7 +1064,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="711935000" />
+    <option name="totallyTimeSpent" value="712236000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1128,7 +1077,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838883" visible="true" weight="0.2238806" />
       <window_info id="Structure" order="1" sideWeight="0.50053704" side_tool="true" weight="0.20575693" />
@@ -1586,6 +1534,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="39" column="87" selection-start-line="39" selection-start-column="87" selection-end-line="39" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/java/cn/AssassinG/ScsyERP/WebBoss/Intercepts/CorsFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -1593,13 +1548,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScsyERP-web-Boss/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="39" column="87" selection-start-line="39" selection-start-column="87" selection-end-line="39" selection-end-column="87" />
         </state>
       </provider>
     </entry>
