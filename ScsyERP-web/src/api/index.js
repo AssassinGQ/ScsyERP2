@@ -63,7 +63,7 @@ export const POST2 = (pointer, path, data) => pointer.$http.post(`http://${ENDPO
     headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196', 'Access-Control-Request-Methods': 'POST' }
 }).then(data => handleResponse(data, { showSuccessMessage: true }))
 export const POST = (path, data) => axios.post(`http://${ENDPOINT}${path}`, data, {
-    // headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Origin': 'http://120.76.219.196:8082', 'Access-Control-Request-Methods': 'POST' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Request-Methods': 'POST' },
     // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     transformRequest: (data = {}) => {
         if(data){
