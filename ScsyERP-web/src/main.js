@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import echarts from 'echarts'
+import VueResource from 'vue-resource'
 
+Vue.use(VueResource)
 Vue.use(VueRouter)
 import './load-element-ui'
 import './load-font-awesome'

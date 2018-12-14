@@ -46,7 +46,7 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
             }
 
             String methodsHeader = "Access-Control-Allow-Methods";
-            response.setHeader(methodsHeader, "*");
+            response.setHeader(methodsHeader, "POST,GET,OPTIONS");
 
             String headerHeader = "Access-Control-Allow-Headers";
             if(!response.containsHeader(headerHeader)){
@@ -61,6 +61,7 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
             String credentialHeader = "Access-Control-Allow-Credentials";
             response.setHeader(credentialHeader, "true");
 
+            response.setContentType("text/plain; charset=UTF-8");
 //            String method= request.getMethod();
 //            if (method.equals("OPTIONS")){
 //                response.setStatus(200);
