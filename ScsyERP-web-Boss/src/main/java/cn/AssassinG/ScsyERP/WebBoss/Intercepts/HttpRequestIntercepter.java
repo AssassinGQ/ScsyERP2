@@ -37,37 +37,32 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
             }
 
 
-            if(!response.containsHeader(originHeader)) {
-                String origin = request.getHeader("Origin");
-                if(origin == null) {
-                    String referer = request.getHeader("Referer");
-                    if(referer != null) {
-                        origin = referer.substring(0, referer.indexOf("/", 7));
-                    }
-                }
-                response.setHeader("Access-Control-Allow-Origin", origin);
-            }
-
-
-            response.setHeader(methodsHeader, "POST,GET,OPTIONS");
-            if(!response.containsHeader(headerHeader)){
-                response.setHeader(headerHeader, "X-Requested-With,accept,origin,content-type");
-            }else{
-//                response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
-//                response.setHeader("Access-Control-Expose-Headers", request.getHeader("Access-Control-Request-Headers"));
-            }
-            // 预检命令（OPTIONS）缓存时间，单位：秒
-            response.setHeader("Access-Control-Max-Age", "3600");
-            // 明确许可客户端发送Cookie，不允许删除字段即可
-            String credentialHeader = "Access-Control-Allow-Credentials";
-            response.setHeader(credentialHeader, "true");
-
-            response.setContentType("text/plain; charset=UTF-8");
-//            String method= request.getMethod();
-//            if (method.equals("OPTIONS")){
-//                response.setStatus(200);
-//                return false;
+//            if(!response.containsHeader(originHeader)) {
+//                String origin = request.getHeader("Origin");
+//                if(origin == null) {
+//                    String referer = request.getHeader("Referer");
+//                    if(referer != null) {
+//                        origin = referer.substring(0, referer.indexOf("/", 7));
+//                    }
+//                }
+//                response.setHeader("Access-Control-Allow-Origin", origin);
 //            }
+//
+//
+//            response.setHeader(methodsHeader, "POST,GET,OPTIONS");
+//            if(!response.containsHeader(headerHeader)){
+//                response.setHeader(headerHeader, "X-Requested-With,accept,origin,content-type");
+//            }else{
+////                response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
+////                response.setHeader("Access-Control-Expose-Headers", request.getHeader("Access-Control-Request-Headers"));
+//            }
+//            // 预检命令（OPTIONS）缓存时间，单位：秒
+//            response.setHeader("Access-Control-Max-Age", "3600");
+//            // 明确许可客户端发送Cookie，不允许删除字段即可
+//            String credentialHeader = "Access-Control-Allow-Credentials";
+//            response.setHeader(credentialHeader, "true");
+//
+//            response.setContentType("text/plain; charset=UTF-8");
             return true;
         }
         /**
@@ -78,14 +73,14 @@ public class HttpRequestIntercepter implements HandlerInterceptor {
         @Override
         public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 //            System.out.println("AppRequestInterceptor====>preHandle");
-            String method= request.getMethod();
-            if (method.equals("OPTIONS")){
-                response.setStatus(200);
-                response.setHeader("Access-Control-Allow-Origin", "*");
-                response.setHeader("Access-Control-Allow-Credentials", "true");
-                response.setHeader("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
-                response.setHeader("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With, Origin");
-            }
+//            String method= request.getMethod();
+//            if (method.equals("OPTIONS")){
+//                response.setStatus(200);
+//                response.setHeader("Access-Control-Allow-Origin", "*");
+//                response.setHeader("Access-Control-Allow-Credentials", "true");
+//                response.setHeader("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
+//                response.setHeader("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With, Origin");
+//            }
         }
 
         /**

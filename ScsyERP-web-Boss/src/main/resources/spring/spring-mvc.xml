@@ -38,7 +38,11 @@
     </mvc:annotation-driven>
     
     <mvc:cors>
-        <mvc:mapping path="/**"/>
+        <mvc:mapping path="/**"
+        allowed-origins="*"
+        allowed-methods="*"
+        allow-credentials="true"
+        max-age="3600"/>
     </mvc:cors>
     <mvc:interceptors>
         <mvc:interceptor>
